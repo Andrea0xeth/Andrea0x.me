@@ -145,7 +145,7 @@ export default function Home() {
                 </h1>
                 <TypewriterHero 
                   strings={[
-                    "I'm a Blockchain Product Manager",
+                    "I'm a web3 & Blockchain Product Manager",
                     "I develop DAO, Web3 and DeFi apps",
                     "I'm UX oriented", 
                     "I'm passionate about Web3 innovation",

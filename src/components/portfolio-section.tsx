@@ -25,7 +25,7 @@ export function PortfolioSection() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="text-center mb-6"
+        className="text-center mb-8 md:mb-12"
       >
         <h2 className="text-2xl lg:text-3xl font-bold text-[var(--text-primary)] mb-3">
           My <span className="text-[var(--accent-primary)]">Portfolio</span>

@@ -6,7 +6,7 @@ export const portfolioData = {
     nationality: "Italian 🇮🇹",
     birthYear: 1994,
     workMode: "100% remote but willing to travel out of necessity",
-    description: "A Blockchain Product Manager & Product Communication. In love with DAO, DeFi, NFTs & Web3 in general. Specialized in Management with particular attention to techno-economic aspects especially the use of EVM. Blockchain, Web3 & DeFi daily user. I'm able to quickly and efficiently understand the operational logic of IT systems.",
+    description: "In love with DAO, DeFi, NFTs & Web3 in general. Specialized in Management with particular attention to techno-economic aspects especially the use of EVM. Blockchain, Web3 & DeFi daily user. I'm able to quickly and efficiently understand the operational logic of IT systems.",
     avatar: "/images/avatar.jpg",
   },
   
