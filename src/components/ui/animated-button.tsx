@@ -26,7 +26,7 @@ export function AnimatedButton({
   const baseClasses = 'relative overflow-hidden rounded-full font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500/50 inline-flex items-center justify-center';
   
   const variantClasses = {
-    primary: 'bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)] hover:opacity-90 text-white shadow-lg hover:shadow-xl',
+    primary: 'bg-[var(--accent-primary)] hover:opacity-90 text-white shadow-lg hover:shadow-xl',
     secondary: 'bg-[var(--bg-tertiary)] hover:bg-[var(--bg-secondary)] text-[var(--text-primary)] border border-[var(--border-primary)]',
     ghost: 'bg-transparent hover:bg-[var(--glass-bg)] text-[var(--text-primary)] border border-[var(--border-primary)]',
     glass: 'bg-[var(--glass-bg)] backdrop-blur-md border border-[var(--border-primary)] text-[var(--text-primary)] hover:bg-[var(--glass-bg)]/80',

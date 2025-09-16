@@ -25,12 +25,12 @@ export function PortfolioSection() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="text-center mb-8 md:mb-12"
+        className="text-center mb-12 md:mb-16"
       >
         <h2 className="text-2xl lg:text-3xl font-bold text-[var(--text-primary)] mb-3">
           My <span className="text-[var(--accent-primary)]">Portfolio</span>
         </h2>
-        <p className="text-sm text-[var(--text-tertiary)] max-w-2xl mx-auto">
+        <p className="text-sm text-[var(--text-tertiary)] max-w-2xl mx-auto mb-8">
           Explore my Web3 projects and contributions to the decentralized ecosystem
         </p>
         

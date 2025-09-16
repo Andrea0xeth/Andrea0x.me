@@ -1,14 +1,17 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import { GlassCard } from '@/components/ui/glass-card';
 import { AnimatedButton } from '@/components/ui/animated-button';
 import { TypewriterHero } from '@/components/typewriter-hero';
 import { RotatingAvatar } from '@/components/rotating-avatar';
 import { MobileTabs } from '@/components/mobile-tabs';
 import { portfolioData } from '@/data/portfolio';
+import { ExpertiseIcons } from '@/components/expertise-icons';
 import { PortfolioSection } from '@/components/portfolio-section';
 import { ExperienceSection } from '@/components/experience-section';
+import { SkillsSection } from '@/components/skills-section';
 import { SectionDivider } from '@/components/ui/section-divider';
 import { ThemeSwitcher } from '@/components/ui/theme-switcher';
 import { 
@@ -22,6 +25,29 @@ import {
 
 export default function Home() {
   const { personal, social, expertise, stats } = portfolioData;
+  const [isAnonymous, setIsAnonymous] = useState(true);
+  const [isGlitching, setIsGlitching] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Effetto glitch periodico
+  useEffect(() => {
+    const glitchInterval = setInterval(() => {
+      setIsGlitching(true);
+      setTimeout(() => setIsGlitching(false), 800); // Glitch dura 1 secondi
+    }, 6000); // Ogni 8 secondi
+
+    return () => clearInterval(glitchInterval);
+  }, []);
+
+  // Gestione scroll per header
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[var(--bg-primary)] via-[var(--bg-secondary)] to-[var(--bg-tertiary)]">
@@ -35,20 +61,18 @@ export default function Home() {
       </div>
 
       <div className="relative z-10">
-        {/* Header */}
-        <header className="container mx-auto px-4 py-2 md:py-4">
+        {/* Header - Fixed on desktop, hidden on mobile */}
+        <header className={`hidden md:block fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled 
+            ? 'bg-[var(--glass-bg)] backdrop-blur-md border-b border-[var(--glass-border)]' 
+            : 'bg-transparent'
+        }`}>
+          <div className="container mx-auto px-4 py-2 md:py-4">
           <motion.nav 
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex justify-between items-center"
+            className="flex justify-end items-center"
           >
-            <motion.div 
-              className="text-2xl font-bold text-[var(--text-primary)]"
-              whileHover={{ scale: 1.05 }}
-            >
-              {personal.name}
-            </motion.div>
-            
             <div className="flex items-center space-x-4">
               <ThemeSwitcher />
               <AnimatedButton
@@ -62,10 +86,11 @@ export default function Home() {
               </AnimatedButton>
             </div>
           </motion.nav>
+          </div>
         </header>
 
         {/* Hero Section */}
-        <section className="container mx-auto px-4 py-6 md:py-12">
+        <section className="container mx-auto px-4 py-6 md:py-12 md:pt-20">
           <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
             {/* Card con foto e social - ora sulla sinistra e prioritaria su mobile */}
             <motion.div
@@ -74,20 +99,70 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               className="order-1 lg:order-1"
             >
-                  <GlassCard className="p-4 text-center" gradient>
-                    <RotatingAvatar
-                      images={[
-                        "/images/einstein.png",
-                        "/images/me.jpg"
-                      ]}
-                      alt={personal.name}
-                      className="w-48 h-48 rounded-full mx-auto mb-4 object-cover border-4 border-white/20 shadow-2xl"
-                      interval={4000}
-                    />
+                  <GlassCard className="p-4 text-center relative" gradient>
+                    {/* Anon Button */}
+                    <motion.button
+                      onClick={() => setIsAnonymous(!isAnonymous)}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="absolute top-2 right-2 px-2 py-1 rounded-full text-xs font-medium transition-all duration-300 z-10 cursor-pointer bg-[var(--glass-bg)] text-[var(--text-secondary)] border border-[var(--glass-border)]"
+                    >
+                      <span 
+                        style={isAnonymous ? {} : { textDecoration: 'line-through', opacity: 0.6 }}
+                      >
+                        Anon
+                      </span>
+                    </motion.button>
+
+                    <div className="relative">
+                      <RotatingAvatar
+                        images={[
+                          isAnonymous ? "/images/einstein.png" : "/images/me.jpg"
+                        ]}
+                        alt={isAnonymous ? "Andrea0x.eth" : "Andrea Ritondale"}
+                        className={`w-48 h-48 rounded-full mx-auto mb-4 object-cover border-4 border-white/20 shadow-2xl transition-all duration-300 ${
+                          isGlitching ? 'opacity-30 blur-sm' : 'opacity-100'
+                        }`}
+                        interval={4000}
+                      />
+                      
+                      {/* Avatar glitch overlay */}
+                      {isGlitching && (
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          className="absolute inset-0 w-48 h-48 rounded-full mx-auto mb-4 object-cover border-4 border-red-500/50 shadow-2xl"
+                          style={{
+                            backgroundImage: `url(${isAnonymous ? "/images/me.jpg" : "/images/einstein.png"})`,
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                            filter: 'hue-rotate(180deg) contrast(1.5)',
+                            animation: 'glitch 0.5s infinite'
+                          }}
+                        />
+                      )}
+                    </div>
                 
                 <div className="space-y-2">
-                  <h3 className="text-xl font-bold text-[var(--text-primary)]">{personal.name}</h3>
-                  <p className="text-[var(--text-secondary)] text-sm">{personal.title}</p>
+                  <h3 className="text-xl font-bold text-[var(--text-primary)] relative">
+                    {isAnonymous ? "Andrea0x.eth" : "Andrea Ritondale"}
+                    {isGlitching && (
+                      <motion.span
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="absolute inset-0 text-red-400"
+                        style={{
+                          filter: 'hue-rotate(180deg)',
+                          animation: 'glitch 0.5s infinite'
+                        }}
+                      >
+                        {isAnonymous ? "Andrea Ritondale" : "Andrea0x.eth"}
+                      </motion.span>
+                    )}
+                  </h3>
+                  <p className="text-[var(--text-secondary)] text-sm">{personal.subtitle}</p>
                   
                   <div className="flex justify-center space-x-3 pt-2">
                     <motion.a
@@ -140,9 +215,23 @@ export default function Home() {
                 transition={{ delay: 0.2 }}
                 className="mb-4"
               >
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-normal text-[var(--text-primary)] mb-2">
-                  I&apos;m Andrea0x.eth
-                </h1>
+                  <h1 className="text-2xl md:text-3xl lg:text-4xl font-normal text-[var(--text-primary)] mb-2 relative">
+                    I&apos;m {isAnonymous ? "Andrea0x.eth" : "Andrea Ritondale"}
+                    {isGlitching && (
+                      <motion.span
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="absolute inset-0 text-red-400"
+                        style={{
+                          filter: 'hue-rotate(180deg)',
+                          animation: 'glitch 0.5s infinite'
+                        }}
+                      >
+                        I&apos;m {isAnonymous ? "Andrea Ritondale" : "Andrea0x.eth"}
+                      </motion.span>
+                    )}
+                  </h1>
                 <TypewriterHero 
                   strings={[
                     "I'm a web3 & Blockchain Product Manager",
@@ -161,7 +250,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
               >
-                {personal.title}
+                {personal.subtitle}
               </motion.h2>
               
               <motion.p 
@@ -267,10 +356,14 @@ export default function Home() {
                   transition: { duration: 0.3 }
                 }}
               >
-                <GlassCard className="p-6 text-center h-full flex flex-col justify-between" hover gradient>
+                <GlassCard className="p-6 h-full flex flex-col justify-between" hover gradient>
                   <div>
-                    <div className="text-2xl mb-3">{item.icon}</div>
-                    <h3 className="text-sm font-bold text-[var(--text-primary)] mb-3">{item.title}</h3>
+                    <div className="flex items-center justify-between mb-3">
+                      <h3 className="text-sm font-bold text-[var(--text-primary)]">{item.title}</h3>
+                      <div className="text-[var(--accent-primary)] flex-shrink-0 ml-2">
+                        {ExpertiseIcons[item.icon as keyof typeof ExpertiseIcons]}
+                      </div>
+                    </div>
                   </div>
                   <p className="text-[var(--text-tertiary)] leading-relaxed text-xs px-2">{item.description}</p>
                 </GlassCard>
@@ -297,6 +390,16 @@ export default function Home() {
         {/* Experience Section */}
         <div className="hidden lg:block">
           <ExperienceSection />
+        </div>
+
+        {/* Section Divider */}
+        <div className="hidden md:block">
+          <SectionDivider />
+        </div>
+
+        {/* Skills Section */}
+        <div className="hidden lg:block">
+          <SkillsSection />
         </div>
 
         {/* Section Divider */}
@@ -354,11 +457,29 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="container mx-auto px-4 py-12 border-t border-[var(--border-primary)]">
+        <footer className="container mx-auto px-4 py-12 pb-20 md:pb-12 border-t border-[var(--border-primary)]">
           <div className="text-center text-[var(--text-tertiary)]">
             <p>&copy; {new Date().getFullYear()} {personal.name}. All rights reserved.</p>
           </div>
       </footer>
+
+        {/* Mobile Footer - Always visible */}
+        <footer className="fixed bottom-0 left-0 right-0 md:hidden z-50">
+          <div className="bg-[var(--glass-bg)] backdrop-blur-md border-t border-[var(--glass-border)] px-4 py-3">
+            <div className="flex justify-end items-center space-x-3">
+              <ThemeSwitcher />
+              <AnimatedButton
+                href={social.calendly}
+                variant="primary"
+                size="sm"
+                className="flex items-center space-x-2"
+              >
+                <Calendar className="w-4 h-4" />
+                <span>Book Call</span>
+              </AnimatedButton>
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
   );
