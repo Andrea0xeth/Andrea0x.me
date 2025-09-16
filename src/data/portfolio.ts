@@ -1,12 +1,10 @@
 export const portfolioData = {
   personal: {
     name: "Andrea0x.eth",
-    title: "Blockchain Product Manager & Product Communication",
-    subtitle: "Web3, DAO, DeFi & NFT Specialist",
     nationality: "Italian 🇮🇹",
     birthYear: 1994,
     workMode: "100% remote but willing to travel out of necessity",
-    description: "A Blockchain Product Manager & Product Communication. In love with DAO, DeFi, NFTs & Web3 in general. Specialized in Management with particular attention to techno-economic aspects especially the use of EVM. Blockchain, Web3 & DeFi daily user. I'm able to quickly and efficiently understand the operational logic of IT systems.",
+    description: "In love with DAO, DeFi & Web3. Specialized in IT Management with particular attention to techno-economic aspects of EVM. Web3 & DeFi daily user. I'm able to quickly & efficiently understand the operational logic of IT systems.",
     avatar: "/images/avatar.jpg",
   },
   
@@ -22,17 +20,17 @@ export const portfolioData = {
 
   expertise: [
     {
-      icon: "🎯",
+      icon: "pm",
       title: "Blockchain / Web3 PM",
       description: "Comfortable managing resources and product growth."
     },
     {
-      icon: "💬",
+      icon: "communication",
       title: "Blockchain / Web3 Product Communication",
       description: "Thanks to my complete understanding of technology, I can be an excellent communication bridge to the outside world."
     },
     {
-      icon: "🔧",
+      icon: "consultant",
       title: "Blockchain / Web3 Consultant",
       description: "Given my experiences I am an excellent resource as an external consultant."
     }

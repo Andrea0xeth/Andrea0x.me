@@ -78,18 +78,6 @@ export function RotatingAvatar({
         />
       </AnimatePresence>
       
-      {/* Indicatore di rotazione */}
-      <motion.div
-        className="absolute -top-2 -right-2 w-6 h-6 bg-primary-500 rounded-full flex items-center justify-center"
-        animate={{ rotate: 360 }}
-        transition={{ 
-          duration: 2,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-      >
-        <div className="w-2 h-2 bg-white rounded-full"></div>
-      </motion.div>
     </div>
   );
 }

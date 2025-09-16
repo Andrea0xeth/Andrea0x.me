@@ -97,7 +97,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Andrea0x.eth - Blockchain Product Manager & Web3 Specialist",
-    description: "Blockchain Product Manager & Product Communication specialist in Web3, DAO, DeFi & NFT.",
+    description: "Blockchain Product Manager & Product Communication specialist.",
     creator: '@andrea0x_eth',
     images: ['https://static.debank.com/image/op_nft/local_url/f75f6a9d560cf10d57c1866859b64c43/8294c465eb0314d169a2c0efdb354952.png'],
   },

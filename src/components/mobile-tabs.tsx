@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GlassCard } from '@/components/ui/glass-card';
 import { portfolioData } from '@/data/portfolio';
+import { ExpertiseIcons } from '@/components/expertise-icons';
 import { PortfolioSection } from '@/components/portfolio-section';
 import { ExperienceSection } from '@/components/experience-section';
 // No additional imports needed for simple text tabs
@@ -49,8 +50,10 @@ export function MobileTabs() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <GlassCard className="p-4 flex items-center space-x-4" hover>
-                  <div className="text-2xl flex-shrink-0">{item.icon}</div>
+                <GlassCard className="p-4 flex items-start space-x-3" hover>
+                  <div className="text-[var(--accent-primary)] flex-shrink-0 mt-0.5">
+                    {ExpertiseIcons[item.icon as keyof typeof ExpertiseIcons]}
+                  </div>
                   <div className="flex-1">
                     <h3 className="text-sm font-bold text-[var(--text-primary)] mb-1">{item.title}</h3>
                     <p className="text-[var(--text-tertiary)] text-xs leading-relaxed">{item.description}</p>
@@ -69,57 +72,59 @@ export function MobileTabs() {
 
       case 'skills':
         return (
-          <div className="space-y-6">
-            {/* Skills */}
+          <div className="px-4 space-y-4">
+            {/* Skills - Minimal Design */}
             <div>
-              <h3 className="text-lg font-bold text-[var(--text-primary)] mb-4">Technical Skills</h3>
-              <div className="space-y-3">
+              <h3 className="text-base font-semibold text-[var(--text-primary)] mb-3">Technical Skills</h3>
+              <div className="space-y-2">
                 {skills.map((skill, index) => (
                   <motion.div
                     key={skill.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                    className="flex items-center justify-between py-1"
                   >
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-[var(--text-secondary)] font-medium text-sm">{skill.name}</span>
-                      <span className="text-[var(--accent-primary)] font-bold text-sm">{skill.level}%</span>
-                    </div>
-                    <div className="w-full bg-[var(--bg-tertiary)] rounded-full h-2">
-                      <motion.div
-                        className="bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)] h-2 rounded-full"
-                        initial={{ width: 0 }}
-                        animate={{ width: `${skill.level}%` }}
-                        transition={{ duration: 1, delay: index * 0.1 }}
-                      />
+                    <span className="text-[var(--text-secondary)] text-sm">{skill.name}</span>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-16 bg-[var(--bg-tertiary)] rounded-full h-1.5">
+                        <motion.div
+                          className="bg-[var(--accent-primary)] h-1.5 rounded-full"
+                          initial={{ width: 0 }}
+                          animate={{ width: `${skill.level}%` }}
+                          transition={{ duration: 0.8, delay: index * 0.05 }}
+                        />
+                      </div>
+                      <span className="text-[var(--accent-primary)] text-xs font-medium w-8">{skill.level}%</span>
                     </div>
                   </motion.div>
                 ))}
               </div>
             </div>
 
-            {/* Languages */}
+            {/* Languages - Minimal Design */}
             <div>
-              <h3 className="text-lg font-bold text-[var(--text-primary)] mb-4">Languages</h3>
-              <div className="space-y-3">
+              <h3 className="text-base font-semibold text-[var(--text-primary)] mb-3">Languages</h3>
+              <div className="space-y-2">
                 {languages.map((language, index) => (
                   <motion.div
                     key={language.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                    className="flex items-center justify-between py-1"
                   >
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-[var(--text-secondary)] font-medium text-sm">{language.name}</span>
-                      <span className="text-[var(--accent-primary)] font-bold text-sm">{language.level}%</span>
-                    </div>
-                    <div className="w-full bg-[var(--bg-tertiary)] rounded-full h-2">
-                      <motion.div
-                        className="bg-gradient-to-r from-[var(--accent-primary)] to-[var(--accent-secondary)] h-2 rounded-full"
-                        initial={{ width: 0 }}
-                        animate={{ width: `${language.level}%` }}
-                        transition={{ duration: 1, delay: index * 0.1 }}
-                      />
+                    <span className="text-[var(--text-secondary)] text-sm">{language.name}</span>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-16 bg-[var(--bg-tertiary)] rounded-full h-1.5">
+                        <motion.div
+                          className="bg-[var(--accent-primary)] h-1.5 rounded-full"
+                          initial={{ width: 0 }}
+                          animate={{ width: `${language.level}%` }}
+                          transition={{ duration: 0.8, delay: index * 0.05 }}
+                        />
+                      </div>
+                      <span className="text-[var(--accent-primary)] text-xs font-medium w-8">{language.level}%</span>
                     </div>
                   </motion.div>
                 ))}
