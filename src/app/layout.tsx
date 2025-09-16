@@ -101,17 +101,6 @@ export const metadata: Metadata = {
     creator: '@andrea0x_eth',
     images: ['https://static.debank.com/image/op_nft/local_url/f75f6a9d560cf10d57c1866859b64c43/8294c465eb0314d169a2c0efdb354952.png'],
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
   verification: {
     google: 'your-google-verification-code',
   },
