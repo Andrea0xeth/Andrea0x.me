@@ -351,6 +351,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 [![GitHub stars](https://img.shields.io/github/stars/andrea0x-eth/andrea0x-me?style=social)](https://github.com/andrea0x-eth/andrea0x-me/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/andrea0x-eth/andrea0x-me?style=social)](https://github.com/andrea0x-eth/andrea0x-me/network)
 
-**Built with ❤️ by [Andrea0x.eth](https://andrea0x.eth.limo)**
+**Built with ❤️ by [Andrea0x.eth](https://andrea0x.me)**
 
 </div>
