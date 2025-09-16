@@ -50,13 +50,13 @@ export function MobileTabs() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <GlassCard className="p-4 flex items-center justify-between" hover>
+                <GlassCard className="p-4 flex items-start space-x-3" hover>
+                  <div className="text-[var(--accent-primary)] flex-shrink-0 mt-0.5">
+                    {ExpertiseIcons[item.icon as keyof typeof ExpertiseIcons]}
+                  </div>
                   <div className="flex-1">
                     <h3 className="text-sm font-bold text-[var(--text-primary)] mb-1">{item.title}</h3>
                     <p className="text-[var(--text-tertiary)] text-xs leading-relaxed">{item.description}</p>
-                  </div>
-                  <div className="text-[var(--accent-primary)] flex-shrink-0 ml-2">
-                    {ExpertiseIcons[item.icon as keyof typeof ExpertiseIcons]}
                   </div>
                 </GlassCard>
               </motion.div>

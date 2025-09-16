@@ -1,7 +1,6 @@
 export const portfolioData = {
   personal: {
     name: "Andrea0x.eth",
-    subtitle: "Web3, DAO, DeFi & NFT Specialist",
     nationality: "Italian 🇮🇹",
     birthYear: 1994,
     workMode: "100% remote but willing to travel out of necessity",

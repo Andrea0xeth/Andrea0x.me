@@ -162,7 +162,6 @@ export default function Home() {
                       </motion.span>
                     )}
                   </h3>
-                  <p className="text-[var(--text-secondary)] text-sm">{personal.subtitle}</p>
                   
                   <div className="flex justify-center space-x-3 pt-2">
                     <motion.a
@@ -244,14 +243,6 @@ export default function Home() {
                 />
               </motion.div>
               
-              <motion.h2 
-                className="text-lg lg:text-xl text-[var(--text-secondary)] mb-4"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-              >
-                {personal.subtitle}
-              </motion.h2>
               
               <motion.p 
                 className="text-sm md:text-base text-[var(--text-tertiary)] mb-6 leading-relaxed"
@@ -358,11 +349,11 @@ export default function Home() {
               >
                 <GlassCard className="p-6 h-full flex flex-col justify-between" hover gradient>
                   <div>
-                    <div className="flex items-center justify-between mb-3">
-                      <h3 className="text-sm font-bold text-[var(--text-primary)]">{item.title}</h3>
-                      <div className="text-[var(--accent-primary)] flex-shrink-0 ml-2">
+                    <div className="flex items-center mb-3">
+                      <div className="text-[var(--accent-primary)] flex-shrink-0 mr-3">
                         {ExpertiseIcons[item.icon as keyof typeof ExpertiseIcons]}
                       </div>
+                      <h3 className="text-sm font-bold text-[var(--text-primary)]">{item.title}</h3>
                     </div>
                   </div>
                   <p className="text-[var(--text-tertiary)] leading-relaxed text-xs px-2">{item.description}</p>
