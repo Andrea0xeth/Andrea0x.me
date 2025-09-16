@@ -90,7 +90,7 @@ export default function Home() {
         </header>
 
         {/* Hero Section */}
-        <section className="container mx-auto px-4 py-6 md:py-12 md:pt-20">
+        <section className="container mx-auto px-4 py-6 md:py-12 md:pt-28">
           <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
             {/* Card con foto e social - ora sulla sinistra e prioritaria su mobile */}
             <motion.div
