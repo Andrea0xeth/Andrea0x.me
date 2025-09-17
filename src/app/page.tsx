@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { GlassCard } from '@/components/ui/glass-card';
 import { AnimatedButton } from '@/components/ui/animated-button';
 import { TypewriterHero } from '@/components/typewriter-hero';
@@ -16,18 +16,28 @@ import { SectionDivider } from '@/components/ui/section-divider';
 import { ThemeSwitcher } from '@/components/ui/theme-switcher';
 import { 
   Github, 
-  Twitter, 
   Linkedin, 
   MessageCircle, 
   Calendar,
-  Download
+  Download,
+  Mail
 } from 'lucide-react';
+import { XIcon } from '@/components/ui/x-icon';
 
 export default function Home() {
   const { personal, social, expertise, stats } = portfolioData;
   const [isAnonymous, setIsAnonymous] = useState(true);
   const [isGlitching, setIsGlitching] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  // Memoize le strings del TypewriterHero per evitare re-render
+  const typewriterStrings = useMemo(() => [
+    "I'm a web3 & Blockchain Product Manager",
+    "I develop DAO, Web3 and DeFi apps",
+    "I'm UX oriented", 
+    "I'm passionate about Web3 innovation",
+    "I build decentralized solutions"
+  ], []);
 
   // Effetto glitch periodico
   useEffect(() => {
@@ -165,7 +175,19 @@ export default function Home() {
                   
                   <div className="flex justify-center space-x-3 pt-2">
                     <motion.a
+                      href={`mailto:${social.email}?subject=Hello from your portfolio&body=Hi Andrea0x.eth,%0D%0A%0D%0AI found your portfolio and I'm interested in...`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.2 }}
+                      whileTap={{ scale: 0.9 }}
+                      className="text-[var(--text-tertiary)] hover:text-[var(--text-primary)] transition-colors"
+                    >
+                      <Mail className="w-6 h-6" />
+                    </motion.a>
+                    <motion.a
                       href={social.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       whileHover={{ scale: 1.2 }}
                       whileTap={{ scale: 0.9 }}
                       className="text-[var(--text-tertiary)] hover:text-[var(--text-primary)] transition-colors"
@@ -174,6 +196,8 @@ export default function Home() {
                     </motion.a>
                     <motion.a
                       href={social.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       whileHover={{ scale: 1.2 }}
                       whileTap={{ scale: 0.9 }}
                       className="text-[var(--text-tertiary)] hover:text-[var(--text-primary)] transition-colors"
@@ -182,14 +206,18 @@ export default function Home() {
                     </motion.a>
                     <motion.a
                       href={social.twitter}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       whileHover={{ scale: 1.2 }}
                       whileTap={{ scale: 0.9 }}
                       className="text-[var(--text-tertiary)] hover:text-[var(--text-primary)] transition-colors"
                     >
-                      <Twitter className="w-6 h-6" />
+                      <XIcon className="w-6 h-6" />
                     </motion.a>
                     <motion.a
                       href={social.telegram}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       whileHover={{ scale: 1.2 }}
                       whileTap={{ scale: 0.9 }}
                       className="text-[var(--text-tertiary)] hover:text-[var(--text-primary)] transition-colors"
@@ -232,13 +260,7 @@ export default function Home() {
                     )}
                   </h1>
                 <TypewriterHero 
-                  strings={[
-                    "I'm a web3 & Blockchain Product Manager",
-                    "I develop DAO, Web3 and DeFi apps",
-                    "I'm UX oriented", 
-                    "I'm passionate about Web3 innovation",
-                    "I build decentralized solutions"
-                  ]}
+                  strings={typewriterStrings}
                   className="text-xl md:text-2xl lg:text-3xl"
                 />
               </motion.div>
@@ -265,12 +287,12 @@ export default function Home() {
                   size="md"
                   className="flex items-center space-x-2"
                 >
-                  <Twitter className="w-4 h-4" />
+                  <XIcon className="w-4 h-4" />
                   <span>Follow Me</span>
                 </AnimatedButton>
                 
                 <AnimatedButton
-                  href="/assets/AndreaRitondale_CV.pdf"
+                  href="https://tinyurl.com/Andrea0x-CV"
                   variant="glass"
                   size="md"
                   className="flex items-center space-x-2"
@@ -433,15 +455,26 @@ export default function Home() {
                   <Calendar className="w-4 h-4" />
                   <span>Schedule a Call</span>
                 </AnimatedButton>
-                <AnimatedButton
-                  href={social.telegram}
-                  variant="glass"
-                  size="md"
-                  className="flex items-center space-x-2"
-                >
-                  <MessageCircle className="w-4 h-4" />
-                  <span>Contact Me</span>
-                </AnimatedButton>
+                <div className="flex w-full sm:w-auto">
+                  <AnimatedButton
+                    href={social.telegram}
+                    variant="glass"
+                    size="md"
+                    className="flex items-center justify-center space-x-2 rounded-r-none border-r-0 flex-1"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    <span>Telegram</span>
+                  </AnimatedButton>
+                  <AnimatedButton
+                    href={`mailto:${social.email}?subject=Hello from your portfolio&body=Hi Andrea0x.eth,%0D%0A%0D%0AI found your portfolio and I'm interested in...`}
+                    variant="glass"
+                    size="md"
+                    className="flex items-center justify-center space-x-2 rounded-l-none flex-1"
+                  >
+                    <Mail className="w-4 h-4" />
+                    <span>Email</span>
+                  </AnimatedButton>
+                </div>
               </div>
             </GlassCard>
           </motion.div>
