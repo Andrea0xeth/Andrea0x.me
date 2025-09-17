@@ -9,9 +9,10 @@ export const portfolioData = {
   },
   
   social: {
+    email: "hello@andrea0x.me",
     telegram: "https://t.me/Andrea0x_eth",
     linkedin: "https://it.linkedin.com/in/andrea-ritondale",
-    twitter: "https://twitter.com/andrea0x_eth",
+    twitter: "https://x.com/andrea0x_eth",
     github: "https://github.com/Andrea0xeth?tab=repositories",
     discord: "andrea0x.eth#0001",
     mirror: "https://mirror.xyz/andrea0x.eth",

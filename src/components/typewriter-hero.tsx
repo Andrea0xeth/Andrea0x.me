@@ -9,7 +9,7 @@ interface TypewriterHeroProps {
   className?: string;
 }
 
-export function TypewriterHero({ strings, className = '' }: TypewriterHeroProps) {
+export const TypewriterHero = React.memo(function TypewriterHero({ strings, className = '' }: TypewriterHeroProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -37,4 +37,4 @@ export function TypewriterHero({ strings, className = '' }: TypewriterHeroProps)
       />
     </motion.div>
   );
-}
+});

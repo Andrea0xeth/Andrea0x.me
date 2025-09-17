@@ -42,7 +42,7 @@ export function MobileTabs() {
     switch (contentType) {
       case 'expertise':
         return (
-          <div className="space-y-4">
+          <div className="px-4 space-y-4">
             {expertise.map((item, index) => (
               <motion.div
                 key={item.title}
