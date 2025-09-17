@@ -45,7 +45,7 @@ export const portfolioData = {
       type: "Full Time",
       description: "Leading product development for Factor's DeFi strategy marketplace. Mix-and-match building blocks and extendable templates for strategy creation. Managing comprehensive suite of community-curated DeFi strategies and automated strategy vaults.",
       link: "https://factor.fi/",
-      logo: "/images/factor.gif"
+      logo: "/images/factor_studio.gif"
     },
     {
       company: "Gruppo Activa",
@@ -222,11 +222,20 @@ export const portfolioData = {
 
   projects: [
     {
-      title: "Factor",
-      description: "DeFi middleware infrastructure",
+      title: "Factor Studio",
+      description: "DeFi middleware infrastructure for DeFi strategies and automated vaults",
       image: "/images/factor.jpg",
-      gif: "/images/factor.gif",
-      link: "https://app.factor.fi/",
+      gif: "/images/factor_studio.gif",
+      link: "https://studio.factor.fi/",
+      categories: ["DeFi", "Web3", "DAO", "Community"],
+      featured: true
+    },
+    {
+      title: "Factor Discover",
+      description: "DeFi strategies and automated vaults marketplace where you can find the best DeFi strategies and automated vaults coming from Factor Studio or Factor SDK",
+      image: "/images/factor.jpg",
+      gif: "/images/factor_discover.gif",
+      link: "https://pro.factor.fi/",
       categories: ["DeFi", "Web3", "DAO", "Community"],
       featured: true
     },
@@ -244,7 +253,6 @@ export const portfolioData = {
       description: "Kwenta.io PFP customiser!",
       image: "/images/kwentize.jpg",
       gif: "/images/kwentize.gif",
-      link: "https://kwentize.yomi.dance/",
       categories: ["NFT", "Web3", "Web2", "Community"],
       featured: false
     },
@@ -253,7 +261,6 @@ export const portfolioData = {
       description: "Synthetix.io Italian Official Community!",
       image: "/images/synthetixitalia.jpg",
       gif: "/images/synthetixitalia.gif",
-      link: "https://synthetixitalia.eth.limo/",
       categories: ["Web3", "DAO", "Community"],
       featured: true
     },
@@ -262,7 +269,6 @@ export const portfolioData = {
       description: "DAO managed EVM wallet!",
       image: "/images/wallet.jpg",
       gif: "/images/wallet.gif",
-      link: "https://wallet.jigstack.org/",
       categories: ["Web3"],
       featured: false
     },
@@ -271,7 +277,6 @@ export const portfolioData = {
       description: "Multi-product DeFi Umbrella with the ambition to become a fully decentralized DAO!",
       image: "/images/jigstack.jpg",
       gif: "/images/jigstack.gif",
-      link: "https://jigstack.org/",
       categories: ["DeFi", "Web3", "DAO", "Community"],
       featured: true
     },
@@ -280,7 +285,6 @@ export const portfolioData = {
       description: "Jigstack Staking e Governance Platform!",
       image: "/images/stakbank.jpg",
       gif: null,
-      link: "https://www.stakbank.jigstack.org/",
       categories: ["DeFi", "Web3", "DAO"],
       featured: false
     },
@@ -289,7 +293,6 @@ export const portfolioData = {
       description: "Web3 Launchpad, Initial Dex Offering platform.",
       image: "/images/lemonade.jpg",
       gif: null,
-      link: "https://lemonade.jigstack.org/",
       categories: ["DeFi", "Web3"],
       featured: false
     },
@@ -298,7 +301,6 @@ export const portfolioData = {
       description: "Copy trading DeFi platform, DAO managed!",
       image: "/images/fndz.jpg",
       gif: null,
-      link: "https://fndz.io/",
       categories: ["DeFi", "Web3", "DAO"],
       featured: false
     },
@@ -307,7 +309,6 @@ export const portfolioData = {
       description: "Free online shopping assistant with in progress web3 implementation!",
       image: "/images/fndapp.jpg",
       gif: null,
-      link: "https://fndapp.io/",
       categories: ["Web2", "Web3", "Community"],
       featured: false
     },
@@ -316,7 +317,6 @@ export const portfolioData = {
       description: "Premium NFTs marketplace!",
       image: "/images/gallery.jpg",
       gif: null,
-      link: "https://www.defigallery.co/",
       categories: ["NFT", "Web3"],
       featured: false
     },
@@ -325,7 +325,6 @@ export const portfolioData = {
       description: "EVM crypto gifting!",
       image: "/images/santa.jpg",
       gif: null,
-      link: "https://santa.jigstack.org/",
       categories: ["NFT", "Web3", "Web2"],
       featured: false
     }
