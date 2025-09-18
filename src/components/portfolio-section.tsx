@@ -87,17 +87,19 @@ export function PortfolioSection() {
                 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
-                <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <AnimatedButton
-                    href={project.link}
-                    variant="glass"
-                    size="sm"
-                    className="w-full flex items-center justify-center space-x-2"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                    <span>View Project</span>
-                  </AnimatedButton>
-                </div>
+                {project.link && (
+                  <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <AnimatedButton
+                      href={project.link}
+                      variant="glass"
+                      size="sm"
+                      className="w-full flex items-center justify-center space-x-2"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      <span>View Project</span>
+                    </AnimatedButton>
+                  </div>
+                )}
               </div>
               
               <div className="p-4 flex flex-col flex-grow">
