@@ -222,20 +222,20 @@ export const portfolioData = {
 
   projects: [
     {
-      title: "Factor Studio",
-      description: "DeFi middleware infrastructure for DeFi strategies and automated vaults",
-      image: "/images/factor.jpg",
-      gif: "/images/factor_studio.gif",
-      link: "https://studio.factor.fi/",
+      title: "Factor Discover",
+      description: "DeFi strategies and automated vaults marketplace where you can find the best DeFi strategies and automated vaults coming from Factor Studio or Factor SDK",
+      image: "/images/factor_discover.gif",
+      gif: "/images/factor_discover.gif",
+      link: "https://pro.factor.fi/",
       categories: ["DeFi", "Web3", "DAO", "Community"],
       featured: true
     },
     {
-      title: "Factor Discover",
-      description: "DeFi strategies and automated vaults marketplace where you can find the best DeFi strategies and automated vaults coming from Factor Studio or Factor SDK",
-      image: "/images/factor.jpg",
-      gif: "/images/factor_discover.gif",
-      link: "https://pro.factor.fi/",
+      title: "Factor Studio",
+      description: "DeFi middleware infrastructure for DeFi strategies and automated vaults",
+      image: "/images/factor_studio.gif",
+      gif: "/images/factor_studio.gif",
+      link: "https://studio.factor.fi/",
       categories: ["DeFi", "Web3", "DAO", "Community"],
       featured: true
     },
