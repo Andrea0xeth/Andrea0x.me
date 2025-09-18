@@ -115,8 +115,25 @@ export default function Home() {
                       onClick={() => setIsAnonymous(!isAnonymous)}
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="absolute top-2 right-2 px-2 py-1 rounded-full text-xs font-medium transition-all duration-300 z-10 cursor-pointer bg-[var(--glass-bg)] text-[var(--text-secondary)] border border-[var(--glass-border)]"
+                      className="absolute top-2 right-2 px-2 py-1 rounded-full text-xs font-medium transition-all duration-300 z-10 cursor-pointer bg-[var(--glass-bg)] text-[var(--text-secondary)] border border-[var(--glass-border)] flex items-center gap-1"
                     >
+                      {/* Switch Icon - Circular arrows */}
+                      <svg 
+                        width="10" 
+                        height="10" 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        strokeWidth="2" 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round"
+                        className="w-3 h-3"
+                      >
+                        <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/>
+                        <path d="M21 3v5h-5"/>
+                        <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/>
+                        <path d="M3 21v-5h5"/>
+                      </svg>
                       <span 
                         style={isAnonymous ? {} : { textDecoration: 'line-through', opacity: 0.6 }}
                       >
@@ -276,7 +293,7 @@ export default function Home() {
               </motion.p>
 
               <motion.div 
-                className="flex flex-wrap gap-3"
+                className="flex flex-wrap gap-3 justify-center md:justify-start"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 }}
@@ -337,7 +354,9 @@ export default function Home() {
         </section>
 
         {/* Mobile Tabs */}
-        <MobileTabs />
+        <div className="lg:hidden">
+          <MobileTabs />
+        </div>
 
         {/* Expertise Section */}
         <section className="container mx-auto px-4 py-8 hidden lg:block">
@@ -386,7 +405,7 @@ export default function Home() {
         </section>
 
         {/* Section Divider */}
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <SectionDivider />
         </div>
 
@@ -396,7 +415,7 @@ export default function Home() {
         </div>
 
         {/* Section Divider */}
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <SectionDivider />
         </div>
 
@@ -406,7 +425,7 @@ export default function Home() {
         </div>
 
         {/* Section Divider */}
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <SectionDivider />
         </div>
 
@@ -416,7 +435,7 @@ export default function Home() {
         </div>
 
         {/* Section Divider */}
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <SectionDivider />
         </div>
 
