@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://andrea0x.eth.limo'),
+  metadataBase: new URL('https://andrea0x.me'),
   robots: {
     index: true,
     follow: true,
@@ -81,14 +81,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Andrea0x.eth - Blockchain Product Manager & Web3 Developer",
     description: "Professional Blockchain Product Manager & Product Communication specialist. Expert in DAO, DeFi, NFTs & Web3 technologies. Building the future of decentralized applications.",
-    url: 'https://andrea0x.eth.limo',
+    url: 'https://andrea0x.me',
     siteName: 'Andrea0x.eth Portfolio',
     images: [
       {
-        url: 'https://static.debank.com/image/op_nft/local_url/f75f6a9d560cf10d57c1866859b64c43/8294c465eb0314d169a2c0efdb354952.png',
+        url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: 'Andrea0x.eth - Blockchain Product Manager',
+        alt: 'Andrea0x.eth - Blockchain Product Manager & Web3 Developer',
       },
     ],
     locale: 'en_US',
@@ -99,7 +99,7 @@ export const metadata: Metadata = {
     title: "Andrea0x.eth - Blockchain Product Manager & Web3 Specialist",
     description: "Blockchain Product Manager & Product Communication specialist.",
     creator: '@andrea0x_eth',
-    images: ['https://static.debank.com/image/op_nft/local_url/f75f6a9d560cf10d57c1866859b64c43/8294c465eb0314d169a2c0efdb354952.png'],
+    images: ['/opengraph-image'],
   },
   verification: {
     google: 'your-google-verification-code',
