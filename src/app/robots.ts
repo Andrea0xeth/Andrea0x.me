@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/private/', '/admin/'],
     },
-    sitemap: 'https://andrea0x.eth.limo/sitemap.xml',
+    sitemap: 'https://andrea0x.me/sitemap.xml',
   }
 }
 
