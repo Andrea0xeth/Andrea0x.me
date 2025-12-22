@@ -309,7 +309,7 @@ export default function Home() {
                 </AnimatedButton>
                 
                 <AnimatedButton
-                  href="https://tinyurl.com/Andrea0x-CV"
+                  href="https://ug.link/myhomenas-andrea0x/filemgr/share-download/?id=37cf4996166d428da997a39f79933bd5"
                   variant="glass"
                   size="md"
                   className="flex items-center space-x-2"
