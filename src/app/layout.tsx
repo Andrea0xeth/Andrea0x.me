@@ -51,6 +51,10 @@ export const metadata: Metadata = {
     telephone: false,
   },
   metadataBase: new URL('https://andrea0x.me'),
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
   robots: {
     index: true,
     follow: true,
