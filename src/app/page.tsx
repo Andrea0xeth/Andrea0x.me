@@ -144,7 +144,7 @@ export default function Home() {
                     <div className="relative">
                       <RotatingAvatar
                         images={[
-                          isAnonymous ? "/images/einstein.png" : "/images/me.jpg"
+                          isAnonymous ? "/images/miladi.png" : "/images/me.jpg"
                         ]}
                         alt={isAnonymous ? "Andrea0x.eth" : "Andrea Ritondale"}
                         className={`w-48 h-48 rounded-full mx-auto mb-4 object-cover border-4 border-white/20 shadow-2xl transition-all duration-300 ${
@@ -161,7 +161,7 @@ export default function Home() {
                           exit={{ opacity: 0 }}
                           className="absolute inset-0 w-48 h-48 rounded-full mx-auto mb-4 object-cover border-4 border-red-500/50 shadow-2xl"
                           style={{
-                            backgroundImage: `url(${isAnonymous ? "/images/me.jpg" : "/images/einstein.png"})`,
+                            backgroundImage: `url(${isAnonymous ? "/images/me.jpg" : "/images/miladi.png"})`,
                             backgroundSize: 'cover',
                             backgroundPosition: 'center',
                             filter: 'hue-rotate(180deg) contrast(1.5)',
