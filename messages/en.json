@@ -1,0 +1,167 @@
+{
+  "nav": {
+    "bookCall": "Book a Call",
+    "downloadCV": "Download CV",
+    "theme": "Theme",
+    "language": "Language"
+  },
+  "common": {
+    "followMe": "Follow Me",
+    "scheduleCall": "Schedule a Call",
+    "email": "Email",
+    "telegram": "Telegram"
+  },
+  "home": {
+    "heroTitle": "I'm",
+    "heroSubtitle": "Blockchain Product Manager & Web3 Specialist",
+    "matrix": {
+      "whatIDo": {
+        "title": "What I do",
+        "summary": "Multi-skill, multi-domain, generalist by design."
+      },
+      "domains": {
+        "title": "Domains × Projects",
+        "summary": "Cross-domain coverage shown via shared pillars."
+      }
+    },
+    "contactCta": {
+      "title": "Ready to work together?",
+      "body": "Let's discuss your next project and how I can help bring your vision to life.",
+      "scheduleCall": "Schedule a Call",
+      "telegram": "Telegram",
+      "email": "Email"
+    }
+  },
+  "hero": {
+    "followMe": "Follow Me",
+    "scheduleCall": "Schedule a call",
+    "downloadCV": "Download CV"
+  },
+  "sections": {
+    "expertise": "Expertise",
+    "portfolio": "Portfolio",
+    "experience": "Experience",
+    "skills": "Skills",
+    "trustedBy": "Trusted By",
+    "collaborations": "Collaborations",
+    "techStack": "Tech Stack",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "services": {
+    "heroTitle": "Fractional CTO & Technical Architect",
+    "heroSubtitle": "Fractional CTO · Technical Architect · AI Engineering · for production systems",
+    "howWeEngage": {
+      "title": "How we engage",
+      "step1": "Discovery call — 30 minutes to align on context, goals and constraints.",
+      "step2": "Scope & rate — written proposal with deliverables, timeline and rate range.",
+      "step3": "Engagement — kickoff, decision logs, weekly checkpoints, end-of-engagement handoff."
+    },
+    "cta": {
+      "book": "Book a discovery call",
+      "email": "Email"
+    }
+  },
+  "about": {
+    "title": "About — Andrea Ritondale",
+    "languages": "Languages",
+    "education": "Education",
+    "quickFacts": "Quick facts",
+    "cta": {
+      "schedule": "Schedule a call",
+      "cv": "Download CV",
+      "email": "Email"
+    }
+  },
+  "whoIsThisFor": {
+    "title": "Who is this for?",
+    "card1": {
+      "title": "Recruiter / Hiring Manager",
+      "body": "Looking to hire engineering talent?",
+      "ctaPrimary": "View resume",
+      "ctaSecondary": "Read about"
+    },
+    "card2": {
+      "title": "Founder / Co-founder seek",
+      "body": "Building a startup? Need a technical co-founder or founding engineer?",
+      "ctaPrimary": "Reach out",
+      "ctaSecondary": "Read about"
+    },
+    "card3": {
+      "title": "Consulting / Fractional CTO client",
+      "body": "Need a fractional CTO or technical architect for production systems?",
+      "ctaPrimary": "View services"
+    }
+  },
+  "portfolio": {
+    "title": "My Portfolio",
+    "summary": "Selected projects across Web3, AI, B2B SaaS and the public sector.",
+    "cta": {
+      "title": "Interested in collaborating?",
+      "body": "Let's discuss how we can work together on your next project.",
+      "button": "Let's chat"
+    }
+  },
+  "experience": {
+    "title": "My Experience",
+    "summary": "A journey through software, AI, blockchain and decentralized technologies.",
+    "work": "Work Experience",
+    "education": "Education"
+  },
+  "mobileTabs": {
+    "tab": {
+      "expertise": "Expertise",
+      "portfolio": "Portfolio",
+      "experience": "Experience",
+      "skills": "Skills"
+    }
+  },
+  "caseStudy": {
+    "readMore": "Read case study",
+    "allCaseStudies": "All case studies",
+    "previous": "Previous",
+    "next": "Next",
+    "clients": "Clients",
+    "role": "Role",
+    "period": "Period",
+    "featured": {
+      "title": "Featured Work"
+    },
+    "section": {
+      "problem": "Problem",
+      "architecture": "Architecture",
+      "decisions": "Decisions",
+      "results": "Results",
+      "tech": "Tech & Pillars"
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "languages": "Languages",
+    "proficiency": {
+      "native": "Native",
+      "fluent": "Fluent",
+      "professional": "Professional",
+      "basic": "Basic",
+      "beginner": "Beginner"
+    }
+  },
+  "collaborations": {
+    "title": "Collaborations & Community",
+    "summary": "Past contributor / advisor / community lead roles"
+  },
+  "techStack": {
+    "title": "Tech Stack",
+    "summary": "Daily tools across cloud, AI, web3, data, and dev",
+    "category": {
+      "cloud": "Cloud",
+      "ai": "AI",
+      "web3": "Web3",
+      "database": "Database",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "devops": "DevOps",
+      "tools": "Tools"
+    }
+  }
+}

@@ -1,34 +1,19 @@
 import { MetadataRoute } from 'next'
+import { routing } from '@/i18n/routing'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://andrea0x.me'
-  
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 1,
+  const lastModified = new Date()
+
+  return routing.locales.map((locale) => ({
+    url: `${baseUrl}/${locale}`,
+    lastModified,
+    changeFrequency: 'monthly' as const,
+    priority: locale === routing.defaultLocale ? 1 : 0.9,
+    alternates: {
+      languages: Object.fromEntries(
+        routing.locales.map((l) => [l, `${baseUrl}/${l}`])
+      ),
     },
-    {
-      url: `${baseUrl}/portfolio`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/experience`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-  ]
+  }))
 }
-
-

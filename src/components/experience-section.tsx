@@ -1,12 +1,16 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useLocale, useTranslations } from 'next-intl';
 import { GlassCard } from '@/components/ui/glass-card';
 import { AnimatedButton } from '@/components/ui/animated-button';
+import { SectionHeader } from '@/components/ui/section-header';
 import { portfolioData } from '@/data/portfolio';
 import { ExternalLink, Calendar, MapPin, Users } from 'lucide-react';
 
 export function ExperienceSection() {
+  const locale = useLocale() as 'it' | 'en';
+  const t = useTranslations('experience');
   const { experience, education } = portfolioData;
 
   return (
@@ -16,20 +20,21 @@ export function ExperienceSection() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="text-center mb-6"
+        className="mb-8 md:mb-10"
       >
-        <h2 className="text-2xl lg:text-3xl font-bold text-[var(--text-primary)] mb-3">
-          My <span className="text-[var(--accent-primary)]">Experience</span>
-        </h2>
-        <p className="text-sm text-[var(--text-tertiary)] max-w-2xl mx-auto">
-          A journey through Web3, blockchain, and decentralized technologies
-        </p>
+        <SectionHeader
+          number="05"
+          title={t('title')}
+          summary={t('summary')}
+          align="center"
+          className="mx-auto"
+        />
       </motion.div>
 
       <div className="grid lg:grid-cols-2 gap-8">
         {/* Work Experience */}
         <div>
-          <motion.h3 
+          <motion.h3
             className="text-lg font-bold text-[var(--text-primary)] mb-4 flex items-center"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -37,9 +42,9 @@ export function ExperienceSection() {
             viewport={{ once: true }}
           >
             <Users className="w-4 h-4 mr-2 text-[var(--accent-primary)]" />
-            Work Experience
+            {t('work')}
           </motion.h3>
-          
+
           <div className="space-y-4">
             {experience.map((job, index) => (
               <motion.div
@@ -53,12 +58,12 @@ export function ExperienceSection() {
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex-1">
                       <h4 className="text-sm font-bold text-[var(--text-primary)] mb-2">
-                        {job.position}
+                        {job.position[locale]}
                       </h4>
                       <div className="flex items-center space-x-4 text-[var(--text-tertiary)] mb-2">
                         <span className="font-medium text-sm">{job.company}</span>
                         <span className="text-xs">•</span>
-                        <span className="text-xs">{job.type}</span>
+                        <span className="text-xs">{job.type[locale]}</span>
                       </div>
                       <div className="flex items-center text-[var(--accent-primary)] text-xs">
                         <Calendar className="w-3 h-3 mr-2" />
@@ -76,9 +81,9 @@ export function ExperienceSection() {
                       </AnimatedButton>
                     )}
                   </div>
-                  
+
                   <p className="text-gray-400 leading-relaxed text-xs">
-                    {job.description}
+                    {job.description[locale]}
                   </p>
                 </GlassCard>
               </motion.div>
@@ -88,7 +93,7 @@ export function ExperienceSection() {
 
         {/* Education */}
         <div>
-          <motion.h3 
+          <motion.h3
             className="text-lg font-bold text-[var(--text-primary)] mb-4 flex items-center"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -96,13 +101,13 @@ export function ExperienceSection() {
             viewport={{ once: true }}
           >
             <MapPin className="w-4 h-4 mr-2 text-[var(--accent-primary)]" />
-            Education
+            {t('education')}
           </motion.h3>
-          
+
           <div className="space-y-4">
             {education.map((edu, index) => (
               <motion.div
-                key={`${edu.title}-${edu.period}`}
+                key={`${edu.title[locale]}-${edu.period}`}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -112,7 +117,7 @@ export function ExperienceSection() {
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex-1">
                       <h4 className="text-sm font-bold text-[var(--text-primary)] mb-2">
-                        {edu.title}
+                        {edu.title[locale]}
                       </h4>
                       <div className="flex items-center text-[var(--accent-primary)] text-xs mb-2">
                         <Calendar className="w-3 h-3 mr-2" />
@@ -130,9 +135,9 @@ export function ExperienceSection() {
                       </AnimatedButton>
                     )}
                   </div>
-                  
+
                   <p className="text-gray-400 leading-relaxed text-xs">
-                    {edu.description}
+                    {edu.description[locale]}
                   </p>
                 </GlassCard>
               </motion.div>

@@ -2,20 +2,36 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { useLocale, useTranslations } from 'next-intl';
 import { GlassCard } from '@/components/ui/glass-card';
 import { AnimatedButton } from '@/components/ui/animated-button';
 import { PortfolioImage } from '@/components/ui/portfolio-image';
+import { SectionHeader } from '@/components/ui/section-header';
 import { portfolioData } from '@/data/portfolio';
 import { ExternalLink } from 'lucide-react';
 
-const categories = ['All', 'DeFi', 'Web3', 'DAO', 'NFT', 'Community', 'Web2'];
+const categories = [
+  'All',
+  'DeFi',
+  'Web3',
+  'DAO',
+  'NFT',
+  'Community',
+  'Web2',
+  'B2B SaaS',
+  'AI',
+  'Government',
+  'Enterprise',
+];
 
 export function PortfolioSection() {
+  const locale = useLocale() as 'it' | 'en';
+  const t = useTranslations('portfolio');
   const [activeCategory, setActiveCategory] = useState('All');
   const { projects } = portfolioData;
 
-  const filteredProjects = activeCategory === 'All' 
-    ? projects 
+  const filteredProjects = activeCategory === 'All'
+    ? projects
     : projects.filter(project => project.categories.includes(activeCategory));
 
   return (
@@ -25,15 +41,16 @@ export function PortfolioSection() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="text-center mb-12 md:mb-16"
+        className="mb-12 md:mb-16"
       >
-        <h2 className="text-2xl lg:text-3xl font-bold text-[var(--text-primary)] mb-3">
-          My <span className="text-[var(--accent-primary)]">Portfolio</span>
-        </h2>
-        <p className="text-sm text-[var(--text-tertiary)] max-w-2xl mx-auto mb-8">
-          Explore my Web3 projects and contributions to the decentralized ecosystem
-        </p>
-        
+        <SectionHeader
+          number="04"
+          title={t('title')}
+          summary={t('summary')}
+          align="center"
+          className="mb-8 mx-auto"
+        />
+
         {/* Category Filter */}
         <div className="flex flex-wrap justify-center gap-2 mb-6 md:gap-3 md:mb-8">
           {categories.map((category) => (
@@ -55,7 +72,7 @@ export function PortfolioSection() {
       </motion.div>
 
       {/* Projects Grid */}
-      <motion.div 
+      <motion.div
         className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
         layout
       >
@@ -76,7 +93,7 @@ export function PortfolioSection() {
                   alt={project.title}
                   className="w-full h-48 object-cover transition-all duration-300"
                 />
-                
+
                 {project.featured && (
                   <div className="absolute top-4 left-4">
                     <span className="bg-[var(--accent-primary)] text-white px-3 py-1 rounded-full text-sm font-medium">
@@ -84,9 +101,9 @@ export function PortfolioSection() {
                     </span>
                   </div>
                 )}
-                
+
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
+
                 {project.link && (
                   <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <AnimatedButton
@@ -101,11 +118,11 @@ export function PortfolioSection() {
                   </div>
                 )}
               </div>
-              
+
               <div className="p-4 flex flex-col flex-grow">
                 <h3 className="text-sm font-bold text-[var(--text-primary)] mb-3">{project.title}</h3>
-                <p className="text-[var(--text-tertiary)] mb-3 flex-grow text-xs leading-relaxed">{project.description}</p>
-                
+                <p className="text-[var(--text-tertiary)] mb-3 flex-grow text-xs leading-relaxed">{project.description[locale]}</p>
+
                 <div className="flex flex-wrap gap-2 mt-auto">
                   {project.categories.map((category) => (
                     <span
@@ -132,10 +149,10 @@ export function PortfolioSection() {
       >
         <GlassCard className="p-4 text-center max-w-md mx-auto" gradient>
           <h3 className="text-sm font-bold text-[var(--text-primary)] mb-3">
-            Interested in <span className="text-[var(--accent-primary)]">collaborating?</span>
+            {t('cta.title')}
           </h3>
           <p className="text-[var(--text-tertiary)] mb-3 text-xs">
-            Let&apos;s discuss how we can work together on your next Web3 project
+            {t('cta.body')}
           </p>
           <AnimatedButton
             href={portfolioData.social.calendly}
@@ -143,7 +160,7 @@ export function PortfolioSection() {
             size="sm"
             className="flex items-center space-x-2 mx-auto"
           >
-            <span>Let&apos;s chat</span>
+            <span>{t('cta.button')}</span>
           </AnimatedButton>
         </GlassCard>
       </motion.div>

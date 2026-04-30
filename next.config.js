@@ -1,3 +1,8 @@
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const createNextIntlPlugin = require('next-intl/plugin');
+
+const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Enable experimental features
@@ -93,11 +98,6 @@ const nextConfig = {
             name: 'framer-motion',
             chunks: 'all',
           },
-          three: {
-            test: /[\\/]node_modules[\\/]three[\\/]/,
-            name: 'three',
-            chunks: 'all',
-          },
         },
       };
     }
@@ -122,4 +122,4 @@ const nextConfig = {
   // SWC minification is enabled by default in Next.js 15
 };
 
-module.exports = nextConfig;
+module.exports = withNextIntl(nextConfig);
