@@ -24,18 +24,25 @@ const PILLAR_SHORT: Record<PillarId, string> = {
   business: 'Biz',
 };
 
+interface DomainsProjectsMatrixProps {
+  /** When true, skip the section wrapper + numbered header (used as sub-particle of FeaturedCaseStudies). */
+  compact?: boolean;
+}
+
 /**
- * DomainsProjectsMatrix — section "02" of the home page.
- *
- * Visual matrix where:
+ * DomainsProjectsMatrix — visual matrix where:
  *   rows    = case studies (4)
  *   columns = pillars      (6)
  *   filled dot when caseStudy.pillarsTouched.includes(pillar.id)
  *
+ * Two render modes:
+ * - default (full section with SectionHeader number="02")
+ * - compact (no wrapper, used inside FeaturedCaseStudies as cross-domain coverage map)
+ *
  * On mobile we collapse to one row per project with horizontally
  * scrollable pill list of pillars touched.
  */
-export function DomainsProjectsMatrix() {
+export function DomainsProjectsMatrix({ compact = false }: DomainsProjectsMatrixProps = {}) {
   const locale = useLocale() as Locale;
   const t = useTranslations('home.matrix.domains');
   const prefersReduced = useReducedMotion();
@@ -43,17 +50,35 @@ export function DomainsProjectsMatrix() {
 
   const { caseStudies, pillars } = portfolioData;
 
+  const Wrapper = compact
+    ? ({ children }: { children: React.ReactNode }) => <div>{children}</div>
+    : ({ children }: { children: React.ReactNode }) => (
+        <section className="container mx-auto px-4 py-12 md:py-16">{children}</section>
+      );
+
   return (
-    <section className="container mx-auto px-4 py-12 md:py-16">
-      <motion.div {...motionProps}>
-        <SectionHeader
-          number="02"
-          title={t('title')}
-          summary={t('summary')}
-          align="left"
-          className="mb-8 md:mb-10"
-        />
-      </motion.div>
+    <Wrapper>
+      {!compact && (
+        <motion.div {...motionProps}>
+          <SectionHeader
+            number="02"
+            title={t('title')}
+            summary={t('summary')}
+            align="left"
+            className="mb-8 md:mb-10"
+          />
+        </motion.div>
+      )}
+      {compact && (
+        <div className="mb-4 flex items-baseline gap-3">
+          <span className="text-tag font-mono text-[color:var(--text-tertiary)]">
+            {locale === 'it' ? 'Copertura cross-dominio' : 'Cross-domain coverage'}
+          </span>
+          <span className="text-caption text-[color:var(--text-tertiary)]">
+            {t('summary')}
+          </span>
+        </div>
+      )}
 
       {/* Desktop / tablet matrix */}
       <motion.div {...motionProps} className="hidden md:block">
@@ -192,6 +217,6 @@ export function DomainsProjectsMatrix() {
           );
         })}
       </div>
-    </section>
+    </Wrapper>
   );
 }

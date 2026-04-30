@@ -9,8 +9,8 @@ import type { CaseStudy, Locale } from '@/data/types';
 import { portfolioData } from '@/data/portfolio';
 import { Surface } from '@/components/ui/surface';
 import { TagPill } from '@/components/ui/tag-pill';
-import { MetricNumber } from '@/components/ui/metric-number';
 import { SectionHeader } from '@/components/ui/section-header';
+import { DomainsProjectsMatrix } from '@/components/domains-projects-matrix';
 import { motionPresets } from '@/lib/motion-presets';
 import { useReducedMotion, getMotionProps } from '@/lib/use-reduced-motion';
 
@@ -19,10 +19,17 @@ interface FeaturedCaseStudiesProps {
   max?: number;
 }
 
+/**
+ * Extract a short summary from a longer architecture text.
+ * Skip "domain-style" periods like "Factor.fi" or "Mandate.Finance" by
+ * requiring the sentence-ending punctuation to be followed by whitespace
+ * or end-of-string. Cap at ~220 chars so cards stay tight.
+ */
 function firstSentence(text: string): string {
-  // Match up to the first period followed by a space or end of string.
-  const match = text.match(/^[^.!?]*[.!?]/);
-  return match ? match[0].trim() : text;
+  const m = text.match(/^.+?[.!?](?=\s|$)/);
+  const sentence = m ? m[0].trim() : text;
+  if (sentence.length > 220) return sentence.slice(0, 217).trimEnd() + '…';
+  return sentence;
 }
 
 interface CaseStudyCardProps {
@@ -35,7 +42,6 @@ interface CaseStudyCardProps {
 function CaseStudyCard({ caseStudy, locale, index, reduceMotion }: CaseStudyCardProps) {
   const t = useTranslations('caseStudy');
   const summary = firstSentence(caseStudy.architecture[locale]);
-  const topMetrics = caseStudy.results.slice(0, 2);
 
   const fadeIn = getMotionProps(motionPresets.fadeInUpSlow, reduceMotion);
   const hover = getMotionProps(motionPresets.cardHover, reduceMotion);
@@ -60,76 +66,62 @@ function CaseStudyCard({ caseStudy, locale, index, reduceMotion }: CaseStudyCard
       >
         <Surface
           variant="bordered"
-          padding="md"
-          className="h-full flex flex-col gap-4 transition-colors group-hover:border-[color:var(--accent-primary)]/40"
+          padding="none"
+          className="h-full flex flex-col overflow-hidden transition-colors group-hover:border-[color:var(--accent-primary)]/40"
         >
           {caseStudy.image && (
             <div
-              className="relative w-full aspect-[16/10] rounded-xl overflow-hidden"
-              style={{
-                backgroundColor: 'var(--bg-secondary)',
-                border: '1px solid var(--border-primary)',
-              }}
+              className="relative w-full aspect-video overflow-hidden"
+              style={{ backgroundColor: 'var(--bg-secondary)' }}
             >
               <Image
                 src={caseStudy.image}
                 alt={caseStudy.title}
                 fill
-                sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
-                className="object-contain p-6 transition-transform duration-300 group-hover:scale-[1.03]"
+                sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
               />
             </div>
           )}
 
-          <div className="flex items-center gap-2">
-            <TagPill variant="accent" size="sm">
-              {caseStudy.domain[locale]}
-            </TagPill>
-          </div>
+          <div className="flex flex-col gap-3 p-5 md:p-6 flex-grow">
+            <div className="flex flex-wrap items-center gap-2">
+              <TagPill variant="accent" size="sm">
+                {caseStudy.domain[locale]}
+              </TagPill>
+            </div>
 
-          <div className="flex items-start justify-between gap-2">
-            <h3 className="text-h3 text-[color:var(--text-primary)] group-hover:text-[color:var(--accent-primary)] transition-colors">
-              {caseStudy.title}
-            </h3>
-            {caseStudy.link && (
-              <a
-                href={caseStudy.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                aria-label={`Visit ${caseStudy.title}`}
-                className="shrink-0 mt-1 text-[color:var(--text-tertiary)] hover:text-[color:var(--accent-primary)] transition-colors"
-              >
-                <ExternalLink className="w-4 h-4" />
-              </a>
-            )}
-          </div>
+            <div className="flex items-start justify-between gap-2">
+              <h3 className="text-h3 text-[color:var(--text-primary)] group-hover:text-[color:var(--accent-primary)] transition-colors">
+                {caseStudy.title}
+              </h3>
+              {caseStudy.link && (
+                <a
+                  href={caseStudy.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  aria-label={`Visit ${caseStudy.title}`}
+                  className="shrink-0 mt-1 text-[color:var(--text-tertiary)] hover:text-[color:var(--accent-primary)] transition-colors"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              )}
+            </div>
 
-          <p className="text-body text-[color:var(--text-secondary)] line-clamp-3">
-            {summary}
-          </p>
+            <p className="text-body text-[color:var(--text-secondary)] line-clamp-3">
+              {summary}
+            </p>
 
-          {topMetrics.length > 0 && (
-            <div className="grid grid-cols-2 gap-3 pt-2">
-              {topMetrics.map((metric, idx) => (
-                <MetricNumber
-                  key={`${metric.label.en}-${idx}`}
-                  value={metric.value}
-                  label={metric.label[locale]}
-                  size="md"
+            <div className="mt-auto pt-2">
+              <span className="inline-flex items-center gap-2 text-tag text-[color:var(--accent-primary)]">
+                {t('readMore')}
+                <ArrowRight
+                  className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5"
+                  aria-hidden="true"
                 />
-              ))}
+              </span>
             </div>
-          )}
-
-          <div className="mt-auto pt-2">
-            <span className="inline-flex items-center gap-2 text-tag text-[color:var(--accent-primary)]">
-              {t('readMore')}
-              <ArrowRight
-                className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5"
-                aria-hidden="true"
-              />
-            </span>
           </div>
         </Surface>
       </Link>
@@ -147,13 +139,13 @@ export function FeaturedCaseStudies({ locale, max }: FeaturedCaseStudiesProps) {
   return (
     <section className="container mx-auto px-4 py-12 md:py-20">
       <SectionHeader
-        number="03"
+        number="02"
         title={t('featured.title')}
         align="left"
         className="mb-8 md:mb-10"
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
         {items.map((cs, idx) => (
           <CaseStudyCard
             key={cs.slug}
@@ -163,6 +155,11 @@ export function FeaturedCaseStudies({ locale, max }: FeaturedCaseStudiesProps) {
             reduceMotion={reduceMotion}
           />
         ))}
+      </div>
+
+      {/* Cross-domain coverage matrix as sub-particle */}
+      <div className="mt-12 md:mt-16">
+        <DomainsProjectsMatrix compact />
       </div>
     </section>
   );

@@ -313,6 +313,7 @@ export const portfolioData: PortfolioData = {
   caseStudies: [
     {
       slug: "haelias",
+      link: "https://haelias.com",
       title: "Haelias",
       domain: {
         it: "B2B SaaS · Procurement Pharma",
@@ -537,7 +538,7 @@ export const portfolioData: PortfolioData = {
         "Farmadati SOAP",
       ],
       pillarsTouched: ["traditional-dev", "cloud-devops", "it-mgmt"],
-      image: "/images/logos/montefarmaco.png",
+      image: "/images/previews/haelias.jpg",
       featured: true,
     },
     {
@@ -1729,7 +1730,7 @@ export const portfolioData: PortfolioData = {
         it: "B2B SaaS pharma in produzione: 5.5M+ documenti MongoDB, ~14k prodotti in stock cross-supplier, 143 endpoint Express, 5 repo git, clienti enterprise (Montefarmaco, Logista SPA).",
         en: "Production B2B pharma SaaS: 5.5M+ MongoDB documents, ~14k cross-supplier in-stock products, 143 Express endpoints, 5 git repos, enterprise clients (Montefarmaco, Logista SPA).",
       },
-      image: "/images/logos/montefarmaco.png",
+      image: "/images/previews/haelias.jpg",
       gif: null,
       categories: ["B2B SaaS", "Enterprise", "Web2"],
       featured: true,

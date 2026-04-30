@@ -13,7 +13,6 @@ import { HeroSection } from '@/components/hero-section';
 import { StatsSection } from '@/components/stats-section';
 import { TrustedBySection } from '@/components/trusted-by-section';
 import { WhatIDoMatrix } from '@/components/what-i-do-matrix';
-import { DomainsProjectsMatrix } from '@/components/domains-projects-matrix';
 import { FeaturedCaseStudies } from '@/components/featured-case-studies';
 import { PortfolioSection } from '@/components/portfolio-section';
 import { ExperienceSection } from '@/components/experience-section';
@@ -103,8 +102,6 @@ export default async function Home({ params }: HomePageProps) {
         <TrustedBySection />
 
         <WhatIDoMatrix />
-
-        <DomainsProjectsMatrix />
 
         <FeaturedCaseStudies locale={locale} />
 
