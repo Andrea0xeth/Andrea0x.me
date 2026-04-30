@@ -2043,7 +2043,7 @@ export const portfolioData: PortfolioData = {
 
     // AI
     { name: "Anthropic Claude", category: "ai", url: "https://www.anthropic.com/", logo: "/images/logos/anthropic.svg" },
-    { name: "Claude Code", category: "ai", url: "https://www.anthropic.com/claude-code", logo: "/images/logos/anthropic.svg" },
+    { name: "Claude Code", category: "ai", url: "https://www.anthropic.com/claude-code", logo: "/images/logos/tech/claude.svg" },
     { name: "Cursor", category: "ai", url: "https://cursor.com/", logo: "/images/logos/tech/cursor.svg" },
     { name: "OMI", category: "ai", url: "https://www.omi.me/" },
     { name: "DeepInfra", category: "ai", url: "https://deepinfra.com/", logo: "/images/logos/tech/deepinfra.png" },
