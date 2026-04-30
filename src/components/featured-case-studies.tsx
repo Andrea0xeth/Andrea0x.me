@@ -71,20 +71,20 @@ function CaseStudyCard({ caseStudy, locale, index, reduceMotion }: CaseStudyCard
         >
           {caseStudy.image && (
             <div
-              className="relative w-full aspect-video overflow-hidden"
+              className="relative w-full aspect-[16/9] max-h-40 overflow-hidden"
               style={{ backgroundColor: 'var(--bg-secondary)' }}
             >
               <Image
                 src={caseStudy.image}
                 alt={caseStudy.title}
                 fill
-                sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                sizes="(min-width: 768px) 40vw, 100vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
               />
             </div>
           )}
 
-          <div className="flex flex-col gap-3 p-5 md:p-6 flex-grow">
+          <div className="flex flex-col gap-2 p-4 flex-grow">
             <div className="flex flex-wrap items-center gap-2">
               <TagPill variant="accent" size="sm">
                 {caseStudy.domain[locale]}
@@ -92,7 +92,7 @@ function CaseStudyCard({ caseStudy, locale, index, reduceMotion }: CaseStudyCard
             </div>
 
             <div className="flex items-start justify-between gap-2">
-              <h3 className="text-h3 text-[color:var(--text-primary)] group-hover:text-[color:var(--accent-primary)] transition-colors">
+              <h3 className="text-[15px] leading-tight font-semibold text-[color:var(--text-primary)] group-hover:text-[color:var(--accent-primary)] transition-colors">
                 {caseStudy.title}
               </h3>
               {caseStudy.link && (
@@ -102,22 +102,22 @@ function CaseStudyCard({ caseStudy, locale, index, reduceMotion }: CaseStudyCard
                   rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()}
                   aria-label={`Visit ${caseStudy.title}`}
-                  className="shrink-0 mt-1 text-[color:var(--text-tertiary)] hover:text-[color:var(--accent-primary)] transition-colors"
+                  className="shrink-0 text-[color:var(--text-tertiary)] hover:text-[color:var(--accent-primary)] transition-colors"
                 >
-                  <ExternalLink className="w-4 h-4" />
+                  <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               )}
             </div>
 
-            <p className="text-body text-[color:var(--text-secondary)] line-clamp-3">
+            <p className="text-caption text-[color:var(--text-secondary)] line-clamp-2">
               {summary}
             </p>
 
-            <div className="mt-auto pt-2">
-              <span className="inline-flex items-center gap-2 text-tag text-[color:var(--accent-primary)]">
+            <div className="mt-auto pt-1">
+              <span className="inline-flex items-center gap-1.5 text-tag text-[color:var(--accent-primary)]">
                 {t('readMore')}
                 <ArrowRight
-                  className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5"
+                  className="w-3 h-3 transition-transform group-hover:translate-x-0.5"
                   aria-hidden="true"
                 />
               </span>
@@ -145,7 +145,7 @@ export function FeaturedCaseStudies({ locale, max }: FeaturedCaseStudiesProps) {
         className="mb-8 md:mb-10"
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 max-w-5xl">
         {items.map((cs, idx) => (
           <CaseStudyCard
             key={cs.slug}
