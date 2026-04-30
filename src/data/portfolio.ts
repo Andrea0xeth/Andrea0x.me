@@ -17,8 +17,8 @@ export const portfolioData: PortfolioData = {
       en: "100% remote, willing to travel when needed.",
     },
     shortBio: {
-      it: "Principal Engineer + IT Architect + AI Builder. Costruisco e gestisco sistemi IT complessi end-to-end attraverso domini diversi: B2B SaaS pharma in produzione, DeFi AI-native, dati pubblici italiani per i beni culturali.",
-      en: "Principal Engineer + IT Architect + AI Builder. I design, build and run complex IT systems end-to-end across multiple domains: production B2B pharma SaaS, AI-native DeFi, Italian government data products for cultural heritage.",
+      it: "Principal Engineer + IT Architect + AI Builder. Costruisco e gestisco sistemi IT complessi end-to-end attraverso domini diversi: AI engineering · DeFi multi-chain · B2B SaaS pharma in produzione · settore pubblico italiano (PNRR / beni culturali).",
+      en: "Principal Engineer + IT Architect + AI Builder. I design, build and run complex IT systems end-to-end across multiple domains: AI engineering · multi-chain DeFi · production B2B pharma SaaS · Italian public sector (PNRR / cultural heritage).",
     },
     longBio: {
       it: "Sono Andrea — imprenditore tecnico ibrido. Principal Engineer + IT Architect + AI Builder, con ownership end-to-end di sistemi IT complessi su domini multipli.\n\nTraditional software development: 6+ anni di full-stack senior. Su Haelias sono Solo CTO di una piattaforma B2B di procurement digitale per farmacie italiane in produzione attiva, con 5.5M+ documenti MongoDB, ~14k prodotti in stock cross-supplier, 143 endpoint Express e clienti enterprise come Montefarmaco e Logista SPA. Stack: React 19 + Node + Rust + MongoDB + DigitalOcean. Caso emblematico: riduzione 70% size indici in produzione live (1.69 GB -> 369 MB) evitando un upgrade da +€1.260/anno.\n\nAI engineering: su Mandate.Finance sono Founding Product Engineer e Technical Co-founder. Ho costruito una piattaforma DeFi su 11 workspace (6 servizi runtime su Cloud Run, Foundry contracts, infra, due frontend Next.js 15, harness di test, docs). L'agent layer è un singolo LLM loop parametrizzato per 7 job type e 8 strategy template in Postgres, con MCP gateway in Python che intermedia le letture, signing-service che custodisce per-agent EOA cifrate AES-256-GCM, e tre layer di difesa contro le hallucination dello step deploy.\n\nAI-native workflow: tratto Claude Code come moltiplicatore strategico — multi-agent parallel dispatch, code review automation, multi-repo deploy orchestration, conversation->PRD pipeline. Top-decile workflow.\n\nCloud / DevOps: gestisco infrastructure su due piattaforme (GCP per Mandate, DigitalOcean per Haelias) senza supporto DevOps dedicato. Cloud Run, Cloud SQL private + VPC, Secret Manager, App Platform, Managed MongoDB, Vercel, Netlify, Docker. Runbook self-authored.\n\nWeb3 / Blockchain: integrazione smart contract multi-chain EVM (Ethereum, Base, Arbitrum) e Algorand, ERC-4626, EIP-7702 / ERC-7821, account abstraction, soulbound token (ARC-19 + ERC-5192), cross-chain via LiFi, x402 payments, MCP server, integrazione protocolli (AAVE, Morpho, Balancer, Factor SDK).\n\nIT management & digitalizzazione: trasformo workflow tradizionali in flussi digitali end-to-end. Coordino team distribuiti su più progetti in parallelo.\n\nBusiness strategy: revenue modeling Excel, SWOT, business plan, cap table, fundraising, pitch deck, GTM strategy.\n\nSu Activa Digital sono lead tecnico-funzionale di ArtCertify e dei 4 Data Product blockchain del Bando Ecomic Lotto 3 (MiC PNRR), parte di RTI con Civita Mostre, deadline 30 giugno 2026.\n\nNon sono un PM che delega il tech, né un dev che ignora il business. Sono uno dei pochi che può disegnare un sistema, costruirlo, gestirne la complessità IT e poi venderlo. Italiano nativo, lavoro con team internazionali in inglese.",
@@ -2119,8 +2119,8 @@ export const portfolioData: PortfolioData = {
         en: "Domains running in parallel",
       },
       caption: {
-        it: "Blockchain · Government · Web3 · AI · Logistics · Pharma B2B ",
-        en: "Blockchain · Government · Web3 · AI · Logistics · Pharma B2B ",
+        it: "AI · DeFi · B2B SaaS · Settore pubblico · Beni culturali",
+        en: "AI · DeFi · B2B SaaS · Public sector · Cultural heritage",
       },
     },
   ],
