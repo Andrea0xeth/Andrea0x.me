@@ -34,6 +34,13 @@ export default async function RootLayout({
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <meta name="theme-color" content="#0ea5e9" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        {/* Block-script: resolve theme before paint to avoid FOUC.
+            Order: explicit user choice (localStorage) > OS preference > dark fallback. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var s=localStorage.getItem('theme');var t=(s==='light'||s==='dark')?s:(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.classList.add(t);}catch(e){document.documentElement.classList.add('dark');}})();`,
+          }}
+        />
       </head>
       <body className={`${inter.className} antialiased`}>
         <ThemeProvider>
