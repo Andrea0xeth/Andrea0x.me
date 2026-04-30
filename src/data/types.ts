@@ -167,6 +167,8 @@ export interface TechStackItem {
   name: string;
   category: TechStackCategory;
   url?: string;
+  /** Optional path to brand SVG/PNG, e.g. '/images/logos/tech/vercel.svg'. */
+  logo?: string;
 }
 
 // ----- Stats & trustedBy ------------------------------------------------------

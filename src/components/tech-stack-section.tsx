@@ -82,7 +82,24 @@ export function TechStackSection() {
                 {items.map((item) => {
                   const pill = (
                     <TagPill variant="mono" size="sm">
-                      {item.name}
+                      {item.logo ? (
+                        <span className="inline-flex items-center gap-1.5">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={item.logo}
+                            alt=""
+                            aria-hidden="true"
+                            width={14}
+                            height={14}
+                            loading="lazy"
+                            decoding="async"
+                            className="h-3.5 w-3.5 grayscale opacity-70 transition group-hover:grayscale-0 group-hover:opacity-100"
+                          />
+                          {item.name}
+                        </span>
+                      ) : (
+                        item.name
+                      )}
                     </TagPill>
                   );
 
@@ -93,12 +110,12 @@ export function TechStackSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={item.name}
-                      className="inline-flex hover:opacity-80 transition-opacity"
+                      className="group inline-flex hover:opacity-80 transition-opacity"
                     >
                       {pill}
                     </a>
                   ) : (
-                    <span key={item.name} className="inline-flex">
+                    <span key={item.name} className="group inline-flex">
                       {pill}
                     </span>
                   );

@@ -17,12 +17,12 @@ export const portfolioData: PortfolioData = {
       en: "100% remote, willing to travel when needed.",
     },
     shortBio: {
-      it: "Principal Engineer + IT Architect + AI Builder. Costruisco e gestisco sistemi IT complessi end-to-end attraverso domini diversi: B2B SaaS pharma in produzione, DeFi multi-agent, dati pubblici italiani.",
-      en: "Principal Engineer + IT Architect + AI Builder. I design, build and run complex IT systems end-to-end across multiple domains: production B2B pharma SaaS, multi-agent DeFi, Italian government data products.",
+      it: "Principal Engineer + IT Architect + AI Builder. Costruisco e gestisco sistemi IT complessi end-to-end attraverso domini diversi: B2B SaaS pharma in produzione, DeFi AI-native, dati pubblici italiani per i beni culturali.",
+      en: "Principal Engineer + IT Architect + AI Builder. I design, build and run complex IT systems end-to-end across multiple domains: production B2B pharma SaaS, AI-native DeFi, Italian government data products for cultural heritage.",
     },
     longBio: {
-      it: "Sono Andrea — imprenditore tecnico ibrido. Principal Engineer + IT Architect + AI Builder, con ownership end-to-end di sistemi IT complessi su domini multipli.\n\nTraditional software development: 6+ anni di full-stack senior. Su Haelias sono Solo CTO di una piattaforma B2B di procurement digitale per farmacie italiane in produzione attiva, con 5.5M+ documenti MongoDB, 30k+ prodotti multi-tenant, clienti enterprise come Montefarmaco e Logista SPA. Stack: React 19 + Node + Rust + MongoDB + DigitalOcean. Caso emblematico: riduzione 70% size indici in produzione live (1.69 GB -> 369 MB) evitando un upgrade da +€1.260/anno.\n\nAI engineering: su Mandate.Finance sono Founding Product Engineer e Technical Co-founder. Ho costruito un sistema con 11 componenti microservizi (ui, backend, agent-executor, agent-tester, mcp-gateway, signing-service, jobs, contracts, landing, infra, docs). Architettura multi-agent (evaluator/researcher/manager/executor) con memoria a lungo termine, MCP gateway per l'integrazione LLM<->blockchain, parsing LLM di documenti per data ingestion.\n\nAI-native workflow: tratto Claude Code come moltiplicatore strategico — multi-agent parallel dispatch, code review automation, multi-repo deploy orchestration, conversation->PRD pipeline. Top-decile workflow.\n\nCloud / DevOps: gestisco infrastructure su due piattaforme (GCP per Mandate, DigitalOcean per Haelias) senza supporto DevOps dedicato. Cloud Run, Cloud SQL private + VPC, Secret Manager, App Platform, Managed MongoDB, Vercel, Netlify, Docker. Runbook self-authored.\n\nWeb3 / Blockchain: smart contract integration multi-chain (Ethereum, Base, Arbitrum), ERC-4626, EIP-7702, account abstraction, cross-chain via LiFi, integrazione protocolli (AAVE, Morpho, Balancer, Factor SDK).\n\nIT management & digitalizzazione: trasformo workflow tradizionali in flussi digitali end-to-end. Coordino team distribuiti su più progetti in parallelo.\n\nBusiness strategy: revenue modeling Excel, SWOT, business plan, cap table, fundraising, pitch deck, GTM strategy.\n\nSu DPass / PNRR sono architect e proposal lead di 6 blockchain data product per MIC e Invitalia, coordinando un team multi-disciplinare.\n\nNon sono un PM che delega il tech, né un dev che ignora il business. Sono uno dei pochi che può disegnare un sistema, costruirlo, gestirne la complessità IT e poi venderlo. Italiano nativo, lavoro con team internazionali in inglese.",
-      en: "I'm Andrea — a hybrid technical founder. Principal Engineer + IT Architect + AI Builder, with end-to-end ownership of complex IT systems across multiple domains.\n\nTraditional software development: 6+ years of senior full-stack work. On Haelias I'm the Solo CTO of a B2B digital procurement platform for Italian pharmacies, running in production with 5.5M+ MongoDB documents, 30k+ multi-tenant products, and enterprise clients like Montefarmaco and Logista SPA. Stack: React 19 + Node + Rust + MongoDB + DigitalOcean. A flagship example: a 70% reduction in index footprint on the live cluster (1.69 GB -> 369 MB), avoiding a €1,260/year cluster upgrade.\n\nAI engineering: on Mandate.Finance I'm the Founding Product Engineer and Technical Co-founder. I built a system with 11 microservice components (ui, backend, agent-executor, agent-tester, mcp-gateway, signing-service, jobs, contracts, landing, infra, docs). Multi-agent architecture (evaluator/researcher/manager/executor) with long-term memory, MCP gateway bridging LLMs and blockchain tools, and LLM-based document parsing for data ingestion.\n\nAI-native workflow: I treat Claude Code as a strategic multiplier — multi-agent parallel dispatch, code-review automation, multi-repo deploy orchestration, conversation-to-PRD pipeline. Top-decile workflow.\n\nCloud / DevOps: I run infrastructure across two platforms (GCP for Mandate, DigitalOcean for Haelias) without dedicated DevOps support. Cloud Run, Cloud SQL private + VPC, Secret Manager, App Platform, Managed MongoDB, Vercel, Netlify, Docker. Self-authored runbooks.\n\nWeb3 / Blockchain: multi-chain smart-contract integration (Ethereum, Base, Arbitrum), ERC-4626, EIP-7702, account abstraction, cross-chain via LiFi, protocol integrations (AAVE, Morpho, Balancer, Factor SDK).\n\nIT management & digitalization: I turn traditional workflows into end-to-end digital flows and coordinate distributed teams across several parallel projects.\n\nBusiness strategy: Excel revenue modeling, SWOT, business plan, cap table, fundraising, pitch deck, GTM.\n\nOn DPass / PNRR I'm the architect and proposal lead for 6 blockchain data products for MIC and Invitalia, coordinating a multi-disciplinary team.\n\nI'm not a PM who delegates the tech, nor a dev who ignores the business. I'm one of the few who can design a system, build it, manage the IT complexity and then sell it. Italian native; I work with international teams in English.",
+      it: "Sono Andrea — imprenditore tecnico ibrido. Principal Engineer + IT Architect + AI Builder, con ownership end-to-end di sistemi IT complessi su domini multipli.\n\nTraditional software development: 6+ anni di full-stack senior. Su Haelias sono Solo CTO di una piattaforma B2B di procurement digitale per farmacie italiane in produzione attiva, con 5.5M+ documenti MongoDB, ~14k prodotti in stock cross-supplier, 143 endpoint Express e clienti enterprise come Montefarmaco e Logista SPA. Stack: React 19 + Node + Rust + MongoDB + DigitalOcean. Caso emblematico: riduzione 70% size indici in produzione live (1.69 GB -> 369 MB) evitando un upgrade da +€1.260/anno.\n\nAI engineering: su Mandate.Finance sono Founding Product Engineer e Technical Co-founder. Ho costruito una piattaforma DeFi su 11 workspace (6 servizi runtime su Cloud Run, Foundry contracts, infra, due frontend Next.js 15, harness di test, docs). L'agent layer è un singolo LLM loop parametrizzato per 7 job type e 8 strategy template in Postgres, con MCP gateway in Python che intermedia le letture, signing-service che custodisce per-agent EOA cifrate AES-256-GCM, e tre layer di difesa contro le hallucination dello step deploy.\n\nAI-native workflow: tratto Claude Code come moltiplicatore strategico — multi-agent parallel dispatch, code review automation, multi-repo deploy orchestration, conversation->PRD pipeline. Top-decile workflow.\n\nCloud / DevOps: gestisco infrastructure su due piattaforme (GCP per Mandate, DigitalOcean per Haelias) senza supporto DevOps dedicato. Cloud Run, Cloud SQL private + VPC, Secret Manager, App Platform, Managed MongoDB, Vercel, Netlify, Docker. Runbook self-authored.\n\nWeb3 / Blockchain: integrazione smart contract multi-chain EVM (Ethereum, Base, Arbitrum) e Algorand, ERC-4626, EIP-7702 / ERC-7821, account abstraction, soulbound token (ARC-19 + ERC-5192), cross-chain via LiFi, x402 payments, MCP server, integrazione protocolli (AAVE, Morpho, Balancer, Factor SDK).\n\nIT management & digitalizzazione: trasformo workflow tradizionali in flussi digitali end-to-end. Coordino team distribuiti su più progetti in parallelo.\n\nBusiness strategy: revenue modeling Excel, SWOT, business plan, cap table, fundraising, pitch deck, GTM strategy.\n\nSu Activa Digital sono lead tecnico-funzionale di ArtCertify e dei 4 Data Product blockchain del Bando Ecomic Lotto 3 (MiC PNRR), parte di RTI con Civita Mostre, deadline 30 giugno 2026.\n\nNon sono un PM che delega il tech, né un dev che ignora il business. Sono uno dei pochi che può disegnare un sistema, costruirlo, gestirne la complessità IT e poi venderlo. Italiano nativo, lavoro con team internazionali in inglese.",
+      en: "I'm Andrea — a hybrid technical founder. Principal Engineer + IT Architect + AI Builder, with end-to-end ownership of complex IT systems across multiple domains.\n\nTraditional software development: 6+ years of senior full-stack work. On Haelias I'm the Solo CTO of a B2B digital procurement platform for Italian pharmacies, running in production with 5.5M+ MongoDB documents, ~14k cross-supplier in-stock products, 143 Express endpoints, and enterprise clients like Montefarmaco and Logista SPA. Stack: React 19 + Node + Rust + MongoDB + DigitalOcean. A flagship example: a 70% reduction in index footprint on the live cluster (1.69 GB -> 369 MB), avoiding a €1,260/year cluster upgrade.\n\nAI engineering: on Mandate.Finance I'm the Founding Product Engineer and Technical Co-founder. I built a DeFi platform across 11 workspaces (6 Cloud Run runtime services, Foundry contracts, infra, two Next.js 15 frontends, a test harness, docs). The agent layer is a single LLM loop parameterised by 7 job types and 8 strategy templates stored in Postgres, with a Python MCP gateway brokering reads, a signing-service custodying AES-256-GCM-encrypted per-agent EOAs, and three layers of defense against deploy-step hallucinations.\n\nAI-native workflow: I treat Claude Code as a strategic multiplier — multi-agent parallel dispatch, code-review automation, multi-repo deploy orchestration, conversation-to-PRD pipeline. Top-decile workflow.\n\nCloud / DevOps: I run infrastructure across two platforms (GCP for Mandate, DigitalOcean for Haelias) without dedicated DevOps support. Cloud Run, Cloud SQL private + VPC, Secret Manager, App Platform, Managed MongoDB, Vercel, Netlify, Docker. Self-authored runbooks.\n\nWeb3 / Blockchain: multi-chain smart-contract integration on EVM (Ethereum, Base, Arbitrum) and Algorand, ERC-4626, EIP-7702 / ERC-7821, account abstraction, soulbound tokens (ARC-19 + ERC-5192), cross-chain via LiFi, x402 payments, MCP servers, protocol integrations (AAVE, Morpho, Balancer, Factor SDK).\n\nIT management & digitalization: I turn traditional workflows into end-to-end digital flows and coordinate distributed teams across several parallel projects.\n\nBusiness strategy: Excel revenue modeling, SWOT, business plan, cap table, fundraising, pitch deck, GTM.\n\nAt Activa Digital I'm the technical-functional lead on ArtCertify and the 4 blockchain Data Products of the Ecomic Lotto 3 tender (MiC PNRR), part of an RTI with Civita Mostre, deadline 30 June 2026.\n\nI'm not a PM who delegates the tech, nor a dev who ignores the business. I'm one of the few who can design a system, build it, manage the IT complexity and then sell it. Italian native; I work with international teams in English.",
     },
     avatarReal: "/images/me.jpg",
     avatarAnon: "/images/miladi.png",
@@ -47,19 +47,19 @@ export const portfolioData: PortfolioData = {
     typewriter: {
       it: [
         "Principal Engineer & IT Architect",
-        "AI Builder — multi-agent, MCP, LLM integration",
+        "AI Builder — MCP, agent loop, code-level guardrails",
         "Founding Product Engineer @ Mandate.Finance",
         "Solo CTO @ Haelias — 5.5M+ documenti in produzione",
-        "Architetto blockchain data products per il settore pubblico",
+        "Lead tecnico-funzionale ArtCertify — MiC PNRR Lotto 3",
         "Cloud ops senza DevOps dedicato — GCP + DigitalOcean",
         "Generalista by design, specialista dove serve",
       ],
       en: [
         "Principal Engineer & IT Architect",
-        "AI Builder — multi-agent, MCP, LLM integration",
+        "AI Builder — MCP, agent loops, code-level guardrails",
         "Founding Product Engineer @ Mandate.Finance",
         "Solo CTO @ Haelias — 5.5M+ docs in production",
-        "Blockchain data products for the public sector",
+        "Technical-functional lead — ArtCertify · MiC PNRR Lotto 3",
         "Cloud ops without dedicated DevOps — GCP + DigitalOcean",
         "Generalist by design, specialist where it matters",
       ],
@@ -90,10 +90,10 @@ export const portfolioData: PortfolioData = {
         },
         {
           label: {
-            it: "Endpoint Express custom",
-            en: "Custom Express endpoints",
+            it: "Endpoint Express custom (singolo `main.ts`)",
+            en: "Custom Express endpoints (single `main.ts`)",
           },
-          value: "50+",
+          value: "143",
         },
       ],
       tags: [
@@ -116,32 +116,35 @@ export const portfolioData: PortfolioData = {
         en: "AI Engineering",
       },
       summary: {
-        it: "Costruisco sistemi AI in produzione: multi-agent autonomi, MCP gateway, LLM integration.",
-        en: "I build production AI systems: autonomous multi-agent runtimes, MCP gateways, LLM integration.",
+        it: "Costruisco sistemi AI in produzione: agent loop con tool whitelist, MCP gateway multi-tenant, signing-service custodial e guardrail a livello di codice.",
+        en: "I build production AI systems: agent loops with per-task tool whitelists, multi-tenant MCP gateways, custodial signing-services and code-level guardrails.",
       },
       metrics: [
         {
           label: {
-            it: "Microservizi su Mandate in 5 settimane",
-            en: "Microservices shipped on Mandate in 5 weeks",
+            it: "Workspace su Mandate in 5 settimane",
+            en: "Workspaces shipped on Mandate in 5 weeks",
           },
           value: "11",
         },
         {
           label: {
-            it: "Architettura multi-agent",
-            en: "Multi-agent architecture",
+            it: "Job type × strategy template (Postgres-driven)",
+            en: "Job types × strategy templates (Postgres-driven)",
           },
-          value: "evaluator / researcher / manager / executor",
+          value: "7 × 8",
         },
       ],
       tags: [
-        "Multi-agent architecture",
+        "Single-loop agent",
+        "Per-task tool whitelist",
         "MCP gateway",
+        "MCP-over-stdio",
         "LLM integration",
-        "Long-term memory",
-        "Anthropic Claude",
+        "Code-level SELL GUARD",
         "DeepInfra",
+        "OpenRouter",
+        "Anthropic (review)",
         "Prompt engineering",
         "Agent testing",
       ],
@@ -192,8 +195,8 @@ export const portfolioData: PortfolioData = {
         en: "Web3 / Blockchain",
       },
       summary: {
-        it: "Smart contract integration multi-chain, vault ERC-4626, account abstraction, gasless UX.",
-        en: "Multi-chain smart-contract integration, ERC-4626 vaults, account abstraction, gasless UX.",
+        it: "Integrazione smart contract multi-chain (EVM + Algorand), vault ERC-4626, soulbound token (ARC-19 + ERC-5192), account abstraction, gasless UX.",
+        en: "Multi-chain smart-contract integration (EVM + Algorand), ERC-4626 vaults, soulbound tokens (ARC-19 + ERC-5192), account abstraction, gasless UX.",
       },
       metrics: [
         {
@@ -201,7 +204,7 @@ export const portfolioData: PortfolioData = {
             it: "Chain integrate",
             en: "Chains integrated",
           },
-          value: "Ethereum + Base + Arbitrum",
+          value: "Ethereum · Base · Arbitrum · Algorand",
         },
         {
           label: {
@@ -215,12 +218,18 @@ export const portfolioData: PortfolioData = {
         "ERC-4626",
         "EIP-7702",
         "ERC-7821",
+        "ERC-721",
+        "ERC-5192",
+        "Algorand",
+        "ARC-3 / ARC-19",
+        "AlgoKit",
         "Privy",
         "Wagmi / viem",
         "Foundry",
         "LiFi",
         "Solidity",
-        "Subgraph",
+        "x402",
+        "MCP",
         "Account abstraction",
       ],
     },
@@ -310,10 +319,10 @@ export const portfolioData: PortfolioData = {
         en: "B2B SaaS · Pharma Procurement",
       },
       role: {
-        it: "Solo CTO / Principal Engineer",
-        en: "Solo CTO / Principal Engineer",
+        it: "Solo CTO / Principal Engineer (con contributor support su UI)",
+        en: "Solo CTO / Principal Engineer (with contributor support on UI)",
       },
-      period: "2022 – present",
+      period: "2025 – present (architettura attuale; legacy Crifarma/Healias 2022 – 2024)",
       status: "production",
       clients: ["Montefarmaco", "Logista SPA"],
       problem: {
@@ -321,8 +330,8 @@ export const portfolioData: PortfolioData = {
         en: "Italian pharmacies handle procurement through phone calls, emails and faxes to multiple wholesalers, negotiate prices verbally and reconcile invoices by hand. They need a real-time multi-supplier catalog, digital purchase orders, compliance-grade audit trails and safety UX for high-value orders.",
       },
       architecture: {
-        it: "Stack production end-to-end su 4+ repo con multi-environment workflow: backend Express + TypeScript (50+ endpoint), UI React 19 + Tailwind + MUI 7, landing Vite, worker Rust + Tokio per ingestion da Farmadati. MongoDB Managed con 5.5M+ documenti, schema multi-tenant a 5 ruoli RBAC, custom search engine (substring + multi-EAN + relevance scoring), state machine ODA con sub-ordini cascading e counter-offer audit trail. Bridge bidirezionale UI <-> Discord per il customer support real-time.",
-        en: "End-to-end production stack across 4+ repos with multi-environment workflow: Express + TypeScript backend (50+ endpoints), React 19 + Tailwind + MUI 7 UI, Vite landing, Rust + Tokio worker ingesting Farmadati. Managed MongoDB with 5.5M+ documents, multi-tenant 5-role RBAC schema, a custom search engine (substring + multi-EAN + relevance scoring), an ODA state machine with cascading sub-orders and counter-offer audit trail, plus a real-time UI<->Discord bridge for customer support.",
+        it: "Stack production end-to-end su 5 repo git indipendenti (core / ui / sync-worker / landingpage / sixsteps_docs): backend Express + TypeScript con 143 endpoint montati da un singolo `main.ts`, SPA React 19 + Tailwind 3 + MUI 7 con 136 componenti in Atomic Design e 5 React Context (no Redux), landing in Vite, worker Rust + Tokio per l'ingestion dal catalogo SOAP di Farmadati su MongoDB Managed condiviso. Il data layer è composto da 16 schemi Mongoose in modello multi-tenant (5 ruoli RBAC: admin / manager / buyer / supplier / referral_partner), un search engine custom su indici parziali pesati e una strategia indici a due livelli che confina gli indici di Discover/ricerca ai ~14k prodotti in stock invece dei 5,5M totali. Il dominio ODA è una state machine a 6 stati con sub-ordini cascading (`createSubOda`) e una state machine counter-offer per linea a 6 stati (`requested → admin_absorbed | sent_to_supplier → supplier_responded → resolved`), più un layer `stripSupplierDataForBuyer` invocato su ogni read lato buyer. Il customer support è un bridge Discord ↔ SSE bidirezionale: messaggi pollati via REST da Discord vengono pushati nella UI in tempo reale. 493 test case backend (Jest + supertest), 68% statement coverage. La UI principale è CRA + craco (non Next.js); Vite alimenta solo la landingpage.",
+        en: "End-to-end production stack across 5 independent git repos (core / ui / sync-worker / landingpage / sixsteps_docs): an Express + TypeScript backend exposing 143 endpoints mounted from a single `main.ts`, a React 19 + Tailwind 3 + MUI 7 SPA with 136 components organised in Atomic Design and 5 React Contexts (no Redux), a Vite landing page, and a Rust + Tokio sync worker that ingests Farmadati's SOAP catalog into the shared Managed MongoDB. The data layer is 16 Mongoose schemas with a multi-tenant entity model (5 RBAC roles: admin / manager / buyer / supplier / referral_partner), a custom search engine over partial weighted text indexes, and a two-tier index strategy that confines Discover/search indexes to the ~14k in-stock products instead of the full 5.5M-document catalog. The ODA domain is a 6-state order machine with cascading sub-orders (`createSubOda`), a 6-state per-line counter-offer state machine (`requested → admin_absorbed | sent_to_supplier → supplier_responded → resolved`), and a `stripSupplierDataForBuyer` sanitiser called on every buyer-facing order read. Customer support is a bidirectional Discord ↔ SSE bridge: REST-polled Discord messages stream into the UI in real time. 493 backend test cases (Jest + supertest), 68% statement coverage. The main UI is CRA + craco (not Next.js); Vite powers the landing page only.",
       },
       decisions: [
         {
@@ -331,18 +340,18 @@ export const portfolioData: PortfolioData = {
             en: "Cluster upgrade vs index optimization",
           },
           body: {
-            it: "Diagnosticato il root cause via cache pressure analysis e drop+recreate degli indici in produzione live: 70% di footprint in meno (1.69 GB -> 369 MB), cluster $15/mese sufficiente, evitato l'upgrade da +€1.260/anno.",
-            en: "Diagnosed the root cause through WiredTiger cache-pressure analysis, then dropped and recreated indexes on the live cluster: 70% footprint reduction (1.69 GB -> 369 MB), $15/month cluster kept, $1,260/year upgrade avoided.",
+            it: "Diagnosi via WiredTiger cache-pressure analysis: dei 5,5M documenti prodotti, solo ~14k portano supply attiva. Indici sostituiti con indici parziali filtrati su `{hasSupply: true, status: \"active\"}` (name, producer, category) più un indice testuale partial pesato multi-campo (name:10, sku:8, ean:8, producer:5, category:3, description:1). Risultato: ~99% di riduzione del footprint in cache sui search path, 70% di riduzione on-disk live (1.69 GB → 369 MB), cluster $15/mese mantenuto, upgrade da €1.260/anno evitato.",
+            en: "Diagnosed via WiredTiger cache-pressure analysis: out of 5.5M product docs, only ~14k carry active supply at any time. Replaced full indexes with partial indexes filtered on `{hasSupply: true, status: \"active\"}` — name, producer, category, plus a partial weighted multi-field text index (name:10, sku:8, ean:8, producer:5, category:3, description:1). Result: ~99% reduction in the in-cache search-index footprint, 70% on-disk index reduction live (1.69 GB → 369 MB), $15/mo cluster kept, €1,260/year upgrade avoided.",
           },
         },
         {
           title: {
-            it: "Worker ingestion in Rust + Tokio",
-            en: "Rust + Tokio ingestion worker",
+            it: "Worker Farmadati in Rust + Tokio",
+            en: "Rust + Tokio Farmadati sync worker",
           },
           body: {
-            it: "Per il sync continuo del database canonical Farmadati ho scelto Rust + Tokio invece di Node: throughput stabile, memoria prevedibile, latenza <1s tra upload supply e visibilità nel catalogo Discover.",
-            en: "For the continuous Farmadati sync I picked Rust + Tokio over Node: stable throughput, predictable memory, <1s latency between supply upload and visibility in the Discover catalog.",
+            it: "Sync continuo SOAP-to-Mongo con concorrenza per tabella e per pagina (`FARMADATI_PAGE_CONCURRENCY`) e bulk write. Lock + run-history collections (`farmadati_sync_states`, `farmadati_sync_runs`) e comando `resume` heartbeat-based per crash recovery. Modalità CLI: `delta` / `full` / `auto` / `resume` / `snapshot` / `reset-lock`. Rust con `$set`-only è intenzionale: il flag `hasSupply` denormalizzato dal backend sopravvive a ogni upsert Farmadati perché il worker tocca solo i propri campi.",
+            en: "Continuous SOAP-to-Mongo sync with concurrent table downloads + per-table page-level concurrency (`FARMADATI_PAGE_CONCURRENCY`) and bulk writes. Lock + run-history collections (`farmadati_sync_states`, `farmadati_sync_runs`) plus a heartbeat-based `resume` command for crash recovery. CLI modes: `delta` / `full` / `auto` / `resume` / `snapshot` / `reset-lock`. Rust `$set`-only is intentional: the backend's `hasSupply` denormalisation flag survives every Farmadati upsert because the worker only sets its own fields.",
           },
         },
         {
@@ -351,8 +360,8 @@ export const portfolioData: PortfolioData = {
             en: "Privacy-by-design between supplier and buyer",
           },
           body: {
-            it: "Layer stripSupplierDataForBuyer che sanifica i dati admin/supplier prima di esporli al buyer; counter-offer state machine tracciabile (requested -> admin_absorbed | sent_to_supplier -> supplier_responded -> resolved) con originalNetPrice e absorbedNetPrice separati.",
-            en: "A stripSupplierDataForBuyer layer sanitizes admin/supplier data before exposing it to buyers; the counter-offer state machine (requested -> admin_absorbed | sent_to_supplier -> supplier_responded -> resolved) keeps originalNetPrice and absorbedNetPrice strictly separated.",
+            it: "`stripSupplierDataForBuyer` (`core/routes/orders.ts:182`) è il sanitiser unico chiamato su ogni read lato buyer: rimuove `warehouseAssignments`, droppa `warehouse`/`entityId` dai breakdown di linea, e gating della visibilità `priceNegotiation` in base allo status dell'ordine. La state machine counter-offer ha 6 stati + 3 risoluzioni (`buyer_price_accepted` / `supplier_price_accepted` / `negotiation_failed`) con `originalNetPrice` e `absorbedNetPrice` rigorosamente separati.",
+            en: "`stripSupplierDataForBuyer` (`core/routes/orders.ts:182`) is the single sanitiser called on every buyer-facing order read: removes `warehouseAssignments`, drops `warehouse`/`entityId` from line breakdowns, and gates `priceNegotiation` visibility on order status. The counter-offer state machine has 6 states + 3 resolutions (`buyer_price_accepted` / `supplier_price_accepted` / `negotiation_failed`) with `originalNetPrice` and `absorbedNetPrice` strictly separated.",
           },
         },
         {
@@ -363,6 +372,36 @@ export const portfolioData: PortfolioData = {
           body: {
             it: "Hard block scartato in favore di un warning configurabile per ordini €250k–€1M+ — sicurezza senza frustrare i buyer enterprise.",
             en: "Picked a configurable warning over a hard block for €250k–€1M+ orders — safety without frustrating enterprise buyers.",
+          },
+        },
+        {
+          title: {
+            it: "Sub-ODA cascading per fulfilment parziale",
+            en: "Sub-ODA cascading for partial fulfilment",
+          },
+          body: {
+            it: "Quando un magazzino fulfilla solo parzialmente una linea, l'admin emette un sub-ODA (`createSubOda`, `routes/orders.ts:6350`) collegato via `parent.subOrderIds[]` e `subOrderId: \"ODA-SUB-...\"`. Il buyer vede un singolo ODA; il flusso warehouse riceve un nuovo ODA per ogni round di fulfilment. Coperto dai test in `tests/orders.test.ts:3570-3645`.",
+            en: "When a warehouse partially fulfils a line, admin issues a sub-ODA (`createSubOda`, `routes/orders.ts:6350`) linked by `parent.subOrderIds[]` and `subOrderId: \"ODA-SUB-...\"`. The buyer keeps a single ODA in their view; the warehouse-side picking flow gets one fresh ODA per fulfilment round. Tested at `tests/orders.test.ts:3570-3645`.",
+          },
+        },
+        {
+          title: {
+            it: "Bridge customer support Discord ↔ SSE",
+            en: "Discord ↔ SSE customer support bridge",
+          },
+          body: {
+            it: "Customer support real-time senza Intercom: REST-polling di un canale Discord ogni 10s (`libs/support-discord.ts`), persistenza in `support-conversations` + `support-messages`, push verso UI via Server-Sent Events (`libs/support-stream.ts`). Gestisce 429-retry, filtering del bot user e subscription per conversazione.",
+            en: "Real-time customer support without paying for Intercom: REST-polls a Discord channel every 10s (`libs/support-discord.ts`), persists messages to `support-conversations` + `support-messages`, then pushes them into the UI via Server-Sent Events (`libs/support-stream.ts`). Handles 429-retry, bot user filtering, and conversation-scoped subscription.",
+          },
+        },
+        {
+          title: {
+            it: "bulkWrite singolo per CSV da 50k righe",
+            en: "Single bulkWrite for 50k-row CSVs",
+          },
+          body: {
+            it: "Gli upload CSV (`csv-upload.ts`) e la maintenance del flag `hasSupply` (`hasSupplyMaintenance.ts`) emettono un singolo MongoDB bulkWrite per upload indipendentemente dalla size — anche un CSV da 50k righe diventa una sola operazione, con progress streamato in UI tramite l'utility upload-progress.",
+            en: "CSV uploads (`csv-upload.ts`) and supply-flag maintenance (`hasSupplyMaintenance.ts`) issue a single MongoDB bulkWrite per upload regardless of size — even a 50k-row CSV is one operation, with progress streamed to the UI via the upload-progress utility.",
           },
         },
       ],
@@ -376,48 +415,126 @@ export const portfolioData: PortfolioData = {
         },
         {
           label: {
-            it: "Prodotti attivi multi-tenant",
-            en: "Active multi-tenant products",
-          },
-          value: "30k+",
-        },
-        {
-          label: {
             it: "Prodotti in stock cross-supplier",
-            en: "Cross-supplier in-stock products",
+            en: "In-stock cross-supplier products",
           },
-          value: "14k+",
+          value: "~14k",
         },
         {
           label: {
-            it: "Riduzione size indici",
-            en: "Index footprint reduction",
+            it: "Endpoint Express (singolo `main.ts`)",
+            en: "Express endpoints (single `main.ts`)",
           },
-          value: "70%",
+          value: "143",
         },
         {
           label: {
-            it: "Latenza upload supply -> catalogo",
-            en: "Upload-to-catalog latency",
+            it: "Test case backend (Jest + supertest)",
+            en: "Backend test cases (Jest + supertest)",
           },
-          value: "<1s",
+          value: "493",
+        },
+        {
+          label: {
+            it: "Statement coverage backend",
+            en: "Backend statement coverage",
+          },
+          value: "68%",
+        },
+        {
+          label: {
+            it: "Schemi Mongoose",
+            en: "Mongoose schemas",
+          },
+          value: "16",
+        },
+        {
+          label: {
+            it: "Componenti React (Atomic Design)",
+            en: "React components (Atomic Design)",
+          },
+          value: "136",
+        },
+        {
+          label: {
+            it: "Repo git indipendenti",
+            en: "Independent git repos",
+          },
+          value: "5",
+        },
+        {
+          label: {
+            it: "Riduzione size indici on-disk (live)",
+            en: "On-disk index footprint reduction (live)",
+          },
+          value: "70% (1.69 GB → 369 MB)",
+        },
+        {
+          label: {
+            it: "Riduzione indici in cache (search path)",
+            en: "In-cache search-index reduction",
+          },
+          value: "~99%",
+        },
+        {
+          label: {
+            it: "Risparmio annuale vs upgrade cluster",
+            en: "Annual savings vs cluster upgrade",
+          },
+          value: "€1,260/yr",
+        },
+        {
+          label: {
+            it: "Benchmark CSV ingest",
+            en: "CSV ingest benchmark",
+          },
+          value: "50k rows = 1 bulkWrite",
         },
       ],
       techStack: [
-        "Express",
+        // Backend
+        "Node.js",
+        "Express 4",
         "TypeScript",
-        "React 19",
-        "Tailwind",
-        "MUI 7",
-        "Vite",
-        "Rust + Tokio",
         "MongoDB",
-        "DigitalOcean App Platform",
-        "Vercel",
-        "Discord Bot API",
-        "ExcelJS",
-        "PDFKit",
+        "Mongoose",
+        "MongoDB driver (native)",
+        "Helmet",
+        "Web Push",
         "Resend",
+        "@react-email/components",
+        "PDFKit",
+        "ExcelJS",
+        "Turf.js",
+        // Frontend
+        "React 19",
+        "React Router v7",
+        "Tailwind 3",
+        "MUI 7",
+        "MUI X DataGrid",
+        "framer-motion",
+        "Chart.js",
+        "Recharts",
+        "react-window",
+        "CRA + craco",
+        "Vite (landingpage only)",
+        // Worker
+        "Rust 2021",
+        "Tokio",
+        "reqwest",
+        "mongodb (Rust driver)",
+        "rustls",
+        // Tooling
+        "Jest",
+        "supertest",
+        // Infra
+        "DigitalOcean App Platform",
+        "Managed MongoDB",
+        "Vercel",
+        // Integrations
+        "Discord Bot API",
+        "Server-Sent Events",
+        "Farmadati SOAP",
       ],
       pillarsTouched: ["traditional-dev", "cloud-devops", "it-mgmt"],
       image: "/images/logos/montefarmaco.png",
@@ -427,8 +544,8 @@ export const portfolioData: PortfolioData = {
       slug: "mandate",
       title: "Mandate.Finance",
       domain: {
-        it: "DeFi + AI multi-agent",
-        en: "DeFi + AI multi-agent",
+        it: "DeFi + AI agent layer",
+        en: "DeFi + AI agent layer",
       },
       role: {
         it: "Founding Product Engineer & Technical Co-founder",
@@ -441,38 +558,78 @@ export const portfolioData: PortfolioData = {
         en: "Build a DeFi platform where autonomous AI agents manage real on-chain funds while preserving user self-custody, gasless UX and real-time oversight. Strong guardrails are mandatory — on-chain irreversibility is unforgiving.",
       },
       architecture: {
-        it: "Monorepo con 11 componenti (ui, backend, agent-executor, agent-tester, mcp-gateway, signing-service, jobs, contracts, landing, infra, docs). Architettura multi-agent (evaluator + researcher + manager + executor) con memoria a lungo termine. MCP gateway separa il ragionamento (LLM) dalle letture on-chain dal signing-service che esegue le scritture. Smart contracts in Foundry, multi-chain Ethereum + Base + Arbitrum, cross-chain via LiFi. Cloud Run + Cloud SQL privato + VPC + Secret Manager su GCP.",
-        en: "Monorepo with 11 components (ui, backend, agent-executor, agent-tester, mcp-gateway, signing-service, jobs, contracts, landing, infra, docs). Multi-agent architecture (evaluator + researcher + manager + executor) with long-term memory. The MCP gateway separates reasoning (LLM) from on-chain reads, while the signing-service handles writes. Foundry smart contracts, multi-chain across Ethereum + Base + Arbitrum, cross-chain via LiFi. GCP infra: Cloud Run + private Cloud SQL + VPC + Secret Manager.",
+        it: "Piattaforma multi-repo distribuita su 11 workspace — 6 servizi runtime su GCP Cloud Run (`backend`, `agent-executor`, `signing-service`, `mcp-gateway`, `jobs`, `stats-api`), una suite di smart contract Foundry (ERC-7821 `KairosBatchExecutor` + `KairosBillingTreasury` UUPS, deployati allo stesso indirizzo su Base, Arbitrum e Ethereum mainnet via CREATE2), un Postgres 16 privato con 59 migration SQL versionate, due frontend Next.js 15 (`ui` e `landing`), un test harness end-to-end basato su SSE e il sito pubblico di docs. Agent layer: un singolo LLM loop in `agent-executor` parametrizzato per 7 job type (deploy / scan / trade / rebalance / report / exit / chat) e ~8 strategy template conservati su Postgres — tool whitelist per task, SELL GUARD a livello di codice e per-vault prompt override su tre tier. L'MCP gateway (Python + FastAPI) intermedia tutte le letture DeFi via JSON-RPC su stdio con request-id correlation per evitare cross-tenant pollution; il signing-service è l'unico custode delle EOA per-agent (keystore AES-256-GCM in Postgres) e l'unica via per le scritture on-chain — ogni scrittura passa da una transazione EIP-7702 Type-4 sponsorata da un singolo hot wallet, con counter atomico per i nonce in Redis così che lo scale-out multi-instance di Cloud Run sia sicuro.",
+        en: "Multi-repo platform across 11 workspaces — 6 runtime services on GCP Cloud Run (`backend`, `agent-executor`, `signing-service`, `mcp-gateway`, `jobs`, `stats-api`), a Foundry smart-contract suite (ERC-7821 `KairosBatchExecutor` + UUPS `KairosBillingTreasury` deployed at the same address on Base, Arbitrum and Ethereum mainnet via CREATE2), a private Postgres 16 with 59 versioned SQL migrations, two Next.js 15 frontends (`ui` and `landing`), an SSE-based agent test harness, and a public docs site. Agent layer: a single LLM loop in `agent-executor` parameterised by 7 job types (deploy / scan / trade / rebalance / report / exit / chat) and ~8 strategy templates stored in Postgres — per-task tool whitelists, code-level SELL GUARDs and per-vault prompt overrides at three resolution tiers. The MCP gateway (Python + FastAPI) brokers all read-only DeFi data via JSON-RPC over stdio with request-id correlation to prevent cross-tenant pollution; the signing-service is the sole custodian of per-agent EOAs (AES-256-GCM keystore in Postgres) and the only path to chain writes — every write rides on EIP-7702 Type-4 transactions sponsored by a single hot wallet, with a Redis-backed atomic nonce counter so multi-instance Cloud Run scale-out is safe.",
       },
       decisions: [
         {
           title: {
-            it: "Multi-provider LLM con Gemma low-cost",
-            en: "Multi-provider LLM with low-cost Gemma",
+            it: "Single agent loop + 7 job type + 8 strategy template",
+            en: "Single agent loop + 7 job types + 8 strategy templates",
           },
           body: {
-            it: "Astrazione multi-provider (DeepInfra/Gemma per costi, OpenRouter come backup, Anthropic premium). Gemma scelto per agent autonomi: cost-driven, non capability-driven. DeepInfra ~3x più economico di OpenRouter.",
-            en: "Multi-provider abstraction (DeepInfra/Gemma for cost, OpenRouter as backup, Anthropic premium). Gemma was the choice for autonomous agents: cost-driven, not capability-driven. DeepInfra is ~3x cheaper than OpenRouter.",
+            it: "Un singolo LLM loop (`runAgentLoop` in `agent-executor/src/llm/loop.ts`), una sola fonte di verità per i prompt (tabella `strategy_templates` in Postgres), tool whitelist per job type (deploy / scan / trade / rebalance / report / exit / chat) e per-vault prompt override a tre tier. Aggiungere una nuova strategia è una riga SQL, non un servizio. Sostituisce il framing 'multi-agent (evaluator/researcher/manager/executor)': la realtà è più interessante — parametrizzazione runtime, non topologia di ruoli.",
+            en: "One LLM loop (`runAgentLoop` in `agent-executor/src/llm/loop.ts`), one source of truth for prompts (`strategy_templates` table in Postgres), per-job-type tool whitelists (deploy / scan / trade / rebalance / report / exit / chat) and three-tier per-vault prompt overrides. Adding a new strategy is a SQL row, not a service. This replaces the 'multi-agent (evaluator/researcher/manager/executor)' framing — the real story is runtime parameterisation, not a role topology.",
           },
         },
         {
           title: {
-            it: "MCP gateway per separare reasoning ed esecuzione",
-            en: "MCP gateway to separate reasoning and execution",
+            it: "Tre layer di difesa contro le hallucination dello step deploy",
+            en: "Three layers of defense against deploy-step hallucinations",
           },
           body: {
-            it: "Componente dedicato che espone tool blockchain (read state, simulate, fetch market data) come MCP server. L'agent ragiona, MCP esegue letture, signing-service esegue scritture: separation of concerns netta e auditabile.",
-            en: "A dedicated component exposes blockchain tools (read state, simulate, fetch market data) as an MCP server. The agent reasons, MCP performs reads, the signing-service performs writes — clean and auditable separation of concerns.",
+            it: "Quando i modelli più piccoli hallucinavano 'Deployment Complete' senza chiamare `register_vault`, la piattaforma deployava un secondo vault on-chain e bloccava i fondi. Fix a tre layer: (1) auto-register dentro la branch `deploy_vault` dal topic `VaultCreated` parsato dalla receipt del signing-service, (2) `registerVaultInDb` idempotente che short-circuita su duplicate-active, (3) post-loop validator che sovrascrive la decision dichiarata dall'LLM in `'error'` quando `getVaultStatus(vaultId)` mostra pending/null.",
+            en: "When small models hallucinated 'Deployment Complete' without calling `register_vault`, the platform deployed second on-chain vaults and stranded funds. Three layers: (1) receipt-parsed auto-register inside the `deploy_vault` branch using the signing-service's `VaultCreated` topic, (2) idempotent `registerVaultInDb` that short-circuits on duplicate-active, (3) post-loop validator that overrides the LLM's claimed decision to `'error'` when `getVaultStatus(vaultId)` shows pending/null.",
           },
         },
         {
           title: {
-            it: "agent-tester come gate di deploy",
-            en: "agent-tester as a deploy gate",
+            it: "SELL GUARD a livello di codice non bypassabile dall'LLM",
+            en: "Code-level SELL GUARD the LLM cannot bypass",
           },
           body: {
-            it: "Quality assurance dedicata per output non-deterministici LLM, validation di policy compliance (l'agent rispetta i bound della risk × strategy matrix?), regression detection prima del deploy in produzione.",
-            en: "A dedicated QA layer for non-deterministic LLM output: policy-compliance validation (does the agent stay within the risk × strategy matrix?) and regression detection before production deploy.",
+            it: "Sui vault trader (`category.endsWith('-trader')`), quando `factor_swap_openocean` venderebbe il token in trading per il denominator, l'executor chiama `simulate_exit` server-side, calcola il cost basis dai `vault_trades` e blocca lo swap se il PnL supera la soglia di stop-loss. L'LLM non può rilanciare o discutere — vede solo `SELL_BLOCKED`. Origine: deepseek aveva bypassato tre volte il prompt-level mandate → enforcement spostato nel codice.",
+            en: "On trader vaults (`category.endsWith('-trader')`), when `factor_swap_openocean` would sell the trading token for the denominator the executor calls `simulate_exit` server-side, computes cost basis from `vault_trades`, and blocks the swap if PnL exceeds the stop-loss threshold. The LLM cannot retry or argue — it only sees `SELL_BLOCKED`. Origin: deepseek bypassed the prompt-level mandate three times → enforcement moved into code.",
+          },
+        },
+        {
+          title: {
+            it: "Custodia EOA per-agent + sponsor paga il gas",
+            en: "Per-agent EOA custody + sponsor pays gas",
+          },
+          body: {
+            it: "Il backend non vede mai chiavi in chiaro: ogni EOA dell'agent è generata e cifrata AES-256-GCM dentro `signing-service/src/keystore.ts`, persistita in `signing_keystores`, decifrata in una cache TTL di 5 minuti. Gli utenti firmano authorization EIP-7702 che delegano a un singolo batch executor allo stesso indirizzo CREATE2 su tre chain; l'hot wallet della piattaforma paga il gas. Risultato: UX gasless self-custody con zero relayer wallet trust nel mezzo.",
+            en: "Backend never sees plaintext keys: each agent EOA is generated and AES-256-GCM-encrypted inside `signing-service/src/keystore.ts`, persisted in `signing_keystores`, decrypted into a 5-min TTL cache. Users sign EIP-7702 authorizations delegating to a single batch executor at the same CREATE2 address on three chains; the platform's hot wallet pays gas. Result: gasless self-custody UX with zero trusted wallet relayers in between.",
+          },
+        },
+        {
+          title: {
+            it: "Sponsor nonce con Redis EVAL Lua atomico",
+            en: "Atomic sponsor nonce via Redis EVAL Lua",
+          },
+          body: {
+            it: "Il `SponsorMutex` in-process serializza solo una replica; lo scaling multi-instance di Cloud Run può andare in race su `getTransactionCount(sponsor, 'pending')`. Fix: counter atomico Redis-backed `sponsor-nonce:{chainId}` driven da uno script `EVAL` Lua (`GET → SET(n+1) → return n` atomico), con cold-start path che legge il nonce dalla chain solo se la key non esiste. Fallback su `Map` in-memory se Redis non è disponibile, con warn log per ops.",
+            en: "The in-process `SponsorMutex` only serializes a single replica; multi-instance Cloud Run scale-out could race on `getTransactionCount(sponsor, 'pending')`. Fix: Redis-backed atomic counter `sponsor-nonce:{chainId}` driven by an `EVAL` Lua script (`GET → SET(n+1) → return n` atomically), with cold-start path that reads chain nonce only when the key is absent. Fallback to in-memory `Map` when Redis is unavailable, with warn log for ops.",
+          },
+        },
+        {
+          title: {
+            it: "MCP-over-stdio multi-tenant con request-id correlation",
+            en: "Multi-tenant MCP-over-stdio with request-id correlation",
+          },
+          body: {
+            it: "JSON-RPC naive su singolo pipe stdin/stdout non è sicuro per un gateway multi-tenant: un singolo `console.log` di una qualsiasi dep transitiva polluiva lo stream e produceva data scrambling cross-vault (osservato in produzione il 2026-04-15 — agent A vedeva il `factor_vault_analytics` di agent B). Il gateway loopa su `stdout.readline()` e scarta ogni frame il cui `id` non matcha la richiesta in flight — unica difesa durevole per questa classe di bug multi-tenant.",
+            en: "Naive JSON-RPC over a single stdin/stdout pipe is unsafe for a multi-tenant gateway: a single `console.log` from any transitive dep polluted the response stream and produced cross-vault data scrambling (observed in production 2026-04-15 — agent A saw agent B's `factor_vault_analytics` result). The gateway loops on `stdout.readline()` discarding any frame whose `id` doesn't match the in-flight request — the only durable defence against this class of multi-tenant bug.",
+          },
+        },
+        {
+          title: {
+            it: "Leverage watchdog in-process (HF<1.2 emergency exit)",
+            en: "In-process leverage watchdog (HF<1.2 emergency exit)",
+          },
+          body: {
+            it: "`agent-executor/src/leverage-watchdog.ts`: cron `setInterval` da 60s avviato post-`app.listen`, fermato su SIGTERM. Ogni tick: (1) carica i vault con `mode: leverage`, (2) legge il `min(healthFactor)` su Aave + Morpho via `factor_vault_analytics`, (3) su `HF < config.minHealthFactor` inserisce una row `custom_jobs` con il prompt di exit-leverage schedulato `* * * * *`, (4) sotto la soglia hard 1.2 emette un prompt EMERGENCY-prefixato e `log.error`. Cloud Run a singola replica + guard `inFlight` in-process previene tick concorrenti.",
+            en: "`agent-executor/src/leverage-watchdog.ts`: 60s `setInterval` started post-`app.listen`, stopped on SIGTERM. Each tick: (1) load vaults with `mode: leverage`, (2) read `min(healthFactor)` across Aave + Morpho via `factor_vault_analytics`, (3) on `HF < config.minHealthFactor` insert a `custom_jobs` row with the exit-leverage prompt scheduled `* * * * *`, (4) below the hard 1.2 floor emit an EMERGENCY-prefixed prompt and `log.error`. Single-replica Cloud Run + in-process `inFlight` guard prevents concurrent ticks.",
           },
         },
         {
@@ -481,18 +638,28 @@ export const portfolioData: PortfolioData = {
             en: "Gasless UX with self-custody",
           },
           body: {
-            it: "Privy + EIP-7702 sponsored transactions + account abstraction: l'utente non vede mai una private key e non paga gas, mantenendo self-custody. Cross-chain via LiFi percepito come operazione singola.",
-            en: "Privy + EIP-7702 sponsored transactions + account abstraction: users never touch a private key and never pay gas, while keeping self-custody. Cross-chain via LiFi feels like a single operation.",
+            it: "Privy + EIP-7702 Type-4 sponsored transactions + ERC-7821 batch executor: l'utente non vede mai una private key e non paga gas, mantenendo self-custody. Cross-chain via LiFi percepito come operazione singola.",
+            en: "Privy + EIP-7702 Type-4 sponsored transactions + ERC-7821 batch executor: users never touch a private key and never pay gas, while keeping self-custody. Cross-chain via LiFi feels like a single operation.",
+          },
+        },
+        {
+          title: {
+            it: "Multi-provider LLM cost-driven",
+            en: "Cost-driven multi-provider LLM",
+          },
+          body: {
+            it: "Astrazione multi-provider in produzione (DeepInfra come default, OpenRouter come backup). Anthropic resta come strumento di review/research, non nel router LLM in produzione. La migrazione da Ollama Cloud a DeepInfra ha tagliato ~50% del costo. Pattern cost-driven, non capability-driven.",
+            en: "Multi-provider abstraction in production (DeepInfra as default, OpenRouter as backup). Anthropic stays for review/research, not in the production LLM router. Migration from Ollama Cloud to DeepInfra cut cost ~50%. Cost-driven pattern, not capability-driven.",
           },
         },
       ],
       results: [
         {
           label: {
-            it: "Componenti microservizi production-deployed",
-            en: "Microservice components production-deployed",
+            it: "Componenti production-deployed",
+            en: "Components production-deployed",
           },
-          value: "11",
+          value: "11 workspace · 6 Cloud Run service",
         },
         {
           label: {
@@ -506,7 +673,7 @@ export const portfolioData: PortfolioData = {
             it: "Commit complessivi",
             en: "Total commits",
           },
-          value: "1,500+",
+          value: "1,300+",
         },
         {
           label: {
@@ -520,7 +687,35 @@ export const portfolioData: PortfolioData = {
             it: "UI authorship",
             en: "UI authorship",
           },
-          value: "93%",
+          value: "94%",
+        },
+        {
+          label: {
+            it: "Test smart contract",
+            en: "Smart-contract tests",
+          },
+          value: "127 (15 suite, 7 invarianti × 256 run)",
+        },
+        {
+          label: {
+            it: "Migration SQL versionate",
+            en: "Versioned SQL migrations",
+          },
+          value: "59",
+        },
+        {
+          label: {
+            it: "Sistema notifiche",
+            en: "Notification system",
+          },
+          value: "72 eventi · 8 domini · 3 tier",
+        },
+        {
+          label: {
+            it: "Chain (stesso indirizzo via CREATE2)",
+            en: "Chains (same address via CREATE2)",
+          },
+          value: "Ethereum + Base + Arbitrum",
         },
       ],
       techStack: [
@@ -530,18 +725,29 @@ export const portfolioData: PortfolioData = {
         "Tailwind",
         "Privy",
         "Wagmi / viem",
-        "Foundry",
-        "Solidity",
+        "Foundry / Solidity 0.8.28",
+        "EIP-7702 / ERC-7821",
+        "ERC-7821 batch executor",
+        "UUPS billing treasury",
+        "Factor StudioPro vault factory",
         "Express",
-        "Drizzle",
-        "Postgres",
+        "Drizzle ORM",
+        "Postgres 16",
+        "Python 3.12 / FastAPI",
+        "MCP (JSON-RPC over stdio)",
         "GCP Cloud Run",
-        "Cloud SQL",
+        "Cloud SQL (private VPC)",
+        "Memorystore Redis",
         "Secret Manager",
         "DeepInfra",
-        "Anthropic",
-        "LiFi",
-        "Subgraph",
+        "OpenRouter",
+        "LiFi (cross-chain)",
+        "Resend + React Email",
+        "Stripe",
+        "Pino",
+        "Vitest",
+        "Three.js / R3F",
+        "Custom stats service (Go + GCS)",
       ],
       pillarsTouched: ["traditional-dev", "ai-eng", "cloud-devops", "web3", "it-mgmt", "business"],
       image: "/images/factor_studio.gif",
@@ -549,80 +755,179 @@ export const portfolioData: PortfolioData = {
     },
     {
       slug: "dpass",
-      title: "DPass / PNRR",
+      title: "Bando Ecomic Lotto 3 — MiC PNRR (DPaaS / DPass)",
       domain: {
-        it: "Settore pubblico italiano · Blockchain data products",
-        en: "Italian public sector · Blockchain data products",
+        it: "Settore pubblico italiano · Beni culturali · Blockchain data products",
+        en: "Italian public sector · Cultural heritage · Blockchain data products",
       },
       role: {
-        it: "Architect / Technical Lead / Proposal Lead",
-        en: "Architect / Technical Lead / Proposal Lead",
+        it: "Lead tecnico-funzionale ArtCertify + blockchain Data Products (RTI Activa Digital + Civita Mostre)",
+        en: "Technical-functional lead on ArtCertify + blockchain Data Products (RTI Activa Digital + Civita Mostre)",
       },
-      period: "2024 – 2025",
+      period: "2025 – 30 giugno 2026 (deadline operativa)",
       status: "active",
-      clients: ["MIC – Ministero della Cultura", "Invitalia", "PNRR"],
+      clients: ["MiC – Digital Library / ICDP", "Invitalia", "PNRR / NextGenerationEU"],
       problem: {
-        it: "Il PNRR italiano ha bisogno di prodotti dati basati su blockchain integrati con l'identity governativa (IPAC, ArchCertify, OAuth2). Servono proposte tecniche solide, capacità di interfacciarsi con autorità pubbliche e team multi-disciplinari.",
-        en: "The Italian PNRR needs blockchain-based data products integrated with government identity (IPAC, ArchCertify, OAuth2). It requires solid technical proposals, the ability to interface with public authorities, and multi-disciplinary team coordination.",
+        it: "Il MiC italiano (Digital Library / Istituto Centrale per la Digitalizzazione del Patrimonio Culturale) ha emesso il Bando Ecomic Lotto 3 'Fruizione Avanzata' (Dialogo Competitivo, D.Lgs. 36/2023, finanziamento PNRR) per costruire un ecosistema digitale dei beni culturali. Servono Data Product blockchain integrati nella DPaaS (cloud privato MiC su OpenShift), ontologie semantiche compliant con ArCo / REICAT / Dublin Core, certificazioni soulbound non trasferibili, identità governativa SPID/IAM ECOMIC e una piattaforma applicativa pronta a sostenere 6 use case pilota su istituti culturali nazionali.",
+        en: "The Italian Ministry of Culture (Digital Library / ICDP) issued the Ecomic Lotto 3 'Advanced Fruition' tender (Dialogo Competitivo, D.Lgs. 36/2023, NextGenerationEU/PNRR funding) to build a national cultural-heritage digital ecosystem. The bid requires blockchain Data Products integrated into DPaaS (the MiC's private OpenShift cloud), semantic ontologies compliant with ArCo / REICAT / Dublin Core, non-transferable soulbound certifications, SPID / IAM ECOMIC government identity and an application platform ready to power 6 pilot use cases across national cultural institutions.",
       },
       architecture: {
-        it: "DPass API e piattaforma per costruire prodotti su infrastruttura pubblica blockchain. IPAC certification + ArchCertify integration come livello di trust governativo. OAuth2 governativo per identity management con autorità pubbliche. Coordinamento di team deliverable (Marco, Serena, Flavio, Gianluca) lato proposal e architecture.",
-        en: "DPass APIs and platform for building products on public blockchain infrastructure. IPAC certification + ArchCertify integration provide the government trust layer. Government OAuth2 for identity management with public authorities. Cross-functional team coordination (Marco, Serena, Flavio, Gianluca) on the proposal and architecture side.",
+        it: "Architettura su tre livelli logici (per ALLEGATO 1.1 Parte II + Relazione Unica). Livello 1 — DP-Lab / DPaaS: 4 Data Product blockchain stateless lambda-style su cloud privato MiC (OpenShift + Dataiku + Dify + storage S3) — DP1 Catalogo Metadati (Elasticsearch OSS + Postgres + Protegé/Pellet, REICAT/Dublin Core/ArCo), DP2 Collegamento automatico Metadati ed Entità (Dify + LLaMA, NER + abstract + entity extraction multimodale), DP3 Certificazione asset+metadati via Blockchain+IPFS (chain agnostic: Algorand-first con fork EVM su Base), DP4 Collegamento Entità Linked Data (Neo4j + GraphDB, profilo CIDOC-CRM/ArCo). Livello 2 — Backend microservizi containerizzati (Docker/K8s), API-first OpenAPI/Swagger, IAM ECOMIC + JWT + RBAC + TLS 1.3. Livello 3 — Frontend applicativo: 3 piattaforme RTI (ArtCertify per certificazione SBT, Atlante Digitale per fruizione mobile-first, ARMedia per XR/AR/VR) consumate da 6 use case pilota (Masterpiece Box / Bronzi di Riace, Regina Viarum / Appia Antica, Risorse Culturali di Comunità / Oliveto Citra, Double Reality / Brescia, Villa dei Papiri / MANN, BasiliCULT / Potenza). Storage ibrido: MINIO/S3 per file (centralizzato, GDPR-bound), IPFS Pinata per metadata JSON (decentralizzato, immutable per CID, ARC-19 compatible). CI/CD: ArgoCD + GitLab. Codename interno: Terranova. Coordinamento RTI Activa Digital S.c.a.r.l. + Civita Mostre con partner ARMedia, GS&H/GSnet, Orfeo, Remidia, Cultural AI partner.",
+        en: "Three logical layers (per ALLEGATO 1.1 Parte II + Relazione Unica). Layer 1 — DP-Lab / DPaaS: 4 stateless lambda-style blockchain Data Products on the MiC private cloud (OpenShift + Dataiku + Dify + S3 storage) — DP1 Metadata Catalog (Elasticsearch OSS + Postgres + Protegé/Pellet, REICAT/Dublin Core/ArCo), DP2 Auto-linking Metadata & Entities (Dify + LLaMA, multimodal NER + abstract + entity extraction), DP3 Asset+metadata certification via Blockchain+IPFS (chain-agnostic: Algorand-first with EVM fork on Base), DP4 Entity Linking via Linked Data (Neo4j + GraphDB, CIDOC-CRM/ArCo profile). Layer 2 — Containerised backend microservices (Docker/K8s), API-first OpenAPI/Swagger, IAM ECOMIC + JWT + RBAC + TLS 1.3. Layer 3 — Application frontend: 3 RTI platforms (ArtCertify for SBT certification, Atlante Digitale for mobile-first fruition, ARMedia for XR/AR/VR) consumed by 6 pilot use cases (Masterpiece Box / Bronzi di Riace, Regina Viarum / Appia Antica, Risorse Culturali di Comunità / Oliveto Citra, Double Reality / Brescia, Villa dei Papiri / MANN, BasiliCULT / Potenza). Hybrid storage: MINIO/S3 for files (centralised, GDPR-bound), IPFS Pinata for JSON metadata (decentralised, immutable per CID, ARC-19 compatible). CI/CD: ArgoCD + GitLab. Internal codename: Terranova. Coordinated within the RTI Activa Digital S.c.a.r.l. + Civita Mostre consortium with partners ARMedia, GS&H/GSnet, Orfeo, Remidia, Cultural AI partner.",
       },
       decisions: [
         {
           title: {
-            it: "Architettura blockchain-as-a-substrate, non blockchain-as-a-product",
-            en: "Blockchain as substrate, not product",
+            it: "4 Data Product stateless, non un monolite",
+            en: "4 stateless Data Products, not a monolith",
           },
           body: {
-            it: "Le proposte trattano la blockchain come livello di garanzia auditabile per dati pubblici, non come token-driven product. Riduce frizione regolatoria e accelera l'approval.",
-            en: "Proposals treat blockchain as an auditable guarantee layer for public data, not as a token-driven product. Lower regulatory friction, faster approval.",
+            it: "Scelti 4 Data Product lambda-style stateless (input → JSON output su S3 / I.PaC) invece di una piattaforma monolitica per allinearsi ai criteri di valutazione DPaaS e ai vincoli di delivery PNRR. Ogni DP è autonomamente versionabile e sostituibile.",
+            en: "Picked 4 stateless lambda-style Data Products (input → JSON output on S3 / I.PaC) over a monolithic platform to align with DPaaS scoring criteria and PNRR delivery constraints. Each DP is independently versionable and replaceable.",
           },
         },
         {
           title: {
-            it: "Identity governativa come prerequisito",
+            it: "Algorand-first, EVM Base come fork (chain-agnostic)",
+            en: "Algorand-first with Base EVM fork (chain-agnostic)",
+          },
+          body: {
+            it: "DP3 progettato chain-agnostic. ASA fornisce semantica token senza rischio smart-contract, fee Algorand sono prevedibili e energy-friendly (DNSH compliant per Allegato 1.5); Base/EVM mantenuto come fork (`ArtCertify_EVM`) per flessibilità istituzionale.",
+            en: "DP3 designed chain-agnostic. ASA gives token semantics without smart-contract risk, Algorand fees are predictable and energy-friendly (DNSH compliant per Allegato 1.5); Base/EVM kept as fork (`ArtCertify_EVM`) for institutional flexibility.",
+          },
+        },
+        {
+          title: {
+            it: "SBT (soulbound) sopra NFT trasferibili",
+            en: "SBT (soulbound) over transferable NFTs",
+          },
+          body: {
+            it: "Le certificazioni di beni culturali devono essere prove non-trasferibili. ARC-19 (template URL IPFS mutabile) + ARC-3 (metadata) su Algorand; ERC-721 + ERC-5192 (Minimal Soulbound) con override `_update` su Base via contratto custom `ArtCertifySBT.sol`.",
+            en: "Cultural-heritage certifications must be non-transferable proofs. ARC-19 (mutable IPFS template URL) + ARC-3 (metadata) on Algorand; ERC-721 + ERC-5192 (Minimal Soulbound) with `_update` override on Base via custom `ArtCertifySBT.sol` contract.",
+          },
+        },
+        {
+          title: {
+            it: "Storage ibrido MINIO + IPFS",
+            en: "Hybrid MINIO + IPFS storage",
+          },
+          body: {
+            it: "MINIO per i file raw (centralizzato, S3-compatibile, GDPR-bounded), IPFS Pinata solo per i metadata JSON (decentralizzato, immutable per CID, ARC-19 compatibile). Bilancia compliance e immutabilità.",
+            en: "MINIO for raw files (centralised, S3-compatible, GDPR-bounded), IPFS Pinata for JSON metadata only (decentralised, immutable per CID, ARC-19 compatible). Balances compliance with immutability.",
+          },
+        },
+        {
+          title: {
+            it: "ArtCertify decoupled dai Data Product",
+            en: "ArtCertify decoupled from Data Products",
+          },
+          body: {
+            it: "ArtCertify shippato standalone come prima cosa, così che gli istituti culturali possano usarlo senza dipendere dalla disponibilità DP-Lab; binding incrementale ai DP nelle release successive. Mitigazione del rischio di delivery PNRR.",
+            en: "Ship ArtCertify standalone first, so cultural institutions can use it without depending on DP-Lab availability, then bind DPs incrementally in later releases. Mitigates PNRR delivery risk.",
+          },
+        },
+        {
+          title: {
+            it: "Identità governativa come prerequisito",
             en: "Government identity as a prerequisite",
           },
           body: {
-            it: "OAuth2 governativo + IPAC + ArchCertify dal giorno uno: ogni prodotto si aggancia all'identità nazionale, evitando bypass tecnici inaccettabili per il settore pubblico.",
-            en: "Government OAuth2 + IPAC + ArchCertify from day one: every product hooks into national identity, avoiding technical bypasses unacceptable for the public sector.",
+            it: "SPID + IAM ECOMIC + JWT + RBAC + TLS 1.3 dal giorno uno: ogni Data Product e ogni applicazione si agganciano all'identità nazionale, evitando bypass tecnici inaccettabili per il settore pubblico.",
+            en: "SPID + IAM ECOMIC + JWT + RBAC + TLS 1.3 from day one: every Data Product and every application hooks into national identity, avoiding technical bypasses unacceptable for the public sector.",
           },
         },
       ],
       results: [
         {
           label: {
-            it: "Blockchain data product proposti",
-            en: "Blockchain data products proposed",
+            it: "Data Product blockchain progettati",
+            en: "Blockchain Data Products designed",
           },
-          value: "6",
+          value: "4 (Catalogo · Auto-linking · Certificazione · Linked Data)",
+        },
+        {
+          label: {
+            it: "Use case pilota consumatori",
+            en: "Consuming pilot use cases",
+          },
+          value: "6 (Masterpiece Box · Regina Viarum · Risorse Culturali · Double Reality · Villa dei Papiri · BasiliCULT)",
+        },
+        {
+          label: {
+            it: "Piattaforme applicative RTI",
+            en: "RTI application platforms",
+          },
+          value: "3 (ArtCertify · Atlante Digitale · ARMedia)",
         },
         {
           label: {
             it: "Enti pubblici coinvolti",
             en: "Public-sector bodies engaged",
           },
-          value: "MIC + Invitalia",
+          value: "MiC Digital Library + Invitalia",
         },
         {
           label: {
-            it: "Team deliverable coordinato",
-            en: "Delivery team coordinated",
+            it: "Procedura di gara",
+            en: "Procurement procedure",
           },
-          value: "4 persone",
+          value: "Dialogo Competitivo (D.Lgs. 36/2023)",
+        },
+        {
+          label: {
+            it: "Deadline operativa",
+            en: "Operational deadline",
+          },
+          value: "30 giugno 2026",
         },
       ],
       techStack: [
-        "Blockchain data products",
-        "OAuth2",
-        "IPAC",
-        "ArchCertify",
-        "Identity management",
-        "Public-sector procurement",
+        // Blockchain
+        "Algorand",
+        "ARC-3",
+        "ARC-19",
+        "Algorand Standard Assets (ASA)",
+        "AlgoKit",
+        "algosdk",
+        "Pera Wallet Connect",
+        "Base (EVM L2)",
+        "ERC-721",
+        "ERC-5192 (Soulbound)",
+        "OpenZeppelin",
+        // Storage
+        "IPFS / Pinata",
+        "MINIO (S3-compatible)",
+        "Crust Network (POC)",
+        // Data layer
+        "Neo4j (Linked Data)",
+        "Elasticsearch OSS",
+        "Postgres",
+        "Protegé / Pellet (OWL)",
+        "ArCo / REICAT / Dublin Core",
+        "CIDOC-CRM",
+        // AI / DPaaS
+        "Dify (LLM orchestrator)",
+        "LLaMA",
+        "Dataiku",
+        // Identity
+        "SPID",
+        "IAM ECOMIC",
+        "JWT + RBAC",
+        "TLS 1.3",
+        "Privy (EVM fork)",
+        // Frontend
+        "React 19",
+        "TypeScript",
+        "Vite",
+        "Tailwind 3",
+        // Infra
+        "OpenShift",
+        "Docker",
+        "Kubernetes",
+        "ArgoCD",
+        "GitLab CI",
       ],
-      pillarsTouched: ["it-mgmt", "web3", "business"],
+      pillarsTouched: ["it-mgmt", "web3", "business", "ai-eng"],
       image: "/images/logos/pnrr.svg",
       featured: true,
     },
@@ -630,72 +935,140 @@ export const portfolioData: PortfolioData = {
       slug: "factor",
       title: "Factor",
       domain: {
-        it: "DeFi · Vault infrastructure",
-        en: "DeFi · Vault infrastructure",
+        it: "DeFi · Vault infrastructure · AI-native layer",
+        en: "DeFi · Vault infrastructure · AI-native layer",
       },
       role: {
-        it: "Founding Engineer (precedente)",
-        en: "Founding Engineer (previous)",
+        it: "Founding Engineer · Top contributor su Discover · 100% sole author su VaaS / Agent",
+        en: "Founding Engineer · Top contributor on Discover · 100% sole author on VaaS / Agent",
       },
-      period: "2023 – 2024",
-      status: "completed",
+      period: "2023 – present",
+      status: "active",
       problem: {
-        it: "Costruire l'infrastruttura per un marketplace di strategie DeFi e vault automatizzati: backend, jobs schedulati, signing-service e UI per strategy creator e community.",
-        en: "Build the infrastructure for a DeFi strategy marketplace and automated vaults: backend, scheduled jobs, signing-service and UI for strategy creators and the community.",
+        it: "Costruire l'infrastruttura per un'esperienza DeFi vault-as-a-service end-to-end: contratti ERC-4626 con manager-adapter, SDK tipizzato, due UI in produzione (power-user + depositor) e — dal 2026 — un layer AI-native che esponga vault e strategie a LLM, agent autonomi e API HTTP a pagamento.",
+        en: "Build the infrastructure for an end-to-end DeFi vault-as-a-service experience: ERC-4626 contracts with manager-adapter pattern, a typed SDK, two production UIs (power-user + depositor) and — from 2026 — an AI-native layer exposing vaults and strategies to LLMs, autonomous agents and pay-per-call HTTP APIs.",
       },
       architecture: {
-        it: "Backend orientato ai vault, layer di jobs per execution schedulata, signing-service separato per la sicurezza delle scritture on-chain, UI per la gestione delle strategie. Reference codebase tuttora attivo per pattern Web3 e ERC-4626.",
-        en: "Vault-oriented backend, scheduled jobs layer for execution, separate signing-service to secure on-chain writes, UI for strategy management. Still an active reference codebase for Web3 and ERC-4626 patterns.",
+        it: "Factor.fi è un'infrastruttura per vault DeFi su Arbitrum, Base ed Ethereum: vault ERC-4626 Studio Pro, manager-adapter pattern con integrazione di Aave, Compound, Morpho, Silo, Uniswap V3, OpenOcean e Pendle, più un SDK tipizzato (`@factordao/sdk`, `@factordao/sdk-studio`). Sopra girano due UI in produzione: Factor Studio (Vite + React 19 + wagmi + RainbowKit, ~78k LOC, ~253 commit Andrea) per power-user che compongono e gestiscono vault, e Factor Discover (Next.js 14 + Sentry, ~56k LOC, ~468 commit Andrea — top contributor individuale) per i depositanti su `pro.factor.fi`. Nel 2026 ho aggiunto un layer AI-native: un server MCP (`factor-mcp`, 68 tool) che espone l'intero SDK agli LLM con due modalità (stdio classica e stateless multi-tenant via AsyncLocalStorage); un prodotto Vault-as-a-Service (`factor-vaas`, 100% sole author) HTTP con pagamenti via x402 / USDC su Base, worker BullMQ, pool di wallet HD-derived (treasury all'indice 0, ogni worker su indice proprio — nessuna chiave condivisa) e motore di ribilanciamento basato su Anthropic; un agente DeFi autonomo (`factor-agent`, 4.8k LOC, working tree only) che consuma il server MCP via task pianificati con cron (vault-monitor, position-tracker, strategy-executor, auto-compound, risk-guard, reporter), con notifiche Telegram + Discord.",
+        en: "Factor.fi is a DeFi vault infrastructure on Arbitrum, Base and Ethereum: ERC-4626 Studio Pro vaults, a manager-adapter pattern integrating Aave, Compound, Morpho, Silo, Uniswap V3, OpenOcean and Pendle, plus a typed SDK (`@factordao/sdk`, `@factordao/sdk-studio`). Two production UIs ride on top: Factor Studio (Vite + React 19 + wagmi + RainbowKit, ~78k LOC, ~253 Andrea commits) for power-users to compose and manage vaults, and Factor Discover (Next.js 14 + Sentry, ~56k LOC, ~468 Andrea commits — top individual contributor) for depositors on `pro.factor.fi`. In 2026 I added an AI-native layer: an MCP server (`factor-mcp`, 68 tools) exposing the entire SDK to LLMs with two modes (classic stdio and stateless multi-tenant via AsyncLocalStorage); a Vault-as-a-Service HTTP product (`factor-vaas`, 100% sole author) with x402 / USDC payments on Base, BullMQ workers, an HD-derived wallet pool (treasury at index 0, each worker at its own index — no shared keys) and an Anthropic-driven rebalancing engine; an autonomous DeFi agent (`factor-agent`, 4.8k LOC, working tree only) that consumes the MCP server over cron-scheduled tasks (vault-monitor, position-tracker, strategy-executor, auto-compound, risk-guard, reporter) with Telegram + Discord notifications.",
       },
       decisions: [
         {
           title: {
-            it: "Signing-service isolato",
-            en: "Isolated signing-service",
+            it: "HD wallet pool con isolamento per worker",
+            en: "HD wallet pool with per-worker isolation",
           },
           body: {
-            it: "Le chiavi private restano in un servizio separato con secret management dedicato: superficie di attacco minima, audit semplificato.",
-            en: "Private keys live in an isolated service with dedicated secret management: minimal attack surface, simpler audit.",
+            it: "In `factor-vaas` il treasury vive sull'indice HD 0; ogni worker deriva il proprio indice. Nessuna chiave condivisa, scaling orizzontale immediato e blast radius minimo se un worker viene compromesso.",
+            en: "In `factor-vaas` the treasury sits at HD index 0; each worker derives its own index. No shared keys, horizontal scaling out-of-the-box, minimal blast radius if a worker is compromised.",
           },
         },
         {
           title: {
-            it: "Strategy templates riusabili",
-            en: "Reusable strategy templates",
+            it: "MCP stateless via AsyncLocalStorage",
+            en: "Stateless MCP via AsyncLocalStorage",
           },
           body: {
-            it: "Mix-and-match building blocks per la community: l'utente compone strategie senza scrivere contratti, sfruttando primitive verificate.",
-            en: "Mix-and-match building blocks for the community: users compose strategies without writing contracts, leveraging vetted primitives.",
+            it: "`factor-mcp` ha due modalità: stdio classica e stateless per gateway multi-tenant. ChainId ed environment viaggiano nel context per-richiesta tramite AsyncLocalStorage; `sendTransaction` restituisce calldata non firmato anziché broadcast — un singolo processo serve molti utenti senza mutazione di stato globale.",
+            en: "`factor-mcp` ships two modes: classic stdio and stateless for multi-tenant gateways. `chainId` and environment ride in per-request context via AsyncLocalStorage; `sendTransaction` returns unsigned calldata instead of broadcasting — one process serves many users with zero global-state mutation.",
+          },
+        },
+        {
+          title: {
+            it: "Pagamenti x402 per primitive on-chain",
+            en: "x402 payments for on-chain primitives",
+          },
+          body: {
+            it: "VaaS espone `POST /api/vault` dietro x402 (Coinbase, USDC su Base): il client ottiene 402 Payment Required, firma il pagamento e riprova. Niente account, niente carte di credito, una primitiva HTTP+blockchain pulita. Pricing in funzione dei componenti (`3 + adapters*1 + assets*0.10` USDC).",
+            en: "VaaS gates `POST /api/vault` behind x402 (Coinbase, USDC on Base): the client gets a 402 Payment Required, signs the payment and retries. No accounts, no credit cards, a clean HTTP+blockchain primitive. Pricing is a function of components (`3 + adapters*1 + assets*0.10` USDC).",
+          },
+        },
+        {
+          title: {
+            it: "Manager-adapter pattern riusabile",
+            en: "Reusable manager-adapter pattern",
+          },
+          body: {
+            it: "Ogni protocollo (Aave, Morpho, Silo, Compound, Uniswap V3, OpenOcean, Pendle) è un adapter isolato dietro un'interfaccia comune. Le strategie diventano building block componibili anziché contratti monolitici, audit più semplice e onboarding di nuovi protocolli incrementale.",
+            en: "Each protocol (Aave, Morpho, Silo, Compound, Uniswap V3, OpenOcean, Pendle) is an isolated adapter behind a shared interface. Strategies become composable building blocks rather than monolithic contracts — simpler audits, incremental onboarding of new protocols.",
           },
         },
       ],
       results: [
         {
           label: {
-            it: "Tipologia codebase",
-            en: "Codebase type",
+            it: "Periodo attivo",
+            en: "Active period",
           },
-          value: "Reference attivo per pattern ERC-4626",
+          value: "Feb 2024 – Apr 2026 (ongoing on Discover UI)",
         },
         {
           label: {
-            it: "Componenti owned",
-            en: "Owned components",
+            it: "Codebase principali",
+            en: "Owned codebases",
           },
-          value: "Backend · Jobs · Signing-service · UI",
+          value: "Studio UI (~78k LOC) · Discover UI (~56k LOC) · MCP server (68 tool) · VaaS · Agent",
+        },
+        {
+          label: {
+            it: "Contributi UI principali",
+            en: "Lead UI contribution",
+          },
+          value: "Top contributor su Discover (~468 commit), 2nd su Studio (~253 commit)",
+        },
+        {
+          label: {
+            it: "Chain supportate",
+            en: "Supported chains",
+          },
+          value: "Arbitrum · Base · Ethereum",
+        },
+        {
+          label: {
+            it: "Layer AI-native (2026)",
+            en: "AI-native layer (2026)",
+          },
+          value: "MCP (68 tool, stdio + stateless) · VaaS (x402 + USDC) · Agent (cron + LLM)",
         },
       ],
       techStack: [
+        // Smart contracts / SDKs
         "Solidity",
         "ERC-4626",
+        "Foundry",
+        "Hardhat",
+        "wagmi",
+        "viem",
+        "ethers",
+        // Backend / infra
         "TypeScript",
         "Node.js",
         "Express",
-        "React",
-        "Wagmi",
-        "Foundry",
+        "Drizzle ORM",
+        "Postgres",
+        "Redis",
+        "BullMQ",
+        // UI
+        "React 19",
+        "Next.js 14",
+        "Vite",
+        "RainbowKit",
+        "Radix UI",
+        "Tailwind",
+        "TanStack Query/Table",
+        // AI / agent
+        "MCP (Model Context Protocol)",
+        "Anthropic SDK",
+        "x402",
+        "AsyncLocalStorage",
+        // Misc
+        "Sentry",
+        "Drizzle-Kit",
+        "Zod",
+        "Lerna",
+        "i18next",
       ],
-      pillarsTouched: ["traditional-dev", "web3"],
+      pillarsTouched: ["traditional-dev", "web3", "ai-eng", "cloud-devops"],
       image: "/images/factor_studio.gif",
       link: "https://factor.fi/",
       featured: true,
@@ -715,8 +1088,8 @@ export const portfolioData: PortfolioData = {
       period: "03/2026 – Present",
       type: { it: "Co-founder", en: "Co-founder" },
       description: {
-        it: "Founding engineer di una piattaforma DeFi multi-agent: 11 componenti microservizi production-deployed in 5 settimane (1.500+ commit, ~140k LOC). Architettura multi-agent con memoria a lungo termine, MCP gateway, agent-tester, signing-service. Multi-chain (Ethereum + Base + Arbitrum) con UX gasless via Privy + EIP-7702.",
-        en: "Founding engineer of a multi-agent DeFi platform: 11 production-deployed microservices in 5 weeks (1,500+ commits, ~140k LOC). Multi-agent architecture with long-term memory, MCP gateway, agent-tester, signing-service. Multi-chain (Ethereum + Base + Arbitrum) with gasless UX via Privy + EIP-7702.",
+        it: "Founding engineer di una piattaforma DeFi AI-native: 11 workspace (6 servizi runtime su Cloud Run + Foundry contracts + infra + 2 frontend Next.js 15 + test harness + docs) in 5 settimane (~1.300 commit, ~140k LOC). Single LLM loop su 7 job type + 8 strategy template Postgres, MCP gateway in Python, signing-service con per-agent EOA AES-256-GCM, ERC-7821 batch executor + UUPS billing treasury (127 test) deployati allo stesso indirizzo CREATE2 su Ethereum + Base + Arbitrum. UX gasless via Privy + EIP-7702.",
+        en: "Founding engineer of an AI-native DeFi platform: 11 workspaces (6 Cloud Run runtime services + Foundry contracts + infra + 2 Next.js 15 frontends + test harness + docs) in 5 weeks (~1,300 commits, ~140k LOC). Single LLM loop over 7 job types + 8 strategy templates in Postgres, Python MCP gateway, signing-service with per-agent AES-256-GCM EOAs, ERC-7821 batch executor + UUPS billing treasury (127 tests) deployed at the same CREATE2 address on Ethereum + Base + Arbitrum. Gasless UX via Privy + EIP-7702.",
       },
       logo: "/images/factor_studio.gif",
     },
@@ -729,22 +1102,22 @@ export const portfolioData: PortfolioData = {
       period: "2022 – Present",
       type: { it: "Full Time", en: "Full Time" },
       description: {
-        it: "Solo CTO di un B2B SaaS pharma in produzione attiva (Montefarmaco, Logista SPA): 5.5M+ documenti MongoDB, 30k+ prodotti multi-tenant. Architettura end-to-end (BE Express + UI React 19 + worker Rust), 70% riduzione size indici live evitando upgrade da +€1.260/anno, custom search engine, modal warning per ordini €250k–€1M+.",
-        en: "Solo CTO of a live B2B pharma SaaS (Montefarmaco, Logista SPA): 5.5M+ MongoDB documents, 30k+ multi-tenant products. End-to-end architecture (Express BE + React 19 UI + Rust worker), 70% live index footprint reduction avoiding a €1,260/year upgrade, custom search engine, modal warnings for €250k–€1M+ orders.",
+        it: "Solo CTO di un B2B SaaS pharma in produzione attiva (Montefarmaco, Logista SPA): 5.5M+ documenti MongoDB, ~14k prodotti in stock cross-supplier, 143 endpoint Express, 16 schemi Mongoose, 5 ruoli RBAC, 493 test backend con 68% statement coverage. Architettura end-to-end su 5 repo git (BE Express + UI React 19 + craco + worker Rust + landing Vite + docs), 70% riduzione size indici on-disk live + ~99% in cache evitando upgrade da +€1.260/anno, custom search engine, modal warning per ordini €250k–€1M+.",
+        en: "Solo CTO of a live B2B pharma SaaS (Montefarmaco, Logista SPA): 5.5M+ MongoDB documents, ~14k cross-supplier in-stock products, 143 Express endpoints, 16 Mongoose schemas, 5 RBAC roles, 493 backend tests with 68% statement coverage. End-to-end architecture across 5 git repos (Express BE + React 19 + craco UI + Rust worker + Vite landing + docs), 70% on-disk index footprint reduction + ~99% in cache avoiding a €1,260/year upgrade, custom search engine, modal warnings for €250k–€1M+ orders.",
       },
       logo: "/images/me.jpg",
     },
     {
-      company: "DPass / PNRR",
+      company: "Bando Ecomic Lotto 3 (MiC PNRR / Activa Digital)",
       position: {
-        it: "Architect / Technical Lead",
-        en: "Architect / Technical Lead",
+        it: "Lead tecnico-funzionale ArtCertify + Data Product Blockchain",
+        en: "Technical-functional lead on ArtCertify + Blockchain Data Products",
       },
-      period: "2024 – 2025",
+      period: "2025 – 06/2026 (deadline operativa)",
       type: { it: "Lead Tecnico", en: "Technical Lead" },
       description: {
-        it: "Architettato e proposto 6 blockchain data product per il PNRR italiano (MIC/Invitalia). Technical due diligence + architecture design + proposal lead. Coordinamento team (Marco, Serena, Flavio, Gianluca). IPAC certification + ArchCertify + OAuth2 governativo.",
-        en: "Architected and proposed 6 blockchain data products for the Italian PNRR (MIC/Invitalia). Technical due diligence, architecture design and proposal lead. Cross-functional team coordination (Marco, Serena, Flavio, Gianluca). IPAC certification + ArchCertify + government OAuth2.",
+        it: "Lead tecnico-funzionale su ArtCertify e sui 4 Data Product blockchain (Catalogo Metadati, Auto-linking, Certificazione Blockchain+IPFS, Linked Data) del Bando Ecomic Lotto 3 'Fruizione Avanzata' (MiC Digital Library / Invitalia, finanziamento PNRR, Dialogo Competitivo D.Lgs. 36/2023). RTI Activa Digital + Civita Mostre, codename interno Terranova. Coordinamento con il team Sara (PO), Giulio (tech lead), Flavio Cipollina (PO AI), Roberto Donnofrio, Serena Nardoni (BA), Jacopo (analista funzionale), Daniele Vettoretti (Data Product reference).",
+        en: "Technical-functional lead on ArtCertify and on the 4 blockchain Data Products (Metadata Catalog, Auto-linking, Blockchain+IPFS Certification, Linked Data) of the Ecomic Lotto 3 'Advanced Fruition' tender (MiC Digital Library / Invitalia, PNRR funding, Dialogo Competitivo D.Lgs. 36/2023). RTI Activa Digital + Civita Mostre, internal codename Terranova. Coordination with Sara (PO), Giulio (tech lead), Flavio Cipollina (AI PO), Roberto Donnofrio, Serena Nardoni (BA), Jacopo (functional analyst), Daniele Vettoretti (Data Product reference).",
       },
       logo: "/images/logos/pnrr.svg",
     },
@@ -909,17 +1282,20 @@ export const portfolioData: PortfolioData = {
     {
       category: { it: "AI Engineering", en: "AI Engineering" },
       items: [
-        "Multi-Agent Architecture",
+        "Single-loop Agent",
+        "Per-task Tool Whitelist",
         "LLM Integration",
         "MCP Gateway",
-        "Agent Testing",
-        "Long-term Memory",
+        "MCP-over-stdio (request-id correlation)",
+        "Agent Testing (SSE harness)",
+        "Code-level Guardrails (SELL GUARD)",
+        "Strategy Templates (Postgres-driven)",
         "Real-time Oversight",
         "Prompt Engineering",
         "Multi-provider LLM",
         "DeepInfra",
-        "Anthropic",
         "OpenRouter",
+        "Anthropic (review)",
       ],
     },
     {
@@ -976,16 +1352,28 @@ export const portfolioData: PortfolioData = {
         "Ethereum",
         "Base",
         "Arbitrum",
+        "Algorand",
         "Privy",
         "Wagmi",
         "viem",
+        "ethers",
         "ERC-4626",
         "EIP-7702",
         "ERC-7821",
+        "ERC-721",
+        "ERC-5192 (Soulbound)",
         "ERC-2612",
         "UUPS Proxies",
+        "ARC-3 / ARC-19",
+        "AlgoKit",
+        "algosdk",
+        "Pera Wallet Connect",
+        "WalletConnect v2",
+        "x402",
         "Foundry",
+        "Hardhat",
         "Solidity",
+        "OpenZeppelin",
         "LiFi",
         "Alchemy",
         "AAVE",
@@ -993,7 +1381,8 @@ export const portfolioData: PortfolioData = {
         "Balancer",
         "Factor SDK",
         "Account Abstraction",
-        "Subgraph",
+        "MCP (Model Context Protocol)",
+        "IPFS / Pinata",
       ],
     },
     {
@@ -1069,11 +1458,13 @@ export const portfolioData: PortfolioData = {
         "Multi-tenant SaaS",
         "DeFi",
         "ERC-4626 Vaults",
+        "Soulbound Tokens (SBT)",
         "PNRR",
-        "DPass",
-        "IPAC",
-        "ArchCertify",
-        "OAuth2 Governativo",
+        "MiC Digital Library",
+        "DPaaS / DP-Lab",
+        "Cultural Heritage",
+        "ArCo / REICAT / Dublin Core",
+        "SPID / IAM ECOMIC",
       ],
     },
   ],
@@ -1141,19 +1532,23 @@ export const portfolioData: PortfolioData = {
         en: "AI Engineering",
       },
       description: {
-        it: "Costruisco sistemi AI in produzione: multi-agent, MCP gateway, LLM integration, agent-tester, prompt engineering production-grade.",
-        en: "I build production AI systems: multi-agent, MCP gateways, LLM integration, agent-testers, production-grade prompt engineering.",
+        it: "Costruisco sistemi AI in produzione: agent loop con tool whitelist, MCP gateway multi-tenant, signing-service custodial, guardrail a livello di codice, prompt engineering production-grade.",
+        en: "I build production AI systems: agent loops with per-task tool whitelists, multi-tenant MCP gateways, custodial signing-services, code-level guardrails, production-grade prompt engineering.",
       },
       bulletPoints: {
         it: [
-          "Multi-agent architecture (evaluator/researcher/manager/executor)",
-          "MCP gateway tra LLM e tool esterni",
+          "Single agent loop con tool whitelist per job type",
+          "MCP gateway tra LLM e tool esterni (request-id correlation)",
+          "Signing-service custodial con per-agent EOA cifrate",
+          "Guardrail a livello di codice (SELL GUARD non bypassabile)",
           "Subscription/credit engine per agent autonomi",
           "Quality assurance su output non-deterministici",
         ],
         en: [
-          "Multi-agent architecture (evaluator/researcher/manager/executor)",
-          "MCP gateway between LLMs and external tools",
+          "Single agent loop with per-job-type tool whitelists",
+          "MCP gateway between LLMs and external tools (request-id correlation)",
+          "Custodial signing-service with per-agent encrypted EOAs",
+          "Code-level guardrails (non-bypassable SELL GUARD)",
           "Subscription/credit engine for autonomous agents",
           "QA for non-deterministic outputs",
         ],
@@ -1216,21 +1611,25 @@ export const portfolioData: PortfolioData = {
         en: "Web3 / Smart Contract Integration",
       },
       description: {
-        it: "Integrazione smart contract multi-chain con UX gasless, account abstraction e protocollo audit-ready.",
-        en: "Multi-chain smart-contract integration with gasless UX, account abstraction and audit-ready protocols.",
+        it: "Integrazione smart contract multi-chain (EVM + Algorand) con UX gasless, account abstraction, soulbound token e protocolli audit-ready.",
+        en: "Multi-chain (EVM + Algorand) smart-contract integration with gasless UX, account abstraction, soulbound tokens and audit-ready protocols.",
       },
       bulletPoints: {
         it: [
-          "ERC-4626 vault e EIP-7702 sponsored tx",
-          "Cross-chain via LiFi e Subgraph indexing",
+          "ERC-4626 vault, EIP-7702 / ERC-7821 sponsored tx, UUPS proxy",
+          "Soulbound token (ARC-19 + ERC-5192) con metadata IPFS versionato",
+          "Cross-chain via LiFi, pagamenti HTTP via x402",
+          "Algorand: AlgoKit, algosdk, ARC-3/19, Pera Wallet",
           "Privy + Wagmi + viem stack",
-          "Signing-service isolato",
+          "Signing-service isolato con per-agent EOA cifrate",
         ],
         en: [
-          "ERC-4626 vaults and EIP-7702 sponsored tx",
-          "Cross-chain via LiFi and Subgraph indexing",
+          "ERC-4626 vaults, EIP-7702 / ERC-7821 sponsored tx, UUPS proxies",
+          "Soulbound tokens (ARC-19 + ERC-5192) with versioned IPFS metadata",
+          "Cross-chain via LiFi, HTTP payments via x402",
+          "Algorand: AlgoKit, algosdk, ARC-3/19, Pera Wallet",
           "Privy + Wagmi + viem stack",
-          "Isolated signing-service",
+          "Isolated signing-service with per-agent encrypted EOAs",
         ],
       },
     },
@@ -1326,19 +1725,19 @@ export const portfolioData: PortfolioData = {
     {
       title: "Haelias",
       description: {
-        it: "B2B SaaS pharma in produzione: 5.5M+ documenti MongoDB, 30k+ prodotti multi-tenant, clienti enterprise (Montefarmaco, Logista SPA).",
-        en: "Production B2B pharma SaaS: 5.5M+ MongoDB documents, 30k+ multi-tenant products, enterprise clients (Montefarmaco, Logista SPA).",
+        it: "B2B SaaS pharma in produzione: 5.5M+ documenti MongoDB, ~14k prodotti in stock cross-supplier, 143 endpoint Express, 5 repo git, clienti enterprise (Montefarmaco, Logista SPA).",
+        en: "Production B2B pharma SaaS: 5.5M+ MongoDB documents, ~14k cross-supplier in-stock products, 143 Express endpoints, 5 git repos, enterprise clients (Montefarmaco, Logista SPA).",
       },
       image: "/images/logos/montefarmaco.png",
       gif: null,
-      categories: ["B2B SaaS", "Enterprise", "Web2", "AI"],
+      categories: ["B2B SaaS", "Enterprise", "Web2"],
       featured: true,
     },
     {
       title: "Mandate.Finance",
       description: {
-        it: "Piattaforma DeFi con agent AI autonomi: 11 microservizi production-deployed in 5 settimane, multi-chain, gasless UX.",
-        en: "DeFi platform with autonomous AI agents: 11 production-deployed microservices in 5 weeks, multi-chain, gasless UX.",
+        it: "Piattaforma DeFi AI-native: 11 workspace production-deployed in 5 settimane, multi-chain (stesso indirizzo CREATE2 su 3 chain), MCP gateway, gasless UX via EIP-7702 + ERC-7821.",
+        en: "AI-native DeFi platform: 11 production-deployed workspaces in 5 weeks, multi-chain (same CREATE2 address on 3 chains), MCP gateway, gasless UX via EIP-7702 + ERC-7821.",
       },
       image: "/images/factor_studio.gif",
       gif: "/images/factor_studio.gif",
@@ -1348,13 +1747,68 @@ export const portfolioData: PortfolioData = {
     {
       title: "DPass / PNRR",
       description: {
-        it: "6 blockchain data product proposals per il PNRR italiano (MIC/Invitalia). IPAC + ArchCertify + OAuth2 governativo.",
-        en: "6 blockchain data product proposals for the Italian PNRR (MIC/Invitalia). IPAC + ArchCertify + government OAuth2.",
+        it: "Bando Ecomic Lotto 3 'Fruizione Avanzata' (MiC PNRR): 4 Data Product blockchain (Catalogo, Auto-linking, Certificazione, Linked Data) consumati da 6 use case pilota su istituti culturali nazionali. RTI Activa Digital + Civita Mostre.",
+        en: "Ecomic Lotto 3 'Advanced Fruition' tender (MiC PNRR): 4 blockchain Data Products (Catalog, Auto-linking, Certification, Linked Data) consumed by 6 pilot use cases across national cultural institutions. RTI Activa Digital + Civita Mostre.",
       },
       image: "/images/logos/pnrr.svg",
       gif: null,
-      categories: ["Government", "Web3", "Enterprise"],
+      categories: ["Government", "Web3", "Enterprise", "Cultural Heritage"],
       featured: true,
+    },
+    {
+      title: "ArtCertify",
+      description: {
+        it: "Piattaforma dual-chain di Soulbound Token per la certificazione di beni culturali. Algorand-first (ARC-3 + ARC-19, Pera Wallet, JWT backend) con fork EVM su Base (ERC-721 + ERC-5192, Privy, Hardhat/Foundry). Storage ibrido MINIO + IPFS, certificati non-trasferibili con metadata IPFS versionato.",
+        en: "Dual-chain Soulbound Token platform for cultural-heritage certification. Algorand-first (ARC-3 + ARC-19, Pera Wallet, JWT backend) with EVM fork on Base (ERC-721 + ERC-5192, Privy, Hardhat/Foundry). Hybrid MINIO + IPFS storage, non-transferable certificates with versioned IPFS metadata.",
+      },
+      image: "/images/logos/pnrr.svg",
+      gif: null,
+      categories: ["Web3", "Algorand", "Government", "Identity", "Cultural Heritage"],
+      featured: true,
+    },
+    {
+      title: "Artence Passkey",
+      description: {
+        it: "Wallet Algorand passkey-native: deriva la secret key in modo deterministico dal `rawId` di una credenziale WebAuthn via SHA-256, e la espone alle dApp via WalletConnect v2 con namespace `algorand:*`. Onboarding Web3 senza seed phrase.",
+        en: "Passkey-native Algorand wallet: derives the secret key deterministically from a WebAuthn credential `rawId` via SHA-256, and exposes it to dApps via WalletConnect v2 with the `algorand:*` namespace. Web3 onboarding without seed phrase.",
+      },
+      image: "/images/me.jpg",
+      gif: null,
+      categories: ["Web3", "Algorand", "Identity"],
+      featured: true,
+    },
+    {
+      title: "Terion Token",
+      description: {
+        it: "Progetto token (ulteriori dettagli in fase di review NDA).",
+        en: "Token project (additional details under NDA review).",
+      },
+      image: "/images/me.jpg",
+      gif: null,
+      categories: ["Web3", "DeFi"],
+      featured: false,
+    },
+    {
+      title: "CAPUT MUNDI",
+      description: {
+        it: "Deployment italiano di ArtCertify per il progetto Roma Caput Mundi (PNRR / NextGenerationEU). Certificazione SBT Algorand di asset culturali della Capitale.",
+        en: "Italian deployment of ArtCertify for the Rome Caput Mundi project (PNRR / NextGenerationEU). Algorand SBT certification for Rome's cultural assets.",
+      },
+      image: "/images/logos/pnrr.svg",
+      gif: null,
+      categories: ["Government", "Cultural Heritage", "Web3"],
+      featured: false,
+    },
+    {
+      title: "Raspberry Claw",
+      description: {
+        it: "AI agent self-hosted su Raspberry Pi con integrazione Factor: agent autonomo on-prem con tooling DeFi, MIT, documentazione bilingue.",
+        en: "Self-hosted AI agent on Raspberry Pi with Factor integration: autonomous on-prem agent with DeFi tooling, MIT-licensed, bilingual docs.",
+      },
+      image: "/images/me.jpg",
+      gif: null,
+      categories: ["AI", "Web3"],
+      featured: false,
     },
     {
       title: "Factor Discover",
@@ -1386,7 +1840,7 @@ export const portfolioData: PortfolioData = {
         it: "GrantsDAO che finanzia progetti community e public goods legati a kwenta.io.",
         en: "GrantsDAO funding kwenta.io community and public-goods projects.",
       },
-      image: "/images/kwenta.jpg",
+      image: "/images/previews/kwenta.jpg",
       gif: null,
       link: "https://kwenta.eth.limo/",
       categories: ["DeFi", "Web3", "DAO", "Community"],
@@ -1581,51 +2035,58 @@ export const portfolioData: PortfolioData = {
   // -------------------------------------------------------------------------
   techStack: [
     // Cloud
-    { name: "Google Cloud Platform", category: "cloud", url: "https://cloud.google.com/" },
-    { name: "DigitalOcean", category: "cloud", url: "https://www.digitalocean.com/" },
-    { name: "Vercel", category: "cloud", url: "https://vercel.com/" },
-    { name: "Netlify", category: "cloud", url: "https://www.netlify.com/" },
+    { name: "Google Cloud Platform", category: "cloud", url: "https://cloud.google.com/", logo: "/images/logos/gcp.svg" },
+    { name: "DigitalOcean", category: "cloud", url: "https://www.digitalocean.com/", logo: "/images/logos/tech/digitalocean.svg" },
+    { name: "Vercel", category: "cloud", url: "https://vercel.com/", logo: "/images/logos/tech/vercel.svg" },
+    { name: "Netlify", category: "cloud", url: "https://www.netlify.com/", logo: "/images/logos/tech/netlify.svg" },
 
     // AI
-    { name: "Anthropic Claude", category: "ai", url: "https://www.anthropic.com/" },
-    { name: "Claude Code", category: "ai", url: "https://www.anthropic.com/claude-code" },
-    { name: "Cursor", category: "ai", url: "https://cursor.com/" },
+    { name: "Anthropic Claude", category: "ai", url: "https://www.anthropic.com/", logo: "/images/logos/anthropic.svg" },
+    { name: "Claude Code", category: "ai", url: "https://www.anthropic.com/claude-code", logo: "/images/logos/anthropic.svg" },
+    { name: "Cursor", category: "ai", url: "https://cursor.com/", logo: "/images/logos/tech/cursor.svg" },
     { name: "OMI", category: "ai", url: "https://www.omi.me/" },
     { name: "DeepInfra", category: "ai", url: "https://deepinfra.com/" },
 
     // Web3 protocols
-    { name: "AAVE", category: "web3", url: "https://aave.com/" },
+    { name: "AAVE", category: "web3", url: "https://aave.com/", logo: "/images/logos/aave.svg" },
     { name: "Morpho", category: "web3", url: "https://morpho.org/" },
     { name: "Balancer", category: "web3", url: "https://balancer.fi/" },
     { name: "Factor SDK", category: "web3", url: "https://factor.fi/" },
     { name: "LiFi", category: "web3", url: "https://li.fi/" },
     { name: "Privy", category: "web3", url: "https://www.privy.io/" },
+    { name: "Algorand", category: "web3", url: "https://www.algorand.com/" },
+    { name: "AlgoKit", category: "web3", url: "https://github.com/algorandfoundation/algokit" },
+    { name: "Pera Wallet", category: "web3", url: "https://perawallet.app/" },
+    { name: "IPFS", category: "web3", url: "https://ipfs.tech/" },
+    { name: "Crust Network", category: "web3", url: "https://crust.network/" },
 
     // Database
-    { name: "MongoDB", category: "database", url: "https://www.mongodb.com/" },
-    { name: "Postgres", category: "database", url: "https://www.postgresql.org/" },
-    { name: "Drizzle", category: "database", url: "https://orm.drizzle.team/" },
+    { name: "MongoDB", category: "database", url: "https://www.mongodb.com/", logo: "/images/logos/tech/mongodb.svg" },
+    { name: "Postgres", category: "database", url: "https://www.postgresql.org/", logo: "/images/logos/tech/postgres.svg" },
+    { name: "Drizzle", category: "database", url: "https://orm.drizzle.team/", logo: "/images/logos/tech/drizzle.svg" },
+    { name: "Neo4j", category: "database", url: "https://neo4j.com/" },
+    { name: "MINIO", category: "database", url: "https://min.io/" },
 
     // Frontend
-    { name: "Next.js", category: "frontend", url: "https://nextjs.org/" },
-    { name: "React", category: "frontend", url: "https://react.dev/" },
-    { name: "TypeScript", category: "frontend", url: "https://www.typescriptlang.org/" },
-    { name: "Tailwind CSS", category: "frontend", url: "https://tailwindcss.com/" },
+    { name: "Next.js", category: "frontend", url: "https://nextjs.org/", logo: "/images/logos/tech/next-js.svg" },
+    { name: "React", category: "frontend", url: "https://react.dev/", logo: "/images/logos/tech/react.svg" },
+    { name: "TypeScript", category: "frontend", url: "https://www.typescriptlang.org/", logo: "/images/logos/tech/typescript.svg" },
+    { name: "Tailwind CSS", category: "frontend", url: "https://tailwindcss.com/", logo: "/images/logos/tech/tailwind-css.svg" },
 
     // Backend
-    { name: "Node.js", category: "backend", url: "https://nodejs.org/" },
-    { name: "Express", category: "backend", url: "https://expressjs.com/" },
-    { name: "Rust", category: "backend", url: "https://www.rust-lang.org/" },
+    { name: "Node.js", category: "backend", url: "https://nodejs.org/", logo: "/images/logos/tech/node-js.svg" },
+    { name: "Express", category: "backend", url: "https://expressjs.com/", logo: "/images/logos/tech/express.svg" },
+    { name: "Rust", category: "backend", url: "https://www.rust-lang.org/", logo: "/images/logos/tech/rust.svg" },
 
     // DevOps
-    { name: "Docker", category: "devops", url: "https://www.docker.com/" },
-    { name: "GitHub", category: "devops", url: "https://github.com/" },
+    { name: "Docker", category: "devops", url: "https://www.docker.com/", logo: "/images/logos/tech/docker.svg" },
+    { name: "GitHub", category: "devops", url: "https://github.com/", logo: "/images/logos/tech/github.svg" },
 
     // Tools
-    { name: "Linear", category: "tools", url: "https://linear.app/" },
-    { name: "Resend", category: "tools", url: "https://resend.com/" },
-    { name: "Stripe", category: "tools", url: "https://stripe.com/" },
-    { name: "Coinbase CDP", category: "tools", url: "https://www.coinbase.com/developer-platform" },
+    { name: "Linear", category: "tools", url: "https://linear.app/", logo: "/images/logos/tech/linear.svg" },
+    { name: "Resend", category: "tools", url: "https://resend.com/", logo: "/images/logos/tech/resend.svg" },
+    { name: "Stripe", category: "tools", url: "https://stripe.com/", logo: "/images/logos/tech/stripe.svg" },
+    { name: "Coinbase CDP", category: "tools", url: "https://www.coinbase.com/developer-platform", logo: "/images/logos/tech/coinbase.svg" },
   ],
 
   // -------------------------------------------------------------------------
@@ -1657,12 +2118,12 @@ export const portfolioData: PortfolioData = {
     {
       value: "11",
       label: {
-        it: "Microservizi in 5 settimane",
-        en: "Microservices in 5 weeks",
+        it: "Workspace in 5 settimane",
+        en: "Workspaces in 5 weeks",
       },
       caption: {
-        it: "Mandate.Finance · 1.500+ commit, ~140k LOC",
-        en: "Mandate.Finance · 1,500+ commits, ~140k LOC",
+        it: "Mandate.Finance · 1.300+ commit, ~140k LOC",
+        en: "Mandate.Finance · 1,300+ commits, ~140k LOC",
       },
     },
     {

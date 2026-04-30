@@ -151,7 +151,7 @@ In gergo 2026 questa figura si chiama **"AI-native builder"** o **"10x founder-e
 
 ### 5.2 Mandate.Finance — DeFi + AI multi-agent
 
-Periodo verificabile dal git: **24 marzo → 30 aprile 2026, 5 settimane**. Repo monorepo con **11 componenti**:
+Periodo verificabile dal git: **24 marzo → 30 aprile 2026, 5 settimane**. Architettura multi-repo su **11 componenti microservizi**:
 
 | Componente | Tipo | Tu (% authorship) |
 |---|---|---|
