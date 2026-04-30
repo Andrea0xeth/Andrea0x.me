@@ -45,51 +45,63 @@ export default async function Home({ params }: HomePageProps) {
 
   return (
     <div className="min-h-screen pb-24 md:pb-0 bg-[color:var(--bg-primary)]">
-      {/* Sticky desktop header */}
-      <header className="hidden md:block sticky top-0 z-50 backdrop-blur-md border-b border-[color:var(--border-primary)]/60 bg-[color:var(--bg-primary)]/80">
-        <div className="container mx-auto px-4 py-3 flex items-center justify-between gap-4">
-          <div className="flex flex-col leading-tight">
-            <span className="text-body font-medium text-[color:var(--text-primary)]">
-              {personal.name}
-            </span>
-            <span className="font-mono text-tag text-[color:var(--text-tertiary)]">
-              · {personal.handle}
-            </span>
-          </div>
+      {/* Floating liquid-glass desktop header */}
+      <header className="hidden md:block sticky top-3 z-50 px-4 pointer-events-none">
+        <div
+          className="container mx-auto pointer-events-auto rounded-2xl border shadow-lg"
+          style={{
+            backgroundColor: 'color-mix(in srgb, var(--bg-secondary) 70%, transparent)',
+            borderColor: 'color-mix(in srgb, var(--border-primary) 70%, transparent)',
+            backdropFilter: 'saturate(180%) blur(20px)',
+            WebkitBackdropFilter: 'saturate(180%) blur(20px)',
+            boxShadow:
+              '0 1px 0 0 color-mix(in srgb, var(--text-primary) 6%, transparent) inset, 0 12px 32px -16px rgba(0,0,0,0.45)',
+          }}
+        >
+          <div className="px-5 py-2.5 flex items-center justify-between gap-4">
+            <div className="flex flex-col leading-tight">
+              <span className="text-body font-medium text-[color:var(--text-primary)]">
+                {personal.name}
+              </span>
+              <span className="font-mono text-tag text-[color:var(--text-tertiary)]">
+                · {personal.handle}
+              </span>
+            </div>
 
-          <nav className="hidden md:flex items-center space-x-6">
-            <Link
-              href={`/${locale}/work`}
-              className="text-caption text-[color:var(--text-tertiary)] hover:text-[color:var(--text-primary)] transition-colors"
-            >
-              {locale === 'it' ? 'Lavori' : 'Work'}
-            </Link>
-            <Link
-              href={`/${locale}/about`}
-              className="text-caption text-[color:var(--text-tertiary)] hover:text-[color:var(--text-primary)] transition-colors"
-            >
-              {locale === 'it' ? 'Chi sono' : 'About'}
-            </Link>
-            <Link
-              href={`/${locale}/services`}
-              className="text-caption text-[color:var(--text-tertiary)] hover:text-[color:var(--text-primary)] transition-colors"
-            >
-              {locale === 'it' ? 'Servizi' : 'Services'}
-            </Link>
-          </nav>
+            <nav className="hidden md:flex items-center gap-1">
+              <Link
+                href={`/${locale}/work`}
+                className="px-3 py-1.5 rounded-full text-caption text-[color:var(--text-secondary)] hover:text-[color:var(--text-primary)] hover:bg-[color:var(--bg-tertiary)]/60 transition-colors"
+              >
+                {locale === 'it' ? 'Lavori' : 'Work'}
+              </Link>
+              <Link
+                href={`/${locale}/about`}
+                className="px-3 py-1.5 rounded-full text-caption text-[color:var(--text-secondary)] hover:text-[color:var(--text-primary)] hover:bg-[color:var(--bg-tertiary)]/60 transition-colors"
+              >
+                {locale === 'it' ? 'Chi sono' : 'About'}
+              </Link>
+              <Link
+                href={`/${locale}/services`}
+                className="px-3 py-1.5 rounded-full text-caption text-[color:var(--text-secondary)] hover:text-[color:var(--text-primary)] hover:bg-[color:var(--bg-tertiary)]/60 transition-colors"
+              >
+                {locale === 'it' ? 'Servizi' : 'Services'}
+              </Link>
+            </nav>
 
-          <div className="flex items-center gap-3">
-            <LanguageSwitcher />
-            <ThemeSwitcher />
-            <AnimatedButton
-              href={social.calendly}
-              variant="primary"
-              size="sm"
-              className="flex items-center space-x-2"
-            >
-              <Calendar className="w-4 h-4" />
-              <span>{tNav('bookCall')}</span>
-            </AnimatedButton>
+            <div className="flex items-center gap-2">
+              <LanguageSwitcher />
+              <ThemeSwitcher />
+              <AnimatedButton
+                href={social.calendly}
+                variant="primary"
+                size="sm"
+                className="flex items-center space-x-2"
+              >
+                <Calendar className="w-4 h-4" />
+                <span>{tNav('bookCall')}</span>
+              </AnimatedButton>
+            </div>
           </div>
         </div>
       </header>
@@ -171,13 +183,17 @@ export default async function Home({ params }: HomePageProps) {
           </div>
         </footer>
 
-        {/* Mobile fixed-bottom bar */}
-        <div className="fixed bottom-0 left-0 right-0 md:hidden z-50">
+        {/* Mobile floating liquid-glass bottom bar */}
+        <div className="fixed bottom-3 left-3 right-3 md:hidden z-50">
           <div
-            className="px-4 py-3 backdrop-blur-md border-t"
+            className="px-4 py-2.5 rounded-2xl border shadow-lg"
             style={{
-              backgroundColor: 'var(--glass-bg)',
-              borderColor: 'var(--glass-border)',
+              backgroundColor: 'color-mix(in srgb, var(--bg-secondary) 75%, transparent)',
+              borderColor: 'color-mix(in srgb, var(--border-primary) 70%, transparent)',
+              backdropFilter: 'saturate(180%) blur(20px)',
+              WebkitBackdropFilter: 'saturate(180%) blur(20px)',
+              boxShadow:
+                '0 1px 0 0 color-mix(in srgb, var(--text-primary) 6%, transparent) inset, 0 12px 32px -16px rgba(0,0,0,0.5)',
             }}
           >
             <div className="flex items-center justify-end gap-3">

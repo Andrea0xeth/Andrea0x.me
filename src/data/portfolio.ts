@@ -1555,6 +1555,7 @@ export const portfolioData: PortfolioData = {
           "QA for non-deterministic outputs",
         ],
       },
+      rateRange: "€120–200/h",
     },
     {
       id: "database-performance",
@@ -1580,6 +1581,7 @@ export const portfolioData: PortfolioData = {
           "Hot patches under pressure",
         ],
       },
+      rateRange: "€120–200/h",
     },
     {
       id: "process-digitalization",
@@ -1605,6 +1607,7 @@ export const portfolioData: PortfolioData = {
           "Self-service UX and document generation",
         ],
       },
+      rateRange: "€120–200/h",
     },
     {
       id: "web3-integration",
@@ -1634,6 +1637,7 @@ export const portfolioData: PortfolioData = {
           "Isolated signing-service with per-agent encrypted EOAs",
         ],
       },
+      rateRange: "€120–200/h",
     },
   ],
 
