@@ -214,6 +214,53 @@ body {
 }
 
 /* ---------------------------------------------------------------------------
+ * Logo tiles — drop-shadow + on-hover tooltip used in TrustedBy groups.
+ * `.logo-tile` adds a subtle theme-aware drop shadow.
+ * `.logo-tooltip` shows the value of `data-tooltip` on hover/focus.
+ * ------------------------------------------------------------------------ */
+.logo-tile {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.18));
+}
+.dark .logo-tile {
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.55));
+}
+
+.logo-tooltip {
+  position: relative;
+}
+.logo-tooltip:hover::after,
+.logo-tooltip:focus-visible::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--text-primary);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-primary);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* ---------------------------------------------------------------------------
+ * Theme-aware visibility — for assets that ship a dark/light variant pair.
+ * Use .theme-dark-only on the dark-mode asset and .theme-light-only on the
+ * light-mode asset; the right one will be visible per the active theme.
+ * ------------------------------------------------------------------------ */
+.theme-dark-only { display: none; }
+.dark .theme-dark-only { display: block; }
+.theme-light-only { display: block; }
+.dark .theme-light-only { display: none; }
+
+/* ---------------------------------------------------------------------------
  * Marquee — infinite horizontal scroll for logo strips. Items must be
  * duplicated 2x by the consumer so the -50% translate yields a seamless loop.
  * ------------------------------------------------------------------------ */

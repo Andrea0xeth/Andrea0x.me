@@ -2051,14 +2051,14 @@ export const portfolioData: PortfolioData = {
 
     // Web3 protocols
     { name: "AAVE", category: "web3", url: "https://aave.com/", logo: "/images/logos/aave.svg" },
-    { name: "Morpho", category: "web3", url: "https://morpho.org/", logo: "/images/logos/tech/morpho.png" },
+    { name: "Morpho", category: "web3", url: "https://morpho.org/", logo: "/images/logos/tech/morpho-dark.svg", logoLight: "/images/logos/tech/morpho-light.svg" },
     { name: "Balancer", category: "web3", url: "https://balancer.fi/", logo: "/images/logos/tech/balancer.svg" },
     { name: "Factor SDK", category: "web3", url: "https://factor.fi/", logo: "/images/logos/tech/factor.png" },
     { name: "LiFi", category: "web3", url: "https://li.fi/", logo: "/images/logos/tech/lifi.svg" },
     { name: "Privy", category: "web3", url: "https://www.privy.io/", logo: "/images/logos/tech/privy.png" },
     { name: "Algorand", category: "web3", url: "https://www.algorand.com/", logo: "/images/logos/tech/algorand.svg" },
     { name: "AlgoKit", category: "web3", url: "https://github.com/algorandfoundation/algokit", logo: "/images/logos/tech/algokit.png" },
-    { name: "Pera Wallet", category: "web3", url: "https://perawallet.app/", logo: "/images/logos/tech/perawallet.png" },
+    { name: "Pera Wallet", category: "web3", url: "https://perawallet.app/", logo: "/images/logos/tech/perawallet.svg" },
     { name: "IPFS", category: "web3", url: "https://ipfs.tech/", logo: "/images/logos/tech/ipfs.svg" },
     { name: "Crust Network", category: "web3", url: "https://crust.network/", logo: "/images/logos/tech/crust.png" },
 

@@ -169,6 +169,8 @@ export interface TechStackItem {
   url?: string;
   /** Optional path to brand SVG/PNG, e.g. '/images/logos/tech/vercel.svg'. */
   logo?: string;
+  /** Optional alternate logo for light theme (when default logo is dark-mode optimized). */
+  logoLight?: string;
 }
 
 // ----- Stats & trustedBy ------------------------------------------------------

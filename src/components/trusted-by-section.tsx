@@ -30,6 +30,7 @@ const groups = [
 type LogoItem = {
   name: string;
   logo: string;
+  logoLight?: string;
   url: string;
   textOnly?: boolean;
 };
@@ -51,6 +52,7 @@ export function TrustedBySection() {
   const toolsFromTechStack: LogoItem[] = techStack.map((t) => ({
     name: t.name,
     logo: t.logo ?? '',
+    logoLight: t.logoLight,
     url: t.url ?? '',
     textOnly: !t.logo,
   }));
@@ -98,23 +100,42 @@ export function TrustedBySection() {
                     {[...items, ...items].map((item, idx) => {
                       const cell = item.textOnly ? (
                         <span
-                          className="inline-flex items-center h-12 px-3 rounded-md border border-[color:var(--border-primary)] text-caption text-[color:var(--text-tertiary)] whitespace-nowrap"
-                          title={item.name}
+                          className="inline-flex items-center h-12 px-3 rounded-md border border-[color:var(--border-primary)] text-caption text-[color:var(--text-tertiary)] whitespace-nowrap logo-tooltip"
+                          data-tooltip={item.name}
                         >
                           {item.name}
                         </span>
                       ) : (
                         <div
-                          className="relative h-10 w-24 shrink-0"
-                          title={item.name}
+                          className="relative h-10 w-24 shrink-0 logo-tile logo-tooltip"
+                          data-tooltip={item.name}
                         >
-                          <Image
-                            src={item.logo}
-                            alt={item.name}
-                            fill
-                            className="object-contain"
-                            sizes="96px"
-                          />
+                          {item.logoLight ? (
+                            <>
+                              <Image
+                                src={item.logo}
+                                alt={item.name}
+                                fill
+                                className="object-contain theme-dark-only"
+                                sizes="96px"
+                              />
+                              <Image
+                                src={item.logoLight}
+                                alt={item.name}
+                                fill
+                                className="object-contain theme-light-only"
+                                sizes="96px"
+                              />
+                            </>
+                          ) : (
+                            <Image
+                              src={item.logo}
+                              alt={item.name}
+                              fill
+                              className="object-contain"
+                              sizes="96px"
+                            />
+                          )}
                         </div>
                       );
 
@@ -149,15 +170,15 @@ export function TrustedBySection() {
                   {items.map((item) => {
                     const inner = item.textOnly ? (
                       <span
-                        className="inline-flex items-center px-3 py-2 rounded-md border border-[color:var(--border-primary)] bg-transparent text-caption text-[color:var(--text-secondary)] hover:opacity-90 transition-opacity"
-                        title={item.name}
+                        className="inline-flex items-center px-3 py-2 rounded-md border border-[color:var(--border-primary)] bg-transparent text-caption text-[color:var(--text-secondary)] hover:opacity-90 transition-opacity logo-tooltip"
+                        data-tooltip={item.name}
                       >
                         {item.name}
                       </span>
                     ) : (
                       <div
-                        className="relative h-10 w-28 hover:scale-[1.04] transition-transform duration-300"
-                        title={item.name}
+                        className="relative h-10 w-28 hover:scale-[1.04] transition-transform duration-300 logo-tile logo-tooltip"
+                        data-tooltip={item.name}
                       >
                         <Image
                           src={item.logo}

@@ -84,17 +84,44 @@ export function TechStackSection() {
                     <TagPill variant="mono" size="sm">
                       {item.logo ? (
                         <span className="inline-flex items-center gap-1.5">
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
-                            src={item.logo}
-                            alt=""
-                            aria-hidden="true"
-                            width={14}
-                            height={14}
-                            loading="lazy"
-                            decoding="async"
-                            className="h-3.5 w-3.5 transition group-hover:scale-110"
-                          />
+                          {item.logoLight ? (
+                            <>
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img
+                                src={item.logo}
+                                alt=""
+                                aria-hidden="true"
+                                width={14}
+                                height={14}
+                                loading="lazy"
+                                decoding="async"
+                                className="h-3.5 w-3.5 theme-dark-only transition group-hover:scale-110"
+                              />
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img
+                                src={item.logoLight}
+                                alt=""
+                                aria-hidden="true"
+                                width={14}
+                                height={14}
+                                loading="lazy"
+                                decoding="async"
+                                className="h-3.5 w-3.5 theme-light-only transition group-hover:scale-110"
+                              />
+                            </>
+                          ) : (
+                            /* eslint-disable-next-line @next/next/no-img-element */
+                            <img
+                              src={item.logo}
+                              alt=""
+                              aria-hidden="true"
+                              width={14}
+                              height={14}
+                              loading="lazy"
+                              decoding="async"
+                              className="h-3.5 w-3.5 transition group-hover:scale-110"
+                            />
+                          )}
                           {item.name}
                         </span>
                       ) : (
