@@ -71,7 +71,7 @@ export function HeroSection({ locale }: HeroSectionProps) {
           className="order-1 lg:order-1 flex justify-center lg:justify-start"
         >
           <div
-            className="relative rounded-full overflow-hidden shadow-2xl"
+            className="relative rounded-full overflow-hidden"
             style={{
               width: 'clamp(200px, 28vw, 256px)',
               height: 'clamp(200px, 28vw, 256px)',

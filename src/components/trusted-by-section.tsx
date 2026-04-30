@@ -35,7 +35,7 @@ type LogoItem = {
 };
 
 export function TrustedBySection() {
-  const { trustedBy } = portfolioData;
+  const { trustedBy, techStack } = portfolioData;
   const locale = useLocale() as 'it' | 'en';
   const prefersReduced = useReducedMotion();
   const headerMotion = getMotionProps(motionPresets.fadeInUpSlow, prefersReduced);
@@ -46,6 +46,21 @@ export function TrustedBySection() {
       ? 'Clienti, istituzioni e strumenti selezionati tra pharma, settore pubblico e Web3.'
       : 'Selected clients, institutions, and tools across pharma, public sector and Web3.';
 
+  // The "tools" group is derived from the canonical techStack list — every
+  // tool that has a logo appears here as a logo, the rest as text chips.
+  const toolsFromTechStack: LogoItem[] = techStack.map((t) => ({
+    name: t.name,
+    logo: t.logo ?? '',
+    url: t.url ?? '',
+    textOnly: !t.logo,
+  }));
+
+  const itemsByGroup: Record<typeof groups[number]['key'], LogoItem[]> = {
+    enterprise: trustedBy.enterprise,
+    institutions: trustedBy.institutions,
+    tools: toolsFromTechStack,
+  };
+
   return (
     <section className="container mx-auto px-4 py-12 md:py-16">
       <motion.div {...headerMotion} className="mb-8 md:mb-10">
@@ -54,7 +69,7 @@ export function TrustedBySection() {
 
       <div className="space-y-8">
         {groups.map((g) => {
-          const items = trustedBy[g.key] as LogoItem[];
+          const items = itemsByGroup[g.key];
           const groupLabel = groupTitles[locale][g.key];
           return (
             <div key={g.key}>
@@ -65,14 +80,14 @@ export function TrustedBySection() {
                 {items.map((item) => {
                   const inner = item.textOnly ? (
                     <span
-                      className="inline-block px-3 py-2 rounded-md border border-[color:var(--border-primary)] bg-transparent text-caption text-[color:var(--text-secondary)] opacity-70 hover:opacity-100 transition-opacity duration-300"
+                      className="inline-block px-3 py-2 rounded-md border border-[color:var(--border-primary)] bg-transparent text-caption text-[color:var(--text-secondary)] hover:opacity-90 transition-opacity duration-300"
                       title={item.name}
                     >
                       {item.name}
                     </span>
                   ) : (
                     <div
-                      className="relative h-10 w-28 opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300"
+                      className="relative h-10 w-28 hover:scale-[1.04] transition-transform duration-300"
                       title={item.name}
                     >
                       <Image

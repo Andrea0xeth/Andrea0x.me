@@ -292,7 +292,7 @@ export const portfolioData: PortfolioData = {
             it: "Industry presence",
             en: "Industry presence",
           },
-          value: "Mandate rep · Gnosis Pay integration",
+          value: "Gnosis Pay",
         },
       ],
       tags: [
@@ -542,6 +542,7 @@ export const portfolioData: PortfolioData = {
     },
     {
       slug: "mandate",
+      link: "https://mandate.finance",
       title: "Mandate.Finance",
       domain: {
         it: "DeFi + AI agent layer",
@@ -659,7 +660,7 @@ export const portfolioData: PortfolioData = {
             it: "Componenti production-deployed",
             en: "Components production-deployed",
           },
-          value: "11 workspace · 6 Cloud Run service",
+          value: "11",
         },
         {
           label: {
@@ -750,7 +751,7 @@ export const portfolioData: PortfolioData = {
         "Custom stats service (Go + GCS)",
       ],
       pillarsTouched: ["traditional-dev", "ai-eng", "cloud-devops", "web3", "it-mgmt", "business"],
-      image: "/images/factor_studio.gif",
+      image: "/images/previews/mandate.jpg",
       featured: true,
     },
     {
@@ -850,14 +851,14 @@ export const portfolioData: PortfolioData = {
             it: "Use case pilota consumatori",
             en: "Consuming pilot use cases",
           },
-          value: "6 (Masterpiece Box · Regina Viarum · Risorse Culturali · Double Reality · Villa dei Papiri · BasiliCULT)",
+          value: "6",
         },
         {
           label: {
             it: "Piattaforme applicative RTI",
             en: "RTI application platforms",
           },
-          value: "3 (ArtCertify · Atlante Digitale · ARMedia)",
+          value: "3",
         },
         {
           label: {
@@ -1000,14 +1001,14 @@ export const portfolioData: PortfolioData = {
             it: "Periodo attivo",
             en: "Active period",
           },
-          value: "Feb 2024 – Apr 2026 (ongoing on Discover UI)",
+          value: "Feb 2024 – ora",
         },
         {
           label: {
             it: "Codebase principali",
             en: "Owned codebases",
           },
-          value: "Studio UI (~78k LOC) · Discover UI (~56k LOC) · MCP server (68 tool) · VaaS · Agent",
+          value: "~140k LOC",
         },
         {
           label: {
@@ -1069,7 +1070,7 @@ export const portfolioData: PortfolioData = {
         "i18next",
       ],
       pillarsTouched: ["traditional-dev", "web3", "ai-eng", "cloud-devops"],
-      image: "/images/factor_studio.gif",
+      image: "/images/previews/factor.jpg",
       link: "https://factor.fi/",
       featured: true,
     },
@@ -1739,8 +1740,8 @@ export const portfolioData: PortfolioData = {
         it: "Piattaforma DeFi AI-native: 11 workspace production-deployed in 5 settimane, multi-chain (stesso indirizzo CREATE2 su 3 chain), MCP gateway, gasless UX via EIP-7702 + ERC-7821.",
         en: "AI-native DeFi platform: 11 production-deployed workspaces in 5 weeks, multi-chain (same CREATE2 address on 3 chains), MCP gateway, gasless UX via EIP-7702 + ERC-7821.",
       },
-      image: "/images/factor_studio.gif",
-      gif: "/images/factor_studio.gif",
+      image: "/images/previews/mandate.jpg",
+      gif: null,
       categories: ["DeFi", "Web3", "AI", "Enterprise"],
       featured: true,
     },

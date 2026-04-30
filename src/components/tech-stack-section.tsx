@@ -93,7 +93,7 @@ export function TechStackSection() {
                             height={14}
                             loading="lazy"
                             decoding="async"
-                            className="h-3.5 w-3.5 grayscale opacity-70 transition group-hover:grayscale-0 group-hover:opacity-100"
+                            className="h-3.5 w-3.5 transition group-hover:scale-110"
                           />
                           {item.name}
                         </span>
