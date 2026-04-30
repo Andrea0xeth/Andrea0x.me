@@ -71,93 +71,123 @@ export function TrustedBySection() {
         {groups.map((g) => {
           const items = itemsByGroup[g.key];
           const groupLabel = groupTitles[locale][g.key];
-          // Tools row uses smaller tiles with name below; clients/institutions
-          // get the larger cell since logos are fewer and brand-recognition heavy.
           const isTools = g.key === 'tools';
+
           return (
             <div key={g.key}>
               <h3 className="text-tag text-[color:var(--text-secondary)] mb-5 text-center font-semibold">
                 {groupLabel}
               </h3>
-              <div
-                className={
-                  isTools
-                    ? 'grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2'
-                    : 'flex flex-wrap items-center justify-center gap-3'
-                }
-              >
-                {items.map((item) => {
-                  const inner = item.textOnly ? (
-                    <div
-                      className={
-                        isTools
-                          ? 'flex flex-col items-center justify-center gap-1.5 h-20 px-2 rounded-lg border border-[color:var(--border-primary)] bg-[color:var(--bg-secondary)] hover:bg-[color:var(--bg-tertiary)] transition-colors'
-                          : 'inline-flex items-center px-3 py-2 rounded-md border border-[color:var(--border-primary)] bg-transparent text-caption text-[color:var(--text-secondary)] hover:opacity-90 transition-opacity'
-                      }
-                      title={item.name}
-                    >
-                      {isTools ? (
-                        <>
-                          <div className="h-5 w-5 rounded-sm bg-[color:var(--bg-tertiary)]" aria-hidden />
-                          <span className="text-[10px] tracking-wide text-[color:var(--text-tertiary)] truncate w-full text-center">
-                            {item.name}
-                          </span>
-                        </>
+
+              {isTools ? (
+                // Infinite-scroll marquee for the (many) techStack tools.
+                // Items duplicated to enable seamless -50% translation.
+                <div
+                  className="relative overflow-hidden"
+                  style={{
+                    maskImage:
+                      'linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%)',
+                    WebkitMaskImage:
+                      'linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%)',
+                  }}
+                >
+                  <div
+                    className="flex items-center gap-10 animate-marquee"
+                    style={{ width: 'max-content' }}
+                  >
+                    {[...items, ...items].map((item, idx) => {
+                      const cell = item.textOnly ? (
+                        <span
+                          className="inline-flex items-center h-12 px-3 rounded-md border border-[color:var(--border-primary)] text-caption text-[color:var(--text-tertiary)] whitespace-nowrap"
+                          title={item.name}
+                        >
+                          {item.name}
+                        </span>
                       ) : (
-                        item.name
-                      )}
-                    </div>
-                  ) : isTools ? (
-                    <div
-                      className="flex flex-col items-center justify-center gap-1.5 h-20 px-2 rounded-lg border border-[color:var(--border-primary)] bg-[color:var(--bg-secondary)] hover:bg-[color:var(--bg-tertiary)] hover:border-[color:var(--accent-primary)]/30 transition-colors"
-                      title={item.name}
-                    >
-                      <div className="relative h-6 w-6 shrink-0">
+                        <div
+                          className="relative h-10 w-24 shrink-0"
+                          title={item.name}
+                        >
+                          <Image
+                            src={item.logo}
+                            alt={item.name}
+                            fill
+                            className="object-contain"
+                            sizes="96px"
+                          />
+                        </div>
+                      );
+
+                      return item.url ? (
+                        <a
+                          key={`${item.name}-${idx}`}
+                          href={item.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={item.name}
+                          aria-hidden={idx >= items.length}
+                          className="shrink-0 hover:opacity-80 transition-opacity"
+                          tabIndex={idx >= items.length ? -1 : 0}
+                        >
+                          {cell}
+                        </a>
+                      ) : (
+                        <span
+                          key={`${item.name}-${idx}`}
+                          aria-label={item.name}
+                          aria-hidden={idx >= items.length}
+                          className="shrink-0"
+                        >
+                          {cell}
+                        </span>
+                      );
+                    })}
+                  </div>
+                </div>
+              ) : (
+                <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
+                  {items.map((item) => {
+                    const inner = item.textOnly ? (
+                      <span
+                        className="inline-flex items-center px-3 py-2 rounded-md border border-[color:var(--border-primary)] bg-transparent text-caption text-[color:var(--text-secondary)] hover:opacity-90 transition-opacity"
+                        title={item.name}
+                      >
+                        {item.name}
+                      </span>
+                    ) : (
+                      <div
+                        className="relative h-10 w-28 hover:scale-[1.04] transition-transform duration-300"
+                        title={item.name}
+                      >
                         <Image
                           src={item.logo}
                           alt={item.name}
                           fill
                           className="object-contain"
-                          sizes="24px"
+                          sizes="112px"
                         />
                       </div>
-                      <span className="text-[10px] tracking-wide text-[color:var(--text-tertiary)] truncate w-full text-center">
-                        {item.name}
-                      </span>
-                    </div>
-                  ) : (
-                    <div
-                      className="relative h-10 w-28 hover:scale-[1.04] transition-transform duration-300"
-                      title={item.name}
-                    >
-                      <Image
-                        src={item.logo}
-                        alt={item.name}
-                        fill
-                        className="object-contain"
-                        sizes="112px"
-                      />
-                    </div>
-                  );
+                    );
 
-                  return item.url ? (
-                    <a
-                      key={item.name}
-                      href={item.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={item.name}
-                      className="block"
-                    >
-                      {inner}
-                    </a>
-                  ) : (
-                    <div key={item.name} aria-label={item.name}>
-                      {inner}
-                    </div>
-                  );
-                })}
-              </div>
+                    return item.url ? (
+                      <a
+                        key={item.name}
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={item.name}
+                        className="block"
+                      >
+                        {inner}
+                      </a>
+                    ) : (
+                      <div key={item.name} aria-label={item.name}>
+                        {inner}
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
             </div>
           );
         })}

@@ -213,6 +213,30 @@ body {
   font-weight: 500;
 }
 
+/* ---------------------------------------------------------------------------
+ * Marquee — infinite horizontal scroll for logo strips. Items must be
+ * duplicated 2x by the consumer so the -50% translate yields a seamless loop.
+ * ------------------------------------------------------------------------ */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 60s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}
+
 /* Print */
 @media print {
   body {

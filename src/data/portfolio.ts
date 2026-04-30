@@ -1984,9 +1984,9 @@ export const portfolioData: PortfolioData = {
       },
       {
         name: "DPass",
-        logo: "",
-        url: "",
-        textOnly: true,
+        logo: "/images/logos/dpass.png",
+        url: "https://www.dipendenze.gov.it/",
+        textOnly: false,
       },
     ],
     institutions: [
@@ -2046,14 +2046,14 @@ export const portfolioData: PortfolioData = {
     { name: "Claude Code", category: "ai", url: "https://www.anthropic.com/claude-code", logo: "/images/logos/anthropic.svg" },
     { name: "Cursor", category: "ai", url: "https://cursor.com/", logo: "/images/logos/tech/cursor.svg" },
     { name: "OMI", category: "ai", url: "https://www.omi.me/" },
-    { name: "DeepInfra", category: "ai", url: "https://deepinfra.com/" },
+    { name: "DeepInfra", category: "ai", url: "https://deepinfra.com/", logo: "/images/logos/tech/deepinfra.png" },
 
     // Web3 protocols
     { name: "AAVE", category: "web3", url: "https://aave.com/", logo: "/images/logos/aave.svg" },
     { name: "Morpho", category: "web3", url: "https://morpho.org/" },
-    { name: "Balancer", category: "web3", url: "https://balancer.fi/" },
+    { name: "Balancer", category: "web3", url: "https://balancer.fi/", logo: "/images/logos/tech/balancer.svg" },
     { name: "Factor SDK", category: "web3", url: "https://factor.fi/" },
-    { name: "LiFi", category: "web3", url: "https://li.fi/" },
+    { name: "LiFi", category: "web3", url: "https://li.fi/", logo: "/images/logos/tech/lifi.svg" },
     { name: "Privy", category: "web3", url: "https://www.privy.io/" },
     { name: "Algorand", category: "web3", url: "https://www.algorand.com/" },
     { name: "AlgoKit", category: "web3", url: "https://github.com/algorandfoundation/algokit" },
@@ -2134,8 +2134,8 @@ export const portfolioData: PortfolioData = {
         en: "Domains running in parallel",
       },
       caption: {
-        it: "Pharma B2B · DeFi · Government · Web3 · AI",
-        en: "Pharma B2B · DeFi · Government · Web3 · AI",
+        it: "Blockchain · Government · Web3 · AI · Logistics · Pharma B2B ",
+        en: "Blockchain · Government · Web3 · AI · Logistics · Pharma B2B ",
       },
     },
   ],
