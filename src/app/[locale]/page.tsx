@@ -45,8 +45,8 @@ export default async function Home({ params }: HomePageProps) {
 
   return (
     <div className="min-h-screen pb-24 md:pb-0 bg-[color:var(--bg-primary)]">
-      {/* Floating liquid-glass desktop header */}
-      <header className="hidden md:block sticky top-3 z-50 px-4 pointer-events-none">
+      {/* Floating liquid-glass desktop header (fixed, always-visible) */}
+      <header className="hidden md:block fixed top-3 left-0 right-0 z-50 px-4 pointer-events-none">
         <div
           className="container mx-auto pointer-events-auto rounded-2xl border shadow-lg"
           style={{
@@ -106,7 +106,7 @@ export default async function Home({ params }: HomePageProps) {
         </div>
       </header>
 
-      <main className="relative">
+      <main className="relative md:pt-20">
         <HeroSection locale={locale} />
 
         <StatsSection />
