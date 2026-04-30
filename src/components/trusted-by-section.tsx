@@ -1,9 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { useLocale } from 'next-intl';
-import { SectionHeader } from '@/components/ui/section-header';
 import { portfolioData } from '@/data/portfolio';
 import { motionPresets } from '@/lib/motion-presets';
 import { getMotionProps, useReducedMotion } from '@/lib/use-reduced-motion';
@@ -21,12 +19,6 @@ const groupTitles = {
   },
 } as const;
 
-const groups = [
-  { key: 'enterprise' as const },
-  { key: 'institutions' as const },
-  { key: 'tools' as const },
-];
-
 type LogoItem = {
   name: string;
   logo: string;
@@ -34,6 +26,63 @@ type LogoItem = {
   url: string;
   textOnly?: boolean;
 };
+
+interface LogoProps {
+  item: LogoItem;
+  size?: 'sm' | 'md';
+}
+
+function Logo({ item, size = 'md' }: LogoProps) {
+  const heightClass = size === 'sm' ? 'h-7' : 'h-9';
+
+  if (item.textOnly) {
+    return (
+      <span
+        className={`inline-flex items-center ${heightClass} px-3 text-caption text-[color:var(--text-tertiary)] whitespace-nowrap logo-tooltip`}
+        data-tooltip={item.name}
+      >
+        {item.name}
+      </span>
+    );
+  }
+
+  const baseImg =
+    `${heightClass} w-auto max-w-[140px] object-contain opacity-80 hover:opacity-100 transition-opacity duration-200`;
+
+  return (
+    <span className="logo-tooltip inline-block" data-tooltip={item.name}>
+      {item.logoLight ? (
+        <>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={item.logo}
+            alt={item.name}
+            className={`theme-dark-only ${baseImg}`}
+            loading="lazy"
+            decoding="async"
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={item.logoLight}
+            alt={item.name}
+            className={`theme-light-only ${baseImg}`}
+            loading="lazy"
+            decoding="async"
+          />
+        </>
+      ) : (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={item.logo}
+          alt={item.name}
+          className={baseImg}
+          loading="lazy"
+          decoding="async"
+        />
+      )}
+    </span>
+  );
+}
 
 export function TrustedBySection() {
   const { trustedBy, techStack } = portfolioData;
@@ -47,9 +96,7 @@ export function TrustedBySection() {
       ? 'Clienti, istituzioni e strumenti selezionati tra pharma, settore pubblico e Web3.'
       : 'Selected clients, institutions, and tools across pharma, public sector and Web3.';
 
-  // The "tools" group is derived from the canonical techStack list — every
-  // tool that has a logo appears here as a logo, the rest as text chips.
-  const toolsFromTechStack: LogoItem[] = techStack.map((t) => ({
+  const tools: LogoItem[] = techStack.map((t) => ({
     name: t.name,
     logo: t.logo ?? '',
     logoLight: t.logoLight,
@@ -57,167 +104,121 @@ export function TrustedBySection() {
     textOnly: !t.logo,
   }));
 
-  const itemsByGroup: Record<typeof groups[number]['key'], LogoItem[]> = {
-    enterprise: trustedBy.enterprise,
-    institutions: trustedBy.institutions,
-    tools: toolsFromTechStack,
-  };
-
   return (
-    <section className="container mx-auto px-4 py-12 md:py-16">
-      <motion.div {...headerMotion} className="mb-8 md:mb-10">
-        <SectionHeader title={title} summary={summary} align="center" className="mx-auto" />
+    <section className="container mx-auto px-4 py-16 md:py-24">
+      <motion.div {...headerMotion} className="text-center mb-12 md:mb-16">
+        <h2 className="text-h2 text-[color:var(--text-primary)] mb-2">{title}</h2>
+        <p className="text-caption text-[color:var(--text-tertiary)] max-w-xl mx-auto">
+          {summary}
+        </p>
       </motion.div>
 
-      <div className="space-y-10">
-        {groups.map((g) => {
-          const items = itemsByGroup[g.key];
-          const groupLabel = groupTitles[locale][g.key];
-          const isTools = g.key === 'tools';
-
-          return (
-            <div key={g.key}>
-              <h3 className="text-tag text-[color:var(--text-secondary)] mb-5 text-center font-semibold">
-                {groupLabel}
-              </h3>
-
-              {isTools ? (
-                // Infinite-scroll marquee for the (many) techStack tools.
-                // Items duplicated to enable seamless -50% translation.
-                <div
-                  className="relative"
-                  style={{
-                    overflowX: 'hidden',
-                    overflowY: 'visible',
-                    paddingTop: 28, // room for tooltip popup
-                    paddingBottom: 8,
-                    maskImage:
-                      'linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%)',
-                    WebkitMaskImage:
-                      'linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%)',
-                  }}
+      <div className="space-y-14 md:space-y-16">
+        {/* Enterprise Clients — flat row, generous spacing */}
+        <motion.div {...headerMotion}>
+          <h3 className="text-tag text-[color:var(--text-tertiary)] text-center mb-8 font-semibold">
+            {groupTitles[locale].enterprise}
+          </h3>
+          <div className="flex flex-wrap items-center justify-center gap-x-14 gap-y-8">
+            {trustedBy.enterprise.map((item) =>
+              item.url ? (
+                <a
+                  key={item.name}
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={item.name}
+                  className="inline-flex items-center"
                 >
-                  <div
-                    className="flex items-center gap-10 animate-marquee"
-                    style={{ width: 'max-content' }}
-                  >
-                    {[...items, ...items].map((item, idx) => {
-                      const cell = item.textOnly ? (
-                        <span
-                          className="inline-flex items-center h-12 px-3 rounded-md border border-[color:var(--border-primary)] text-caption text-[color:var(--text-tertiary)] whitespace-nowrap logo-tooltip"
-                          data-tooltip={item.name}
-                        >
-                          {item.name}
-                        </span>
-                      ) : (
-                        <div
-                          className="relative h-12 w-28 shrink-0 logo-tile logo-tooltip flex items-center justify-center px-3 py-2"
-                          data-tooltip={item.name}
-                        >
-                          {item.logoLight ? (
-                            <>
-                              <Image
-                                src={item.logo}
-                                alt={item.name}
-                                fill
-                                className="object-contain theme-dark-only"
-                                sizes="96px"
-                              />
-                              <Image
-                                src={item.logoLight}
-                                alt={item.name}
-                                fill
-                                className="object-contain theme-light-only"
-                                sizes="96px"
-                              />
-                            </>
-                          ) : (
-                            <Image
-                              src={item.logo}
-                              alt={item.name}
-                              fill
-                              className="object-contain"
-                              sizes="96px"
-                            />
-                          )}
-                        </div>
-                      );
-
-                      return item.url ? (
-                        <a
-                          key={`${item.name}-${idx}`}
-                          href={item.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={item.name}
-                          aria-hidden={idx >= items.length}
-                          className="shrink-0 hover:opacity-80 transition-opacity"
-                          tabIndex={idx >= items.length ? -1 : 0}
-                        >
-                          {cell}
-                        </a>
-                      ) : (
-                        <span
-                          key={`${item.name}-${idx}`}
-                          aria-label={item.name}
-                          aria-hidden={idx >= items.length}
-                          className="shrink-0"
-                        >
-                          {cell}
-                        </span>
-                      );
-                    })}
-                  </div>
-                </div>
+                  <Logo item={item} />
+                </a>
               ) : (
-                <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
-                  {items.map((item) => {
-                    const inner = item.textOnly ? (
-                      <span
-                        className="inline-flex items-center px-3 py-2 rounded-md border border-[color:var(--border-primary)] bg-transparent text-caption text-[color:var(--text-secondary)] hover:opacity-90 transition-opacity logo-tooltip"
-                        data-tooltip={item.name}
-                      >
-                        {item.name}
-                      </span>
-                    ) : (
-                      <div
-                        className="relative h-14 w-32 hover:scale-[1.04] transition-transform duration-300 logo-tile logo-tooltip flex items-center justify-center px-4 py-2.5"
-                        data-tooltip={item.name}
-                      >
-                        <div className="relative w-full h-full">
-                          <Image
-                            src={item.logo}
-                            alt={item.name}
-                            fill
-                            className="object-contain"
-                            sizes="128px"
-                          />
-                        </div>
-                      </div>
-                    );
+                <span key={item.name} className="inline-flex items-center" aria-label={item.name}>
+                  <Logo item={item} />
+                </span>
+              )
+            )}
+          </div>
+        </motion.div>
 
-                    return item.url ? (
-                      <a
-                        key={item.name}
-                        href={item.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={item.name}
-                        className="block"
-                      >
-                        {inner}
-                      </a>
-                    ) : (
-                      <div key={item.name} aria-label={item.name}>
-                        {inner}
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
+        {/* Public Sector & Institutions */}
+        <motion.div {...headerMotion}>
+          <h3 className="text-tag text-[color:var(--text-tertiary)] text-center mb-8 font-semibold">
+            {groupTitles[locale].institutions}
+          </h3>
+          <div className="flex flex-wrap items-center justify-center gap-x-14 gap-y-8">
+            {trustedBy.institutions.map((item) =>
+              item.url ? (
+                <a
+                  key={item.name}
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={item.name}
+                  className="inline-flex items-center"
+                >
+                  <Logo item={item} />
+                </a>
+              ) : (
+                <span key={item.name} className="inline-flex items-center" aria-label={item.name}>
+                  <Logo item={item} />
+                </span>
+              )
+            )}
+          </div>
+        </motion.div>
+
+        {/* Built With — infinite marquee, single row, dense */}
+        <motion.div {...headerMotion}>
+          <h3 className="text-tag text-[color:var(--text-tertiary)] text-center mb-8 font-semibold">
+            {groupTitles[locale].tools}
+          </h3>
+          <div
+            className="relative"
+            style={{
+              overflowX: 'hidden',
+              overflowY: 'visible',
+              paddingTop: 28,
+              paddingBottom: 8,
+              maskImage:
+                'linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%)',
+              WebkitMaskImage:
+                'linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%)',
+            }}
+          >
+            <div
+              className="flex items-center gap-12 animate-marquee"
+              style={{ width: 'max-content' }}
+            >
+              {[...tools, ...tools].map((item, idx) => {
+                const dup = idx >= tools.length;
+                return item.url ? (
+                  <a
+                    key={`${item.name}-${idx}`}
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={item.name}
+                    aria-hidden={dup}
+                    tabIndex={dup ? -1 : 0}
+                    className="shrink-0 inline-flex items-center"
+                  >
+                    <Logo item={item} size="sm" />
+                  </a>
+                ) : (
+                  <span
+                    key={`${item.name}-${idx}`}
+                    aria-label={item.name}
+                    aria-hidden={dup}
+                    className="shrink-0 inline-flex items-center"
+                  >
+                    <Logo item={item} size="sm" />
+                  </span>
+                );
+              })}
             </div>
-          );
-        })}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

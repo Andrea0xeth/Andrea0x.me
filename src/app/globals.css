@@ -218,20 +218,9 @@ body {
  * `.logo-tile` adds a subtle theme-aware drop shadow.
  * `.logo-tooltip` shows the value of `data-tooltip` on hover/focus.
  * ------------------------------------------------------------------------ */
-/* `.logo-tile` is the card backdrop applied to every logo cell. A subtle
- * surface fill + 1px border neutralises the page bg so black logos read on
- * dark theme and pale logos read on light theme without nuking brand colour.
- * No filter glow — that read as "cheap". */
-.logo-tile {
-  background-color: color-mix(in srgb, var(--bg-secondary) 75%, transparent);
-  border: 1px solid color-mix(in srgb, var(--border-primary) 60%, transparent);
-  border-radius: 8px;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
-}
-.logo-tile:hover {
-  background-color: color-mix(in srgb, var(--bg-tertiary) 80%, transparent);
-  border-color: color-mix(in srgb, var(--accent-primary) 35%, transparent);
-}
+/* `.logo-tile` retired — logos render naked, no card backdrop.
+ * Visibility on dark bg comes from minor brightness boost on monochrome logos
+ * (handled at component level) and from logoLight pairs where available. */
 
 .logo-tooltip {
   position: relative;
