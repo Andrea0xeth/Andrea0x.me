@@ -27,7 +27,7 @@ export function CVDownloadButton({
   const text = label ?? LABELS[locale];
 
   const baseClasses =
-    'relative overflow-hidden rounded-full font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500/50 inline-flex items-center justify-center px-5 py-2.5 text-sm';
+    'relative overflow-hidden rounded-full font-medium transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-primary)] inline-flex items-center justify-center px-5 py-2.5 text-sm';
 
   const variantClasses: Record<NonNullable<CVDownloadButtonProps['variant']>, string> = {
     primary:
@@ -45,12 +45,6 @@ export function CVDownloadButton({
       className={cn(baseClasses, variantClasses[variant], className)}
       aria-label={text}
     >
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-        initial={{ x: '-100%' }}
-        whileHover={{ x: '100%' }}
-        transition={{ duration: 0.6 }}
-      />
       <span className="relative z-10 flex items-center gap-2">
         <Download className="h-4 w-4" aria-hidden="true" />
         {text}

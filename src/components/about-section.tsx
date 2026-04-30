@@ -22,12 +22,21 @@ interface AboutSectionProps {
  */
 export async function AboutSection({ locale }: AboutSectionProps) {
   const t = await getTranslations({ locale, namespace: 'about' });
+  const tSkills = await getTranslations({ locale, namespace: 'skills' });
   const { personal, social, taglines, languages, education } = portfolioData;
 
   const longBioParagraphs = personal.longBio[locale]
     .split(/\n\n+/)
     .map((p) => p.trim())
     .filter(Boolean);
+
+  const proficiencyLabel = (level: number): string => {
+    if (level >= 100) return tSkills('proficiency.native');
+    if (level >= 80) return tSkills('proficiency.fluent');
+    if (level >= 50) return tSkills('proficiency.professional');
+    if (level >= 25) return tSkills('proficiency.basic');
+    return tSkills('proficiency.beginner');
+  };
 
   return (
     <div className="container mx-auto px-4 py-12 md:py-20">
@@ -114,32 +123,18 @@ export async function AboutSection({ locale }: AboutSectionProps) {
         <h2 className="text-h2 text-[color:var(--text-primary)] mb-6">
           {t('languages')}
         </h2>
-        <ul className="flex flex-col gap-3 max-w-md">
+        <ul className="flex flex-col gap-2 max-w-md">
           {languages.map((lang) => (
             <li
               key={lang.name}
-              className="flex items-center justify-between gap-4"
+              className="flex items-baseline justify-between gap-4"
             >
               <span className="text-body text-[color:var(--text-primary)]">
                 {lang.name}
               </span>
-              <div className="flex items-center gap-3 flex-1 max-w-[60%]">
-                <div
-                  className="h-1 flex-1 rounded-full overflow-hidden"
-                  style={{ backgroundColor: 'var(--bg-secondary)' }}
-                >
-                  <div
-                    className="h-full rounded-full"
-                    style={{
-                      width: `${lang.level}%`,
-                      backgroundColor: 'var(--accent-primary)',
-                    }}
-                  />
-                </div>
-                <span className="metric text-[13px] leading-[20px] text-[color:var(--text-tertiary)] w-10 text-right">
-                  {lang.level}%
-                </span>
-              </div>
+              <span className="text-tag text-[color:var(--text-tertiary)] uppercase tracking-wide">
+                {proficiencyLabel(lang.level)}
+              </span>
             </li>
           ))}
         </ul>

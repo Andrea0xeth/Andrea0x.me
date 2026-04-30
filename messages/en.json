@@ -1,19 +1,13 @@
 {
   "nav": {
-    "bookCall": "Book a Call",
-    "downloadCV": "Download CV",
-    "theme": "Theme",
-    "language": "Language"
+    "bookCall": "Book a Call"
   },
-  "common": {
-    "followMe": "Follow Me",
-    "scheduleCall": "Schedule a Call",
-    "email": "Email",
-    "telegram": "Telegram"
+  "notFound": {
+    "title": "Page not found",
+    "body": "The page you're looking for doesn't exist or has been moved.",
+    "cta": "Back home"
   },
   "home": {
-    "heroTitle": "I'm",
-    "heroSubtitle": "Blockchain Product Manager & Web3 Specialist",
     "matrix": {
       "whatIDo": {
         "title": "What I do",
@@ -33,20 +27,7 @@
     }
   },
   "hero": {
-    "followMe": "Follow Me",
-    "scheduleCall": "Schedule a call",
-    "downloadCV": "Download CV"
-  },
-  "sections": {
-    "expertise": "Expertise",
-    "portfolio": "Portfolio",
-    "experience": "Experience",
-    "skills": "Skills",
-    "trustedBy": "Trusted By",
-    "collaborations": "Collaborations",
-    "techStack": "Tech Stack",
-    "services": "Services",
-    "contact": "Contact"
+    "followMe": "Follow Me"
   },
   "services": {
     "heroTitle": "Fractional CTO & Technical Architect",
@@ -63,7 +44,6 @@
     }
   },
   "about": {
-    "title": "About — Andrea Ritondale",
     "languages": "Languages",
     "education": "Education",
     "quickFacts": "Quick facts",
@@ -79,13 +59,13 @@
       "title": "Recruiter / Hiring Manager",
       "body": "Looking to hire engineering talent?",
       "ctaPrimary": "View resume",
-      "ctaSecondary": "Read about"
+      "ctaSecondary": "About me"
     },
     "card2": {
-      "title": "Founder / Co-founder seek",
+      "title": "Founder / Looking for a co-founder",
       "body": "Building a startup? Need a technical co-founder or founding engineer?",
       "ctaPrimary": "Reach out",
-      "ctaSecondary": "Read about"
+      "ctaSecondary": "About me"
     },
     "card3": {
       "title": "Consulting / Fractional CTO client",
@@ -107,14 +87,6 @@
     "summary": "A journey through software, AI, blockchain and decentralized technologies.",
     "work": "Work Experience",
     "education": "Education"
-  },
-  "mobileTabs": {
-    "tab": {
-      "expertise": "Expertise",
-      "portfolio": "Portfolio",
-      "experience": "Experience",
-      "skills": "Skills"
-    }
   },
   "caseStudy": {
     "readMore": "Read case study",

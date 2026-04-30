@@ -1,5 +1,6 @@
 import { setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
+import Link from 'next/link';
 import { Calendar, Mail, MessageCircle } from 'lucide-react';
 import { notFound } from 'next/navigation';
 
@@ -44,7 +45,7 @@ export default async function Home({ params }: HomePageProps) {
   const { social, personal } = portfolioData;
 
   return (
-    <div className="min-h-screen bg-[color:var(--bg-primary)]">
+    <div className="min-h-screen pb-24 md:pb-0 bg-[color:var(--bg-primary)]">
       {/* Sticky desktop header */}
       <header className="hidden md:block sticky top-0 z-50 backdrop-blur-md border-b border-[color:var(--border-primary)]/60 bg-[color:var(--bg-primary)]/80">
         <div className="container mx-auto px-4 py-3 flex items-center justify-between gap-4">
@@ -56,6 +57,27 @@ export default async function Home({ params }: HomePageProps) {
               · {personal.handle}
             </span>
           </div>
+
+          <nav className="hidden md:flex items-center space-x-6">
+            <Link
+              href={`/${locale}/work`}
+              className="text-caption text-[color:var(--text-tertiary)] hover:text-[color:var(--text-primary)] transition-colors"
+            >
+              {locale === 'it' ? 'Lavori' : 'Work'}
+            </Link>
+            <Link
+              href={`/${locale}/about`}
+              className="text-caption text-[color:var(--text-tertiary)] hover:text-[color:var(--text-primary)] transition-colors"
+            >
+              {locale === 'it' ? 'Chi sono' : 'About'}
+            </Link>
+            <Link
+              href={`/${locale}/services`}
+              className="text-caption text-[color:var(--text-tertiary)] hover:text-[color:var(--text-primary)] transition-colors"
+            >
+              {locale === 'it' ? 'Servizi' : 'Services'}
+            </Link>
+          </nav>
 
           <div className="flex items-center gap-3">
             <LanguageSwitcher />

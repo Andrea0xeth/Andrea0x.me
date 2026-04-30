@@ -22,7 +22,7 @@ export const portfolioData: PortfolioData = {
     },
     longBio: {
       it: "Sono Andrea — imprenditore tecnico ibrido. Principal Engineer + IT Architect + AI Builder, con ownership end-to-end di sistemi IT complessi su domini multipli.\n\nTraditional software development: 6+ anni di full-stack senior. Su Haelias sono Solo CTO di una piattaforma B2B di procurement digitale per farmacie italiane in produzione attiva, con 5.5M+ documenti MongoDB, 30k+ prodotti multi-tenant, clienti enterprise come Montefarmaco e Logista SPA. Stack: React 19 + Node + Rust + MongoDB + DigitalOcean. Caso emblematico: riduzione 70% size indici in produzione live (1.69 GB -> 369 MB) evitando un upgrade da +€1.260/anno.\n\nAI engineering: su Mandate.Finance sono Founding Product Engineer e Technical Co-founder. Ho costruito un sistema con 11 componenti microservizi (ui, backend, agent-executor, agent-tester, mcp-gateway, signing-service, jobs, contracts, landing, infra, docs). Architettura multi-agent (evaluator/researcher/manager/executor) con memoria a lungo termine, MCP gateway per l'integrazione LLM<->blockchain, parsing LLM di documenti per data ingestion.\n\nAI-native workflow: tratto Claude Code come moltiplicatore strategico — multi-agent parallel dispatch, code review automation, multi-repo deploy orchestration, conversation->PRD pipeline. Top-decile workflow.\n\nCloud / DevOps: gestisco infrastructure su due piattaforme (GCP per Mandate, DigitalOcean per Haelias) senza supporto DevOps dedicato. Cloud Run, Cloud SQL private + VPC, Secret Manager, App Platform, Managed MongoDB, Vercel, Netlify, Docker. Runbook self-authored.\n\nWeb3 / Blockchain: smart contract integration multi-chain (Ethereum, Base, Arbitrum), ERC-4626, EIP-7702, account abstraction, cross-chain via LiFi, integrazione protocolli (AAVE, Morpho, Balancer, Factor SDK).\n\nIT management & digitalizzazione: trasformo workflow tradizionali in flussi digitali end-to-end. Coordino team distribuiti su più progetti in parallelo.\n\nBusiness strategy: revenue modeling Excel, SWOT, business plan, cap table, fundraising, pitch deck, GTM strategy.\n\nSu DPass / PNRR sono architect e proposal lead di 6 blockchain data product per MIC e Invitalia, coordinando un team multi-disciplinare.\n\nNon sono un PM che delega il tech, né un dev che ignora il business. Sono uno dei pochi che può disegnare un sistema, costruirlo, gestirne la complessità IT e poi venderlo. Italiano nativo, lavoro con team internazionali in inglese.",
-      en: "I'm Andrea — a hybrid technical founder. Principal Engineer + IT Architect + AI Builder, with end-to-end ownership of complex IT systems across multiple domains.\n\nTraditional software development: 6+ years of senior full-stack work. On Haelias I'm Solo CTO of a B2B digital procurement platform for Italian pharmacies, live in production with 5.5M+ MongoDB documents, 30k+ multi-tenant products, and enterprise clients like Montefarmaco and Logista SPA. Stack: React 19 + Node + Rust + MongoDB + DigitalOcean. A representative case: a 70% reduction in index footprint on the live cluster (1.69 GB -> 369 MB), avoiding a €1,260/year upgrade.\n\nAI engineering: on Mandate.Finance I'm Founding Product Engineer and Technical Co-founder. I built a system with 11 microservice components (ui, backend, agent-executor, agent-tester, mcp-gateway, signing-service, jobs, contracts, landing, infra, docs). Multi-agent architecture (evaluator/researcher/manager/executor) with long-term memory, MCP gateway bridging LLMs and blockchain tools, and LLM-based document parsing for data ingestion.\n\nAI-native workflow: I treat Claude Code as a strategic multiplier — multi-agent parallel dispatch, code-review automation, multi-repo deploy orchestration, conversation-to-PRD pipeline. Top-decile workflow.\n\nCloud / DevOps: I run infrastructure across two platforms (GCP for Mandate, DigitalOcean for Haelias) without dedicated DevOps support. Cloud Run, Cloud SQL private + VPC, Secret Manager, App Platform, Managed MongoDB, Vercel, Netlify, Docker. Self-authored runbooks.\n\nWeb3 / Blockchain: multi-chain smart-contract integration (Ethereum, Base, Arbitrum), ERC-4626, EIP-7702, account abstraction, cross-chain via LiFi, protocol integrations (AAVE, Morpho, Balancer, Factor SDK).\n\nIT management & digitalization: I turn traditional workflows into end-to-end digital flows and coordinate distributed teams across several parallel projects.\n\nBusiness strategy: Excel revenue modeling, SWOT, business plan, cap table, fundraising, pitch deck, GTM.\n\nOn DPass / PNRR I'm architect and proposal lead for 6 blockchain data products for MIC and Invitalia, coordinating a multi-disciplinary team.\n\nI'm not a PM who delegates the tech, nor a dev who ignores the business. I'm one of the few who can design a system, build it, run its IT complexity and then sell it. Italian native; I work with international teams in English.",
+      en: "I'm Andrea — a hybrid technical founder. Principal Engineer + IT Architect + AI Builder, with end-to-end ownership of complex IT systems across multiple domains.\n\nTraditional software development: 6+ years of senior full-stack work. On Haelias I'm the Solo CTO of a B2B digital procurement platform for Italian pharmacies, running in production with 5.5M+ MongoDB documents, 30k+ multi-tenant products, and enterprise clients like Montefarmaco and Logista SPA. Stack: React 19 + Node + Rust + MongoDB + DigitalOcean. A flagship example: a 70% reduction in index footprint on the live cluster (1.69 GB -> 369 MB), avoiding a €1,260/year cluster upgrade.\n\nAI engineering: on Mandate.Finance I'm the Founding Product Engineer and Technical Co-founder. I built a system with 11 microservice components (ui, backend, agent-executor, agent-tester, mcp-gateway, signing-service, jobs, contracts, landing, infra, docs). Multi-agent architecture (evaluator/researcher/manager/executor) with long-term memory, MCP gateway bridging LLMs and blockchain tools, and LLM-based document parsing for data ingestion.\n\nAI-native workflow: I treat Claude Code as a strategic multiplier — multi-agent parallel dispatch, code-review automation, multi-repo deploy orchestration, conversation-to-PRD pipeline. Top-decile workflow.\n\nCloud / DevOps: I run infrastructure across two platforms (GCP for Mandate, DigitalOcean for Haelias) without dedicated DevOps support. Cloud Run, Cloud SQL private + VPC, Secret Manager, App Platform, Managed MongoDB, Vercel, Netlify, Docker. Self-authored runbooks.\n\nWeb3 / Blockchain: multi-chain smart-contract integration (Ethereum, Base, Arbitrum), ERC-4626, EIP-7702, account abstraction, cross-chain via LiFi, protocol integrations (AAVE, Morpho, Balancer, Factor SDK).\n\nIT management & digitalization: I turn traditional workflows into end-to-end digital flows and coordinate distributed teams across several parallel projects.\n\nBusiness strategy: Excel revenue modeling, SWOT, business plan, cap table, fundraising, pitch deck, GTM.\n\nOn DPass / PNRR I'm the architect and proposal lead for 6 blockchain data products for MIC and Invitalia, coordinating a multi-disciplinary team.\n\nI'm not a PM who delegates the tech, nor a dev who ignores the business. I'm one of the few who can design a system, build it, manage the IT complexity and then sell it. Italian native; I work with international teams in English.",
     },
     avatarReal: "/images/me.jpg",
     avatarAnon: "/images/miladi.png",
@@ -34,7 +34,7 @@ export const portfolioData: PortfolioData = {
     linkedin: "https://it.linkedin.com/in/andrea-ritondale",
     twitter: "https://x.com/andrea0x_eth",
     github: "https://github.com/Andrea0xeth?tab=repositories",
-    discord: "andrea0x.eth#0001",
+    discord: "andrea0x.eth",
     mirror: "https://mirror.xyz/andrea0x.eth",
     calendly: "https://calendly.com/andrea0x_eth",
   },
@@ -48,7 +48,7 @@ export const portfolioData: PortfolioData = {
       it: [
         "Principal Engineer & IT Architect",
         "AI Builder — multi-agent, MCP, LLM integration",
-        "Founding Engineer @ Mandate.Finance",
+        "Founding Product Engineer @ Mandate.Finance",
         "Solo CTO @ Haelias — 5.5M+ documenti in produzione",
         "Architetto blockchain data products per il settore pubblico",
         "Cloud ops senza DevOps dedicato — GCP + DigitalOcean",
@@ -57,7 +57,7 @@ export const portfolioData: PortfolioData = {
       en: [
         "Principal Engineer & IT Architect",
         "AI Builder — multi-agent, MCP, LLM integration",
-        "Founding Engineer @ Mandate.Finance",
+        "Founding Product Engineer @ Mandate.Finance",
         "Solo CTO @ Haelias — 5.5M+ docs in production",
         "Blockchain data products for the public sector",
         "Cloud ops without dedicated DevOps — GCP + DigitalOcean",
@@ -78,7 +78,7 @@ export const portfolioData: PortfolioData = {
       },
       summary: {
         it: "Full-stack senior+ con production ownership: scrivo specifiche, architetto, deploy e mantengo.",
-        en: "Senior+ full-stack with production ownership: I write the spec, architect, deploy and maintain.",
+        en: "Senior+ full-stack with production ownership: I write specs, design the architecture, deploy and maintain.",
       },
       metrics: [
         {
@@ -268,7 +268,7 @@ export const portfolioData: PortfolioData = {
       },
       summary: {
         it: "Revenue modeling, GTM, fundraising e business plan: tech con attitudine imprenditoriale.",
-        en: "Revenue modeling, GTM, fundraising and business plans — tech with founder mindset.",
+        en: "Revenue modeling, GTM, fundraising and business plans — tech with a founder mindset.",
       },
       metrics: [
         {
@@ -420,7 +420,7 @@ export const portfolioData: PortfolioData = {
         "Resend",
       ],
       pillarsTouched: ["traditional-dev", "cloud-devops", "it-mgmt"],
-      image: "/images/logos/montefarmaco.svg",
+      image: "/images/logos/montefarmaco.png",
       featured: true,
     },
     {
@@ -442,7 +442,7 @@ export const portfolioData: PortfolioData = {
       },
       architecture: {
         it: "Monorepo con 11 componenti (ui, backend, agent-executor, agent-tester, mcp-gateway, signing-service, jobs, contracts, landing, infra, docs). Architettura multi-agent (evaluator + researcher + manager + executor) con memoria a lungo termine. MCP gateway separa il ragionamento (LLM) dalle letture on-chain dal signing-service che esegue le scritture. Smart contracts in Foundry, multi-chain Ethereum + Base + Arbitrum, cross-chain via LiFi. Cloud Run + Cloud SQL privato + VPC + Secret Manager su GCP.",
-        en: "Monorepo with 11 components (ui, backend, agent-executor, agent-tester, mcp-gateway, signing-service, jobs, contracts, landing, infra, docs). Multi-agent architecture (evaluator + researcher + manager + executor) with long-term memory. The MCP gateway separates reasoning (LLM) from on-chain reads, with the signing-service handling writes. Foundry smart contracts, multi-chain across Ethereum + Base + Arbitrum, cross-chain via LiFi. GCP infra: Cloud Run + private Cloud SQL + VPC + Secret Manager.",
+        en: "Monorepo with 11 components (ui, backend, agent-executor, agent-tester, mcp-gateway, signing-service, jobs, contracts, landing, infra, docs). Multi-agent architecture (evaluator + researcher + manager + executor) with long-term memory. The MCP gateway separates reasoning (LLM) from on-chain reads, while the signing-service handles writes. Foundry smart contracts, multi-chain across Ethereum + Base + Arbitrum, cross-chain via LiFi. GCP infra: Cloud Run + private Cloud SQL + VPC + Secret Manager.",
       },
       decisions: [
         {
@@ -452,7 +452,7 @@ export const portfolioData: PortfolioData = {
           },
           body: {
             it: "Astrazione multi-provider (DeepInfra/Gemma per costi, OpenRouter come backup, Anthropic premium). Gemma scelto per agent autonomi: cost-driven, non capability-driven. DeepInfra ~3x più economico di OpenRouter.",
-            en: "Multi-provider abstraction (DeepInfra/Gemma for cost, OpenRouter as backup, Anthropic premium). Gemma was a cost-driven choice for autonomous agents, not a capability one. DeepInfra is ~3x cheaper than OpenRouter.",
+            en: "Multi-provider abstraction (DeepInfra/Gemma for cost, OpenRouter as backup, Anthropic premium). Gemma was the choice for autonomous agents: cost-driven, not capability-driven. DeepInfra is ~3x cheaper than OpenRouter.",
           },
         },
         {
@@ -563,7 +563,7 @@ export const portfolioData: PortfolioData = {
       clients: ["MIC – Ministero della Cultura", "Invitalia", "PNRR"],
       problem: {
         it: "Il PNRR italiano ha bisogno di prodotti dati basati su blockchain integrati con l'identity governativa (IPAC, ArchCertify, OAuth2). Servono proposte tecniche solide, capacità di interfacciarsi con autorità pubbliche e team multi-disciplinari.",
-        en: "The Italian PNRR needs blockchain-based data products integrated with government identity (IPAC, ArchCertify, OAuth2). It requires solid technical proposals, the ability to engage public authorities, and cross-functional team coordination.",
+        en: "The Italian PNRR needs blockchain-based data products integrated with government identity (IPAC, ArchCertify, OAuth2). It requires solid technical proposals, the ability to interface with public authorities, and multi-disciplinary team coordination.",
       },
       architecture: {
         it: "DPass API e piattaforma per costruire prodotti su infrastruttura pubblica blockchain. IPAC certification + ArchCertify integration come livello di trust governativo. OAuth2 governativo per identity management con autorità pubbliche. Coordinamento di team deliverable (Marco, Serena, Flavio, Gianluca) lato proposal e architecture.",
@@ -817,7 +817,7 @@ export const portfolioData: PortfolioData = {
       period: "2020 – 10/2022",
       description: {
         it: "Voto: 110 e lode. Tesi: 'Decentralized Autonomous Organization — Modello di governance sovranazionale in Blockchain'.",
-        en: "Grade: 110 cum Laude. Dissertation: 'Decentralized Autonomous Organization — A supranational governance model in Blockchain'.",
+        en: "Grade: 110/110 cum laude. Dissertation: 'Decentralized Autonomous Organization — A supranational governance model in Blockchain'.",
       },
       link: "https://www.researchgate.net/publication/365354831_DAO_Decentralized_Autonomous_Organization_Modello_sovranazionale_di_Corporate_Governance_in_blockchain",
     },
@@ -1020,7 +1020,7 @@ export const portfolioData: PortfolioData = {
       },
       items: [
         "Process Mapping",
-        "Workflow Digitization",
+        "Workflow Digitalization",
         "State Machine Design",
         "Audit Trail",
         "Self-service UX",
@@ -1329,7 +1329,7 @@ export const portfolioData: PortfolioData = {
         it: "B2B SaaS pharma in produzione: 5.5M+ documenti MongoDB, 30k+ prodotti multi-tenant, clienti enterprise (Montefarmaco, Logista SPA).",
         en: "Production B2B pharma SaaS: 5.5M+ MongoDB documents, 30k+ multi-tenant products, enterprise clients (Montefarmaco, Logista SPA).",
       },
-      image: "/images/logos/montefarmaco.svg",
+      image: "/images/logos/montefarmaco.png",
       gif: null,
       categories: ["B2B SaaS", "Enterprise", "Web2", "AI"],
       featured: true,
@@ -1418,7 +1418,7 @@ export const portfolioData: PortfolioData = {
       title: "Kwentize",
       description: {
         it: "PFP customiser di Kwenta.io.",
-        en: "Kwenta.io PFP customiser.",
+        en: "Kwenta.io PFP customizer.",
       },
       image: "/images/kwentize.jpg",
       gif: "/images/kwentize.gif",
@@ -1473,7 +1473,7 @@ export const portfolioData: PortfolioData = {
       title: "FNDapp",
       description: {
         it: "Assistente di shopping online con integrazione Web3 in lavorazione.",
-        en: "Free online shopping assistant with in-progress Web3 integration.",
+        en: "Online shopping assistant with in-progress Web3 integration.",
       },
       image: "/images/fndapp.jpg",
       gif: null,
@@ -1511,25 +1511,25 @@ export const portfolioData: PortfolioData = {
     enterprise: [
       {
         name: "Montefarmaco",
-        logo: "/images/logos/montefarmaco.svg",
+        logo: "/images/logos/montefarmaco.png",
         url: "https://www.montefarmaco.it/",
-        textOnly: true,
+        textOnly: false,
       },
       {
         name: "Logista",
-        logo: "/images/logos/logista.svg",
+        logo: "/images/logos/logista.png",
         url: "https://www.logista.com/",
-        textOnly: true,
+        textOnly: false,
       },
       {
         name: "Gruppo Activa",
-        logo: "/images/logos/gruppo-activa.svg",
+        logo: "/images/logos/gruppo-activa.png",
         url: "https://gruppoactiva.com/",
-        textOnly: true,
+        textOnly: false,
       },
       {
         name: "DPass",
-        logo: "/images/logos/dpass.svg",
+        logo: "",
         url: "",
         textOnly: true,
       },
@@ -1539,19 +1539,19 @@ export const portfolioData: PortfolioData = {
         name: "MIC – Ministero della Cultura",
         logo: "/images/logos/mic.svg",
         url: "https://cultura.gov.it/",
-        textOnly: true,
+        textOnly: false,
       },
       {
         name: "Invitalia",
         logo: "/images/logos/invitalia.svg",
         url: "https://www.invitalia.it/",
-        textOnly: true,
+        textOnly: false,
       },
       {
         name: "PNRR – Italia Domani",
         logo: "/images/logos/pnrr.svg",
         url: "https://www.italiadomani.gov.it/",
-        textOnly: true,
+        textOnly: false,
       },
     ],
     tools: [
@@ -1571,7 +1571,7 @@ export const portfolioData: PortfolioData = {
         name: "Aave",
         logo: "/images/logos/aave.svg",
         url: "https://aave.com/",
-        textOnly: true,
+        textOnly: false,
       },
     ],
   },
@@ -1669,7 +1669,7 @@ export const portfolioData: PortfolioData = {
       value: "5+",
       label: {
         it: "Domini di lavoro paralleli",
-        en: "Parallel work domains",
+        en: "Domains running in parallel",
       },
       caption: {
         it: "Pharma B2B · DeFi · Government · Web3 · AI",

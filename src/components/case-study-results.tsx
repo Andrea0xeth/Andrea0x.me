@@ -9,7 +9,7 @@ interface CaseStudyResultsProps {
 
 export function CaseStudyResults({ results, locale }: CaseStudyResultsProps) {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {results.map((result, idx) => (
         <Surface
           key={`${result.label.en}-${idx}`}

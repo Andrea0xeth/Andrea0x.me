@@ -11,19 +11,18 @@ interface GlassCardProps {
   className?: string;
   hover?: boolean;
   blur?: 'sm' | 'md' | 'lg' | 'xl';
-  /**
-   * Reserved for future custom opacity tuning on the `glass` variant.
-   * Accepted for backward compat with prior call sites.
-   */
-  opacity?: number;
   /** Only applied to the `glass` variant. */
   border?: boolean;
-  gradient?: boolean;
   /**
    * Visual treatment:
-   *  - `glass`    — current default, frosted bg + backdrop blur
-   *  - `flat`     — no border, no glass; just rounded with internal padding
-   *  - `bordered` — 1px border, no backdrop-filter
+   *  - `glass`    — frosted bg + backdrop blur (the original purpose).
+   *  - `flat`     — no border, no glass; just rounded with internal padding.
+   *  - `bordered` — 1px border, no backdrop-filter.
+   *
+   * NOTE: as of the design-system migration, this primitive has no remaining
+   * consumers in the home-page sections. Prefer `Surface` from
+   * `@/components/ui/surface` for new work. Kept for any case-study /
+   * legacy pages still relying on the frosted look.
    */
   variant?: GlassCardVariant;
 }
@@ -33,10 +32,7 @@ export function GlassCard({
   className,
   hover = true,
   blur = 'md',
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  opacity: _opacity,
   border = true,
-  gradient = false,
   variant = 'glass',
 }: GlassCardProps) {
   const blurClasses = {
@@ -47,7 +43,9 @@ export function GlassCard({
   } as const;
 
   const variantClasses: Record<GlassCardVariant, string> = {
-    glass: cn(blurClasses[blur], 'shadow-2xl'),
+    // shadow-md keeps a subtle lift without the heavy halo `shadow-2xl` had.
+    // Surface containers should provide most of the visual containment now.
+    glass: cn(blurClasses[blur], 'shadow-md'),
     flat: '',
     bordered: '',
   };
@@ -59,10 +57,6 @@ export function GlassCard({
     style = {
       backgroundColor: 'var(--glass-bg)',
       border: border ? '1px solid var(--glass-border)' : 'none',
-      ...(gradient && {
-        background:
-          'linear-gradient(135deg, var(--glass-bg), rgba(255, 255, 255, 0.02))',
-      }),
     };
   } else if (variant === 'bordered') {
     style = {
@@ -98,9 +92,6 @@ export function GlassCard({
       )}
       style={style}
     >
-      {gradient && variant === 'glass' && (
-        <div className="absolute inset-0 bg-gradient-to-br from-[color:var(--accent-primary)]/15 via-transparent to-[color:var(--accent-primary)]/5" />
-      )}
       <div className="relative z-10">{children}</div>
     </motion.div>
   );

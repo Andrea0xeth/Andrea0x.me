@@ -116,40 +116,6 @@ body {
 }
 
 /* ---------------------------------------------------------------------------
- * Glass utilities (kept — used by GlassCard primitive)
- * ------------------------------------------------------------------------ */
-.glass {
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--glass-border);
-}
-
-.glass-dark {
-  background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-/* ---------------------------------------------------------------------------
- * Float keyframe — kept for backward compat with page.tsx ambient blobs
- * (those blobs will be removed by another agent; meanwhile keep so it builds).
- * ------------------------------------------------------------------------ */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-/* ---------------------------------------------------------------------------
  * Typography utilities
  *
  * Single canonical scale. All section / hero / card titles must use one of:
@@ -247,27 +213,8 @@ body {
   font-weight: 500;
 }
 
-/* ---------------------------------------------------------------------------
- * Misc utilities (kept — actually used)
- * ------------------------------------------------------------------------ */
-.text-balance {
-  text-wrap: balance;
-}
-
-.text-pretty {
-  text-wrap: pretty;
-}
-
-.transition-smooth {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 /* Print */
 @media print {
-  .no-print {
-    display: none !important;
-  }
-
   body {
     background: white !important;
     color: black !important;

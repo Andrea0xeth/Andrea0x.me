@@ -25,8 +25,8 @@ export const TypewriterHero = React.memo(function TypewriterHero({ strings, clas
           deleteSpeed: 10,
           delay: 80,
           cursor: '|',
-          cursorClassName: 'text-[var(--accent-primary)] animate-pulse text-2xl md:text-3xl lg:text-4xl',
-          wrapperClassName: 'text-2xl md:text-3xl lg:text-4xl font-bold text-[var(--text-primary)] leading-tight',
+          cursorClassName: 'text-[var(--accent-primary)] text-h1',
+          wrapperClassName: 'text-h1 text-[var(--text-primary)]',
           stringSplitter: (str) => str.split(''),
         }}
         onInit={(typewriter) => {

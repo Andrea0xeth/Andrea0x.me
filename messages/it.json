@@ -1,19 +1,13 @@
 {
   "nav": {
-    "bookCall": "Prenota una chiamata",
-    "downloadCV": "Scarica CV",
-    "theme": "Tema",
-    "language": "Lingua"
+    "bookCall": "Prenota una chiamata"
   },
-  "common": {
-    "followMe": "Seguimi",
-    "scheduleCall": "Fissa una chiamata",
-    "email": "Email",
-    "telegram": "Telegram"
+  "notFound": {
+    "title": "Pagina non trovata",
+    "body": "La pagina che cerchi non esiste o è stata spostata.",
+    "cta": "Torna alla home"
   },
   "home": {
-    "heroTitle": "Sono",
-    "heroSubtitle": "Blockchain Product Manager & Web3 Specialist",
     "matrix": {
       "whatIDo": {
         "title": "Cosa faccio",
@@ -25,7 +19,7 @@
       }
     },
     "contactCta": {
-      "title": "Pronti a lavorare insieme?",
+      "title": "Pronto a lavorare insieme?",
       "body": "Parliamone: vediamo come posso aiutarti a realizzare il tuo prossimo progetto.",
       "scheduleCall": "Fissa una chiamata",
       "telegram": "Telegram",
@@ -33,23 +27,10 @@
     }
   },
   "hero": {
-    "followMe": "Seguimi",
-    "scheduleCall": "Fissa una chiamata",
-    "downloadCV": "Scarica CV"
-  },
-  "sections": {
-    "expertise": "Competenze",
-    "portfolio": "Portfolio",
-    "experience": "Esperienza",
-    "skills": "Skill",
-    "trustedBy": "Hanno scelto me",
-    "collaborations": "Collaborazioni",
-    "techStack": "Stack tecnologico",
-    "services": "Servizi",
-    "contact": "Contatti"
+    "followMe": "Seguimi"
   },
   "services": {
-    "heroTitle": "Servizi Fractional CTO",
+    "heroTitle": "Servizi Fractional CTO & Technical Architect",
     "heroSubtitle": "Fractional CTO · Technical Architect · AI Engineering · per sistemi in produzione",
     "howWeEngage": {
       "title": "Come lavoriamo insieme",
@@ -63,7 +44,6 @@
     }
   },
   "about": {
-    "title": "Chi sono",
     "languages": "Lingue",
     "education": "Formazione",
     "quickFacts": "In sintesi",
@@ -98,7 +78,7 @@
     "summary": "Progetti selezionati tra Web3, AI, B2B SaaS e settore pubblico.",
     "cta": {
       "title": "Vuoi collaborare?",
-      "body": "Parliamone: vediamo come possiamo lavorare insieme al tuo prossimo progetto.",
+      "body": "Parliamone: vediamo come lavorare insieme al tuo prossimo progetto.",
       "button": "Sentiamoci"
     }
   },
@@ -107,14 +87,6 @@
     "summary": "Un percorso tra software, AI, blockchain e tecnologie decentralizzate.",
     "work": "Esperienza lavorativa",
     "education": "Formazione"
-  },
-  "mobileTabs": {
-    "tab": {
-      "expertise": "Esperienze",
-      "portfolio": "Portfolio",
-      "experience": "Esperienza",
-      "skills": "Skill"
-    }
   },
   "caseStudy": {
     "readMore": "Leggi il case study",

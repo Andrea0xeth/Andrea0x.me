@@ -2,13 +2,30 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useLocale } from 'next-intl';
+import { SectionHeader } from '@/components/ui/section-header';
 import { portfolioData } from '@/data/portfolio';
+import { motionPresets } from '@/lib/motion-presets';
+import { getMotionProps, useReducedMotion } from '@/lib/use-reduced-motion';
+
+const groupTitles = {
+  en: {
+    enterprise: 'Enterprise Clients',
+    institutions: 'Public Sector & Institutions',
+    tools: 'Built With',
+  },
+  it: {
+    enterprise: 'Clienti Enterprise',
+    institutions: 'Settore Pubblico & Istituzioni',
+    tools: 'Tecnologie',
+  },
+} as const;
 
 const groups = [
-  { key: 'enterprise',   title: 'Enterprise Clients' },
-  { key: 'institutions', title: 'Public Sector & Institutions' },
-  { key: 'tools',        title: 'Built With' },
-] as const;
+  { key: 'enterprise' as const },
+  { key: 'institutions' as const },
+  { key: 'tools' as const },
+];
 
 type LogoItem = {
   name: string;
@@ -19,37 +36,36 @@ type LogoItem = {
 
 export function TrustedBySection() {
   const { trustedBy } = portfolioData;
+  const locale = useLocale() as 'it' | 'en';
+  const prefersReduced = useReducedMotion();
+  const headerMotion = getMotionProps(motionPresets.fadeInUpSlow, prefersReduced);
+
+  const title = locale === 'it' ? 'Lavoro con' : 'Trusted by';
+  const summary =
+    locale === 'it'
+      ? 'Clienti, istituzioni e strumenti selezionati tra pharma, settore pubblico e Web3.'
+      : 'Selected clients, institutions, and tools across pharma, public sector and Web3.';
 
   return (
-    <section className="container mx-auto px-4 py-8">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="text-center mb-6"
-      >
-        <h2 className="text-xl lg:text-2xl font-bold text-[var(--text-primary)] mb-2">
-          Trusted <span className="text-[var(--accent-primary)]">by</span>
-        </h2>
-        <p className="text-xs text-[var(--text-tertiary)] max-w-xl mx-auto">
-          Selected clients, institutions, and tools across pharma, public sector and Web3.
-        </p>
+    <section className="container mx-auto px-4 py-12 md:py-16">
+      <motion.div {...headerMotion} className="mb-8 md:mb-10">
+        <SectionHeader title={title} summary={summary} align="center" className="mx-auto" />
       </motion.div>
 
-      <div className="space-y-6">
+      <div className="space-y-8">
         {groups.map((g) => {
           const items = trustedBy[g.key] as LogoItem[];
+          const groupLabel = groupTitles[locale][g.key];
           return (
             <div key={g.key}>
-              <h3 className="text-xs uppercase tracking-wider text-[var(--text-tertiary)] mb-3 text-center">
-                {g.title}
+              <h3 className="text-tag text-[color:var(--text-tertiary)] mb-4 text-center">
+                {groupLabel}
               </h3>
               <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
                 {items.map((item) => {
                   const inner = item.textOnly ? (
                     <span
-                      className="inline-block px-3 py-2 rounded-md border border-[var(--glass-border)] bg-[var(--glass-bg)] text-xs text-[var(--text-secondary)] opacity-70 hover:opacity-100 transition-opacity duration-300"
+                      className="inline-block px-3 py-2 rounded-md border border-[color:var(--border-primary)] bg-transparent text-caption text-[color:var(--text-secondary)] opacity-70 hover:opacity-100 transition-opacity duration-300"
                       title={item.name}
                     >
                       {item.name}
