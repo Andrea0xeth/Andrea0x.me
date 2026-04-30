@@ -33,7 +33,7 @@ interface LogoProps {
 }
 
 function Logo({ item, size = 'md' }: LogoProps) {
-  const heightClass = size === 'sm' ? 'h-7' : 'h-9';
+  const heightClass = size === 'sm' ? 'h-10' : 'h-12';
 
   if (item.textOnly) {
     return (
@@ -47,7 +47,7 @@ function Logo({ item, size = 'md' }: LogoProps) {
   }
 
   const baseImg =
-    `${heightClass} w-auto max-w-[140px] object-contain opacity-80 hover:opacity-100 transition-opacity duration-200`;
+    `${heightClass} w-auto max-w-[160px] object-contain opacity-80 hover:opacity-100 transition-opacity duration-200`;
 
   return (
     <span className="logo-tooltip inline-block" data-tooltip={item.name}>
