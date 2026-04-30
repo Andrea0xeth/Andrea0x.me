@@ -67,24 +67,64 @@ export function TrustedBySection() {
         <SectionHeader title={title} summary={summary} align="center" className="mx-auto" />
       </motion.div>
 
-      <div className="space-y-8">
+      <div className="space-y-10">
         {groups.map((g) => {
           const items = itemsByGroup[g.key];
           const groupLabel = groupTitles[locale][g.key];
+          // Tools row uses smaller tiles with name below; clients/institutions
+          // get the larger cell since logos are fewer and brand-recognition heavy.
+          const isTools = g.key === 'tools';
           return (
             <div key={g.key}>
-              <h3 className="text-tag text-[color:var(--text-tertiary)] mb-4 text-center">
+              <h3 className="text-tag text-[color:var(--text-secondary)] mb-5 text-center font-semibold">
                 {groupLabel}
               </h3>
-              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+              <div
+                className={
+                  isTools
+                    ? 'grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2'
+                    : 'flex flex-wrap items-center justify-center gap-3'
+                }
+              >
                 {items.map((item) => {
                   const inner = item.textOnly ? (
-                    <span
-                      className="inline-block px-3 py-2 rounded-md border border-[color:var(--border-primary)] bg-transparent text-caption text-[color:var(--text-secondary)] hover:opacity-90 transition-opacity duration-300"
+                    <div
+                      className={
+                        isTools
+                          ? 'flex flex-col items-center justify-center gap-1.5 h-20 px-2 rounded-lg border border-[color:var(--border-primary)] bg-[color:var(--bg-secondary)] hover:bg-[color:var(--bg-tertiary)] transition-colors'
+                          : 'inline-flex items-center px-3 py-2 rounded-md border border-[color:var(--border-primary)] bg-transparent text-caption text-[color:var(--text-secondary)] hover:opacity-90 transition-opacity'
+                      }
                       title={item.name}
                     >
-                      {item.name}
-                    </span>
+                      {isTools ? (
+                        <>
+                          <div className="h-5 w-5 rounded-sm bg-[color:var(--bg-tertiary)]" aria-hidden />
+                          <span className="text-[10px] tracking-wide text-[color:var(--text-tertiary)] truncate w-full text-center">
+                            {item.name}
+                          </span>
+                        </>
+                      ) : (
+                        item.name
+                      )}
+                    </div>
+                  ) : isTools ? (
+                    <div
+                      className="flex flex-col items-center justify-center gap-1.5 h-20 px-2 rounded-lg border border-[color:var(--border-primary)] bg-[color:var(--bg-secondary)] hover:bg-[color:var(--bg-tertiary)] hover:border-[color:var(--accent-primary)]/30 transition-colors"
+                      title={item.name}
+                    >
+                      <div className="relative h-6 w-6 shrink-0">
+                        <Image
+                          src={item.logo}
+                          alt={item.name}
+                          fill
+                          className="object-contain"
+                          sizes="24px"
+                        />
+                      </div>
+                      <span className="text-[10px] tracking-wide text-[color:var(--text-tertiary)] truncate w-full text-center">
+                        {item.name}
+                      </span>
+                    </div>
                   ) : (
                     <div
                       className="relative h-10 w-28 hover:scale-[1.04] transition-transform duration-300"
@@ -107,6 +147,7 @@ export function TrustedBySection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={item.name}
+                      className="block"
                     >
                       {inner}
                     </a>

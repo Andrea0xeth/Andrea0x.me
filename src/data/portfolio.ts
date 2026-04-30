@@ -844,7 +844,7 @@ export const portfolioData: PortfolioData = {
             it: "Data Product blockchain progettati",
             en: "Blockchain Data Products designed",
           },
-          value: "4 (Catalogo · Auto-linking · Certificazione · Linked Data)",
+          value: "4",
         },
         {
           label: {

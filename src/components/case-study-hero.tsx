@@ -1,3 +1,4 @@
+import { ExternalLink } from 'lucide-react';
 import type { CaseStudy, Locale, CaseStudyStatus } from '@/data/types';
 import { TagPill } from '@/components/ui/tag-pill';
 
@@ -50,6 +51,18 @@ export function CaseStudyHero({ caseStudy, locale }: CaseStudyHeroProps) {
         <p className="text-caption mt-3">
           {clientsLabel[locale]}: {caseStudy.clients.join(', ')}
         </p>
+      )}
+
+      {caseStudy.link && (
+        <a
+          href={caseStudy.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 mt-4 text-caption text-[color:var(--accent-primary)] hover:underline"
+        >
+          {locale === 'it' ? 'Visita il sito' : 'Visit website'}
+          <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+        </a>
       )}
     </header>
   );

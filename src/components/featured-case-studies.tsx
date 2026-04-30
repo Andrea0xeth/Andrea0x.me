@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ExternalLink } from 'lucide-react';
 import type { CaseStudy, Locale } from '@/data/types';
 import { portfolioData } from '@/data/portfolio';
 import { Surface } from '@/components/ui/surface';
@@ -87,9 +87,23 @@ function CaseStudyCard({ caseStudy, locale, index, reduceMotion }: CaseStudyCard
             </TagPill>
           </div>
 
-          <h3 className="text-h3 text-[color:var(--text-primary)] group-hover:text-[color:var(--accent-primary)] transition-colors">
-            {caseStudy.title}
-          </h3>
+          <div className="flex items-start justify-between gap-2">
+            <h3 className="text-h3 text-[color:var(--text-primary)] group-hover:text-[color:var(--accent-primary)] transition-colors">
+              {caseStudy.title}
+            </h3>
+            {caseStudy.link && (
+              <a
+                href={caseStudy.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                aria-label={`Visit ${caseStudy.title}`}
+                className="shrink-0 mt-1 text-[color:var(--text-tertiary)] hover:text-[color:var(--accent-primary)] transition-colors"
+              >
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            )}
+          </div>
 
           <p className="text-body text-[color:var(--text-secondary)] line-clamp-3">
             {summary}
