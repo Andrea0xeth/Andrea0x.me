@@ -218,16 +218,19 @@ body {
  * `.logo-tile` adds a subtle theme-aware drop shadow.
  * `.logo-tooltip` shows the value of `data-tooltip` on hover/focus.
  * ------------------------------------------------------------------------ */
-/* Light mode: dark drop-shadow gives subtle depth on coloured logos.
- * Dark mode: light halo gives a glow that "outlines" dark logos
- *            so monochrome black marks remain visible against the dark bg. */
+/* `.logo-tile` is the card backdrop applied to every logo cell. A subtle
+ * surface fill + 1px border neutralises the page bg so black logos read on
+ * dark theme and pale logos read on light theme without nuking brand colour.
+ * No filter glow — that read as "cheap". */
 .logo-tile {
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.22));
+  background-color: color-mix(in srgb, var(--bg-secondary) 75%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border-primary) 60%, transparent);
+  border-radius: 8px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
-.dark .logo-tile {
-  filter:
-    drop-shadow(0 0 4px rgba(255, 255, 255, 0.18))
-    drop-shadow(0 0 10px rgba(255, 255, 255, 0.08));
+.logo-tile:hover {
+  background-color: color-mix(in srgb, var(--bg-tertiary) 80%, transparent);
+  border-color: color-mix(in srgb, var(--accent-primary) 35%, transparent);
 }
 
 .logo-tooltip {

@@ -85,8 +85,12 @@ export function TrustedBySection() {
                 // Infinite-scroll marquee for the (many) techStack tools.
                 // Items duplicated to enable seamless -50% translation.
                 <div
-                  className="relative overflow-hidden"
+                  className="relative"
                   style={{
+                    overflowX: 'hidden',
+                    overflowY: 'visible',
+                    paddingTop: 28, // room for tooltip popup
+                    paddingBottom: 8,
                     maskImage:
                       'linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%)',
                     WebkitMaskImage:
@@ -107,7 +111,7 @@ export function TrustedBySection() {
                         </span>
                       ) : (
                         <div
-                          className="relative h-10 w-24 shrink-0 logo-tile logo-tooltip"
+                          className="relative h-12 w-28 shrink-0 logo-tile logo-tooltip flex items-center justify-center px-3 py-2"
                           data-tooltip={item.name}
                         >
                           {item.logoLight ? (
@@ -177,16 +181,18 @@ export function TrustedBySection() {
                       </span>
                     ) : (
                       <div
-                        className="relative h-10 w-28 hover:scale-[1.04] transition-transform duration-300 logo-tile logo-tooltip"
+                        className="relative h-14 w-32 hover:scale-[1.04] transition-transform duration-300 logo-tile logo-tooltip flex items-center justify-center px-4 py-2.5"
                         data-tooltip={item.name}
                       >
-                        <Image
-                          src={item.logo}
-                          alt={item.name}
-                          fill
-                          className="object-contain"
-                          sizes="112px"
-                        />
+                        <div className="relative w-full h-full">
+                          <Image
+                            src={item.logo}
+                            alt={item.name}
+                            fill
+                            className="object-contain"
+                            sizes="128px"
+                          />
+                        </div>
                       </div>
                     );
 
