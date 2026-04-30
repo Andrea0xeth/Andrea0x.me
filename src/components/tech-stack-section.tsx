@@ -56,7 +56,7 @@ export function TechStackSection() {
     <section className="container mx-auto px-4 py-12 md:py-16">
       <motion.div {...motionProps}>
         <SectionHeader
-          number="09"
+          number="08"
           title={t('title')}
           summary={t('summary')}
           align="left"

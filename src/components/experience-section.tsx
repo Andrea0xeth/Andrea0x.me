@@ -21,7 +21,7 @@ export function ExperienceSection() {
     <section className="container mx-auto px-4 py-12 md:py-16">
       <motion.div {...headerMotion} className="mb-8 md:mb-10">
         <SectionHeader
-          number="05"
+          number="04"
           title={t('title')}
           summary={t('summary')}
           align="left"

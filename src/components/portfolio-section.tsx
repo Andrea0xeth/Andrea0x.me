@@ -40,7 +40,7 @@ export function PortfolioSection() {
     <section className="container mx-auto px-4 py-12 md:py-16">
       <motion.div {...headerMotion} className="mb-8 md:mb-10">
         <SectionHeader
-          number="04"
+          number="03"
           title={t('title')}
           summary={t('summary')}
           align="left"
@@ -113,9 +113,22 @@ export function PortfolioSection() {
               </div>
 
               <div className="p-4 md:p-5 flex flex-col flex-grow gap-3">
-                <h3 className="text-h3 text-[color:var(--text-primary)]">
-                  {project.title}
-                </h3>
+                <div className="flex items-start justify-between gap-2">
+                  <h3 className="text-h3 text-[color:var(--text-primary)]">
+                    {project.title}
+                  </h3>
+                  {project.link && project.link !== '#' && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Visit ${project.title}`}
+                      className="shrink-0 mt-1 text-[color:var(--text-tertiary)] hover:text-[color:var(--accent-primary)] transition-colors"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  )}
+                </div>
                 <p className="text-body text-[color:var(--text-secondary)] flex-grow">
                   {project.description[locale]}
                 </p>
@@ -127,20 +140,6 @@ export function PortfolioSection() {
                     </TagPill>
                   ))}
                 </div>
-
-                {project.link && (
-                  <div className="pt-1">
-                    <AnimatedButton
-                      href={project.link}
-                      variant="ghost"
-                      size="sm"
-                      className="inline-flex items-center gap-2"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      <span>View Project</span>
-                    </AnimatedButton>
-                  </div>
-                )}
               </div>
             </Surface>
           </motion.div>

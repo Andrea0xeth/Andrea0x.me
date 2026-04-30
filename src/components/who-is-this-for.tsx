@@ -92,7 +92,7 @@ export function WhoIsThisFor({ locale }: WhoIsThisForProps) {
 
   return (
     <section className="container mx-auto px-4 py-12 md:py-16">
-      <SectionHeader number="07" title={t('title')} className="mb-8 md:mb-10" />
+      <SectionHeader number="06" title={t('title')} className="mb-8 md:mb-10" />
 
       <div className="grid gap-4 md:gap-5 md:grid-cols-3">
         {cards.map((card, idx) => (

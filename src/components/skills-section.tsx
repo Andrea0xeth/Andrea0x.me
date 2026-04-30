@@ -36,7 +36,7 @@ export function SkillsSection() {
     <section className="container mx-auto px-4 py-12 md:py-16">
       <motion.div {...motionProps}>
         <SectionHeader
-          number="06"
+          number="05"
           title={t('title')}
           align="left"
           className="mb-8"

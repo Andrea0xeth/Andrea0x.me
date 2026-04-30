@@ -30,7 +30,7 @@ export function CollaborationsSection() {
     <section className="container mx-auto px-4 py-12 md:py-16">
       <motion.div {...headerMotion}>
         <SectionHeader
-          number="08"
+          number="07"
           title={t('title')}
           summary={t('summary')}
           align="left"
