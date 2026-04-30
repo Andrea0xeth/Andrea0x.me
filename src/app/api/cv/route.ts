@@ -86,7 +86,7 @@ export async function GET(req: NextRequest) {
       headers: {
         'Content-Type': 'application/pdf',
         'Content-Disposition': `attachment; filename="${filename}"`,
-        'Cache-Control': 'public, max-age=3600',
+        'Cache-Control': 'no-store, must-revalidate',
         'Content-Length': String(buffer.length),
       },
     });
