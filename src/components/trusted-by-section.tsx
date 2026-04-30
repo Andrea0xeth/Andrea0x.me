@@ -33,7 +33,7 @@ interface LogoProps {
 }
 
 function Logo({ item, size = 'md' }: LogoProps) {
-  const heightClass = size === 'sm' ? 'h-10' : 'h-12';
+  const heightClass = size === 'sm' ? 'h-12' : 'h-14';
 
   if (item.textOnly) {
     return (
@@ -47,7 +47,7 @@ function Logo({ item, size = 'md' }: LogoProps) {
   }
 
   const baseImg =
-    `${heightClass} w-auto max-w-[160px] object-contain opacity-80 hover:opacity-100 transition-opacity duration-200`;
+    `${heightClass} w-auto max-w-[180px] object-contain opacity-80 hover:opacity-100 transition-opacity duration-200`;
 
   return (
     <span className="logo-tooltip inline-block" data-tooltip={item.name}>
@@ -176,47 +176,66 @@ export function TrustedBySection() {
           <div
             className="relative"
             style={{
-              overflowX: 'hidden',
-              overflowY: 'visible',
-              paddingTop: 28,
-              paddingBottom: 8,
-              maskImage:
-                'linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%)',
-              WebkitMaskImage:
-                'linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%)',
+              paddingTop: 32,
+              paddingBottom: 12,
             }}
           >
             <div
-              className="flex items-center gap-12 animate-marquee"
-              style={{ width: 'max-content' }}
+              className="relative"
+              style={{
+                overflowX: 'hidden',
+                overflowY: 'visible',
+              }}
             >
-              {[...tools, ...tools].map((item, idx) => {
-                const dup = idx >= tools.length;
-                return item.url ? (
-                  <a
-                    key={`${item.name}-${idx}`}
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={item.name}
-                    aria-hidden={dup}
-                    tabIndex={dup ? -1 : 0}
-                    className="shrink-0 inline-flex items-center"
-                  >
-                    <Logo item={item} size="sm" />
-                  </a>
-                ) : (
-                  <span
-                    key={`${item.name}-${idx}`}
-                    aria-label={item.name}
-                    aria-hidden={dup}
-                    className="shrink-0 inline-flex items-center"
-                  >
-                    <Logo item={item} size="sm" />
-                  </span>
-                );
-              })}
+              <div
+                className="flex items-center gap-14 animate-marquee"
+                style={{ width: 'max-content' }}
+              >
+                {[...tools, ...tools].map((item, idx) => {
+                  const dup = idx >= tools.length;
+                  return item.url ? (
+                    <a
+                      key={`${item.name}-${idx}`}
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={item.name}
+                      aria-hidden={dup}
+                      tabIndex={dup ? -1 : 0}
+                      className="shrink-0 inline-flex items-center"
+                    >
+                      <Logo item={item} size="sm" />
+                    </a>
+                  ) : (
+                    <span
+                      key={`${item.name}-${idx}`}
+                      aria-label={item.name}
+                      aria-hidden={dup}
+                      className="shrink-0 inline-flex items-center"
+                    >
+                      <Logo item={item} size="sm" />
+                    </span>
+                  );
+                })}
+              </div>
             </div>
+            {/* Edge fade overlays — don't use mask-image (would clip tooltip) */}
+            <div
+              aria-hidden="true"
+              className="absolute top-0 bottom-0 left-0 w-16 pointer-events-none"
+              style={{
+                background:
+                  'linear-gradient(to right, var(--bg-primary), transparent)',
+              }}
+            />
+            <div
+              aria-hidden="true"
+              className="absolute top-0 bottom-0 right-0 w-16 pointer-events-none"
+              style={{
+                background:
+                  'linear-gradient(to left, var(--bg-primary), transparent)',
+              }}
+            />
           </div>
         </motion.div>
       </div>
