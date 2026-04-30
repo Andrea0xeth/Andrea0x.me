@@ -323,7 +323,7 @@ export const portfolioData: PortfolioData = {
         it: "Solo CTO / Principal Engineer (con contributor support su UI)",
         en: "Solo CTO / Principal Engineer (with contributor support on UI)",
       },
-      period: "2025 – present (architettura attuale; legacy Crifarma/Healias 2022 – 2024)",
+      period: "2022 – present",
       status: "production",
       clients: ["Montefarmaco", "Logista SPA"],
       problem: {
@@ -766,7 +766,7 @@ export const portfolioData: PortfolioData = {
         it: "Lead tecnico-funzionale ArtCertify + blockchain Data Products (RTI Activa Digital + Civita Mostre)",
         en: "Technical-functional lead on ArtCertify + blockchain Data Products (RTI Activa Digital + Civita Mostre)",
       },
-      period: "2025 – 30 giugno 2026 (deadline operativa)",
+      period: "2025 – Jun 2026",
       status: "active",
       clients: ["MiC – Digital Library / ICDP", "Invitalia", "PNRR / NextGenerationEU"],
       problem: {
@@ -1013,10 +1013,10 @@ export const portfolioData: PortfolioData = {
         },
         {
           label: {
-            it: "Contributi UI principali",
-            en: "Lead UI contribution",
+            it: "Commit su Discover · Studio",
+            en: "Commits on Discover · Studio",
           },
-          value: "Top contributor su Discover (~468 commit), 2nd su Studio (~253 commit)",
+          value: "468 + 253",
         },
         {
           label: {
@@ -1030,7 +1030,7 @@ export const portfolioData: PortfolioData = {
             it: "Layer AI-native (2026)",
             en: "AI-native layer (2026)",
           },
-          value: "MCP (68 tool, stdio + stateless) · VaaS (x402 + USDC) · Agent (cron + LLM)",
+          value: "MCP · VaaS · Agent",
         },
       ],
       techStack: [
@@ -1115,7 +1115,7 @@ export const portfolioData: PortfolioData = {
         it: "Lead tecnico-funzionale ArtCertify + Data Product Blockchain",
         en: "Technical-functional lead on ArtCertify + Blockchain Data Products",
       },
-      period: "2025 – 06/2026 (deadline operativa)",
+      period: "2025 – Jun 2026",
       type: { it: "Lead Tecnico", en: "Technical Lead" },
       description: {
         it: "Lead tecnico-funzionale su ArtCertify e sui 4 Data Product blockchain (Catalogo Metadati, Auto-linking, Certificazione Blockchain+IPFS, Linked Data) del Bando Ecomic Lotto 3 'Fruizione Avanzata' (MiC Digital Library / Invitalia, finanziamento PNRR, Dialogo Competitivo D.Lgs. 36/2023). RTI Activa Digital + Civita Mostre, codename interno Terranova. Coordinamento con il team Sara (PO), Giulio (tech lead), Flavio Cipollina (PO AI), Roberto Donnofrio, Serena Nardoni (BA), Jacopo (analista funzionale), Daniele Vettoretti (Data Product reference).",
@@ -1499,7 +1499,7 @@ export const portfolioData: PortfolioData = {
           "Cost discipline on cloud and tooling",
         ],
       },
-      rateRange: "€150–250/h",
+      rateRange: "€130–220/h",
     },
     {
       id: "technical-architect",
@@ -1525,7 +1525,7 @@ export const portfolioData: PortfolioData = {
           "Deploy pipelines and multi-environment workflow",
         ],
       },
-      rateRange: "€130–220/h",
+      rateRange: "€110–180/h",
     },
     {
       id: "ai-engineering",
@@ -1555,7 +1555,7 @@ export const portfolioData: PortfolioData = {
           "QA for non-deterministic outputs",
         ],
       },
-      rateRange: "€150–250/h",
+      rateRange: "€130–220/h",
     },
     {
       id: "database-performance",
@@ -1581,7 +1581,7 @@ export const portfolioData: PortfolioData = {
           "Hot patches under pressure",
         ],
       },
-      rateRange: "€120–200/h",
+      rateRange: "€90–150/h",
     },
     {
       id: "process-digitalization",
@@ -1607,7 +1607,7 @@ export const portfolioData: PortfolioData = {
           "Self-service UX and document generation",
         ],
       },
-      rateRange: "€100–180/h",
+      rateRange: "€70–130/h",
     },
     {
       id: "web3-integration",
@@ -1637,7 +1637,7 @@ export const portfolioData: PortfolioData = {
           "Isolated signing-service with per-agent encrypted EOAs",
         ],
       },
-      rateRange: "€130–220/h",
+      rateRange: "€110–180/h",
     },
   ],
 

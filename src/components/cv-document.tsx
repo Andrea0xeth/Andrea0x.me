@@ -619,14 +619,11 @@ export function CVDocument({ lang, data, qrDataUrl, photoSrc }: CVDocumentProps)
                 return (
                   <View key={cs.slug} style={styles.projEntry} wrap={false}>
                     <View style={styles.projTitleRow}>
-                      <Text style={styles.projTitle}>
-                        {cs.title}
-                        <Text style={styles.projSlug}>  /{cs.slug}</Text>
-                      </Text>
+                      <Text style={styles.projTitle}>{cs.title}</Text>
                       <Text style={styles.expPeriod}>{cs.period}</Text>
                     </View>
                     <Text style={styles.projMeta}>
-                      {cs.domain[lang]} · {cs.role[lang]}
+                      <Text style={styles.projSlug}>/{cs.slug}</Text> · {cs.domain[lang]} · {cs.role[lang]}
                     </Text>
                     <Text style={styles.projDesc}>{firstSentence(cs.architecture[lang])}</Text>
                     {topMetrics.length > 0 && (
