@@ -2,9 +2,9 @@ import { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Andrea0x.eth - Blockchain Product Manager',
-    short_name: 'Andrea0x.eth',
-    description: 'Blockchain Product Manager & Web3 Specialist Portfolio',
+    name: 'Andrea Ritondale — Principal Engineer · IT Architect · AI Builder',
+    short_name: 'Andrea Ritondale',
+    description: 'Principal Engineer + IT Architect + AI Builder. Multi-skill, multi-domain, generalist by design.',
     start_url: '/',
     display: 'standalone',
     background_color: '#0f172a',
