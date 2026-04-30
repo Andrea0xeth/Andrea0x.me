@@ -196,6 +196,32 @@ const styles = StyleSheet.create({
     color: TEXT_2,
     marginBottom: 2,
   },
+  serviceRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'baseline',
+    marginBottom: 3,
+  },
+  serviceName: {
+    fontSize: 8,
+    color: TEXT,
+    flex: 1,
+    paddingRight: 4,
+    lineHeight: 1.25,
+  },
+  serviceRate: {
+    fontFamily: 'JetBrainsMono',
+    fontSize: 7.5,
+    color: ACCENT,
+    fontWeight: 500,
+  },
+  rateNote: {
+    fontSize: 7,
+    color: TEXT_3,
+    fontFamily: 'JetBrainsMono',
+    marginTop: 5,
+    lineHeight: 1.3,
+  },
   rate: {
     fontFamily: 'JetBrainsMono',
     fontSize: 9,
@@ -532,12 +558,19 @@ export function CVDocument({ lang, data, qrDataUrl, photoSrc }: CVDocumentProps)
 
             <View style={styles.section}>
               <SectionHeader title={T.available[lang]} />
-              {data.services.slice(0, 3).map((svc) => (
-                <Text key={svc.id} style={styles.serviceItem}>
-                  · {svc.title[lang]}
-                </Text>
+              {data.services.map((svc) => (
+                <View key={svc.id} style={styles.serviceRow}>
+                  <Text style={styles.serviceName}>{svc.title[lang]}</Text>
+                  {svc.rateRange && (
+                    <Text style={styles.serviceRate}>{svc.rateRange}</Text>
+                  )}
+                </View>
               ))}
-              <Text style={styles.rate}>€120–200/h</Text>
+              <Text style={styles.rateNote}>
+                {lang === 'it'
+                  ? '* Tariffe indicative · aperto a contrattazione'
+                  : '* Indicative rates · open to negotiation'}
+              </Text>
             </View>
           </View>
 

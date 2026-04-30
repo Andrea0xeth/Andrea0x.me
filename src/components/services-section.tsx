@@ -44,6 +44,11 @@ export async function ServicesSection({ locale }: ServicesSectionProps) {
 
       {/* 3. Services grid */}
       <section className="mb-14 md:mb-20">
+        <p className="text-caption text-[color:var(--text-tertiary)] italic mb-6">
+          {locale === 'it'
+            ? '* Tariffe indicative · aperto a contrattazione in base a scope, durata e impegno richiesto.'
+            : '* Indicative rates · open to negotiation depending on scope, duration and required commitment.'}
+        </p>
         <div className="grid gap-4 md:gap-5 md:grid-cols-2">
           {services.map((service) => (
             <Surface
