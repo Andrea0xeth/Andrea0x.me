@@ -1,0 +1,143 @@
+{
+  "nav": {
+    "bookCall": "Prenota una chiamata"
+  },
+  "notFound": {
+    "title": "Pagina non trovata",
+    "body": "La pagina che cerchi non esiste o è stata spostata.",
+    "cta": "Torna alla home"
+  },
+  "home": {
+    "matrix": {
+      "whatIDo": {
+        "title": "Cosa faccio",
+        "summary": "Multi-skill, multi-domain, generalist by design."
+      },
+      "domains": {
+        "title": "Domains × Projects",
+        "summary": "Copertura cross-dominio mostrata tramite pillar condivisi."
+      }
+    },
+    "contactCta": {
+      "title": "Pronto a lavorare insieme?",
+      "body": "Parliamone: vediamo come posso aiutarti a realizzare il tuo prossimo progetto.",
+      "scheduleCall": "Fissa una chiamata",
+      "telegram": "Telegram",
+      "email": "Email"
+    }
+  },
+  "hero": {
+    "followMe": "Seguimi"
+  },
+  "services": {
+    "heroTitle": "Servizi Fractional CTO & Technical Architect",
+    "heroSubtitle": "Fractional CTO · Technical Architect · AI Engineering · per sistemi in produzione",
+    "howWeEngage": {
+      "title": "Come lavoriamo insieme",
+      "step1": "Discovery call — 30 minuti per allinearci su contesto, obiettivi e vincoli.",
+      "step2": "Scope & rate — proposta scritta con deliverable, timeline e fascia di tariffa.",
+      "step3": "Engagement — kickoff, decision log, checkpoint settimanali, handoff a fine progetto."
+    },
+    "cta": {
+      "book": "Prenota una discovery call",
+      "email": "Email"
+    }
+  },
+  "about": {
+    "story": "Storia",
+    "now": "Adesso",
+    "nowSummary": "Progetti attivi che sto shippando ora.",
+    "languages": "Lingue",
+    "education": "Formazione",
+    "quickFacts": "In sintesi",
+    "elsewhere": "Dove trovarmi",
+    "cta": {
+      "schedule": "Fissa una chiamata",
+      "cv": "Scarica CV",
+      "email": "Email"
+    }
+  },
+  "whoIsThisFor": {
+    "title": "Per chi è",
+    "card1": {
+      "title": "Recruiter / Hiring Manager",
+      "body": "Stai cercando talenti di engineering da assumere?",
+      "ctaPrimary": "Vedi resume",
+      "ctaSecondary": "Leggi chi sono"
+    },
+    "card2": {
+      "title": "Founder / Cerco co-founder",
+      "body": "Stai costruendo una startup? Cerchi un co-founder tecnico o un founding engineer?",
+      "ctaPrimary": "Contattami",
+      "ctaSecondary": "Leggi chi sono"
+    },
+    "card3": {
+      "title": "Consulting / Cliente Fractional CTO",
+      "body": "Hai bisogno di un fractional CTO o di un technical architect per sistemi in produzione?",
+      "ctaPrimary": "Vedi i servizi"
+    }
+  },
+  "portfolio": {
+    "title": "Il mio Portfolio",
+    "summary": "Progetti selezionati tra Web3, AI, B2B SaaS e settore pubblico.",
+    "cta": {
+      "title": "Vuoi collaborare?",
+      "body": "Parliamone: vediamo come lavorare insieme al tuo prossimo progetto.",
+      "button": "Sentiamoci"
+    }
+  },
+  "experience": {
+    "title": "La mia Esperienza",
+    "summary": "Un percorso tra software, AI, blockchain e tecnologie decentralizzate.",
+    "work": "Esperienza lavorativa",
+    "education": "Formazione"
+  },
+  "caseStudy": {
+    "readMore": "Leggi il case study",
+    "allCaseStudies": "Tutti i case study",
+    "previous": "Precedente",
+    "next": "Successivo",
+    "clients": "Clienti",
+    "role": "Ruolo",
+    "period": "Periodo",
+    "featured": {
+      "title": "Lavori in evidenza"
+    },
+    "section": {
+      "problem": "Problema",
+      "architecture": "Architettura",
+      "decisions": "Decisioni chiave",
+      "results": "Risultati",
+      "tech": "Tech e pilastri"
+    }
+  },
+  "skills": {
+    "title": "Competenze",
+    "languages": "Lingue",
+    "proficiency": {
+      "native": "Madrelingua",
+      "fluent": "Fluente",
+      "professional": "Professionale",
+      "basic": "Base",
+      "beginner": "Principiante"
+    }
+  },
+  "collaborations": {
+    "title": "Collaborazioni & Community",
+    "summary": "Ruoli passati di contributor, advisor, community lead"
+  },
+  "techStack": {
+    "title": "Stack tecnologico",
+    "summary": "Strumenti quotidiani per cloud, AI, web3, data, e dev",
+    "category": {
+      "cloud": "Cloud",
+      "ai": "AI",
+      "web3": "Web3",
+      "database": "Database",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "devops": "DevOps",
+      "tools": "Tools"
+    }
+  }
+}

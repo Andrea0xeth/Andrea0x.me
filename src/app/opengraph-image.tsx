@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
-export const alt = 'Andrea0x.eth - Blockchain Product Manager & Web3 Developer';
+export const alt = 'Andrea Ritondale — Principal Engineer · IT Architect · AI Builder';
 export const size = {
   width: 1200,
   height: 630,
@@ -32,7 +32,7 @@ export default async function Image() {
             background: 'linear-gradient(135deg, #0a0e1a 0%, #0f1419 25%, #1a1f2e 50%, #0f1419 75%, #0a0e1a 100%)',
           }}
         />
-        
+
         {/* Animated Background Circles */}
         <div
           style={{
@@ -119,19 +119,19 @@ export default async function Image() {
                 letterSpacing: '-2px',
               }}
             >
-              Andrea0x.eth
+              Andrea Ritondale
             </div>
-            
+
             {/* Role */}
             <div
               style={{
-                fontSize: '32px',
+                fontSize: '28px',
                 color: '#cbd5e1',
                 fontWeight: '400',
                 letterSpacing: '-0.5px',
               }}
             >
-              Blockchain Product Manager & Web3 Developer
+              Andrea0x.eth · Principal Engineer · IT Architect · AI Builder
             </div>
           </div>
 
@@ -145,7 +145,7 @@ export default async function Image() {
               marginBottom: 'auto',
             }}
           >
-            {['DeFi', 'DAO', 'Web3', 'EVM', 'Product Management'].map((tag, index) => (
+            {['B2B SaaS', 'AI Engineering', 'Cloud', 'Web3', 'IT Architecture'].map((tag) => (
               <div
                 key={tag}
                 style={{
@@ -226,4 +226,3 @@ export default async function Image() {
     }
   );
 }
-

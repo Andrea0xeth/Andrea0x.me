@@ -1,67 +1,78 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { GlassCard } from '@/components/ui/glass-card';
+import { useLocale, useTranslations } from 'next-intl';
+import { Surface } from '@/components/ui/surface';
+import { SectionHeader } from '@/components/ui/section-header';
 import { AnimatedButton } from '@/components/ui/animated-button';
 import { portfolioData } from '@/data/portfolio';
-import { ExternalLink, Calendar, MapPin, Users } from 'lucide-react';
+import { motionPresets } from '@/lib/motion-presets';
+import { getMotionProps, useReducedMotion } from '@/lib/use-reduced-motion';
+import { ExternalLink, Calendar } from 'lucide-react';
 
 export function ExperienceSection() {
+  const locale = useLocale() as 'it' | 'en';
+  const t = useTranslations('experience');
   const { experience, education } = portfolioData;
+  const prefersReduced = useReducedMotion();
+  const headerMotion = getMotionProps(motionPresets.fadeInUpSlow, prefersReduced);
 
   return (
-    <section className="container mx-auto px-4 py-12">
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="text-center mb-6"
-      >
-        <h2 className="text-2xl lg:text-3xl font-bold text-[var(--text-primary)] mb-3">
-          My <span className="text-[var(--accent-primary)]">Experience</span>
-        </h2>
-        <p className="text-sm text-[var(--text-tertiary)] max-w-2xl mx-auto">
-          A journey through Web3, blockchain, and decentralized technologies
-        </p>
+    <section className="container mx-auto px-4 py-12 md:py-16">
+      <motion.div {...headerMotion} className="mb-8 md:mb-10">
+        <SectionHeader
+          number="04"
+          title={t('title')}
+          summary={t('summary')}
+          align="left"
+        />
       </motion.div>
 
-      <div className="grid lg:grid-cols-2 gap-8">
+      <div className="grid lg:grid-cols-2 gap-8 lg:gap-10">
         {/* Work Experience */}
         <div>
-          <motion.h3 
-            className="text-lg font-bold text-[var(--text-primary)] mb-4 flex items-center"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <Users className="w-4 h-4 mr-2 text-[var(--accent-primary)]" />
-            Work Experience
-          </motion.h3>
-          
+          <h3 className="text-h3 text-[color:var(--text-primary)] mb-4">
+            {t('work')}
+          </h3>
+
           <div className="space-y-4">
             {experience.map((job, index) => (
               <motion.div
                 key={`${job.company}-${job.period}`}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                {...(prefersReduced
+                  ? {}
+                  : {
+                      initial: motionPresets.fadeInUpSlow.initial,
+                      whileInView: motionPresets.fadeInUpSlow.whileInView,
+                      viewport: motionPresets.fadeInUpSlow.viewport,
+                      transition: {
+                        ...motionPresets.fadeInUpSlow.transition,
+                        delay: Math.min(index * 0.05, 0.25),
+                      },
+                    })}
               >
-                <GlassCard className="p-4" hover>
-                  <div className="flex items-start justify-between mb-3">
-                    <div className="flex-1">
-                      <h4 className="text-sm font-bold text-[var(--text-primary)] mb-2">
-                        {job.position}
+                <Surface variant="bordered" padding="md">
+                  <div className="flex items-start justify-between mb-3 gap-3">
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-h3 text-[color:var(--text-primary)] mb-2">
+                        {job.position[locale]}
                       </h4>
-                      <div className="flex items-center space-x-4 text-[var(--text-tertiary)] mb-2">
-                        <span className="font-medium text-sm">{job.company}</span>
-                        <span className="text-xs">•</span>
-                        <span className="text-xs">{job.type}</span>
+                      <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[color:var(--text-secondary)] mb-2">
+                        <span className="text-body font-medium">
+                          {job.company}
+                        </span>
+                        <span
+                          className="text-caption text-[color:var(--text-tertiary)]"
+                          aria-hidden="true"
+                        >
+                          ·
+                        </span>
+                        <span className="text-caption">
+                          {job.type[locale]}
+                        </span>
                       </div>
-                      <div className="flex items-center text-[var(--accent-primary)] text-xs">
-                        <Calendar className="w-3 h-3 mr-2" />
+                      <div className="flex items-center text-[color:var(--accent-primary)] text-caption">
+                        <Calendar className="w-3 h-3 mr-2" aria-hidden="true" />
                         {job.period}
                       </div>
                     </div>
@@ -70,17 +81,17 @@ export function ExperienceSection() {
                         href={job.link}
                         variant="ghost"
                         size="sm"
-                        className="ml-4"
+                        className="shrink-0"
                       >
                         <ExternalLink className="w-4 h-4" />
                       </AnimatedButton>
                     )}
                   </div>
-                  
-                  <p className="text-gray-400 leading-relaxed text-xs">
-                    {job.description}
+
+                  <p className="text-body text-[color:var(--text-secondary)] leading-relaxed">
+                    {job.description[locale]}
                   </p>
-                </GlassCard>
+                </Surface>
               </motion.div>
             ))}
           </div>
@@ -88,34 +99,34 @@ export function ExperienceSection() {
 
         {/* Education */}
         <div>
-          <motion.h3 
-            className="text-lg font-bold text-[var(--text-primary)] mb-4 flex items-center"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <MapPin className="w-4 h-4 mr-2 text-[var(--accent-primary)]" />
-            Education
-          </motion.h3>
-          
+          <h3 className="text-h3 text-[color:var(--text-primary)] mb-4">
+            {t('education')}
+          </h3>
+
           <div className="space-y-4">
             {education.map((edu, index) => (
               <motion.div
-                key={`${edu.title}-${edu.period}`}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                key={`${edu.title[locale]}-${edu.period}`}
+                {...(prefersReduced
+                  ? {}
+                  : {
+                      initial: motionPresets.fadeInUpSlow.initial,
+                      whileInView: motionPresets.fadeInUpSlow.whileInView,
+                      viewport: motionPresets.fadeInUpSlow.viewport,
+                      transition: {
+                        ...motionPresets.fadeInUpSlow.transition,
+                        delay: Math.min(index * 0.05, 0.25),
+                      },
+                    })}
               >
-                <GlassCard className="p-4" hover>
-                  <div className="flex items-start justify-between mb-3">
-                    <div className="flex-1">
-                      <h4 className="text-sm font-bold text-[var(--text-primary)] mb-2">
-                        {edu.title}
+                <Surface variant="bordered" padding="md">
+                  <div className="flex items-start justify-between mb-3 gap-3">
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-h3 text-[color:var(--text-primary)] mb-2">
+                        {edu.title[locale]}
                       </h4>
-                      <div className="flex items-center text-[var(--accent-primary)] text-xs mb-2">
-                        <Calendar className="w-3 h-3 mr-2" />
+                      <div className="flex items-center text-[color:var(--accent-primary)] text-caption mb-2">
+                        <Calendar className="w-3 h-3 mr-2" aria-hidden="true" />
                         {edu.period}
                       </div>
                     </div>
@@ -124,23 +135,22 @@ export function ExperienceSection() {
                         href={edu.link}
                         variant="ghost"
                         size="sm"
-                        className="ml-4"
+                        className="shrink-0"
                       >
                         <ExternalLink className="w-4 h-4" />
                       </AnimatedButton>
                     )}
                   </div>
-                  
-                  <p className="text-gray-400 leading-relaxed text-xs">
-                    {edu.description}
+
+                  <p className="text-body text-[color:var(--text-secondary)] leading-relaxed">
+                    {edu.description[locale]}
                   </p>
-                </GlassCard>
+                </Surface>
               </motion.div>
             ))}
           </div>
         </div>
       </div>
-
     </section>
   );
 }

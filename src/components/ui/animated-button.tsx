@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { ReactNode } from 'react';
 import { cn } from '@/lib/utils';
 
@@ -23,8 +24,9 @@ export function AnimatedButton({
   disabled = false,
   href,
 }: AnimatedButtonProps) {
-  const baseClasses = 'relative overflow-hidden rounded-full font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-500/50 inline-flex items-center justify-center';
-  
+  const baseClasses =
+    'relative overflow-hidden rounded-full font-medium transition-all duration-300 hover:opacity-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-primary)] inline-flex items-center justify-center';
+
   const variantClasses = {
     primary: 'bg-[var(--accent-primary)] hover:opacity-90 text-white shadow-lg hover:shadow-xl',
     secondary: 'bg-[var(--bg-tertiary)] hover:bg-[var(--bg-secondary)] text-[var(--text-primary)] border border-[var(--border-primary)]',
@@ -38,7 +40,53 @@ export function AnimatedButton({
     lg: 'px-6 py-3 text-base',
   };
 
-  const buttonContent = (
+  const isExternal = href
+    ? href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')
+    : false;
+
+  if (href) {
+    if (isExternal) {
+      return (
+        <motion.a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className={cn(
+            baseClasses,
+            variantClasses[variant],
+            sizeClasses[size],
+            className
+          )}
+        >
+          <span className="relative z-10 flex items-center gap-2">{children}</span>
+        </motion.a>
+      );
+    }
+
+    return (
+      <motion.div
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="inline-flex"
+      >
+        <Link
+          href={href}
+          className={cn(
+            baseClasses,
+            variantClasses[variant],
+            sizeClasses[size],
+            className
+          )}
+        >
+          <span className="relative z-10 flex items-center gap-2">{children}</span>
+        </Link>
+      </motion.div>
+    );
+  }
+
+  return (
     <motion.button
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
@@ -52,41 +100,7 @@ export function AnimatedButton({
         className
       )}
     >
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-        initial={{ x: '-100%' }}
-        whileHover={{ x: '100%' }}
-        transition={{ duration: 0.6 }}
-      />
       <span className="relative z-10 flex items-center gap-2">{children}</span>
     </motion.button>
   );
-
-  if (href) {
-    return (
-      <motion.a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className={cn(
-          baseClasses,
-          variantClasses[variant],
-          sizeClasses[size],
-          className
-        )}
-      >
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
-          initial={{ x: '-100%' }}
-          whileHover={{ x: '100%' }}
-          transition={{ duration: 0.6 }}
-        />
-        <span className="relative z-10 flex items-center gap-2">{children}</span>
-      </motion.a>
-    );
-  }
-
-  return buttonContent;
 }

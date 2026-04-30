@@ -1,130 +1,46 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { cookies } from "next/headers";
 import "./globals.css";
 import { ThemeProvider } from "@/contexts/theme-context";
 
-const inter = Inter({ 
+export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://andrea0x.me"
+  ),
+};
+
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
 });
 
-const jetbrainsMono = JetBrains_Mono({ 
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jetbrains-mono",
 });
 
-export const metadata: Metadata = {
-  title: "Andrea0x.eth - Blockchain Product Manager & Web3 Developer | DeFi & DAO Expert",
-  description: "Professional Blockchain Product Manager & Product Communication specialist. Expert in DAO, DeFi, NFTs & Web3 technologies. Building the future of decentralized applications with EVM expertise.",
-  keywords: [
-    "blockchain product manager",
-    "web3 developer",
-    "defi expert",
-    "dao specialist",
-    "nft developer",
-    "ethereum developer",
-    "smart contracts",
-    "blockchain consultant",
-    "web3 product management",
-    "decentralized applications",
-    "crypto product manager",
-    "blockchain communication",
-    "EVM expert",
-    "andrea0x.eth",
-    "andrea ritondale",
-    "Blockchain",
-    "Web3",
-    "DeFi",
-    "DAO",
-    "NFT",
-    "Product Manager",
-    "Ethereum",
-    "Smart Contracts",
-    "Decentralized Finance"
-  ],
-  authors: [{ name: "Andrea Ritondale" }],
-  creator: "Andrea0x.eth",
-  publisher: "Andrea0x.eth",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL('https://andrea0x.me'),
-  icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
-  },
-  robots: {
-    index: true,
-    follow: true,
-    nocache: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      noimageindex: false,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  alternates: {
-    canonical: '/',
-  },
-  category: 'technology',
-  classification: 'Portfolio Website',
-  other: {
-    'theme-color': '#3b82f6',
-    'color-scheme': 'dark light',
-    'apple-mobile-web-app-capable': 'yes',
-    'apple-mobile-web-app-status-bar-style': 'default',
-    'apple-mobile-web-app-title': 'Andrea0x.eth',
-    'application-name': 'Andrea0x.eth Portfolio',
-    'msapplication-TileColor': '#3b82f6',
-  },
-  openGraph: {
-    title: "Andrea0x.eth - Blockchain Product Manager & Web3 Developer",
-    description: "Professional Blockchain Product Manager & Product Communication specialist. Expert in DAO, DeFi, NFTs & Web3 technologies. Building the future of decentralized applications.",
-    url: 'https://andrea0x.me',
-    siteName: 'Andrea0x.eth Portfolio',
-    images: [
-      {
-        url: '/opengraph-image',
-        width: 1200,
-        height: 630,
-        alt: 'Andrea0x.eth - Blockchain Product Manager & Web3 Developer',
-      },
-    ],
-    locale: 'en_US',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: "Andrea0x.eth - Blockchain Product Manager & Web3 Specialist",
-    description: "Blockchain Product Manager & Product Communication specialist.",
-    creator: '@andrea0x_eth',
-    images: ['/opengraph-image'],
-  },
-  verification: {
-    google: 'your-google-verification-code',
-  },
-};
-
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const locale = cookieStore.get("NEXT_LOCALE")?.value === "en" ? "en" : "it";
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang={locale} className={`${inter.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#0ea5e9" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        {/* Block-script: resolve theme before paint to avoid FOUC.
+            Order: explicit user choice (localStorage) > OS preference > dark fallback. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var s=localStorage.getItem('theme');var t=(s==='light'||s==='dark')?s:(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.classList.add(t);}catch(e){document.documentElement.classList.add('dark');}})();`,
+          }}
+        />
       </head>
       <body className={`${inter.className} antialiased`}>
         <ThemeProvider>
