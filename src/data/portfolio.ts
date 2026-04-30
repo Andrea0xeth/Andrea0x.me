@@ -1101,7 +1101,7 @@ export const portfolioData: PortfolioData = {
         it: "Solo CTO / Principal Engineer",
         en: "Solo CTO / Principal Engineer",
       },
-      period: "2022 – Present",
+      period: "07/2025 – Present",
       type: { it: "Full Time", en: "Full Time" },
       description: {
         it: "Solo CTO di un B2B SaaS pharma in produzione attiva (Montefarmaco, Logista SPA): 5.5M+ documenti MongoDB, ~14k prodotti in stock cross-supplier, 143 endpoint Express, 16 schemi Mongoose, 5 ruoli RBAC, 493 test backend con 68% statement coverage. Architettura end-to-end su 5 repo git (BE Express + UI React 19 + craco + worker Rust + landing Vite + docs), 70% riduzione size indici on-disk live + ~99% in cache evitando upgrade da +€1.260/anno, custom search engine, modal warning per ordini €250k–€1M+.",
@@ -1129,7 +1129,7 @@ export const portfolioData: PortfolioData = {
         it: "Founding Engineer / Senior Product Owner",
         en: "Founding Engineer / Senior Product Owner",
       },
-      period: "09/2023 – 2024",
+      period: "09/2023 – Present",
       type: { it: "Full Time", en: "Full Time" },
       description: {
         it: "Founding engineer di Factor: backend, jobs, signing-service e UI per il marketplace di strategie DeFi e vault automatizzati. Mix-and-match strategy templates, ERC-4626, multi-chain. Reference codebase tuttora attivo per i pattern Web3.",
