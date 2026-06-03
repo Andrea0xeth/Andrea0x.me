@@ -608,7 +608,7 @@ export function CVDocument({ lang, data, qrDataUrl, photoSrc, profile }: CVDocum
                 <SectionHeader title={T.focus[lang]} />
                 {profile.focus[lang].map((item) => (
                   <View key={item} style={styles.focusItem}>
-                    <Text style={styles.focusBullet}>—</Text>
+                    <Text style={styles.focusBullet}>›</Text>
                     <Text style={styles.focusText}>{item}</Text>
                   </View>
                 ))}
