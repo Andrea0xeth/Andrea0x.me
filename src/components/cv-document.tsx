@@ -197,6 +197,21 @@ const styles = StyleSheet.create({
     color: TEXT_2,
     marginBottom: 2,
   },
+  focusItem: {
+    flexDirection: 'row',
+    marginBottom: 4,
+  },
+  focusBullet: {
+    fontSize: 8.5,
+    color: ACCENT,
+    width: 9,
+  },
+  focusText: {
+    flex: 1,
+    fontSize: 8.5,
+    color: TEXT_2,
+    lineHeight: 1.35,
+  },
   serviceRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -481,12 +496,27 @@ export function CVDocument({ lang, data, qrDataUrl, photoSrc, profile }: CVDocum
         .filter((cs): cs is (typeof data.caseStudies)[number] => Boolean(cs))
     : data.caseStudies.filter((cs) => cs.featured).slice(0, 4);
 
-  // Pillars — profile reorders/filters by id, else all in data order.
-  const pillars = profile
-    ? profile.pillarOrder
-        .map((id) => data.pillars.find((p) => p.id === id))
-        .filter((p): p is (typeof data.pillars)[number] => Boolean(p))
-    : data.pillars;
+  // Pillars to render — normalized to { title, summary, tags } strings.
+  // Priority: profile.customPillars > profile.pillarOrder subset > all data pillars.
+  const pillarsToRender: { key: string; title: string; summary: string; tags: string[] }[] =
+    profile?.customPillars
+      ? profile.customPillars.map((cp, i) => ({
+          key: `custom-${i}`,
+          title: cp.title[lang],
+          summary: cp.summary[lang],
+          tags: cp.tags,
+        }))
+      : (profile
+          ? profile.pillarOrder
+              .map((id) => data.pillars.find((p) => p.id === id))
+              .filter((p): p is (typeof data.pillars)[number] => Boolean(p))
+          : data.pillars
+        ).map((p) => ({
+          key: p.id,
+          title: p.title[lang],
+          summary: p.summary[lang],
+          tags: p.tags.slice(0, 5),
+        }));
 
   const tagline = profile ? profile.headline[lang] : data.taglines.primary[lang];
   const summary = profile ? profile.summary[lang] : data.personal.shortBio[lang];
@@ -577,9 +607,10 @@ export function CVDocument({ lang, data, qrDataUrl, photoSrc, profile }: CVDocum
               <View style={styles.section}>
                 <SectionHeader title={T.focus[lang]} />
                 {profile.focus[lang].map((item) => (
-                  <Text key={item} style={styles.serviceName}>
-                    {item}
-                  </Text>
+                  <View key={item} style={styles.focusItem}>
+                    <Text style={styles.focusBullet}>—</Text>
+                    <Text style={styles.focusText}>{item}</Text>
+                  </View>
                 ))}
               </View>
             ) : (
@@ -611,14 +642,12 @@ export function CVDocument({ lang, data, qrDataUrl, photoSrc, profile }: CVDocum
 
             <View style={styles.section}>
               <SectionHeader title={T.pillars[lang]} />
-              {pillars.map((p) => (
-                <View key={p.id} style={styles.pillarItem} wrap={false}>
-                  <Text style={styles.pillarTitle}>{p.title[lang]}</Text>
-                  <Text style={styles.pillarSummary}>{p.summary[lang]}</Text>
+              {pillarsToRender.map((p) => (
+                <View key={p.key} style={styles.pillarItem} wrap={false}>
+                  <Text style={styles.pillarTitle}>{p.title}</Text>
+                  <Text style={styles.pillarSummary}>{p.summary}</Text>
                   {p.tags.length > 0 && (
-                    <Text style={styles.pillarTags}>
-                      {p.tags.slice(0, 5).join(' · ')}
-                    </Text>
+                    <Text style={styles.pillarTags}>{p.tags.join(' · ')}</Text>
                   )}
                 </View>
               ))}

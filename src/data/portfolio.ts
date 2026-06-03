@@ -553,7 +553,7 @@ export const portfolioData: PortfolioData = {
         it: "Founding Product Engineer & Technical Co-founder",
         en: "Founding Product Engineer & Technical Co-founder",
       },
-      period: "Mar 2026 – present",
+      period: "2026 – present",
       status: "pre-launch",
       problem: {
         it: "Costruire una piattaforma DeFi dove agent AI autonomi gestiscono fondi reali on-chain, mantenendo self-custody dell'utente, gasless UX e oversight in tempo reale. Servono guardrail forti perché l'irreversibilità on-chain non perdona.",
@@ -944,8 +944,8 @@ export const portfolioData: PortfolioData = {
         it: "Founding Engineer · Top contributor su Discover · 100% sole author su VaaS / Agent",
         en: "Founding Engineer · Top contributor on Discover · 100% sole author on VaaS / Agent",
       },
-      period: "2023 – present",
-      status: "active",
+      period: "2023 – 2025",
+      status: "completed",
       problem: {
         it: "Costruire l'infrastruttura per un'esperienza DeFi vault-as-a-service end-to-end: contratti ERC-4626 con manager-adapter, SDK tipizzato, due UI in produzione (power-user + depositor) e — dal 2026 — un layer AI-native che esponga vault e strategie a LLM, agent autonomi e API HTTP a pagamento.",
         en: "Build the infrastructure for an end-to-end DeFi vault-as-a-service experience: ERC-4626 contracts with manager-adapter pattern, a typed SDK, two production UIs (power-user + depositor) and — from 2026 — an AI-native layer exposing vaults and strategies to LLMs, autonomous agents and pay-per-call HTTP APIs.",
@@ -1002,7 +1002,7 @@ export const portfolioData: PortfolioData = {
             it: "Periodo attivo",
             en: "Active period",
           },
-          value: "Feb 2024 – ora",
+          value: "2023 – 2025",
         },
         {
           label: {
@@ -1087,7 +1087,7 @@ export const portfolioData: PortfolioData = {
         it: "Founding Product Engineer & Technical Co-founder",
         en: "Founding Product Engineer & Technical Co-founder",
       },
-      period: "03/2026 – Present",
+      period: "01/2026 – Present",
       type: { it: "Co-founder", en: "Co-founder" },
       description: {
         it: "Founding engineer di una piattaforma DeFi AI-native: 11 workspace (6 servizi runtime su Cloud Run + Foundry contracts + infra + 2 frontend Next.js 15 + test harness + docs) in 5 settimane (~1.300 commit, ~140k LOC). Single LLM loop su 7 job type + 8 strategy template Postgres, MCP gateway in Python, signing-service con per-agent EOA AES-256-GCM, ERC-7821 batch executor + UUPS billing treasury (127 test) deployati allo stesso indirizzo CREATE2 su Ethereum + Base + Arbitrum. UX gasless via Privy + EIP-7702.",
@@ -1129,7 +1129,7 @@ export const portfolioData: PortfolioData = {
         it: "Founding Engineer / Senior Product Owner",
         en: "Founding Engineer / Senior Product Owner",
       },
-      period: "09/2023 – Present",
+      period: "09/2023 – 12/2025",
       type: { it: "Full Time", en: "Full Time" },
       description: {
         it: "Founding engineer di Factor: backend, jobs, signing-service e UI per il marketplace di strategie DeFi e vault automatizzati. Mix-and-match strategy templates, ERC-4626, multi-chain. Reference codebase tuttora attivo per i pattern Web3.",
