@@ -10,6 +10,7 @@ import {
   Font,
 } from '@react-pdf/renderer';
 import type { PortfolioData, LanguageProficiency } from '@/data/types';
+import type { CVProfile } from '@/data/cv-profiles';
 
 type Lang = 'it' | 'en';
 
@@ -395,6 +396,7 @@ const T = {
   languages: { it: 'Lingue', en: 'Languages' },
   contact: { it: 'Contatti', en: 'Contact' },
   available: { it: 'Disponibilità', en: 'Available for' },
+  focus: { it: 'Focus', en: 'Focus' },
   generated: { it: 'Generato', en: 'Generated' },
 } satisfies Record<string, Record<Lang, string>>;
 
@@ -467,12 +469,27 @@ interface CVDocumentProps {
   data: PortfolioData;
   qrDataUrl?: string;
   photoSrc?: string;
+  /** Optional role-tailored profile (overrides headline, summary, ordering). */
+  profile?: CVProfile;
 }
 
-export function CVDocument({ lang, data, qrDataUrl, photoSrc }: CVDocumentProps) {
-  const featured = data.caseStudies.filter((cs) => cs.featured).slice(0, 4);
-  const tagline = data.taglines.primary[lang];
-  const summary = data.personal.shortBio[lang];
+export function CVDocument({ lang, data, qrDataUrl, photoSrc, profile }: CVDocumentProps) {
+  // Featured case studies — profile reorders/filters by slug, else default top-4.
+  const featured = profile
+    ? profile.featuredSlugs
+        .map((slug) => data.caseStudies.find((cs) => cs.slug === slug))
+        .filter((cs): cs is (typeof data.caseStudies)[number] => Boolean(cs))
+    : data.caseStudies.filter((cs) => cs.featured).slice(0, 4);
+
+  // Pillars — profile reorders/filters by id, else all in data order.
+  const pillars = profile
+    ? profile.pillarOrder
+        .map((id) => data.pillars.find((p) => p.id === id))
+        .filter((p): p is (typeof data.pillars)[number] => Boolean(p))
+    : data.pillars;
+
+  const tagline = profile ? profile.headline[lang] : data.taglines.primary[lang];
+  const summary = profile ? profile.summary[lang] : data.personal.shortBio[lang];
 
   return (
     <Document
@@ -556,22 +573,33 @@ export function CVDocument({ lang, data, qrDataUrl, photoSrc }: CVDocumentProps)
               ))}
             </View>
 
-            <View style={styles.section}>
-              <SectionHeader title={T.available[lang]} />
-              {data.services.map((svc) => (
-                <View key={svc.id} style={styles.serviceRow}>
-                  <Text style={styles.serviceName}>{svc.title[lang]}</Text>
-                  {svc.rateRange && (
-                    <Text style={styles.serviceRate}>{svc.rateRange}</Text>
-                  )}
-                </View>
-              ))}
-              <Text style={styles.rateNote}>
-                {lang === 'it'
-                  ? '* Tariffe indicative · aperto a contrattazione'
-                  : '* Indicative rates · open to negotiation'}
-              </Text>
-            </View>
+            {profile ? (
+              <View style={styles.section}>
+                <SectionHeader title={T.focus[lang]} />
+                {profile.focus[lang].map((item) => (
+                  <Text key={item} style={styles.serviceName}>
+                    {item}
+                  </Text>
+                ))}
+              </View>
+            ) : (
+              <View style={styles.section}>
+                <SectionHeader title={T.available[lang]} />
+                {data.services.map((svc) => (
+                  <View key={svc.id} style={styles.serviceRow}>
+                    <Text style={styles.serviceName}>{svc.title[lang]}</Text>
+                    {svc.rateRange && (
+                      <Text style={styles.serviceRate}>{svc.rateRange}</Text>
+                    )}
+                  </View>
+                ))}
+                <Text style={styles.rateNote}>
+                  {lang === 'it'
+                    ? '* Tariffe indicative · aperto a contrattazione'
+                    : '* Indicative rates · open to negotiation'}
+                </Text>
+              </View>
+            )}
           </View>
 
           {/* MAIN */}
@@ -583,7 +611,7 @@ export function CVDocument({ lang, data, qrDataUrl, photoSrc }: CVDocumentProps)
 
             <View style={styles.section}>
               <SectionHeader title={T.pillars[lang]} />
-              {data.pillars.map((p) => (
+              {pillars.map((p) => (
                 <View key={p.id} style={styles.pillarItem} wrap={false}>
                   <Text style={styles.pillarTitle}>{p.title[lang]}</Text>
                   <Text style={styles.pillarSummary}>{p.summary[lang]}</Text>

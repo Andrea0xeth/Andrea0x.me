@@ -6,6 +6,7 @@ import { renderToStream, DocumentProps } from '@react-pdf/renderer';
 import QRCode from 'qrcode';
 import { CVDocument } from '@/components/cv-document';
 import { portfolioData } from '@/data/portfolio';
+import { getCVProfile } from '@/data/cv-profiles';
 import type { Locale } from '@/data/types';
 
 // react-pdf relies on Node-only APIs (streams, fontkit, fs) — force Node runtime.
@@ -16,11 +17,12 @@ function parseLang(value: string | null): Locale {
   return value === 'en' ? 'en' : 'it';
 }
 
-function buildFilename(lang: Locale): string {
+function buildFilename(lang: Locale, profileTag?: string): string {
   const d = new Date();
   const yyyy = d.getFullYear();
   const mm = String(d.getMonth() + 1).padStart(2, '0');
-  return `Andrea_Ritondale_CV_${yyyy}-${mm}_${lang.toUpperCase()}.pdf`;
+  const tag = profileTag ? `${profileTag}_` : '';
+  return `Andrea_Ritondale_CV_${tag}${yyyy}-${mm}_${lang.toUpperCase()}.pdf`;
 }
 
 async function streamToBuffer(stream: NodeJS.ReadableStream): Promise<Buffer> {
@@ -63,6 +65,7 @@ async function getQrDataUrl(lang: Locale): Promise<string> {
 
 export async function GET(req: NextRequest) {
   const lang = parseLang(req.nextUrl.searchParams.get('lang'));
+  const profile = getCVProfile(req.nextUrl.searchParams.get('profile'));
 
   try {
     const [photoSrc, qrDataUrl] = await Promise.all([
@@ -75,11 +78,12 @@ export async function GET(req: NextRequest) {
       data: portfolioData,
       photoSrc,
       qrDataUrl,
+      profile,
     }) as unknown as React.ReactElement<DocumentProps>;
 
     const stream = await renderToStream(element);
     const buffer = await streamToBuffer(stream as unknown as NodeJS.ReadableStream);
-    const filename = buildFilename(lang);
+    const filename = buildFilename(lang, profile?.filenameTag);
 
     return new Response(new Uint8Array(buffer), {
       status: 200,
