@@ -1,6 +1,5 @@
 import { setRequestLocale } from 'next-intl/server';
 import { getTranslations } from 'next-intl/server';
-import Link from 'next/link';
 import { Calendar, Mail, MessageCircle } from 'lucide-react';
 import { notFound } from 'next/navigation';
 
@@ -23,8 +22,7 @@ import { TechStackSection } from '@/components/tech-stack-section';
 
 import { AnimatedButton } from '@/components/ui/animated-button';
 import { BookCallButton } from '@/components/booking/book-call-button';
-import { LanguageSwitcher } from '@/components/ui/language-switcher';
-import { ThemeSwitcher } from '@/components/ui/theme-switcher';
+import { SiteHeader } from '@/components/site-header';
 import { Surface } from '@/components/ui/surface';
 
 interface HomePageProps {
@@ -39,72 +37,13 @@ export default async function Home({ params }: HomePageProps) {
   setRequestLocale(rawLocale);
   const locale = rawLocale as Locale;
 
-  const tNav = await getTranslations('nav');
   const tCta = await getTranslations('home.contactCta');
 
   const { social, personal } = portfolioData;
 
   return (
     <div className="min-h-screen pb-24 md:pb-0 bg-[color:var(--bg-primary)]">
-      {/* Floating liquid-glass desktop header (fixed, always-visible) */}
-      <header className="hidden md:block fixed top-3 left-0 right-0 z-50 px-4 pointer-events-none">
-        <div
-          className="container mx-auto pointer-events-auto rounded-2xl border shadow-lg"
-          style={{
-            backgroundColor: 'color-mix(in srgb, var(--bg-secondary) 70%, transparent)',
-            borderColor: 'color-mix(in srgb, var(--border-primary) 70%, transparent)',
-            backdropFilter: 'saturate(180%) blur(20px)',
-            WebkitBackdropFilter: 'saturate(180%) blur(20px)',
-            boxShadow:
-              '0 1px 0 0 color-mix(in srgb, var(--text-primary) 6%, transparent) inset, 0 12px 32px -16px rgba(0,0,0,0.45)',
-          }}
-        >
-          <div className="px-5 py-2.5 flex items-center justify-between gap-4">
-            <div className="flex flex-col leading-tight">
-              <span className="text-body font-medium text-[color:var(--text-primary)]">
-                {personal.name}
-              </span>
-              <span className="font-mono text-tag text-[color:var(--text-tertiary)]">
-                · {personal.handle}
-              </span>
-            </div>
-
-            <nav className="hidden md:flex items-center gap-1">
-              <Link
-                href={`/${locale}/work`}
-                className="px-3 py-1.5 rounded-full text-caption text-[color:var(--text-secondary)] hover:text-[color:var(--text-primary)] hover:bg-[color:var(--bg-tertiary)]/60 transition-colors"
-              >
-                {locale === 'it' ? 'Lavori' : 'Work'}
-              </Link>
-              <Link
-                href={`/${locale}/about`}
-                className="px-3 py-1.5 rounded-full text-caption text-[color:var(--text-secondary)] hover:text-[color:var(--text-primary)] hover:bg-[color:var(--bg-tertiary)]/60 transition-colors"
-              >
-                {locale === 'it' ? 'Chi sono' : 'About'}
-              </Link>
-              <Link
-                href={`/${locale}/services`}
-                className="px-3 py-1.5 rounded-full text-caption text-[color:var(--text-secondary)] hover:text-[color:var(--text-primary)] hover:bg-[color:var(--bg-tertiary)]/60 transition-colors"
-              >
-                {locale === 'it' ? 'Servizi' : 'Services'}
-              </Link>
-            </nav>
-
-            <div className="flex items-center gap-2">
-              <LanguageSwitcher />
-              <ThemeSwitcher />
-              <BookCallButton
-                variant="primary"
-                size="sm"
-                className="flex items-center space-x-2"
-              >
-                <Calendar className="w-4 h-4" />
-                <span>{tNav('bookCall')}</span>
-              </BookCallButton>
-            </div>
-          </div>
-        </div>
-      </header>
+      <SiteHeader locale={locale} />
 
       <main className="relative md:pt-20">
         <HeroSection locale={locale} />
@@ -182,34 +121,6 @@ export default async function Home({ params }: HomePageProps) {
             </p>
           </div>
         </footer>
-
-        {/* Mobile floating liquid-glass bottom bar */}
-        <div className="fixed bottom-3 left-3 right-3 md:hidden z-50">
-          <div
-            className="px-4 py-2.5 rounded-2xl border shadow-lg"
-            style={{
-              backgroundColor: 'color-mix(in srgb, var(--bg-secondary) 75%, transparent)',
-              borderColor: 'color-mix(in srgb, var(--border-primary) 70%, transparent)',
-              backdropFilter: 'saturate(180%) blur(20px)',
-              WebkitBackdropFilter: 'saturate(180%) blur(20px)',
-              boxShadow:
-                '0 1px 0 0 color-mix(in srgb, var(--text-primary) 6%, transparent) inset, 0 12px 32px -16px rgba(0,0,0,0.5)',
-            }}
-          >
-            <div className="flex items-center justify-end gap-3">
-              <LanguageSwitcher />
-              <ThemeSwitcher />
-              <BookCallButton
-                variant="primary"
-                size="sm"
-                className="flex items-center space-x-2"
-              >
-                <Calendar className="w-4 h-4" />
-                <span>{tNav('bookCall')}</span>
-              </BookCallButton>
-            </div>
-          </div>
-        </div>
       </main>
     </div>
   );
