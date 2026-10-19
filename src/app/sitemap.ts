@@ -5,7 +5,7 @@ const baseUrl = 'https://andrea0x.me';
 const locales = ['it', 'en'] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ['', '/about', '/services', '/work'] as const;
+  const staticRoutes = ['', '/about', '/services', '/work', '/book'] as const;
   const caseStudySlugs = portfolioData.caseStudies.map((cs) => cs.slug);
 
   const lastModified = new Date();

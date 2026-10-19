@@ -36,7 +36,7 @@ export const portfolioData: PortfolioData = {
     github: "https://github.com/Andrea0xeth?tab=repositories",
     discord: "andrea0x.eth",
     mirror: "https://mirror.xyz/andrea0x.eth",
-    calendly: "https://calendly.com/andrea0x_eth",
+    booking: "https://call.andrea0x.me/book",
   },
 
   taglines: {

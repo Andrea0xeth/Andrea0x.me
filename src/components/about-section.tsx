@@ -11,6 +11,7 @@ import {
   ArrowUpRight,
 } from 'lucide-react';
 import { AnimatedButton } from '@/components/ui/animated-button';
+import { BookCallButton } from '@/components/booking/book-call-button';
 import { Surface } from '@/components/ui/surface';
 import { TagPill } from '@/components/ui/tag-pill';
 import { XIcon } from '@/components/ui/x-icon';
@@ -344,9 +345,9 @@ export async function AboutSection({ locale }: AboutSectionProps) {
             external
           />
           <SocialCard
-            href={social.calendly}
-            label="Calendly"
-            handle="calendly.com/andrea0x_eth"
+            href={social.booking}
+            label="Book a call"
+            handle="call.andrea0x.me/book"
             icon={<Calendar className="w-4 h-4" />}
             external
           />
@@ -355,9 +356,9 @@ export async function AboutSection({ locale }: AboutSectionProps) {
 
       {/* 9. FINAL CTA */}
       <section className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-        <AnimatedButton href={social.calendly} variant="primary" size="md">
+        <BookCallButton variant="primary" size="md" modalTitle={t('cta.schedule')}>
           {t('cta.schedule')}
-        </AnimatedButton>
+        </BookCallButton>
         <AnimatedButton
           href={`/api/cv?lang=${locale}`}
           variant="secondary"

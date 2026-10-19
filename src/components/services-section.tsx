@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import { AnimatedButton } from '@/components/ui/animated-button';
+import { BookCallButton } from '@/components/booking/book-call-button';
 import { Surface } from '@/components/ui/surface';
 import { TagPill } from '@/components/ui/tag-pill';
 import { portfolioData } from '@/data/portfolio';
@@ -115,9 +116,9 @@ export async function ServicesSection({ locale }: ServicesSectionProps) {
 
       {/* 5. CTA */}
       <section className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-        <AnimatedButton href={social.calendly} variant="primary" size="md">
+        <BookCallButton variant="primary" size="md" modalTitle={t('cta.book')}>
           {t('cta.book')}
-        </AnimatedButton>
+        </BookCallButton>
         <AnimatedButton
           href={`mailto:${social.email}`}
           variant="secondary"

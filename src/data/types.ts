@@ -30,7 +30,8 @@ export interface Social {
   github: string;
   discord: string;
   mirror: string;
-  calendly: string;
+  /** Self-hosted Cal.com booking URL (call.andrea0x.me/book) */
+  booking: string;
 }
 
 // ----- Hero / tagline ---------------------------------------------------------

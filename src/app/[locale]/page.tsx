@@ -22,6 +22,7 @@ import { CollaborationsSection } from '@/components/collaborations-section';
 import { TechStackSection } from '@/components/tech-stack-section';
 
 import { AnimatedButton } from '@/components/ui/animated-button';
+import { BookCallButton } from '@/components/booking/book-call-button';
 import { LanguageSwitcher } from '@/components/ui/language-switcher';
 import { ThemeSwitcher } from '@/components/ui/theme-switcher';
 import { Surface } from '@/components/ui/surface';
@@ -92,15 +93,14 @@ export default async function Home({ params }: HomePageProps) {
             <div className="flex items-center gap-2">
               <LanguageSwitcher />
               <ThemeSwitcher />
-              <AnimatedButton
-                href={social.calendly}
+              <BookCallButton
                 variant="primary"
                 size="sm"
                 className="flex items-center space-x-2"
               >
                 <Calendar className="w-4 h-4" />
                 <span>{tNav('bookCall')}</span>
-              </AnimatedButton>
+              </BookCallButton>
             </div>
           </div>
         </div>
@@ -143,15 +143,15 @@ export default async function Home({ params }: HomePageProps) {
               {tCta('body')}
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
-              <AnimatedButton
-                href={social.calendly}
+              <BookCallButton
                 variant="primary"
                 size="md"
                 className="flex items-center space-x-2"
+                modalTitle={tCta('scheduleCall')}
               >
                 <Calendar className="w-4 h-4" />
                 <span>{tCta('scheduleCall')}</span>
-              </AnimatedButton>
+              </BookCallButton>
               <AnimatedButton
                 href={social.telegram}
                 variant="glass"
@@ -199,15 +199,14 @@ export default async function Home({ params }: HomePageProps) {
             <div className="flex items-center justify-end gap-3">
               <LanguageSwitcher />
               <ThemeSwitcher />
-              <AnimatedButton
-                href={social.calendly}
+              <BookCallButton
                 variant="primary"
                 size="sm"
                 className="flex items-center space-x-2"
               >
                 <Calendar className="w-4 h-4" />
                 <span>{tNav('bookCall')}</span>
-              </AnimatedButton>
+              </BookCallButton>
             </div>
           </div>
         </div>
