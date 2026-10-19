@@ -9,9 +9,7 @@
 
 ## 0. EXECUTIVE IDENTITY — chi sei in una frase
 
-**Imprenditore tecnico ibrido + IT Manager + Software Architect + AI Engineer**.
-
-Non sei specializzato in un layer o in un dominio: sei un **technical generalist con depth dove serve**, capace di **disegnare sistemi IT complessi, costruirli end-to-end, gestire la digitalizzazione di processi aziendali, e portarli sul mercato**.
+**Imprenditore tecnico ibrido + IT Manager + Software Architect + AI Engineer**. Un **technical generalist con depth dove serve**, capace di disegnare sistemi IT complessi, costruirli end-to-end, gestirne la digitalizzazione e portarli sul mercato.
 
 Operi simultaneamente su:
 - **Traditional software development** (B2B SaaS production con clienti enterprise)
@@ -1182,3 +1180,52 @@ LINGUE: Italiano (madrelingua), Inglese (fluente tecnico)
 ---
 
 **FINE DOCUMENTO** — Versione canonica 3.0 (bilanciata, multi-skill, generalist by design) · 2026-04-30
+
+---
+
+## 18. APPENDICE — Exceptional Ability / Talent-Visa application answer (EN)
+
+> Risposta copy-paste-ready alla domanda: *"Provide evidence of exceptional ability or achievements. Tell us about companies you worked for or founded before and your academic background. Share accomplishments you're proud of."*
+> Ordine: aziende fondate → leadership istituzionale → CTO produzione → recognition DAO → accademia → intersezione distintiva. Tutti i claim sono verificabili (GitHub, on-chain, ResearchGate, named clients, posizioni DAO elette).
+> **Da verificare prima dell'invio**: (1) titolo esatto @ Gruppo Activa; (2) claim "ahead of most academic attention" sul DAO thesis; (3) OK a rendere pubblici i numeri Mandate/Haelias.
+
+I'm a co-founder, founding engineer, and technical leader who has shipped production systems across DeFi, enterprise SaaS, and institutional/government technology — leading both small founding teams and engineering departments of nearly twenty people. The evidence follows.
+
+**Companies I've founded and built**
+
+I'm **Co-founder & CPO of Mandate.Finance**, a multi-chain DeFi platform where autonomous AI agents manage capital on-chain. I built it end-to-end — smart contracts, frontends, and the AI agent layer — across 11 production services in five weeks (~1,300 commits, ~140k LOC). It deploys to the same CREATE2 address on Ethereum, Base and Arbitrum, enforces code-level guardrails the model cannot bypass, and custodies per-agent keys (AES-256-GCM) in an isolated signing service. Contracts ship with 127 tests, including invariant suites of 256 iterations × ~128k calls.
+
+Before Mandate I was a **Founding Engineer at Factor.fi**, a DeFi vault-infrastructure protocol on Arbitrum, Base and Ethereum. I'm the top contributor on Discover (468 commits), a major contributor on Factor Studio (253 commits), and **sole author of Factor's Vault-as-a-Service** — an HTTP-paid, AI-managed vault built on x402 + USDC. I also built **Factor-MCP**, an MCP server exposing 68 vault operations to language models — one of the earliest MCP integrations bridging LLMs and a live DeFi protocol.
+
+**Leading at institutional scale (Gruppo Activa)**
+
+At **Gruppo Activa — a 7,000-employee Italian company — I lead the Blockchain department, managing nearly 20 developers.** We deliver blockchain and digital-infrastructure projects for institutional and public-sector Italian entities, including the Ministry of Culture's PNRR / NextGenerationEU programs — permissioned and hybrid architectures, certification and provenance, identity and compliance systems, often combining on-chain guarantees with centralized components where regulation demands it.
+
+This is the opposite end from a startup — high accountability, audit and compliance (NIS2, GDPR, PNRR deliverables), public-procurement constraints, and a team to lead rather than a codebase to own alone. Concretely, I'm **technical-functional lead on ArtCertify** and the four blockchain Data Products of the Ministry of Culture's "Ecomic Lotto 3" tender: a dual-chain soulbound-token platform for cultural-heritage certification on Algorand (ARC-19) and Base (ERC-721 + ERC-5192) — institutional-grade technology shipped under regulatory scrutiny while leading a sizeable team.
+
+**Production engineering leadership (Haelias)**
+
+In parallel I'm **Solo CTO of Haelias**, a B2B pharma-procurement SaaS in active production with enterprise clients including **Montefarmaco** and **Logista SPA**. It serves 5.5M+ MongoDB documents and ~14k cross-supplier in-stock products through 143 API endpoints, with 493 backend tests at 68% coverage. I diagnosed and resolved a performance problem that **cut index footprint by ~70% on a live 5.5M-document cluster**, avoiding a cluster upgrade — with zero downtime.
+
+**Recognition by my peers and communities**
+
+My contributions have been recognized through **elected positions** in major DeFi DAOs:
+
+- **Elite Councilor & Grants Councilor at Kwenta DAO** — one of five members elected by token holders to govern the protocol and steward grants.
+- **The 300 & Country Lead at Synthetix DAO** — selected into Synthetix's elite contributor program; led the Italian community.
+- **Core Contributor & Product Manager at Jigstack DAO.**
+
+I've also represented Mandate.Finance in an industry integration call with **Gnosis Pay**.
+
+**Academic background — early conviction on blockchain (2019–2022)**
+
+I committed to blockchain academically years before it became a mainstream academic subject:
+
+- **Master's Degree in Management, 110/110 cum laude** — University of Cassino and Southern Lazio. Dissertation *"DAO – Decentralized Autonomous Organization: a supranational corporate-governance model on blockchain,"* **published on ResearchGate** — researching DAO governance as a formal organizational model in 2022, ahead of most academic attention, and I now build and govern DAOs in practice.
+- **Blockchain Business at Dalian University of Technology (China), 2019** — international program studying blockchain programming alongside Mandarin Chinese: early hands-on foundations in distributed-ledger systems and exposure to one of the world's most advanced blockchain ecosystems.
+- **Bachelor's Degree in Economics** — University of Cassino. Dissertation *"Blockchain to support the internationalization of SMEs"* (2020).
+- **Erasmus+** exchange (St. Kliment University, Bulgaria) and **certified Professional Scrum Master (Scrum.org).**
+
+**What makes my profile exceptional**
+
+The combination is rare: breadth with depth where it matters. I architect complex systems end-to-end, lead engineering teams, and stay technical enough to write production code and review every layer — smart contracts to databases to AI agents. I'm a founding engineer who is also an elected DAO governor; a published researcher on the technology I now build with; a CTO who ships for both Web3 startups and regulated European institutions; and a department head leading twenty engineers at enterprise scale. I work AI-native, at the velocity of a small team, across DeFi, enterprise SaaS, and public-sector blockchain simultaneously. I design the system, build its critical parts, lead the team that builds the rest, and ship it.
