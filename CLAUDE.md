@@ -2,6 +2,10 @@
 
 Guidance for Claude Code working in this repo. Focuses on what is **non-obvious**.
 
+> **Workspace layout:** this directory (`UI/`) is the Git root for the public portfolio.
+> Sibling folders (not in this repo): `../BE` (Cal.com / OCI ops), `../docs` (e.g. `me.md`),
+> `../research` (enrichment notes). See `../README.md`.
+
 ## Commands
 
 ```bash
