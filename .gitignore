@@ -41,6 +41,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# private project sources mounted for AI mining (not for public commit)
+# private / local-only (live under ../BE ../docs ../research — not this repo)
 /progetti/
 /.tmp/
+/.secrets/
