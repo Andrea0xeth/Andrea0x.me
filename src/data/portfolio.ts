@@ -1075,6 +1075,137 @@ export const portfolioData: PortfolioData = {
       link: "https://studio.factor.fi/",
       featured: true,
     },
+    {
+      slug: "deckagent",
+      title: "DeckAgent",
+      domain: {
+        it: "AI-native tooling · Cursor companion · Local-first mobile",
+        en: "AI-native tooling · Cursor companion · Local-first mobile",
+      },
+      role: {
+        it: "Solo founder / full-stack product — daemon, PWA, extension Cursor, app iOS + Watch",
+        en: "Solo founder / full-stack product — daemon, PWA, Cursor extension, iOS + Watch app",
+      },
+      period: "2026",
+      status: "active",
+      problem: {
+        it: "Il coding agentic su Cursor resta legato al desktop: fuori dal Mac non hai visibilità su agent in corso, plan, chat e file del repo, e non puoi accodare il prossimo prompt a Composer senza riaprire il laptop. Le soluzioni ufficiali puntano ad agent in cloud; chi vuole tenere il codice in locale resta senza un telecomando mobile privacy-first.",
+        en: "Agentic coding on Cursor is still desktop-bound: away from the Mac you lose visibility into running agents, plans, chats and repo files, and you cannot queue the next Composer prompt without opening the laptop. Official mobile targets cloud agents; anyone who wants code to stay on their machine has no privacy-first mobile remote.",
+      },
+      architecture: {
+        it: "Monorepo local-first: un daemon Node (Express + WebSocket, bind 127.0.0.1) indicizza workspace Cursor, chat agent, plan/file e coda prompt senza scrivere su `state.vscdb`; una PWA React 19 (Vite + service worker) e un'app Expo (shell nativa + WebView della stessa PWA, Apple Watch, push) consumano lo stesso API surface; un'extension Cursor/VS Code (`andrea0x.deckagent`) fa pairing QR, heartbeat e delivery verso Composer/Agents, con fallback macOS Accessibility quando l'IDE è stale. Accesso remoto via Cloudflare tunnel / Tailscale con auth obbligatoria fuori localhost; pairing a codice monouso a breve TTL.",
+        en: "Local-first monorepo: a Node daemon (Express + WebSocket, bound to 127.0.0.1) indexes Cursor workspaces, agent chats, plans/files and a prompt queue without writing `state.vscdb`; a React 19 PWA (Vite + service worker) and an Expo app (native shell + WebView of the same PWA, Apple Watch, push) share one API surface; a Cursor/VS Code extension (`andrea0x.deckagent`) handles QR pairing, heartbeat and delivery into Composer/Agents, with a macOS Accessibility fallback when the IDE is stale. Remote access via Cloudflare tunnel / Tailscale with auth required off-localhost; short-TTL one-time pairing codes.",
+      },
+      decisions: [
+        {
+          title: {
+            it: "Local-first, non cloud mirror",
+            en: "Local-first, not a cloud mirror",
+          },
+          body: {
+            it: "Il repo resta sulla macchina di fiducia. Il daemon espone solo lettura sandboxata del workspace + una coda prompt; niente sync del codebase su terzi. Tunnel e Tailscale sono opt-in sopra un bind localhost.",
+            en: "The repo stays on the machine you trust. The daemon exposes sandboxed workspace reads plus a prompt queue — no third-party codebase sync. Tunnel and Tailscale are opt-in on top of a localhost bind.",
+          },
+        },
+        {
+          title: {
+            it: "Nessuna mutazione del DB privato di Cursor",
+            en: "No mutation of Cursor's private DB",
+          },
+          body: {
+            it: "Discovery da filesystem e metadati workspace; zero write su `state.vscdb`. La delivery verso Composer passa da clipboard + focus UI (extension) o automation Accessibility, non da reverse-engineering di API private.",
+            en: "Discovery from filesystem and workspace metadata; zero writes to `state.vscdb`. Delivery into Composer uses clipboard + UI focus (extension) or Accessibility automation — not reverse-engineered private APIs.",
+          },
+        },
+        {
+          title: {
+            it: "Una PWA, due shell (web + native)",
+            en: "One PWA, two shells (web + native)",
+          },
+          body: {
+            it: "Feature parity tra browser installabile e iOS: l'app Expo è shell (QR, push, Watch, haptics) intorno alla stessa UI React. Evita di mantenere due client feature-complete.",
+            en: "Feature parity between installable browser and iOS: the Expo app is a shell (QR, push, Watch, haptics) around the same React UI. Avoids maintaining two feature-complete clients.",
+          },
+        },
+        {
+          title: {
+            it: "Dual path di delivery dei prompt",
+            en: "Dual-path prompt delivery",
+          },
+          body: {
+            it: "L'extension fa claim/ack della coda via heartbeat (~8s). Se l'IDE è assente o stale, il daemon può consegnare via Agents window su macOS — resilienza senza un unico punto di fallimento.",
+            en: "The extension claims/acks the queue over a ~8s heartbeat. If the IDE is missing or stale, the daemon can deliver via the macOS Agents window — resilience without a single point of failure.",
+          },
+        },
+        {
+          title: {
+            it: "Onboarding via Cursor Agent skill",
+            en: "Onboarding via a Cursor Agent skill",
+          },
+          body: {
+            it: "GTM tecnico: un messaggio copy-paste + skill `@deckagent-pairing` avvia bridge e QR. L'utente resta nel flusso agentic che già conosce.",
+            en: "Technical GTM: one copy-paste message plus the `@deckagent-pairing` skill starts the bridge and QR. The user stays inside the agentic loop they already know.",
+          },
+        },
+      ],
+      results: [
+        {
+          label: {
+            it: "Surface prodotto",
+            en: "Product surfaces",
+          },
+          value: "Daemon · PWA · Extension · iOS · Watch",
+        },
+        {
+          label: {
+            it: "Beta iPhone",
+            en: "iPhone beta",
+          },
+          value: "TestFlight",
+        },
+        {
+          label: {
+            it: "Extension",
+            en: "Extension",
+          },
+          value: "andrea0x.deckagent",
+        },
+        {
+          label: {
+            it: "Postura sicurezza",
+            en: "Security posture",
+          },
+          value: "Local-first · QR pairing",
+        },
+        {
+          label: {
+            it: "Stack core",
+            en: "Core stack",
+          },
+          value: "Node · React 19 · Expo 57",
+        },
+      ],
+      techStack: [
+        "TypeScript",
+        "Node.js",
+        "Express",
+        "WebSocket",
+        "SQLite",
+        "React 19",
+        "Vite",
+        "PWA",
+        "VS Code Extension API",
+        "Expo",
+        "React Native",
+        "Apple Watch",
+        "Cloudflare Tunnel",
+        "Playwright",
+      ],
+      pillarsTouched: ["ai-eng", "traditional-dev", "cloud-devops"],
+      image: "/images/previews/deckagent.jpg",
+      link: "https://deckage.si",
+      featured: true,
+    },
   ],
 
   // -------------------------------------------------------------------------
@@ -1740,6 +1871,18 @@ export const portfolioData: PortfolioData = {
       featured: true,
     },
     {
+      title: "DeckAgent",
+      description: {
+        it: "Telecomando local-first per Cursor: dal telefono (e Apple Watch) segui agent, plan e file sul PC e accodi il prossimo prompt a Composer — daemon + PWA + extension + app iOS, pairing QR, senza cloud mirror del repo.",
+        en: "Local-first remote for Cursor: from phone (and Apple Watch) follow agents, plans and files on your PC and queue the next Composer prompt — daemon + PWA + extension + iOS app, QR pairing, no cloud mirror of the repo.",
+      },
+      image: "/images/previews/deckagent.jpg",
+      gif: null,
+      link: "https://deckage.si",
+      categories: ["AI", "Mobile", "Developer Tools"],
+      featured: true,
+    },
+    {
       title: "Mandate.Finance",
       description: {
         it: "Piattaforma DeFi AI-native: 11 workspace production-deployed in 5 settimane, multi-chain (stesso indirizzo CREATE2 su 3 chain), MCP gateway, gasless UX via EIP-7702 + ERC-7821.",
@@ -2030,6 +2173,7 @@ export const portfolioData: PortfolioData = {
     { name: "Anthropic Claude", category: "ai", url: "https://www.anthropic.com/", logo: "/images/logos/anthropic.svg" },
     { name: "Claude Code", category: "ai", url: "https://www.anthropic.com/claude-code", logo: "/images/logos/tech/claude.svg" },
     { name: "Cursor", category: "ai", url: "https://cursor.com/", logo: "/images/logos/tech/cursor.svg" },
+    { name: "DeckAgent", category: "ai", url: "https://deckage.si", logo: "/images/logos/tech/deckagent.svg" },
     { name: "OMI", category: "ai", url: "https://www.omi.me/", logo: "/images/logos/tech/omi.png" },
     { name: "DeepInfra", category: "ai", url: "https://deepinfra.com/", logo: "/images/logos/tech/deepinfra.png" },
 

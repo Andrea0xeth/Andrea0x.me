@@ -24,6 +24,8 @@ const config: Config = {
       colors: {
         background: 'var(--bg-primary)',
         foreground: 'var(--text-primary)',
+        paper: 'var(--paper)',
+        signal: 'var(--signal)',
         // Legacy palette — see note above.
         primary: {
           DEFAULT: '#3b82f6',
@@ -72,18 +74,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        // Inter (variable injected by next/font in src/app/layout.tsx).
-        sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
-        // JetBrains Mono — apply via `font-mono`. Variable also injected by
-        // next/font in src/app/layout.tsx.
-        mono: [
-          'var(--font-jetbrains-mono)',
-          'JetBrains Mono',
-          'ui-monospace',
-          'SFMono-Regular',
-          'Menlo',
-          'monospace',
-        ],
+        // Geist + Geist Mono (variables injected by next/font in src/app/layout.tsx).
+        sans: ['var(--font-geist)', 'Geist', 'Inter', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-geist-mono)', 'Geist Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
       },
     },
   },

@@ -55,7 +55,19 @@
       "schedule": "Fissa una chiamata",
       "cv": "Scarica CV",
       "email": "Email"
-    }
+    },
+    "kicker": "Chi sono",
+    "glance": "In breve",
+    "storyTitle": "Disegno il sistema, lo costruisco, lo tengo in piedi.",
+    "nowTitle": "Su cosa sto lavorando",
+    "elsewhereTitle": "Scrivimi dove preferisci.",
+    "nationality": "Nazionalità",
+    "workMode": "Modalità di lavoro",
+    "birthYear": "Anno di nascita",
+    "years": "Anni di esperienza",
+    "pillars": "Pillar di competenza",
+    "domains": "Domini",
+    "bookLabel": "Prenota una call"
   },
   "whoIsThisFor": {
     "title": "Per chi è",
@@ -139,5 +151,79 @@
       "devops": "DevOps",
       "tools": "Tools"
     }
+  },
+  "shell": {
+    "skip": "Vai al contenuto",
+    "homeLabel": "Andrea Ritondale, home",
+    "sections": "Sezioni",
+    "pages": "Pagine",
+    "social": "Social",
+    "language": "Lingua",
+    "switchTo": "Passa all'inglese",
+    "nav": {
+      "work": "Lavori",
+      "method": "Come lavoro",
+      "domains": "Domini",
+      "services": "Servizi",
+      "about": "Chi sono",
+      "book": "Prenota",
+      "bookLong": "una call",
+      "caseStudies": "Case study",
+      "bookFooter": "Prenota"
+    },
+    "closing": {
+      "kicker": "Contatto",
+      "title": "Qual è la prossima mossa?",
+      "body": "Una call di 30 minuti per capire contesto, obiettivi e vincoli. Nessun impegno.",
+      "book": "Prenota una call",
+      "cv": "Scarica CV"
+    }
+  },
+  "work": {
+    "kicker": "Case study",
+    "title": "Cinque sistemi, cinque domini, un solo responsabile tecnico.",
+    "lead": "Ogni progetto ha un case study completo: problema, architettura, decisioni chiave e numeri verificabili.",
+    "matrixKicker": "Copertura",
+    "matrixTitle": "Domini × progetti",
+    "matrixLead": "Quali pillar di competenza tocca ogni sistema.",
+    "project": "Progetto"
+  },
+  "caseStudyPage": {
+    "status": {
+      "production": "In produzione",
+      "pre-launch": "Pre-lancio",
+      "completed": "Completato",
+      "active": "Attivo"
+    },
+    "visit": "Visita il sito",
+    "preview": "Schermata di",
+    "techStack": "Tech stack",
+    "pillars": "Pillar toccati",
+    "atGlance": "Numeri chiave",
+    "ctaTitle": "Hai un sistema simile da costruire?",
+    "ctaBody": "Raccontami il contesto in una call di 30 minuti."
+  },
+  "servicesPage": {
+    "kicker": "Servizi",
+    "ratesNote": "Tariffe indicative · aperte a contrattazione in base a scope, durata e impegno richiesto.",
+    "offerKicker": "Cosa offro",
+    "offerTitle": "Sei modi di lavorare insieme.",
+    "processKicker": "Processo",
+    "rate": "Tariffa"
+  },
+  "bookPage": {
+    "kicker": "Prenota",
+    "title": "Prenota una call",
+    "lead": "Scegli durata e orario: conferma in pochi click. Ricevi l'invito via email.",
+    "facts": {
+      "remote": "Video call · remoto",
+      "tz": "Italia · CET"
+    },
+    "fallback": "Il calendario non si carica?",
+    "openDirect": "Apri call.andrea0x.me"
+  },
+  "notFoundPage": {
+    "kicker": "Errore 404",
+    "work": "Vedi i case study"
   }
 }
