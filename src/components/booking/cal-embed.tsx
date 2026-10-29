@@ -9,24 +9,12 @@ interface CalEmbedProps {
   title?: string;
 }
 
-function resolveTheme(): 'light' | 'dark' {
-  if (typeof document === 'undefined') return 'dark';
-  return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-}
-
 export function CalEmbed({ className, title = 'Book a call' }: CalEmbedProps) {
   const [src, setSrc] = useState(() => calEmbedSrc('dark'));
 
   useEffect(() => {
-    const apply = () => setSrc(calEmbedSrc(resolveTheme()));
-    apply();
-
-    const observer = new MutationObserver(apply);
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['class'],
-    });
-    return () => observer.disconnect();
+    const notes = new URLSearchParams(window.location.search).get('notes')?.slice(0, 500) || undefined;
+    if (notes) setSrc(calEmbedSrc('dark', notes));
   }, []);
 
   return (

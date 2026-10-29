@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { getMessages, setRequestLocale } from "next-intl/server";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { portfolioData } from "@/data/portfolio";
 import type { Locale } from "@/data/types";
+import { SiteNav } from "@/components/site/site-nav";
+import { SiteFooter } from "@/components/site/site-footer";
+import { SiteEffects } from "@/components/site/site-effects";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -127,6 +130,7 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
 
   const messages = await getMessages();
+  const t = await getTranslations({ locale, namespace: 'shell' });
 
   // JSON-LD Person schema. Uses EN shortBio so it stays stable across locales.
   const personJsonLd = {
@@ -166,7 +170,16 @@ export default async function LocaleLayout({
           __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      {children}
+      <a className="skip" href="#main">
+        {t('skip')}
+      </a>
+      <div className="grain" aria-hidden="true" />
+      <SiteNav />
+      <main id="main" className="site-main">
+        {children}
+      </main>
+      <SiteFooter locale={locale} />
+      <SiteEffects />
     </NextIntlClientProvider>
   );
 }

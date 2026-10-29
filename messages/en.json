@@ -51,7 +51,23 @@
       "schedule": "Schedule a call",
       "cv": "Download CV",
       "email": "Email"
-    }
+    },
+    "story": "Story",
+    "now": "Now",
+    "nowSummary": "Active projects I am shipping right now.",
+    "elsewhere": "Find me elsewhere",
+    "kicker": "About",
+    "glance": "At a glance",
+    "storyTitle": "I design the system, build it, and keep it running.",
+    "nowTitle": "What I am working on",
+    "elsewhereTitle": "Reach me wherever you prefer.",
+    "nationality": "Nationality",
+    "workMode": "Work mode",
+    "birthYear": "Birth year",
+    "years": "Years of experience",
+    "pillars": "Skill pillars",
+    "domains": "Domains",
+    "bookLabel": "Book a call"
   },
   "whoIsThisFor": {
     "title": "Who is this for?",
@@ -135,5 +151,79 @@
       "devops": "DevOps",
       "tools": "Tools"
     }
+  },
+  "shell": {
+    "skip": "Skip to content",
+    "homeLabel": "Andrea Ritondale, home",
+    "sections": "Sections",
+    "pages": "Pages",
+    "social": "Social",
+    "language": "Language",
+    "switchTo": "Switch to Italian",
+    "nav": {
+      "work": "Work",
+      "method": "How I work",
+      "domains": "Domains",
+      "services": "Services",
+      "about": "About",
+      "book": "Book",
+      "bookLong": "a call",
+      "caseStudies": "Case studies",
+      "bookFooter": "Book"
+    },
+    "closing": {
+      "kicker": "Contact",
+      "title": "What is the next move?",
+      "body": "A 30-minute call to understand context, goals and constraints. No commitment.",
+      "book": "Book a call",
+      "cv": "Download CV"
+    }
+  },
+  "work": {
+    "kicker": "Case studies",
+    "title": "Five systems, five domains, one technical owner.",
+    "lead": "Every project has a full case study: problem, architecture, key decisions and verifiable numbers.",
+    "matrixKicker": "Coverage",
+    "matrixTitle": "Domains × projects",
+    "matrixLead": "Which skill pillars each system touches.",
+    "project": "Project"
+  },
+  "caseStudyPage": {
+    "status": {
+      "production": "In production",
+      "pre-launch": "Pre-launch",
+      "completed": "Completed",
+      "active": "Active"
+    },
+    "visit": "Visit website",
+    "preview": "Screenshot of",
+    "techStack": "Tech stack",
+    "pillars": "Pillars touched",
+    "atGlance": "Key numbers",
+    "ctaTitle": "Building something similar?",
+    "ctaBody": "Walk me through the context in a 30-minute call."
+  },
+  "servicesPage": {
+    "kicker": "Services",
+    "ratesNote": "Indicative rates · open to negotiation depending on scope, duration and required commitment.",
+    "offerKicker": "What I offer",
+    "offerTitle": "Six ways to work together.",
+    "processKicker": "Process",
+    "rate": "Rate"
+  },
+  "bookPage": {
+    "kicker": "Book",
+    "title": "Book a call",
+    "lead": "Pick a duration and time and confirm in a few clicks. The invite lands in your inbox.",
+    "facts": {
+      "remote": "Video call · remote",
+      "tz": "Italy · CET"
+    },
+    "fallback": "Calendar not loading?",
+    "openDirect": "Open call.andrea0x.me"
+  },
+  "notFoundPage": {
+    "kicker": "Error 404",
+    "work": "See the case studies"
   }
 }

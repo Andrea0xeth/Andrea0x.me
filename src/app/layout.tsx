@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
 import { cookies } from "next/headers";
+import { getLocale } from "next-intl/server";
 import "./globals.css";
-import { ThemeProvider } from "@/contexts/theme-context";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -10,14 +10,25 @@ export const metadata: Metadata = {
   ),
 };
 
-const inter = Inter({
+export const viewport: Viewport = {
+  themeColor: "#0a0908",
+  colorScheme: "dark",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  viewportFit: "cover",
+};
+
+const geist = Geist({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400", "500", "600"],
+  variable: "--font-geist",
 });
 
-const jetbrainsMono = JetBrains_Mono({
+const geistMono = Geist_Mono({
   subsets: ["latin"],
-  variable: "--font-jetbrains-mono",
+  weight: ["400"],
+  variable: "--font-geist-mono",
 });
 
 export default async function RootLayout({
@@ -26,27 +37,30 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const cookieStore = await cookies();
-  const locale = cookieStore.get("NEXT_LOCALE")?.value === "en" ? "en" : "it";
+  const requested = await getLocale().catch(() => undefined);
+  const locale =
+    requested === "en" || requested === "it"
+      ? requested
+      : cookieStore.get("NEXT_LOCALE")?.value === "en"
+        ? "en"
+        : "it";
   return (
-    <html lang={locale} className={`${inter.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
+    <html
+      lang={locale}
+      className={`dark ${geist.variable} ${geistMono.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <meta name="theme-color" content="#0ea5e9" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-        {/* Block-script: resolve theme before paint to avoid FOUC.
-            Order: explicit user choice (localStorage) > OS preference > dark fallback. */}
+        {/* Reveal-on-scroll content is only hidden once JS is known to run. */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var s=localStorage.getItem('theme');var t=(s==='light'||s==='dark')?s:(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.classList.add(t);}catch(e){document.documentElement.classList.add('dark');}})();`,
+            __html: `document.documentElement.classList.add('js');`,
           }}
         />
       </head>
-      <body className={`${inter.className} antialiased`}>
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

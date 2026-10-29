@@ -6,11 +6,13 @@ export const CAL_BOOKING_URL = `${CAL_ORIGIN}${CAL_BOOKING_PATH}`;
 /** Public portfolio path (locale-prefixed by next-intl). */
 export const SITE_BOOK_PATH = '/book';
 
-export function calEmbedSrc(theme: 'light' | 'dark' = 'dark'): string {
+/** `notes` prefills the booking form's additional-notes field. */
+export function calEmbedSrc(theme: 'light' | 'dark' = 'dark', notes?: string): string {
   const params = new URLSearchParams({
     embed: 'true',
     theme,
     layout: 'month_view',
   });
+  if (notes) params.set('notes', notes);
   return `${CAL_BOOKING_URL}?${params.toString()}`;
 }
