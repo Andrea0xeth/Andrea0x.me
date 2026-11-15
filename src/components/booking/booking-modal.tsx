@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
-import { CalEmbed } from '@/components/booking/cal-embed';
+import { CalBooking } from '@/components/booking/cal-booking';
 import { useReducedMotion } from '@/lib/use-reduced-motion';
 
 interface BookingModalProps {
@@ -77,8 +77,8 @@ export function BookingModal({ open, onClose, title = 'Book a call' }: BookingMo
                 <X className="h-4 w-4" />
               </button>
             </div>
-            <div className="min-h-0 flex-1">
-              <CalEmbed title={title} />
+            <div className="min-h-0 flex-1 overflow-y-auto p-4 sm:p-5">
+              <CalBooking title={title} className="h-full min-h-full" />
             </div>
           </motion.div>
         </motion.div>

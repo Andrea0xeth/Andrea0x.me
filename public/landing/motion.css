@@ -242,205 +242,110 @@ body.is-ready .hero-copy .socials { transition-delay: 1.55s; }
   transform: translateY(1px) scale(0.985);
 }
 
-/* ---------- Story (sticky window) ---------- */
+/* ---------- Cases (Aaru-like project switcher) ---------- */
 
-.story {
-  position: relative;
+/* no-js: only the active pane in flow */
+.case-pane { display: none; }
+.case-pane.on { display: block; }
+
+/*
+ * JS: stack panes in one grid cell and crossfade.
+ * Keeps scroll-driven setCase (.on toggle) while avoiding abrupt display swaps.
+ */
+.js .cases-stage {
   display: grid;
-  max-width: calc(var(--measure) + 2 * var(--pad));
-  margin: 0 auto;
-  padding: 0 var(--pad) clamp(3rem, 8vw, 6rem);
+  align-content: start;
 }
 
-.chapter {
-  padding: clamp(3rem, 8vw, 5rem) 0;
+.js .case-pane {
+  --case-dur: 640ms;
+  --case-ease: cubic-bezier(0.33, 0.1, 0.25, 1);
+  display: block;
+  grid-area: 1 / 1;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(6px);
+  z-index: 0;
+  transition:
+    opacity var(--case-dur) var(--case-ease),
+    transform var(--case-dur) var(--case-ease),
+    visibility 0s linear var(--case-dur);
 }
 
-.kick-num {
-  font-family: var(--mono);
-  color: var(--signal);
-  letter-spacing: 0.04em;
+.js .case-pane.on {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: none;
+  z-index: 1;
+  transition:
+    opacity var(--case-dur) var(--case-ease),
+    transform var(--case-dur) var(--case-ease),
+    visibility 0s linear 0s;
 }
 
-.chapter-shot {
-  margin-top: 2rem;
-}
-
-.story-visual {
-  display: none;
-}
-
-@media (min-width: 1000px) {
-  .story {
-    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-    gap: 4.5rem;
-  }
-
-  .chapter {
-    min-height: 88svh;
+/*
+ * Mobile: sequential chapters in page flow (DeckAgent story).
+ * Sticky chips stay; panes unstack so the page scrolls — not the pane.
+ */
+@media (max-width: 979px) {
+  .js .cases-stage {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 0;
-    transition: opacity 600ms var(--ease), filter 600ms var(--ease);
+    align-content: stretch;
   }
 
-  .js .chapter {
-    opacity: 0.28;
-    filter: blur(2px);
-  }
-
-  .js .chapter.on {
+  .js .case-pane {
+    grid-area: auto;
     opacity: 1;
-    filter: none;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+    z-index: auto;
+    padding: 1.35rem 0 2.6rem;
+    border-bottom: 1px solid var(--line);
+    scroll-margin-top: 6.75rem;
+    transition: none;
   }
 
-  .chapter-shot {
-    display: none;
+  .js .case-pane:last-child {
+    border-bottom: 0;
+    padding-bottom: 1.5rem;
   }
 
-  .story-visual {
-    display: block;
-    order: 2;
-  }
-
-  .story-sticky {
-    position: sticky;
-    top: 0;
-    height: 100svh;
-    display: grid;
-    place-items: center;
-    perspective: 1600px;
+  .js .case-pane.on {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
   }
 }
 
-.story-frame {
-  position: relative;
-  width: 100%;
-  transform: rotateY(-8deg) rotateX(3deg);
-  transform-style: preserve-3d;
-  transition: transform 900ms var(--ease);
+.cases-item {
+  transition:
+    color 200ms var(--ease),
+    border-color 200ms var(--ease),
+    background 200ms var(--ease),
+    box-shadow 200ms var(--ease);
 }
-
-.story[data-step="1"] .story-frame { transform: rotateY(6deg) rotateX(3deg); }
-.story[data-step="2"] .story-frame { transform: rotateY(-4deg) rotateX(1deg) translateY(-6px); }
-.story[data-step="3"] .story-frame { transform: rotateY(5deg) rotateX(2deg); }
-.story[data-step="4"] .story-frame { transform: rotateY(-6deg) rotateX(2deg) translateY(-4px); }
-
-.story-frame .shot {
-  position: absolute;
-  inset: 0;
-  clip-path: inset(100% 0 0 0);
-  scale: 1.06;
-  transition: clip-path 900ms var(--ease), scale 1200ms var(--ease);
+/* Desktop rail items keep a light wash; mobile liquid glass is in styles.css. */
+@media (min-width: 980px) {
+  .cases-item.on {
+    color: var(--paper);
+    border-color: var(--line-2);
+    background: rgba(242, 239, 232, 0.05);
+  }
 }
-
-.story-frame .shot.on {
-  clip-path: inset(0 0 0 0);
-  scale: 1;
-  z-index: 1;
+.cases-item.on .cases-num { color: var(--signal); }
+.case-tabs button {
+  transition:
+    color 200ms var(--ease),
+    background 200ms var(--ease),
+    box-shadow 200ms var(--ease);
 }
-
-.story-frame .shot.out {
-  clip-path: inset(0 0 100% 0);
-}
-
-.story-url {
-  position: relative;
-  height: 1em;
-}
-
-.story-url span {
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
-  transition: opacity 400ms var(--ease);
-}
-
-.story-url span.on {
-  opacity: 1;
-}
-
-.story-rail {
-  position: absolute;
-  left: 0;
-  bottom: 9%;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 1.1rem;
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--paper-4);
-}
-
-.story-rail li {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
-  transition: color 400ms var(--ease);
-}
-
-.story-rail span {
-  width: 14px;
-  height: 2px;
-  border-radius: 2px;
-  background: var(--paper-4);
-  transition: width 500ms var(--ease), background 500ms var(--ease);
-}
-
-.story-rail li.on {
-  color: var(--paper);
-}
-
-.story-rail li.on span {
-  width: 28px;
-  background: var(--signal);
-}
-
-.story-chips {
-  position: absolute;
-  right: -1%;
-  top: 14%;
-  width: 270px;
-  height: 64px;
-  transform: translateZ(60px);
-}
-
-.chip-card {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  padding: 0 1rem;
-  border-radius: 18px;
-  background: rgba(28, 26, 24, 0.94);
-  border: 1px solid var(--line-2);
-  box-shadow: 0 24px 50px -20px rgba(0, 0, 0, 0.95);
-  font-size: 0.84rem;
-  color: var(--paper-2);
-  opacity: 0;
-  translate: 0 14px;
-  scale: 0.96;
-  transition: opacity 500ms var(--ease), translate 600ms var(--spring), scale 600ms var(--spring);
-}
-
-.chip-card b {
-  display: block;
-  color: var(--paper);
-  font-weight: 500;
-}
-
-.chip-card.on {
-  opacity: 1;
-  translate: 0 0;
-  scale: 1;
-}
+.case-tabpane { display: none; }
+.case-tabpane.on { display: block; }
 
 /* ---------- Method: step path ---------- */
 
@@ -729,19 +634,26 @@ body.is-ready .hero-copy .socials { transition-delay: 1.55s; }
   margin-bottom: 1.8rem;
   padding: 0.45rem 0.45rem 0.45rem 1rem;
   border-radius: 999px;
-  background: rgba(26, 24, 22, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--line-2);
+  border: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02) 45%, rgba(255, 255, 255, 0.05)),
+    rgba(26, 24, 22, 0.48);
+  backdrop-filter: blur(18px) saturate(170%);
+  -webkit-backdrop-filter: blur(18px) saturate(170%);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    inset 0 0 0 1px rgba(242, 239, 232, 0.16),
     0 0 0 calc(var(--fill) * 1px) rgba(242, 164, 119, 0.5),
-    0 24px 60px -18px rgba(0, 0, 0, 0.9);
+    0 24px 60px -18px rgba(0, 0, 0, 0.75);
   transition: --fill 200ms linear;
 }
 
 .halo-composer:focus-within {
-  border-color: var(--paper-3);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    inset 0 0 0 1px rgba(242, 239, 232, 0.28),
+    0 0 0 calc(var(--fill) * 1px) rgba(242, 164, 119, 0.5),
+    0 24px 60px -18px rgba(0, 0, 0, 0.75);
 }
 
 .halo-input {
@@ -836,18 +748,17 @@ body.is-ready .hero-copy .socials { transition-delay: 1.55s; }
   .focus-frame {
     display: none;
   }
-  .chapter {
-    opacity: 1 !important;
-    filter: none !important;
-  }
   .path-steps li {
     opacity: 1;
     translate: none;
   }
-  .story-frame,
-  .story-frame .shot,
   .stage-inner {
     transition: none;
+  }
+  .js .case-pane,
+  .js .case-pane.on {
+    transition: none;
+    transform: none;
   }
   .btn-ring,
   .now-tag,

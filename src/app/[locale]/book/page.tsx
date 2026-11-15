@@ -5,7 +5,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 
 import { routing } from '@/i18n/routing';
 import type { Locale } from '@/data/types';
-import { CalEmbed } from '@/components/booking/cal-embed';
+import { CalBooking } from '@/components/booking/cal-booking';
 import { portfolioData } from '@/data/portfolio';
 import { CAL_BOOKING_URL } from '@/lib/booking';
 
@@ -80,8 +80,8 @@ export default async function BookPage({ params }: BookPageProps) {
 
   return (
     <>
-      <section className="wrap pb-8 pt-[clamp(7.5rem,15vh,9.5rem)]" aria-labelledby="page-title">
-        <div className="flex flex-wrap items-end justify-between gap-x-10 gap-y-6">
+      <section className="wrap pb-12 pt-[clamp(7.5rem,15vh,9.5rem)]" aria-labelledby="page-title">
+        <div className="flex flex-wrap items-end justify-between gap-x-10 gap-y-8">
           <div>
             <p className="kicker">
               <span className="dot" aria-hidden="true" />
@@ -103,10 +103,8 @@ export default async function BookPage({ params }: BookPageProps) {
       </section>
 
       <section className="wrap pb-[clamp(4rem,9vw,6rem)]" aria-label={t('title')}>
-        <div className="overflow-hidden rounded-[24px] border border-[color:var(--line-2)] bg-[#0f0e0d] shadow-[0_50px_100px_-40px_rgba(0,0,0,0.95)]">
-          <CalEmbed title={t('title')} className="block min-h-[80dvh] md:min-h-[calc(100dvh-12rem)]" />
-        </div>
-        <p className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-1 font-mono text-[0.8rem] text-[color:var(--paper-3)]">
+        <CalBooking title={t('title')} className="block" />
+        <p className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-1 font-mono text-[0.8rem] text-[color:var(--paper-3)]">
           <span>{t('fallback')}</span>
           <a className="inline-flex min-h-[44px] items-center underline decoration-[color:var(--line-2)] underline-offset-4 hover:text-[color:var(--paper)]" href={CAL_BOOKING_URL} target="_blank" rel="noopener noreferrer">
             {t('openDirect')}

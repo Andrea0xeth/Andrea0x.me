@@ -8,6 +8,7 @@ import type { Locale } from '@/data/types';
 import { PageHero } from '@/components/site/page-hero';
 import { PillLink } from '@/components/site/buttons';
 import { ClosingCta } from '@/components/site/closing-cta';
+import { ServicesRail } from '@/components/work/services-rail';
 
 interface ServicesPageProps {
   params: Promise<{ locale: string }>;
@@ -48,10 +49,11 @@ const STEP_BADGES: Record<Locale, string[]> = {
   en: ['30 min', 'in writing', 'every week'],
 };
 
-/** "Discovery call — 30 minutes…" → ["Discovery call", "30 minutes…"] */
+/** "Discovery call: 30 minutes…" → ["Discovery call", "30 minutes…"] */
 function splitStep(text: string): [string, string] {
-  const [head, ...rest] = text.split(' — ');
-  return rest.length ? [head, rest.join(' — ')] : ['', text];
+  const idx = text.indexOf(': ');
+  if (idx === -1) return ['', text];
+  return [text.slice(0, idx), text.slice(idx + 2)];
 }
 
 export default async function ServicesPage({ params }: ServicesPageProps) {
@@ -67,6 +69,7 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
   const t = await getTranslations({ locale, namespace: 'services' });
   const tPage = await getTranslations({ locale, namespace: 'servicesPage' });
   const { personal, services, social } = portfolioData;
+  const total = String(services.length).padStart(2, '0');
 
   return (
     <>
@@ -74,7 +77,7 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
         kicker={
           <>
             <span className="dot" aria-hidden="true" />
-            {tPage('kicker')}
+            {tPage('kicker')} · {total}
           </>
         }
         title={t('heroTitle')}
@@ -89,41 +92,24 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
         </div>
       </PageHero>
 
-      <section className="section wrap border-t border-[color:var(--line)]" aria-labelledby="offer-title">
-        <div className="section-head" data-reveal>
-          <p className="kicker"><span className="num">01</span> · {tPage('offerKicker')}</p>
+      <section className="pb-[clamp(3rem,8vw,5rem)]" aria-labelledby="offer-title">
+        <div className="section-head wrap" data-reveal>
+          <p className="kicker">
+            <span className="num">01</span> · {tPage('offerKicker')}
+          </p>
           <h2 id="offer-title">{tPage('offerTitle')}</h2>
-          <p className="lead !text-[0.95rem] font-mono !text-[color:var(--paper-3)]">* {tPage('ratesNote')}</p>
+          <p className="lead !text-[0.95rem] font-mono !text-[color:var(--paper-3)]">
+            * {tPage('ratesNote')}
+          </p>
         </div>
-        <ul className="grid-cards cols-2" data-spot>
-          {services.map((service, i) => (
-            <li key={service.id} className="spot !gap-3 !p-7" data-reveal>
-              <div className="flex flex-wrap items-center justify-between gap-3">
-                <span className="font-mono text-[0.78rem] text-[color:var(--paper-3)]">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                {service.rateRange ? (
-                  <span className="tag warm">
-                    <span className="sr-only">{tPage('rate')}: </span>
-                    {service.rateRange}
-                  </span>
-                ) : null}
-              </div>
-              <h3 className="mt-2 !text-[clamp(1.4rem,1rem+0.9vw,1.8rem)]">{service.title[l]}</h3>
-              <p className="!text-[0.98rem] !text-[color:var(--paper-2)]">{service.description[l]}</p>
-              <ul className="bullets">
-                {service.bulletPoints[l].map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ul>
+        <ServicesRail services={services} locale={l} />
       </section>
 
-      <section className="section wrap" aria-labelledby="process-title">
+      <section className="section wrap border-t border-[color:var(--line)]" aria-labelledby="process-title">
         <div className="section-head" data-reveal>
-          <p className="kicker"><span className="num">02</span> · {tPage('processKicker')}</p>
+          <p className="kicker">
+            <span className="num">02</span> · {tPage('processKicker')}
+          </p>
           <h2 id="process-title">{t('howWeEngage.title')}</h2>
         </div>
         <ol className="grid gap-4 md:grid-cols-3">
@@ -135,10 +121,15 @@ export default async function ServicesPage({ params }: ServicesPageProps) {
                   <span className="grid h-9 min-w-9 place-items-center rounded-full border border-[color:var(--line-2)] px-3 font-mono text-[0.8rem] text-[color:var(--paper-2)]">
                     {STEP_BADGES[l][i]}
                   </span>
-                  <span className="h-px flex-1 bg-gradient-to-r from-[color:var(--signal)] to-transparent opacity-60" aria-hidden="true" />
+                  <span
+                    className="h-px flex-1 bg-gradient-to-r from-[color:var(--signal)] to-transparent opacity-60"
+                    aria-hidden="true"
+                  />
                   <span className="font-mono text-[0.78rem] text-[color:var(--signal)]">0{i + 1}</span>
                 </div>
-                {head ? <h3 className="mt-6 !text-[1.5rem] !tracking-[-0.035em]">{head}</h3> : null}
+                {head ? (
+                  <h3 className="mt-6 !text-[1.5rem] !tracking-[-0.035em]">{head}</h3>
+                ) : null}
                 <p className="mt-2 text-[color:var(--paper-2)]">{body}</p>
               </li>
             );

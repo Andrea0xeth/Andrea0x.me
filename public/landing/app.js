@@ -121,45 +121,133 @@
     }
   }
 
-  /* Story: the chapter nearest the viewport middle drives the sticky window */
-  const story = document.querySelector(".story");
-  if (story) {
-    const chapters = [...story.querySelectorAll(".chapter")];
-    const shots = [...story.querySelectorAll(".story-frame .shot")];
-    const rail = [...story.querySelectorAll(".story-rail li")];
-    const chips = [...story.querySelectorAll(".story-chips .chip-card")];
-    const urls = [...story.querySelectorAll(".story-url span")];
-    let current = -1;
+  /* Cases: desktop sticky track; mobile = page-scroll chapters (DeckAgent) */
+  const cases = document.querySelector("[data-cases]");
+  if (cases) {
+    const track = cases.querySelector(".cases-track") || cases;
+    const items = [...cases.querySelectorAll(".cases-rail [data-case]")];
+    const panes = [...cases.querySelectorAll("[data-case-pane]")];
+    const ids = items.map((b) => b.getAttribute("data-case")).filter(Boolean);
+    let current = "";
+    let lockUntil = 0;
+    const chapterMode = () => window.matchMedia("(max-width: 979px)").matches;
+    const rail = cases.querySelector(".cases-rail");
+    /* Tall track = desktop scroll-driven. Reduced-motion collapses track → click-only. */
+    const scrollDriven = () =>
+      !reduced && !chapterMode() && track.offsetHeight > window.innerHeight + 80;
 
-    const setStep = (i) => {
-      if (i === current) return;
-      const prev = current;
-      current = i;
-      story.dataset.step = String(i);
-      for (const list of [chapters, rail, chips, urls]) list.forEach((el, k) => el.classList.toggle("on", k === i));
-      shots.forEach((s, k) => {
-        s.classList.toggle("on", k === i);
-        s.classList.toggle("out", k === prev && k < i);
-        if (k !== prev && k !== i) s.classList.remove("out");
+    /* Horizontal-only chip centering — never scrollIntoView (janks vertical page scroll). */
+    const centerChip = (btn) => {
+      if (!rail || !btn) return;
+      const left = btn.offsetLeft - (rail.clientWidth - btn.offsetWidth) / 2;
+      rail.scrollTo({ left: Math.max(0, left), behavior: "auto" });
+    };
+
+    /* User gesture cancels programmatic lock so free-scroll isn't stuck ~0.5s after a chip tap. */
+    const unlockScroll = () => {
+      lockUntil = 0;
+    };
+    window.addEventListener("wheel", unlockScroll, { passive: true });
+    window.addEventListener("touchmove", unlockScroll, { passive: true });
+
+    const setCase = (id) => {
+      if (!id || id === current) return;
+      current = id;
+      cases.dataset.case = id;
+      const chapters = chapterMode();
+      items.forEach((btn) => {
+        const on = btn.getAttribute("data-case") === id;
+        btn.classList.toggle("on", on);
+        btn.setAttribute("aria-selected", on ? "true" : "false");
+        if (on && chapters) centerChip(btn);
+      });
+      panes.forEach((pane) => {
+        const on = pane.getAttribute("data-case-pane") === id;
+        pane.classList.toggle("on", on);
+        if (chapters) pane.setAttribute("aria-hidden", "false");
+        else pane.setAttribute("aria-hidden", on ? "false" : "true");
       });
     };
 
-    const pick = () => {
-      const mid = window.innerHeight / 2;
-      let best = 0;
-      let bestD = Infinity;
-      chapters.forEach((c, k) => {
-        const r = c.getBoundingClientRect();
-        const d = Math.abs(r.top + r.height / 2 - mid);
-        if (d < bestD) {
-          bestD = d;
-          best = k;
+    const scrollToCase = (id) => {
+      const i = ids.indexOf(id);
+      if (i < 0) return;
+      setCase(id);
+      if (chapterMode()) {
+        const pane = panes.find((p) => p.getAttribute("data-case-pane") === id);
+        lockUntil = performance.now() + 420;
+        pane?.scrollIntoView({
+          behavior: reduced ? "auto" : "smooth",
+          block: "start",
+        });
+        return;
+      }
+      if (!scrollDriven()) return;
+      const rect = track.getBoundingClientRect();
+      const absTop = rect.top + window.scrollY;
+      const travel = Math.max(1, track.offsetHeight - window.innerHeight);
+      const y = absTop + ((i + 0.35) / ids.length) * travel;
+      lockUntil = performance.now() + 420;
+      window.scrollTo({ top: y, behavior: reduced ? "auto" : "smooth" });
+    };
+
+    const pickFromScroll = () => {
+      if (!ids.length || performance.now() < lockUntil) return;
+      if (chapterMode()) {
+        /* Eager spy: last pane whose top has crossed a line just under sticky chips. */
+        const railBottom = rail ? rail.getBoundingClientRect().bottom : 0;
+        const line = Math.max(railBottom + 12, window.innerHeight * 0.2);
+        let best = ids[0];
+        for (const pane of panes) {
+          const id = pane.getAttribute("data-case-pane");
+          if (!id) continue;
+          const r = pane.getBoundingClientRect();
+          if (r.height < 24) continue;
+          if (r.top <= line) best = id;
         }
-      });
-      setStep(best);
+        setCase(best);
+        return;
+      }
+      if (!scrollDriven()) return;
+      const r = track.getBoundingClientRect();
+      const travel = Math.max(1, r.height - window.innerHeight);
+      const p = clamp(-r.top / travel);
+      const i = Math.min(ids.length - 1, Math.max(0, Math.floor(p * ids.length)));
+      setCase(ids[i]);
     };
-    setStep(0);
-    onFrameScroll(pick);
+
+    rail?.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-case]");
+      if (btn && cases.contains(btn)) scrollToCase(btn.getAttribute("data-case"));
+    });
+
+    const initial = items.find((b) => b.classList.contains("on")) || items[0];
+    if (initial) setCase(initial.getAttribute("data-case"));
+    if (!reduced) onFrameScroll(pickFromScroll);
+    else pickFromScroll();
+
+    for (const list of cases.querySelectorAll("[data-tabs]")) {
+      const tabs = [...list.querySelectorAll("[data-tab]")];
+      const root = list.closest(".case-pane") || cases;
+      const activate = (tab) => {
+        const name = tab.getAttribute("data-tab") || "";
+        if (!name) return;
+        tabs.forEach((t) => {
+          const on = t === tab;
+          t.classList.toggle("on", on);
+          t.setAttribute("aria-selected", on ? "true" : "false");
+        });
+        root.querySelectorAll("[data-tabpane]").forEach((p) =>
+          p.classList.toggle("on", p.getAttribute("data-tabpane") === name),
+        );
+      };
+      list.addEventListener("click", (e) => {
+        const tab = e.target.closest("[data-tab]");
+        if (tab && list.contains(tab)) activate(tab);
+      });
+      const first = tabs.find((t) => t.classList.contains("on")) || tabs[0];
+      if (first) activate(first);
+    }
   }
 
   /* Step path: line fills with scroll, each step lights as the line reaches it */

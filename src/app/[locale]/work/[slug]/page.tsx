@@ -10,6 +10,7 @@ import { PillLink } from '@/components/site/buttons';
 import { ClosingCta } from '@/components/site/closing-cta';
 import { ArrowLeftIcon, ArrowRightIcon } from '@/components/site/icons';
 import { CaseStudyPreview } from '@/components/work/case-study-preview';
+import { CaseDecisionPanel } from '@/components/work/case-decision-panel';
 
 interface CaseStudyPageParams {
   locale: string;
@@ -146,13 +147,14 @@ export default async function CaseStudyPage({
         </div>
       </header>
 
-      <div className="wrap" data-reveal>
+      <div className="wrap case-preview-glance" data-reveal>
         <CaseStudyPreview
           caseStudy={caseStudy}
           alt={`${tPage('preview')} ${caseStudy.title}`}
           priority
-          sizes="(min-width: 1280px) 1216px, 100vw"
+          sizes="(min-width: 1000px) 70vw, 100vw"
         />
+        <CaseDecisionPanel caseStudy={caseStudy} locale={l} />
       </div>
 
       <section className="proof mt-[clamp(4rem,9vw,6rem)]" aria-label={tPage('atGlance')}>

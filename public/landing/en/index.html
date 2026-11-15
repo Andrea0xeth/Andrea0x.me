@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Andrea Ritondale — Principal Engineer · IT Architect · AI Builder</title>
+  <title>Andrea Ritondale · Principal Engineer · IT Architect · AI Builder</title>
   <meta name="description" content="Principal Engineer + IT Architect + AI Builder. I design, build and run systems in production: AI engineering, multi-chain DeFi, B2B pharma SaaS, Italian public sector (PNRR)." />
   <meta name="theme-color" content="#0a0908" />
   <link rel="canonical" href="https://andrea0x.me/en" />
@@ -15,7 +15,7 @@
   <meta property="og:site_name" content="Andrea Ritondale" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://andrea0x.me/en" />
-  <meta property="og:title" content="Andrea Ritondale — Principal Engineer · IT Architect · AI Builder" />
+  <meta property="og:title" content="Andrea Ritondale · Principal Engineer · IT Architect · AI Builder" />
   <meta property="og:description" content="I design, build and run systems in production: AI, DeFi, B2B SaaS, public sector." />
   <meta property="og:image" content="https://andrea0x.me/opengraph-image" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -24,8 +24,8 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Andrea Ritondale","alternateName":"Andrea0x.eth","url":"https://andrea0x.me","image":"https://andrea0x.me/images/me.jpg","jobTitle":"Principal Engineer · IT Architect · AI Builder","nationality":"Italian","knowsLanguage":["Italian","English"],"sameAs":["https://it.linkedin.com/in/andrea-ritondale","https://x.com/andrea0x_eth","https://github.com/Andrea0xeth","https://t.me/Andrea0x_eth"]}</script>
   <script>document.documentElement.classList.replace("no-js", "js");</script>
   <link rel="preload" href="https://cdn.jsdelivr.net/fontsource/fonts/geist@5.2.8/latin-500-normal.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="/landing/styles.css?v=20261029f" />
-  <link rel="stylesheet" href="/landing/motion.css?v=20261029f" />
+  <link rel="stylesheet" href="/landing/styles.css?v=20261115w" />
+  <link rel="stylesheet" href="/landing/motion.css?v=20261115w" />
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -164,116 +164,189 @@
         <p class="lead">Each project below has a case study with the problem, architecture, decisions and numbers.</p>
       </div>
 
-      <div class="story">
-        <div class="story-visual" aria-hidden="true">
-          <div class="story-sticky">
-            <div class="story-frame">
-              <div class="window">
-                <div class="window-bar"><i></i><i></i><i></i>
-                  <span class="story-url">
-                    <span>haelias · production</span>
-                    <span>mandate.finance</span>
-                    <span>artcertify.com</span>
-                    <span>studio.factor.fi</span>
-                    <span>deckage.si</span>
-                  </span>
+      <div class="cases wrap" data-cases>
+        <div class="cases-track">
+        <div class="cases-sticky">
+        <nav class="cases-rail" aria-label="Projects">
+          <button type="button" class="cases-item on" data-case="haelias" aria-selected="true">
+            <span class="cases-num">01</span>
+            <span class="cases-name">Haelias</span>
+            <span class="cases-hint">Solo CTO · Montefarmaco · Logista</span>
+          </button>
+          <button type="button" class="cases-item" data-case="mandate" aria-selected="false">
+            <span class="cases-num">02</span>
+            <span class="cases-name">Mandate</span>
+            <span class="cases-hint">Technical co-founder · 11 workspaces</span>
+          </button>
+          <button type="button" class="cases-item" data-case="dpass" aria-selected="false">
+            <span class="cases-num">03</span>
+            <span class="cases-name">ArtCertify</span>
+            <span class="cases-hint">Tech lead · MiC · Invitalia</span>
+          </button>
+          <button type="button" class="cases-item" data-case="factor" aria-selected="false">
+            <span class="cases-num">04</span>
+            <span class="cases-name">Factor</span>
+            <span class="cases-hint">Founding engineer · 68 MCP tools</span>
+          </button>
+          <button type="button" class="cases-item" data-case="deckagent" aria-selected="false">
+            <span class="cases-num">05</span>
+            <span class="cases-name">DeckAgent</span>
+            <span class="cases-hint">Solo founder · local-first · QR pairing</span>
+          </button>
+        </nav>
+        <div class="cases-stage">
+          <article class="case-pane on" data-case-pane="haelias">
+            <div class="case-tags"><span>CASE STUDY</span><span class="ghost">IN PRODUCTION</span><span class="ghost">B2B SaaS · Pharma · Production</span></div>
+            <h3 class="case-title">Live procurement for Italian pharmacies. One CTO, production clients.</h3>
+            <p class="case-lead">Digital procurement live with enterprise clients. Express backend, React 19 UI, Rust worker, DigitalOcean.</p>
+            <div class="case-body">
+              <div class="case-main">
+                <div class="case-tabs" role="tablist" data-tabs aria-label="Case depth">
+                <button type="button" role="tab" data-tab="context" class="on" aria-selected="true">Context</button>
+                <button type="button" role="tab" data-tab="architecture" class="" aria-selected="false">Architecture</button>
+                <button type="button" role="tab" data-tab="results" class="" aria-selected="false">Results</button>
                 </div>
-                <div class="window-view">
-                  <div class="shot"><img src="/images/previews/haelias.jpg" alt="" /></div>
-                  <div class="shot"><img src="/images/previews/mandate.jpg" alt="" loading="lazy" /></div>
-                  <div class="shot"><img src="/images/previews/artcertify.jpg" alt="" loading="lazy" /></div>
-                  <div class="shot"><img src="/images/previews/factor-studio.jpg" alt="" loading="lazy" /></div>
-                  <div class="shot"><img src="/images/previews/deckagent.jpg" alt="" loading="lazy" /></div>
+                <div class="case-tabpanes">
+                <p class="case-tabpane on" data-tabpane="context">Italian pharmacies still buy via phone, email and fax. Haelias is the live B2B layer for that market. Solo CTO ownership end-to-end.</p>
+                <p class="case-tabpane" data-tabpane="architecture">Five repos in production: Express + TypeScript (143 endpoints), React 19 SPA, Rust + Tokio Farmadati sync, Managed MongoDB on DigitalOcean.</p>
+                <p class="case-tabpane" data-tabpane="results">5.5M+ MongoDB documents live; 70% on-disk index reduction (1.69 GB → 369 MB); €1,260/year cluster upgrade avoided.</p>
                 </div>
+                <a class="read" href="/en/work/haelias">Read the case study <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
               </div>
-              <div class="story-chips">
-                <div class="chip-card"><span class="dot"></span><div><b>Solo CTO</b>Montefarmaco · Logista</div></div>
-                <div class="chip-card"><span class="dot"></span><div><b>Technical co-founder</b>Ethereum · Base · Arbitrum</div></div>
-                <div class="chip-card"><span class="dot"></span><div><b>Technical-functional lead</b>RTI Activa Digital + Civita</div></div>
-                <div class="chip-card"><span class="dot"></span><div><b>Founding engineer</b>2023 – 2025</div></div>
-                <div class="chip-card"><span class="dot"></span><div><b>Solo founder</b>Beta on TestFlight</div></div>
-              </div>
+              <aside class="case-glance">
+                <p class="case-glance-label">Decision at a glance</p>
+                <dl class="glance">
+                <div><dt>Role</dt><dd>Solo CTO</dd></div>
+                <div><dt>Clients</dt><dd>Montefarmaco · Logista SPA</dd></div>
+                <div><dt>Stack</dt><dd>Express · React 19 · Rust · MongoDB</dd></div>
+                <div><dt>Key number</dt><dd>5.5M+ documents</dd></div>
+                </dl>
+                <div class="case-shot"><img src="/images/previews/haelias.jpg" alt="" loading="lazy" /></div>
+              </aside>
             </div>
-            <ol class="story-rail">
-              <li><span></span>Haelias</li>
-              <li><span></span>Mandate</li>
-              <li><span></span>PNRR</li>
-              <li><span></span>Factor</li>
-              <li><span></span>DeckAgent</li>
-            </ol>
-          </div>
+          </article>
+          <article class="case-pane" data-case-pane="mandate">
+            <div class="case-tags"><span>CASE STUDY</span><span class="ghost">PRE-LAUNCH</span><span class="ghost">DeFi · AI agents · Multi-chain</span></div>
+            <h3 class="case-title">DeFi run by AI agents: one LLM loop, three chains, encrypted keys per agent.</h3>
+            <p class="case-lead">One LLM loop over 7 job types, Python MCP gateway, signing-service with encrypted per-agent keys. CREATE2 on three chains.</p>
+            <div class="case-body">
+              <div class="case-main">
+                <div class="case-tabs" role="tablist" data-tabs aria-label="Case depth">
+                <button type="button" role="tab" data-tab="context" class="on" aria-selected="true">Context</button>
+                <button type="button" role="tab" data-tab="architecture" class="" aria-selected="false">Architecture</button>
+                <button type="button" role="tab" data-tab="results" class="" aria-selected="false">Results</button>
+                </div>
+                <div class="case-tabpanes">
+                <p class="case-tabpane on" data-tabpane="context">Mandate needs agents that can operate DeFi workflows without exposing keys. Pre-launch platform with 11 workspaces stood up in five weeks.</p>
+                <p class="case-tabpane" data-tabpane="architecture">LLM loop over 7 job types, Python MCP gateway, signing-service with encrypted per-agent keys. Contracts at the same CREATE2 address on Ethereum, Base and Arbitrum.</p>
+                <p class="case-tabpane" data-tabpane="results">11 workspaces in 5 weeks; 1,300+ commits; 3 chains at identical CREATE2 addresses.</p>
+                </div>
+                <a class="read" href="/en/work/mandate">Read the case study <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+              </div>
+              <aside class="case-glance">
+                <p class="case-glance-label">Decision at a glance</p>
+                <dl class="glance">
+                <div><dt>Role</dt><dd>Technical co-founder</dd></div>
+                <div><dt>Clients</dt><dd>-</dd></div>
+                <div><dt>Stack</dt><dd>Next.js 15 · Cloud Run · Foundry · Python MCP</dd></div>
+                <div><dt>Key number</dt><dd>11 workspaces in 5 weeks</dd></div>
+                </dl>
+                <div class="case-shot"><img src="/images/previews/mandate.jpg" alt="" loading="lazy" /></div>
+              </aside>
+            </div>
+          </article>
+          <article class="case-pane" data-case-pane="dpass">
+            <div class="case-tags"><span>CASE STUDY</span><span class="ghost">ACTIVE</span><span class="ghost">Public sector · Cultural heritage · Blockchain</span></div>
+            <h3 class="case-title">Ministry of Culture tender: four blockchain data products for cultural assets.</h3>
+            <p class="case-lead">Ecomic Lotto 3: soulbound certificates, SPID identity, hybrid MINIO + IPFS. RTI Activa Digital + Civita.</p>
+            <div class="case-body">
+              <div class="case-main">
+                <div class="case-tabs" role="tablist" data-tabs aria-label="Case depth">
+                <button type="button" role="tab" data-tab="context" class="on" aria-selected="true">Context</button>
+                <button type="button" role="tab" data-tab="architecture" class="" aria-selected="false">Architecture</button>
+                <button type="button" role="tab" data-tab="results" class="" aria-selected="false">Results</button>
+                </div>
+                <div class="case-tabpanes">
+                <p class="case-tabpane on" data-tabpane="context">Italian Ministry of Culture (Ecomic Lotto 3) needed verifiable credentials for cultural assets without losing institutional identity flows (SPID).</p>
+                <p class="case-tabpane" data-tabpane="architecture">Four blockchain Data Products, soulbound certificates, SPID identity, hybrid MINIO + IPFS. Chains: Algorand + Base.</p>
+                <p class="case-tabpane" data-tabpane="results">4 data products; 6 pilot use cases; 2 chains in the delivery scope.</p>
+                </div>
+                <a class="read" href="/en/work/dpass">Read the case study <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+              </div>
+              <aside class="case-glance">
+                <p class="case-glance-label">Decision at a glance</p>
+                <dl class="glance">
+                <div><dt>Role</dt><dd>Technical-functional lead</dd></div>
+                <div><dt>Clients</dt><dd>MiC · Activa Digital · Civita</dd></div>
+                <div><dt>Stack</dt><dd>Algorand · Base · SPID · MINIO · IPFS</dd></div>
+                <div><dt>Key number</dt><dd>4 data products</dd></div>
+                </dl>
+                <div class="case-shot"><img src="/images/previews/artcertify.jpg" alt="" loading="lazy" /></div>
+              </aside>
+            </div>
+          </article>
+          <article class="case-pane" data-case-pane="factor">
+            <div class="case-tags"><span>CASE STUDY</span><span class="ghost">COMPLETED</span><span class="ghost">DeFi · Vault infrastructure · MCP</span></div>
+            <h3 class="case-title">ERC-4626 vaults across three chains, and an MCP layer with 68 tools.</h3>
+            <p class="case-lead">Vaults on Arbitrum, Base and Ethereum, two production UIs, Vault-as-a-Service paid in USDC via x402.</p>
+            <div class="case-body">
+              <div class="case-main">
+                <div class="case-tabs" role="tablist" data-tabs aria-label="Case depth">
+                <button type="button" role="tab" data-tab="context" class="on" aria-selected="true">Context</button>
+                <button type="button" role="tab" data-tab="architecture" class="" aria-selected="false">Architecture</button>
+                <button type="button" role="tab" data-tab="results" class="" aria-selected="false">Results</button>
+                </div>
+                <div class="case-tabpanes">
+                <p class="case-tabpane on" data-tabpane="context">Factor needed production vault infrastructure plus an AI-native surface so agents can operate vaults safely.</p>
+                <p class="case-tabpane" data-tabpane="architecture">ERC-4626 on Arbitrum, Base and Ethereum; two production UIs; MCP server with 68 tools; VaaS paid in USDC via x402.</p>
+                <p class="case-tabpane" data-tabpane="results">~140k LOC; 468 + 253 commits across main surfaces; 68 MCP tools shipped.</p>
+                </div>
+                <a class="read" href="/en/work/factor">Read the case study <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+              </div>
+              <aside class="case-glance">
+                <p class="case-glance-label">Decision at a glance</p>
+                <dl class="glance">
+                <div><dt>Role</dt><dd>Founding engineer</dd></div>
+                <div><dt>Clients</dt><dd>Factor</dd></div>
+                <div><dt>Stack</dt><dd>ERC-4626 · MCP · x402 · USDC</dd></div>
+                <div><dt>Key number</dt><dd>68 MCP tools</dd></div>
+                </dl>
+                <div class="case-shot"><img src="/images/previews/factor-studio.jpg" alt="" loading="lazy" /></div>
+              </aside>
+            </div>
+          </article>
+          <article class="case-pane" data-case-pane="deckagent">
+            <div class="case-tags"><span>CASE STUDY</span><span class="ghost">BETA</span><span class="ghost">AI tooling · Local-first · Mobile</span></div>
+            <h3 class="case-title">A remote for Cursor on your phone. Code stays on your machine.</h3>
+            <p class="case-lead">Follow agents, read plans, send the next prompt. Daemon, PWA, extension, iOS app and Watch.</p>
+            <div class="case-body">
+              <div class="case-main">
+                <div class="case-tabs" role="tablist" data-tabs aria-label="Case depth">
+                <button type="button" role="tab" data-tab="context" class="on" aria-selected="true">Context</button>
+                <button type="button" role="tab" data-tab="architecture" class="" aria-selected="false">Architecture</button>
+                <button type="button" role="tab" data-tab="results" class="" aria-selected="false">Results</button>
+                </div>
+                <div class="case-tabpanes">
+                <p class="case-tabpane on" data-tabpane="context">You leave the desk but the agent keeps running. DeckAgent is the phone remote while the repo stays local.</p>
+                <p class="case-tabpane" data-tabpane="architecture">Five surfaces: daemon, PWA, browser extension, iOS app and Watch. QR pairing; 100% local bind: no cloud proxy of the codebase.</p>
+                <p class="case-tabpane" data-tabpane="results">5 surfaces shipping; 100% local; QR pairing for session bootstrap.</p>
+                </div>
+                <a class="read" href="/en/work/deckagent">Read the case study <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+              </div>
+              <aside class="case-glance">
+                <p class="case-glance-label">Decision at a glance</p>
+                <dl class="glance">
+                <div><dt>Role</dt><dd>Solo founder</dd></div>
+                <div><dt>Clients</dt><dd>-</dd></div>
+                <div><dt>Stack</dt><dd>Daemon · PWA · iOS · Watch</dd></div>
+                <div><dt>Key number</dt><dd>5 surfaces · 100% local</dd></div>
+                </dl>
+                <div class="case-shot"><img src="/images/previews/deckagent.jpg" alt="" loading="lazy" /></div>
+              </aside>
+            </div>
+          </article>
         </div>
-
-        <div class="story-chapters">
-          <article class="chapter">
-            <span class="kick-num">01 / 05</span>
-            <p class="domain">B2B SaaS · Pharma · Production</p>
-            <h3>Haelias</h3>
-            <p>Digital procurement for Italian pharmacies, live with enterprise clients. I'm the only CTO: Express backend, React 19 UI, Rust worker, DigitalOcean infrastructure.</p>
-            <ul class="metrics">
-              <li><b>5.5M+</b>documents</li>
-              <li><b>143</b>endpoints</li>
-              <li><b>−70%</b>on-disk indexes</li>
-            </ul>
-            <a class="read" href="/en/work/haelias">Read the case study <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
-            <div class="chapter-shot window"><div class="window-view"><img src="/images/previews/haelias.jpg" alt="Haelias screenshot" loading="lazy" /></div></div>
-          </article>
-
-          <article class="chapter">
-            <span class="kick-num">02 / 05</span>
-            <p class="domain">DeFi · AI agents · Multi-chain</p>
-            <h3>Mandate.Finance</h3>
-            <p>DeFi platform run by AI agents: one LLM loop over 7 job types, a Python MCP gateway, a signing-service with encrypted per-agent keys. Contracts at the same CREATE2 address on three chains.</p>
-            <ul class="metrics">
-              <li><b>11</b>workspaces in 5 weeks</li>
-              <li><b>1,300+</b>commits</li>
-              <li><b>3</b>chains</li>
-            </ul>
-            <a class="read" href="/en/work/mandate">Read the case study <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
-            <div class="chapter-shot window"><div class="window-view"><img src="/images/previews/mandate.jpg" alt="Mandate.Finance screenshot" loading="lazy" /></div></div>
-          </article>
-
-          <article class="chapter">
-            <span class="kick-num">03 / 05</span>
-            <p class="domain">Public sector · Cultural heritage · Blockchain</p>
-            <h3>MiC PNRR · ArtCertify</h3>
-            <p>Italian Ministry of Culture tender (Ecomic Lotto 3): four blockchain Data Products and soulbound certificates for cultural assets, with SPID identity and hybrid MINIO + IPFS storage.</p>
-            <ul class="metrics">
-              <li><b>4</b>data products</li>
-              <li><b>6</b>pilot use cases</li>
-              <li><b>2</b>chains (Algorand + Base)</li>
-            </ul>
-            <a class="read" href="/en/work/dpass">Read the case study <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
-            <div class="chapter-shot window"><div class="window-view"><img src="/images/previews/artcertify.jpg" alt="ArtCertify screenshot" loading="lazy" /></div></div>
-          </article>
-
-          <article class="chapter">
-            <span class="kick-num">04 / 05</span>
-            <p class="domain">DeFi · Vault infrastructure · MCP</p>
-            <h3>Factor</h3>
-            <p>ERC-4626 vaults on Arbitrum, Base and Ethereum, two production UIs and an AI-native layer: an MCP server with 68 tools and a Vault-as-a-Service paid in USDC via x402.</p>
-            <ul class="metrics">
-              <li><b>~140k</b>LOC</li>
-              <li><b>468 + 253</b>commits</li>
-              <li><b>68</b>MCP tools</li>
-            </ul>
-            <a class="read" href="/en/work/factor">Read the case study <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
-            <div class="chapter-shot window"><div class="window-view"><img src="/images/previews/factor-studio.jpg" alt="Factor Studio screenshot" loading="lazy" /></div></div>
-          </article>
-
-          <article class="chapter">
-            <span class="kick-num">05 / 05</span>
-            <p class="domain">AI tooling · Local-first · Mobile</p>
-            <h3>DeckAgent</h3>
-            <p>A remote for Cursor on your phone: follow agents, read plans and send the next prompt while the code stays on your computer. Daemon, PWA, extension, iOS app and Watch.</p>
-            <ul class="metrics">
-              <li><b>5</b>surfaces</li>
-              <li><b>100%</b>local</li>
-              <li><b>QR</b>pairing</li>
-            </ul>
-            <a class="read" href="/en/work/deckagent">Read the case study <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
-            <div class="chapter-shot window"><div class="window-view"><img src="/images/previews/deckagent.jpg" alt="DeckAgent screenshot" loading="lazy" /></div></div>
-          </article>
+        </div>
         </div>
       </div>
     </section>
@@ -344,9 +417,9 @@
       <div class="trusted-group">
         <h3 class="trusted-label" data-reveal>Public Sector &amp; Institutions<span>03</span></h3>
         <ul class="tiles tiles-lg" data-spot data-reveal>
-          <li class="tile tile-lg wm fc"><a href="https://cultura.gov.it/" target="_blank" rel="noopener noreferrer"><span class="tile-logo"><img src="/images/logos/mic.svg" alt="" loading="lazy" /></span><b>MIC – Ministero della Cultura</b><span>Digital Library · Ecomic Lotto 3 tender</span></a></li>
+          <li class="tile tile-lg wm fc"><a href="https://cultura.gov.it/" target="_blank" rel="noopener noreferrer"><span class="tile-logo"><img src="/images/logos/mic.svg" alt="" loading="lazy" /></span><b>MIC · Ministero della Cultura</b><span>Digital Library · Ecomic Lotto 3 tender</span></a></li>
           <li class="tile tile-lg"><a href="https://www.invitalia.it/" target="_blank" rel="noopener noreferrer"><span class="tile-logo"><img src="/images/logos/invitalia.svg" alt="" loading="lazy" /></span><b>Invitalia</b><span>Ecomic Lotto 3 “Advanced Fruition” tender</span></a></li>
-          <li class="tile tile-lg wm"><a href="https://www.italiadomani.gov.it/" target="_blank" rel="noopener noreferrer"><span class="tile-logo"><img src="/images/logos/pnrr.svg" alt="" loading="lazy" /></span><b>PNRR – Italia Domani</b><span>NextGenerationEU funding</span></a></li>
+          <li class="tile tile-lg wm"><a href="https://www.italiadomani.gov.it/" target="_blank" rel="noopener noreferrer"><span class="tile-logo"><img src="/images/logos/pnrr.svg" alt="" loading="lazy" /></span><b>PNRR · Italia Domani</b><span>NextGenerationEU funding</span></a></li>
         </ul>
       </div>
       <div class="trusted-group">
@@ -492,8 +565,8 @@
     </div>
   </footer>
 
-  <script src="/landing/field.js?v=20261029f" defer></script>
-  <script src="/landing/app.js?v=20261029f" defer></script>
-  <script src="/landing/particles.js?v=20261029f" defer></script>
+  <script src="/landing/field.js?v=20261115w" defer></script>
+  <script src="/landing/app.js?v=20261115w" defer></script>
+  <script src="/landing/particles.js?v=20261115w" defer></script>
 </body>
 </html>

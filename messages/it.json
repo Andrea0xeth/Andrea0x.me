@@ -34,9 +34,9 @@
     "heroSubtitle": "Fractional CTO · Technical Architect · AI Engineering · per sistemi in produzione",
     "howWeEngage": {
       "title": "Come lavoriamo insieme",
-      "step1": "Discovery call — 30 minuti per allinearci su contesto, obiettivi e vincoli.",
-      "step2": "Scope & rate — proposta scritta con deliverable, timeline e fascia di tariffa.",
-      "step3": "Engagement — kickoff, decision log, checkpoint settimanali, handoff a fine progetto."
+      "step1": "Discovery call: 30 minuti per allinearci su contesto, obiettivi e vincoli.",
+      "step2": "Scope & rate: proposta scritta con deliverable, timeline e fascia di tariffa.",
+      "step3": "Engagement: kickoff, decision log, checkpoint settimanali, handoff a fine progetto."
     },
     "cta": {
       "book": "Prenota una discovery call",
@@ -200,6 +200,15 @@
     "techStack": "Tech stack",
     "pillars": "Pillar toccati",
     "atGlance": "Numeri chiave",
+    "decisionGlance": "A colpo d'occhio",
+    "glanceStack": "Stack",
+    "glanceKeyNumber": "Numero chiave",
+    "railLabel": "Progetti",
+    "caseStudyChip": "Case study",
+    "tabsLabel": "Approfondimento",
+    "tabContext": "Contesto",
+    "tabArchitecture": "Architettura",
+    "tabResults": "Risultati",
     "ctaTitle": "Hai un sistema simile da costruire?",
     "ctaBody": "Raccontami il contesto in una call di 30 minuti."
   },
@@ -209,7 +218,13 @@
     "offerKicker": "Cosa offro",
     "offerTitle": "Sei modi di lavorare insieme.",
     "processKicker": "Processo",
-    "rate": "Tariffa"
+    "rate": "Tariffa",
+    "railLabel": "Servizi",
+    "serviceChip": "Servizio",
+    "includes": "Include",
+    "includesUnit": "aree di focus",
+    "glanceLabel": "In breve",
+    "bookCta": "Prenota una discovery call"
   },
   "bookPage": {
     "kicker": "Prenota",
@@ -219,6 +234,8 @@
       "remote": "Video call · remoto",
       "tz": "Italia · CET"
     },
+    "pickDuration": "Scegli una durata",
+    "backToDurations": "Tutte le durate",
     "fallback": "Il calendario non si carica?",
     "openDirect": "Apri call.andrea0x.me"
   },

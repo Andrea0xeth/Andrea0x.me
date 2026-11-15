@@ -81,7 +81,7 @@ export default async function Home({ params }: HomePageProps) {
             <p className="text-body text-[color:var(--text-secondary)] max-w-xl">
               {tCta('body')}
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+            <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
               <BookCallButton
                 variant="primary"
                 size="md"

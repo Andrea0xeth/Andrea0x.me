@@ -34,9 +34,9 @@
     "heroSubtitle": "Fractional CTO · Technical Architect · AI Engineering · for production systems",
     "howWeEngage": {
       "title": "How we engage",
-      "step1": "Discovery call — 30 minutes to align on context, goals and constraints.",
-      "step2": "Scope & rate — written proposal with deliverables, timeline and rate range.",
-      "step3": "Engagement — kickoff, decision logs, weekly checkpoints, end-of-engagement handoff."
+      "step1": "Discovery call: 30 minutes to align on context, goals and constraints.",
+      "step2": "Scope & rate: written proposal with deliverables, timeline and rate range.",
+      "step3": "Engagement: kickoff, decision logs, weekly checkpoints, end-of-engagement handoff."
     },
     "cta": {
       "book": "Book a discovery call",
@@ -200,6 +200,15 @@
     "techStack": "Tech stack",
     "pillars": "Pillars touched",
     "atGlance": "Key numbers",
+    "decisionGlance": "Decision at a glance",
+    "glanceStack": "Stack",
+    "glanceKeyNumber": "Key number",
+    "railLabel": "Projects",
+    "caseStudyChip": "Case study",
+    "tabsLabel": "Case depth",
+    "tabContext": "Context",
+    "tabArchitecture": "Architecture",
+    "tabResults": "Results",
     "ctaTitle": "Building something similar?",
     "ctaBody": "Walk me through the context in a 30-minute call."
   },
@@ -209,7 +218,13 @@
     "offerKicker": "What I offer",
     "offerTitle": "Six ways to work together.",
     "processKicker": "Process",
-    "rate": "Rate"
+    "rate": "Rate",
+    "railLabel": "Services",
+    "serviceChip": "Service",
+    "includes": "Includes",
+    "includesUnit": "focus areas",
+    "glanceLabel": "At a glance",
+    "bookCta": "Book a discovery call"
   },
   "bookPage": {
     "kicker": "Book",
@@ -219,6 +234,8 @@
       "remote": "Video call · remote",
       "tz": "Italy · CET"
     },
+    "pickDuration": "Choose a duration",
+    "backToDurations": "All durations",
     "fallback": "Calendar not loading?",
     "openDirect": "Open call.andrea0x.me"
   },
